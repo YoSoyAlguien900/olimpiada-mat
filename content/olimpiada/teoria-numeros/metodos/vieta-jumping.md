@@ -136,7 +136,10 @@ El descenso clásico **destruye** la solución; Vieta jumping la **transforma**.
 
 ## Problemas relacionados
 
-- **IMO 1988/6.** El problema-origen. Vital.
-- **IMO 2007/5.** Variante donde Vieta jumping junto con análisis modular resuelve elegantemente.
-- **APMO 1997.** Otra ecuación cuadrática con salto similar.
-- **Conjetura de Markov:** unicidad de las representaciones en el árbol de Markov. Abierta en general.
+- **(IMO 1988/P6)** Sean $a, b$ enteros positivos con $ab + 1 \mid a^2 + b^2$. Probar que $\frac{a^2 + b^2}{ab + 1}$ es un cuadrado perfecto. *(El problema-origen del método.)*
+
+- **(Clásico)** Sea $k$ entero positivo fijo. Hallar todos los pares de enteros positivos $(x, y)$ con $x^2 - kxy + y^2 + k = 0$.
+
+- **(Clásico)** Demostrar que la ecuación de Markov $x^2 + y^2 + z^2 = 3xyz$ tiene infinitas soluciones en enteros positivos.
+
+- **(Clásico)** Probar que si $a^2 + b^2 + 1 = 3ab$ para enteros positivos, entonces hay infinitas soluciones. Describir su estructura.

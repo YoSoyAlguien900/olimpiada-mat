@@ -212,12 +212,12 @@ Por multiplicatividad: $f(n) = \prod_{p^k \| n} (2k + 1)$. Esta función es mult
 
 ## Problemas relacionados
 
-- **(OME 2010)** Hallar todos los enteros $n$ con $\sigma(n) = 3n$.
-
 - **(Clásico)** Probar que $\sum_{d \mid n} \mu(d)/d = \varphi(n)/n$ para todo $n \geq 1$.
 
-- **(Clásico)** Hallar una fórmula para $\sum_{d^2 \mid n} \mu(d)$ (la «función de Liouville»).
+- **(Clásico)** Hallar una fórmula para $\sum_{d^2 \mid n} \mu(d)$ en términos de los factores primos de $n$.
 
-- **(ISL 2004/N4)** Sea $f$ multiplicativa con $f(p) = p + 1$ para todo primo $p$. Determinar $f(p^k)$ para $k \geq 2$ si $f$ es además completamente multiplicativa.
+- **(Clásico)** Sea $f$ completamente multiplicativa con $f(p) = p + 1$ para todo primo $p$. Calcular $f(p^k)$.
 
-- **(Conjetura de Lehmer)** ¿Es $\varphi(n) \mid n - 1$ solo cuando $n$ es primo? Sigue abierta; se sabe que si existe $n$ compuesto, tiene al menos 14 factores primos distintos.
+- **(Clásico)** Demostrar que $\sigma(n) < 2n$ para todo primo $n$, y $\sigma(n) > 2n$ para $n = 12$.
+
+- **(Clásico)** Probar que $\sum_{n \leq N} \tau(n) = \sum_{d \leq N} \lfloor N/d \rfloor$ y estimar esta suma asintóticamente como $N \log N + O(N)$.

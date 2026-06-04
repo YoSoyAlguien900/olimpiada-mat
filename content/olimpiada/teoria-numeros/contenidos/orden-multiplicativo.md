@@ -167,12 +167,12 @@ Recíprocamente, si $p \equiv 1 \pmod 4$, sea $g$ una raíz primitiva módulo $p
 
 ## Problemas relacionados
 
-- **(Clásico)** Demostrar que si $p$ es primo y $p \equiv 3 \pmod 4$, entonces $-1$ no es residuo cuadrático módulo $p$. *(Hint: $\operatorname{ord}_p(-1) = 2$, que no divide a $(p-1)/2$ cuando $4 \nmid p-1$.)*
+- **(Clásico)** Demostrar que si $p$ es primo y $p \equiv 3 \pmod 4$, entonces $-1$ no es residuo cuadrático módulo $p$.
 
-- **(OME 2013)** Sea $p$ primo y $a \in \{1, \ldots, p-1\}$. Probar que $\sum_{k=0}^{p-1} a^k \equiv 0 \pmod p$ si $a \not\equiv 1$ y $\equiv -1 \pmod p$ si $a \equiv 1$.
+- **(Clásico)** Sea $p$ primo y $a \in \{1, \ldots, p-1\}$. Probar que $\sum_{k=0}^{p-1} a^k \equiv 0 \pmod p$ si $a \not\equiv 1 \pmod p$.
 
-- **(ISL 2003/N3)** Determinar todos los pares de enteros positivos $(a, b)$ con $a^2 = b! + a$ y $b! + a$ un cuadrado perfecto.
+- **(Clásico)** Probar que si $p \mid 2^n - 1$, entonces $\operatorname{ord}_p(2) \mid n$. Deducir que todo primo impar que divide a $2^p - 1$ (con $p$ primo) es $\equiv 1 \pmod p$.
 
-- **(Clásico)** Para qué enteros $a$ se tiene $\operatorname{ord}_p(a) = p - 1$ (es decir, $a$ es raíz primitiva módulo $p$)?
+- **(Clásico)** Hallar el menor primo $p$ tal que $\operatorname{ord}_p(2) = 10$.
 
-- **(OMG 2022)** Hallar el menor primo $p$ tal que el orden de $5$ módulo $p$ sea exactamente $\frac{p-1}{2}$.
+- **(Clásico)** Probar que la ecuación $x^n \equiv 1 \pmod p$ tiene exactamente $\gcd(n, p-1)$ soluciones en $\{1, \ldots, p-1\}$.

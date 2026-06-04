@@ -177,14 +177,14 @@ La habilidad en teoría de números es saber qué módulo elegir. La paridad (m�
 
 ## Problemas relacionados
 
-- **(Clásico)** Los números $1, 2, \ldots, 2n$ están escritos en un círculo. En cada paso se elige un número y se reemplaza por la diferencia (en valor absoluto) con cada uno de sus dos vecinos, sumando los resultados. ¿Puede terminar con todos ceros?
+- **(Clásico)** Los números $1, 2, \ldots, 2n$ están escritos en una pizarra. En cada paso se borran dos números $a, b$ y se escribe $|a - b|$. ¿Puede el número final ser impar?
 
-- **(OME 2010)** En un tablero de $8 \times 8$, $32$ fichas blancas y $32$ negras se colocan aleatoriamente, una por casilla. ¿Existe siempre una fila o columna que contenga al menos $3$ fichas del mismo color?
+- **(Clásico)** En un tablero de $8 \times 8$ se eliminan dos esquinas opuestas. ¿Se puede cubrir el resto con dominós $1 \times 2$? *(Coloración bipartita.)*
 
-- **(Clásico)** Demostrar que la ecuación $x^4 + y^4 = z^2$ no tiene solución entera positiva usando paridad módulo $4$ como primer paso. *(Luego se necesita descenso infinito.)*
+- **(Clásico)** Demostrar que $x^2 + y^2 \equiv 3 \pmod 4$ no tiene solución entera. Deducir que $x^2 + y^2 + z^2 \equiv 7 \pmod 8$ tampoco.
 
-- **(OMG 2018)** Hay $n$ luces numeradas $1, \ldots, n$, inicialmente todas apagadas. En cada paso se puede cambiar el estado de las luces $k$ y $k+1$ simultáneamente. Determinar para qué valores de $n$ se puede llegar a tener exactamente la luz $1$ encendida y el resto apagadas.
+- **(Clásico)** Hay $n$ luces inicialmente todas apagadas. En cada paso se cambia el estado de exactamente $k$ luces. ¿Para qué valores de $n$ y $k$ se puede llegar a tener exactamente una luz encendida?
 
-- **(IMO 1986/1)** Sean $A$, $B$, $C$, $D$ cuatro puntos del espacio con la propiedad de que en cada conjunto de tres de ellos hay dos a distancia entera y uno a distancia no entera. Determinar si esto es posible para cuatro puntos colineales. *(La paridad de la suma de distancias da la clave.)*
+- **(Clásico)** Se tienen $n \geq 3$ personas en una rueda. En cada instante, cada persona saluda a su vecino de la derecha y luego se mueven todos un paso. ¿Para qué $n$ es posible que cada par de personas se salude exactamente una vez?
 
-- **(Clásico de combinatoria)** Se tienen $n \geq 3$ personas en una rueda. En cada instante, cada persona saluda a su vecino de la derecha y luego se mueven todos un paso a la izquierda. ¿Para qué $n$ es posible que cada par de personas se salude exactamente una vez?
+- **(Clásico)** En un cuadrado de $n \times n$, un caballo hace un recorrido completo (visita cada casilla exactamente una vez). Demostrar que si $n$ es impar, el recorrido no puede ser cerrado.

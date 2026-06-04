@@ -155,10 +155,10 @@ El isomorfismo es $a \pmod N \mapsto (a \pmod{n_1}, a \pmod{n_2}, \ldots, a \pmo
 
 - **(Clásico)** Para todo $k$, demostrar que existen $k$ enteros consecutivos todos divisibles por un cuadrado mayor que $1$.
 
-- **(OME 2012)** Sea $a_1, a_2, \ldots, a_n$ una permutación de $\{1, 2, \ldots, n\}$ con $\gcd(a_i, i) = 1$ para todo $i$. ¿Para qué $n$ existe tal permutación?
+- **(Clásico)** Demostrar que si $m, n$ son coprimos, el número de soluciones de $x^2 \equiv a \pmod{mn}$ es el producto del número de soluciones módulo $m$ y módulo $n$.
 
-- **(Clásico)** Demostrar que si $m, n$ son coprimos, el número de soluciones de $x^2 \equiv a \pmod{mn}$ es igual al producto del número de soluciones de $x^2 \equiv a \pmod m$ y de $x^2 \equiv a \pmod n$.
+- **(Clásico)** Hallar todos los enteros positivos $n$ tales que $n \mid 2^{\varphi(n)} + 1$.
 
-- **(OMG 2021)** Hallar todos los enteros positivos $n$ tales que $n \mid 2^{\varphi(n)} + 1$. *(TCR permite reducir a potencias de primos.)*
+- **(Clásico)** Sea $p$ primo. Probar que el número de pares $(a, b)$ con $1 \leq a, b \leq p-1$ y $a + b \equiv 0 \pmod p$ es $p - 1$. Generalizar con TCR a módulos compuestos.
 
-- **(Putnam 2002)** Determinar cuántos enteros $n$ con $1 \leq n \leq 10^6$ satisfacen que $n$ y $n+1$ son ambos divisibles solo por primos en $\{2, 3, 5, 7\}$.
+- **(Clásico, problema del huevo chino)** Hallar el menor entero positivo que al dividirlo entre $3$ da resto $2$, entre $5$ da resto $3$ y entre $7$ da resto $2$.

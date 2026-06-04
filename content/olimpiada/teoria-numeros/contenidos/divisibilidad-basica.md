@@ -175,12 +175,12 @@ y los cuatro factores son "irreducibles" pero no primos. Esta falla motivó a Ku
 
 - **(Clásico)** Demostrar que si $a \mid bc$ y $\gcd(a, b) = 1$, entonces $a \mid c$.
 
-- **(OMG 2016, regional)** Hallar todos los $n \in \mathbb N$ tales que $n \mid 2^n - 1$.
-
-- **(Clásico)** Para $n \geq 1$, ¿cuántos pares $(a, b)$ con $1 \leq a \leq b \leq n$ satisfacen $\gcd(a, b) = 1$? Estimar en función de $n$.
+- **(Clásico)** Hallar todos los $n \in \mathbb N$ tales que $n \mid 2^n - 1$.
 
 - **(Clásico)** Si $p$ y $q = p + 2$ son ambos primos y $p > 3$, probar que $3 \mid p + 1$.
 
-- **(OME 2014)** Sea $n = a_1 a_2 \cdots a_k$ el producto de todos los enteros $2 \leq a_i \leq 100$ que no son potencias de ningún primo. Calcular $v_2(n) + v_3(n) + v_5(n)$.
+- **(Clásico)** Demostrar que todo número natural de la forma $4k + 3$ tiene al menos un divisor primo de la misma forma. Usar esto para demostrar que hay infinitos primos $\equiv 3 \pmod 4$.
 
-- **(Clásico de factorización)** Demostrar que todo número natural de la forma $4k + 3$ tiene al menos un divisor primo de la misma forma. Usar esto para demostrar que hay infinitos primos $\equiv 3 \pmod 4$.
+- **(Clásico)** Probar que $\tau(n)$ es impar si y solo si $n$ es un cuadrado perfecto.
+
+- **(Clásico)** Hallar todos los enteros positivos $n$ tales que $\tau(n) = \sqrt{n}$.

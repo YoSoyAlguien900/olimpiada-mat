@@ -194,12 +194,12 @@ Así $5 \cdot (-5) - 13 \cdot (-2) = -25 + 26 = 1$, es decir $5x = 1 + 13 \cdot 
 
 ## Problemas relacionados
 
-- **(Clásico)** Demostrar que $\gcd(a + b, ab) = \gcd(a, b)^2 / \gcd(a^2, ab, b^2)$ ... simplificar: si $\gcd(a, b) = 1$ y $p$ es primo con $p \mid a + b$ y $p \mid ab$, obtener una contradicción.
+- **(Clásico)** Si $\gcd(a, b) = 1$ y $p$ es primo con $p \mid a + b$ y $p \mid ab$, obtener una contradicción.
 
-- **(OMG 2016)** Hallar todos los pares de enteros positivos $(a, b)$ con $\gcd(a, b) = 1$ y $\frac{1}{a} + \frac{1}{b} = \frac{1}{2026}$.
+- **(Clásico)** Hallar todos los pares de enteros positivos $(a, b)$ con $\gcd(a, b) = 1$ y $\frac{1}{a} + \frac{1}{b} = \frac{1}{n}$ para un entero $n$ dado.
 
 - **(Clásico)** Si $\gcd(a, b) = 1$, probar que $\gcd(a + b, a^2 - ab + b^2) \in \{1, 3\}$.
 
-- **(Clásico)** Si $a, b$ son enteros positivos con $\gcd(a, b) = 1$, demostrar que todo entero $n \geq (a-1)(b-1)$ es representable como $ax + by$ con $x, y \geq 0$. (El número $(a-1)(b-1) - 1$ es el mayor **no** representable: problema del cambio de monedas.)
+- **(Clásico, moneda de Frobenius)** Si $a, b$ son enteros positivos con $\gcd(a, b) = 1$, demostrar que todo entero $n \geq (a-1)(b-1)$ es representable como $ax + by$ con $x, y \geq 0$. El número $(a-1)(b-1) - 1$ es el mayor no representable.
 
-- **(OME 2013)** Encontrar todos los pares de enteros positivos $(x, y)$ tales que $x^2 y + x + y$ sea múltiplo de $xy^2 + y + x$.
+- **(Clásico)** Encontrar todos los pares de enteros positivos $(x, y)$ tales que $x^2 y + x + y$ sea múltiplo de $xy^2 + y + x$.

@@ -141,14 +141,14 @@ Para $n = 6$: $2^6 - 1 = 63 = 9 \cdot 7$. No es potencia de $3$.
 
 ## Problemas relacionados
 
-- **(IMO Shortlist 2002/N3)** Hallar todos los enteros $n \geq 1$ tales que $2^n - 1 \mid 3^n - 1$.
+- **(Clásico)** Hallar todos los enteros $n \geq 1$ tales que $2^n - 1 \mid 3^n - 1$.
 
-- **(IMO 1990/3)** Los enteros positivos $n$ con $n^2 \mid 2^n + 1$. (Solución parcial en Ejemplo 3.)
-
-- **(OME 2018)** Demostrar que para todo entero $n \geq 2$, $2^n + 3^n$ tiene al menos un factor primo $\equiv 1 \pmod n$.
+- **(Clásico)** Demostrar que para todo entero $n \geq 2$, $2^n + 3^n$ tiene al menos un factor primo $\equiv 1 \pmod n$.
 
 - **(Clásico)** Demostrar que si $p$ y $2p - 1$ son ambos primos, entonces $2p - 1 \mid 2^{p-1} - 1$.
 
-- **(Conjetura de Pillai)** La ecuación $a^x - b^y = c$ tiene finitas soluciones en enteros positivos para $a, b, c$ fijos. Zsigmondy implica resultados parciales.
+- **(Bang, 1886)** Para $a = 2$: demostrar que $2^n - 1$ tiene un divisor primo primitivo para todo $n \geq 7$.
 
-- **(Bang, 1886; caso especial)** Para $a = 2, b = 1$: demostrar que $2^n - 1$ tiene un divisor primo $\equiv 1 \pmod n$ para todo $n \geq 7$.
+- **(Clásico)** Probar que $a^n - b^n$ no puede ser primo si $n$ es compuesto y $a, b > 0$. Deducir que los primos de Mersenne $2^n - 1$ solo pueden aparecer para $n$ primo.
+
+- **(Clásico)** Hallar todos los $n$ para los que $2^n - 1$ puede ser una potencia de $3$.

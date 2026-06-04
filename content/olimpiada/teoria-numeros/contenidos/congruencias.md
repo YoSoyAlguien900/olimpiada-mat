@@ -216,10 +216,10 @@ Los módulos más útiles son $4, 8, 9, 16, 7, 11$. Por ejemplo: $x^2 + y^2 \equ
 
 - **(Clásico)** Demostrar que si $p$ es primo y $p > 3$, entonces $p^2 \equiv 1 \pmod{24}$.
 
-- **(OMG 2019)** Hallar todos los pares de primos $(p, q)$ tales que $p^3 - q^5 = (p + q)^2$.
-
 - **(Clásico)** Probar que $\underbrace{11\cdots1}_{p-1\text{ unos}}$ es divisible por $p$ para todo primo $p > 5$.
 
-- **(OME 2015)** Demostrar que no existen enteros $x, y$ con $x^2 + y^2 = 3z^2$ salvo $x = y = z = 0$. *(Módulo $3$.)*
+- **(Clásico)** Demostrar que no existen enteros $x, y, z$ con $x^2 + y^2 = 3z^2$ salvo $x = y = z = 0$. *(Módulo $3$.)*
 
-- **(Torre exponencial)** ¿Cuál es el último dígito de $\underbrace{7^{7^{7^{\cdots}}}}_{2026 \text{ sietes}}$?
+- **(Clásico)** ¿Cuál es el último dígito de $\underbrace{7^{7^{7^{\cdots}}}}_{2026 \text{ sietes}}$?
+
+- **(Clásico)** Hallar todos los enteros positivos $n$ tales que $3^n + 4^n$ sea divisible por $5$.

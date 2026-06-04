@@ -133,12 +133,12 @@ Las señales de que el descenso podría funcionar:
 
 - **(Clásico)** No existen enteros positivos $a, b$ con $a^2 + b^2 = a^2 b^2$.
 
-- **(Clásico)** La ecuación $x^4 - y^4 = z^2$ no tiene solución en enteros positivos con $\gcd(x,y) = 1$. (Fermat)
+- **(Clásico, Fermat)** La ecuación $x^4 - y^4 = z^2$ no tiene solución en enteros positivos.
 
-- **(OME 2013)** Demostrar que $\sqrt{2} + \sqrt{3}$ es irracional usando descenso. *(Hint: si $\sqrt 2 + \sqrt 3 = p/q$, racionalizar.)*
+- **(Clásico)** Demostrar que $\sqrt{2} + \sqrt{3}$ es irracional. *(Hint: si $\sqrt{2} + \sqrt{3} = p/q$, elevar al cuadrado y analizar.)*
 
-- **(ISL 2007/N1)** Demostrar que la ecuación $x^2 + y^2 + z^2 = 2xyz$ no tiene solución en enteros positivos.
+- **(Clásico)** Demostrar que la ecuación $x^2 + y^2 + z^2 = 2xyz$ no tiene solución en enteros positivos.
 
-- **(Clásico, tres cuadrados)** La ecuación $x^2 + y^2 + z^2 = 8n + 7$ no tiene solución entera. (Módulo $8$, sin descenso necesario; pero la versión con $8n + 7$ específico sí usa el patrón.)
+- **(Clásico)** Demostrar que $\sqrt{n}$ es irracional si $n$ no es un cuadrado perfecto.
 
-- **(USAMO 2009/P3)** Demostrar por descenso que si $p$ es primo y $p \equiv 3 \pmod 4$, entonces $p \nmid x^2 + y^2$ para $\gcd(x,y) = 1$ implica $p^2 \nmid x^2 + y^2$.
+- **(Clásico)** No existen enteros $a, b, c$ con $a^2 + b^2 + c^2 = 2(ab + bc + ca)$ salvo $a = b = c$.

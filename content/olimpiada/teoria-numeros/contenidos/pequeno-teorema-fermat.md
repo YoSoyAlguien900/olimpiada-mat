@@ -182,14 +182,14 @@ Caracterización (Korselt, 1899): $n$ es de Carmichael si y solo si es libre de 
 
 ## Problemas relacionados
 
-- **(Clásico)** Hallar todos los primos $p$ tales que $p \mid 5^p + 4p + 2$.
+- **(Clásico)** Hallar todos los primos $p$ tales que $p \mid 2^p + 1$.
 
-- **(OME 2009)** Demostrar que para todo primo $p > 3$, el número $\underbrace{11\cdots1}_{p-1 \text{ unos}}$ es divisible por $p$.
+- **(Clásico)** Demostrar que para todo primo $p > 3$, el número $\underbrace{11\cdots1}_{p-1 \text{ unos}}$ es divisible por $p$.
 
-- **(OMG 2018)** Sea $p$ un primo impar. Probar que $1^{p-1} + 2^{p-1} + \cdots + (p-1)^{p-1} \equiv -1 \pmod p$.
+- **(Clásico)** Sea $p$ un primo impar. Probar que $1^{p-1} + 2^{p-1} + \cdots + (p-1)^{p-1} \equiv -1 \pmod p$.
 
-- **(Clásico)** Si $p$ es primo y $a^2 \equiv 1 \pmod p$, demostrar que $a \equiv \pm 1 \pmod p$. *(Consecuencia: $(\mathbb Z/p\mathbb Z)^*$ no tiene elementos de orden $2$ salvo $-1$.)*
-
-- **(ISL 2005/N1)** Determinar todos los pares de enteros positivos $(a, b)$ tales que $a^2/(2ab^2 - b^3 + 1)$ sea un entero positivo.
+- **(Clásico)** Si $p$ es primo y $a^2 \equiv 1 \pmod p$, demostrar que $a \equiv \pm 1 \pmod p$.
 
 - **(Clásico)** Probar que $n^{13} - n$ es divisible por $2, 3, 5, 7, 13$, y por tanto por $30030$, para todo entero $n$.
+
+- **(Clásico)** Hallar el último dígito de $3^{3^{3^3}}$.

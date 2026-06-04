@@ -169,12 +169,12 @@ La valuación del factorial es la aplicación más importante de $v_p$ en olimpi
 
 - **(Clásico)** Para $n \geq 1$, hallar $v_2\left(\prod_{k=1}^n (4k-2)\right)$.
 
-- **(OME 2009)** Sea $n$ un entero positivo. Probar que $v_2\binom{2n}{n} = s_2(n)$ (usando Kummer). Deducir que $\binom{2n}{n}$ es impar si y solo si $n$ es una potencia de $2$.
+- **(Clásico)** Probar que $v_2\binom{2n}{n} = s_2(n)$ (usando Kummer). Deducir que $\binom{2n}{n}$ es impar si y solo si $n$ es una potencia de $2$.
 
-- **(Clásico)** Demostrar que $\sqrt[3]{2}$, $\sqrt[3]{3}$, $\sqrt[3]{6}$ son todos irracionales.
-
-- **(USAMO 2010/P5)** Si $p$ es primo y $n = p^a m$ con $p \nmid m$, expresar $v_p(n!)$ en términos de $a$, $m$ y $p$.
-
-- **(ISL 2014/N6)** Determinar todos los enteros $n \geq 2$ tales que $\frac{2^n - 1}{n}$ sea un entero.
+- **(Clásico)** Demostrar que $\sqrt[3]{2}$, $\sqrt[3]{3}$, $\sqrt[3]{6}$ son todos irracionales usando valuaciones $2$-ádica y $3$-ádica.
 
 - **(Clásico)** Probar que $v_p\binom{p^k}{j} = k - v_p(j)$ para $1 \leq j \leq p^k$.
+
+- **(Clásico)** Determinar todos los enteros $n \geq 2$ tales que $\frac{2^n - 1}{n}$ sea un entero. *(Pista: si $p$ es el menor primo divisor de $n$, analizar $v_p$.)*
+
+- **(Clásico)** Probar que si $p$ es primo impar y $a \not\equiv 0 \pmod p$, entonces $v_p(a^{p-1} - 1) = v_p(a-1) + v_p(p-1)$ no es correcto en general — encontrar la fórmula correcta. *(Esto es el Lema LTE para sumas.)*

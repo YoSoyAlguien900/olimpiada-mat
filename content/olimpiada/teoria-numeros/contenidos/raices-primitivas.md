@@ -162,10 +162,10 @@ $$\prod_p \left(1 - \frac{1}{p(p-1)}\right) \approx 0.3739\ldots$$
 
 - **(Clásico)** Para primo $p$ y raíz primitiva $g$, demostrar que $\text{ind}_g(-1) = (p-1)/2$.
 
-- **(OME 2015)** Si $p$ es primo y $g$ raíz primitiva módulo $p$, demostrar que $g + p$ también es raíz primitiva módulo $p^2$.
-
-- **(Conjetura de Artin)** Bajo la Hipótesis de Riemann generalizada, $2$ es raíz primitiva módulo infinitos primos. Verificar computacionalmente para los primeros $100$ primos.
-
-- **(ISL 2005/N4)** Sea $p$ primo impar. Demostrar que hay $\frac{p-1}{2}$ pares $(a, b)$ con $1 \leq a < b \leq p-1$ y $a + b$ RC módulo $p$.
+- **(Clásico)** Si $p$ es primo y $g$ raíz primitiva módulo $p$, demostrar que $g + p$ también es raíz primitiva módulo $p^2$.
 
 - **(Clásico)** Sea $g$ raíz primitiva módulo $p$. Demostrar que $g^{(p-1)/2} \equiv -1 \pmod p$ y deducir que $g$ no es RC módulo $p$.
+
+- **(Clásico)** Sea $p$ primo impar. Demostrar que hay exactamente $\frac{p-1}{2}$ pares $(a, b)$ con $1 \leq a < b \leq p-1$ y $a + b \equiv 0 \pmod p$.
+
+- **(Conjetura de Artin, abierta)** Todo entero $a \neq -1, 0, 1$ que no es cuadrado perfecto es raíz primitiva módulo infinitos primos. Verificar computacionalmente para $a = 2$ y los primeros $50$ primos.

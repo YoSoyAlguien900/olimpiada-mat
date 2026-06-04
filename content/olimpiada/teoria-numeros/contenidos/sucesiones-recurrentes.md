@@ -206,14 +206,14 @@ Recopilamos las identidades más útiles:
 
 ## Problemas relacionados
 
-- **(Clásico)** Demostrar que $F_{n+1}^2 - F_n F_{n+2} = (-1)^n$ (Cassini). Usar el método matricial.
-
-- **(OME 2012)** Hallar todos los $n$ con $F_n$ cuadrado perfecto. Respuesta: $n = 0, 1, 2, 12$.
+- **(Clásico)** Demostrar que $F_{n+1}^2 - F_n F_{n+2} = (-1)^n$ (identidad de Cassini). Usar el método matricial con $\begin{pmatrix}1&1\\1&0\end{pmatrix}^n$.
 
 - **(Clásico)** Para $p$ primo y $p \equiv \pm 1 \pmod 5$, probar que $p \mid F_{p-1}$. Para $p \equiv \pm 2 \pmod 5$, probar que $p \mid F_{p+1}$.
 
-- **(OMG 2020)** Sea $a_1 = 1$, $a_{n+1} = a_n + \lfloor\sqrt{a_n}\rfloor$. Probar que todos los cuadrados perfectos aparecen en la sucesión.
-
 - **(Clásico, Identidad de Vajda)** $F_{m+n} F_{m-n} - F_m^2 = (-1)^{m-n} F_n^2$.
 
-- **(ISL 2007/N5)** Sea $p$ primo y $n = p^2 - 1$. Probar que $p \mid F_n$.
+- **(Clásico)** Demostrar que $F_n$ es par si y solo si $3 \mid n$, y que $F_n$ es divisible por $5$ si y solo si $5 \mid n$.
+
+- **(Clásico)** Sea $p$ primo. Probar que $p \mid F_{p^2 - 1}$ usando el período de Pisano $\pi(p)$.
+
+- **(Clásico)** Demostrar que $F_1 F_2 \cdots F_n$ divide a $F_{2^n}$ para todo $n \geq 1$.

@@ -182,14 +182,14 @@ Si $y$ es impar: $y^3 - x^2 = 3$; módulo $8$: $y^3 \equiv \pm 1, \pm 3$ y $x^2 
 
 ## Problemas relacionados
 
-- **(Clásico)** Determinar todos los primos $p$ para los cuales $\left(\frac{5}{p}\right) = 1$.
+- **(Clásico)** Determinar todos los primos $p$ para los cuales $\left(\frac{5}{p}\right) = 1$ usando reciprocidad.
 
-- **(OME 2016)** Probar que si $p \equiv 3 \pmod 4$, entonces $x^4 \equiv -4 \pmod p$ no tiene solución.
+- **(Clásico)** Probar que si $p \equiv 3 \pmod 4$, entonces $x^4 \equiv -4 \pmod p$ no tiene solución.
 
 - **(Clásico)** Sea $p$ primo con $p \equiv 1 \pmod 3$. Probar que existe $a$ con $a^2 + a + 1 \equiv 0 \pmod p$.
 
-- **(Clásico, congruencias de Gauss)** Para primo impar $p$, calcular $\sum_{a=1}^{p-1} \left(\frac{a}{p}\right) a$.
+- **(Clásico, sumas de Gauss)** Para primo impar $p$, calcular $\sum_{a=1}^{p-1} \left(\frac{a}{p}\right) a$.
 
-- **(ISL 2000/N1)** Determinar todos los enteros $n \geq 1$ que se escriben simultáneamente como suma de dos cuadrados y como suma de dos cubos.
+- **(Clásico)** Probar que todo primo $p \equiv 1 \pmod 4$ es suma de dos cuadrados. *(Hint: $-1$ es RC módulo $p$; usar descenso de Fermat.)*
 
-- **(Conjetura de Goldbach cuadrática)** Todo primo $p \equiv 1 \pmod 4$ es suma de dos cuadrados de **primos**. Abierta.
+- **(Clásico)** Determinar para qué primos $p$ se tiene $\left(\frac{3}{p}\right) = 1$.

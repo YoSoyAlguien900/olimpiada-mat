@@ -203,14 +203,14 @@ Para $n = 2^k$, $k \geq 3$: $\lambda(2^k) = 2^{k-2}$ mientras $\varphi(2^k) = 2^
 
 ## Problemas relacionados
 
-- **(OME 2011)** Demostrar que $\varphi(n) \geq \sqrt{n/2}$ para todo $n \geq 1$.
-
-- **(Clásico)** Calcular $\varphi(n!)$ para valores pequeños de $n$ y estimar el crecimiento.
-
-- **(OMG 2020)** Probar que para todo primo $p$, $\sum_{k=1}^{p-1} k \cdot \varphi(k) \equiv 0 \pmod p$.
+- **(Clásico)** Demostrar que $\varphi(n) \geq \sqrt{n/2}$ para todo $n \geq 1$.
 
 - **(Clásico)** Demostrar que $n \mid \varphi(a^n - 1)$ para todo $a > 1$ y $n \geq 1$.
 
-- **(Conjetura abierta de Lehmer)** ¿Es $\varphi(n) \mid n - 1$ solo para $n$ primo? Se sabe que si no es primo, tiene al menos $14$ factores primos distintos.
+- **(Clásico)** Probar que $\sum_{d \mid n} \varphi(d) = n$ directamente desde la definición de $\varphi$.
 
-- **(IMO 1990/3)** Hallar todos los enteros positivos $n$ con $n^2 \mid 2^n + 1$.
+- **(Clásico)** Hallar todos los $n$ con $\varphi(n) = n/2$.
+
+- **(Clásico)** Demostrar que $\varphi(mn) = \varphi(m)\varphi(n) \cdot d/\varphi(d)$ donde $d = \gcd(m, n)$.
+
+- **(Conjetura de Lehmer, abierta)** ¿Es $\varphi(n) \mid n - 1$ solo para $n$ primo? Se sabe que si existe $n$ compuesto con esta propiedad, tiene al menos $14$ factores primos distintos.

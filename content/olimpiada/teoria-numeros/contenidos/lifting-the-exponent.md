@@ -102,6 +102,12 @@ Los errores más comunes al aplicar LTE:
 
 ## Problemas relacionados
 
-- IMO 1990, Problema 3: Encontrar todos los enteros $n > 1$ tales que $n^2 \mid 2^n + 1$.
-- USAMO 1991, Problema 3: Sobre divisibilidad de $a^n - b^n$ por potencias primas.
-- Iberoamericana 2010: Aplicación al estudio de sumas de potencias.
+- **(Clásico)** Hallar todos los enteros positivos $n > 1$ tales que $n^2 \mid 2^n + 1$.
+
+- **(Clásico)** Determinar $v_3(2^{30} - 1)$ y $v_3(4^{15} - 1)$ usando LTE. Verificar que coinciden.
+
+- **(Clásico)** Probar que si $p$ es primo impar y $p \mid a + b$ con $p \nmid ab$ y $n$ impar, entonces $v_p(a^n + b^n) = v_p(a + b) + v_p(n)$.
+
+- **(Clásico)** Usar LTE para demostrar que $\frac{a^p - b^p}{a - b}$ es coprimo con $a - b$ salvo posiblemente por $p$.
+
+- **(Clásico)** Hallar todos los pares de enteros positivos $(a, n)$ tales que $a^n - 1 \mid a^{n+1} - 1$.

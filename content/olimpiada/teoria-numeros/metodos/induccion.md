@@ -171,12 +171,12 @@ Combinando: AM-GM vale para todo $n$.
 
 - **(Clásico)** Probar $\sum_{k=1}^n k^3 = (n(n+1)/2)^2$ por inducción.
 
-- **(Desigualdad de Bernoulli generalizada)** Para $r > 1$: $(1+x)^r \geq 1 + rx$ para $x > -1$.
+- **(Clásico, Bernoulli)** Para todo $n \geq 1$ y $x > -1$: $(1+x)^n \geq 1 + nx$.
 
-- **(Clásico)** Probar que para $n \geq 2$, $\sqrt n < \sqrt{n-1} + \frac{1}{2\sqrt{n-1}}$.
+- **(Clásico)** Para todo $n$, $\frac{1}{1^2} + \frac{1}{2^2} + \cdots + \frac{1}{n^2} < 2 - \frac{1}{n}$.
 
-- **(Clásico de inducción fuerte)** Para todo $n$, $\frac{1}{1^2} + \frac{1}{2^2} + \cdots + \frac{1}{n^2} < 2 - \frac{1}{n}$.
+- **(Clásico)** Sea $a_1 = 2$ y $a_{n+1} = a_n^2 - a_n + 1$ para $n \geq 1$. Demostrar por inducción que $\sum_{k=1}^n 1/a_k < 1$ para todo $n$.
 
-- **(OME 2014)** Sea $a_1 = 2$ y $a_{n+1} = a_n^2 - a_n + 1$ para $n \geq 1$. Demostrar por inducción que $\sum_{k=1}^n 1/a_k < 1$ para todo $n$.
+- **(Clásico)** Demostrar que $\lfloor n/2 \rfloor \lceil n/2 \rceil = \lfloor n^2/4 \rfloor$ para todo $n \geq 0$.
 
-- **(Clásico de dos pasos)** Demostrar que $\lfloor n/2 \rfloor \lceil n/2 \rceil = \lfloor n^2/4 \rfloor$ para todo $n \geq 0$.
+- **(Clásico)** Probar que todo entero $n \geq 2$ tiene al menos un divisor primo usando inducción fuerte.

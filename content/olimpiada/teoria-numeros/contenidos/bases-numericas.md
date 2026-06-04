@@ -43,7 +43,7 @@ $$
 \vdots
 $$
 
-El proceso termina cuando $q_j = 0$. Los restos, **leídos de abajo hacia arriba**, dan los dígitos $a_0, a_1, a_2, \ldots$ En cada paso el cociente estricatamente decrece: $n > q_0 > q_1 > \cdots \geq 0$, así que el algoritmo siempre termina en finitos pasos.
+El proceso termina cuando $q_j = 0$. Los restos, **leídos de abajo hacia arriba**, dan los dígitos $a_0, a_1, a_2, \ldots$ En cada paso el cociente estrictamente decrece: $n > q_0 > q_1 > \cdots \geq 0$, así que el algoritmo siempre termina en finitos pasos.
 
 ## Teorema
 
@@ -193,37 +193,21 @@ Como $11 \mid 22$, se tiene $11 \mid 7\,392\,814$.
 
 ---
 
-### Un problema olímpico clásico
+### Un problema clásico con suma de dígitos
 
 **Ejemplo 5.** Hallar todos los enteros positivos $n$ tales que $n + s_{10}(n) = 100$.
 
-**Análisis de paridad módulo 9.** Por el Lema, $n \equiv s_{10}(n) \pmod 9$. Sumando: $n + s_{10}(n) \equiv 2s_{10}(n) \pmod 9$. Como $n + s_{10}(n) = 100$ y $100 = 11 \cdot 9 + 1 \equiv 1 \pmod 9$, obtenemos:
+**Análisis módulo 9.** Por el Lema, $n \equiv s_{10}(n) \pmod 9$. Sumando: $2s_{10}(n) \equiv 100 \equiv 1 \pmod 9$, así $s_{10}(n) \equiv 5 \pmod 9$.
 
-$$2\,s_{10}(n) \equiv 1 \pmod 9.$$
+**Acotación.** Como $s_{10}(n) \geq 1$, $n \leq 99$. Con $n$ de dos dígitos: $n = \overline{ab}$, la ecuación es $11a + 2b = 100$. El único entero con $a \leq 9$ es $a = 8, b = 6$: $n = 86$.
 
-Como $2^{-1} \equiv 5 \pmod 9$ (pues $2 \cdot 5 = 10 \equiv 1$), concluimos:
-
-$$s_{10}(n) \equiv 5 \pmod 9, \quad \text{es decir,} \quad s_{10}(n) \in \{5, 14, 23, \ldots\}$$
-
-**Acotación de $n$.** Como $s_{10}(n) \geq 1$, se tiene $n \leq 99$. Por tanto $n$ tiene a lo más dos dígitos, y $s_{10}(n) \leq 9 + 9 = 18$.
-
-Los únicos valores posibles para $s_{10}(n)$ son $5$ y $14$.
-
-**Caso $s_{10}(n) = 5$.** Entonces $n = 100 - 5 = 95$. Pero $s_{10}(95) = 9 + 5 = 14 \neq 5$. Contradicción.
-
-**Caso $s_{10}(n) = 14$.** Entonces $n = 100 - 14 = 86$. Verificamos: $s_{10}(86) = 8 + 6 = 14$. $\checkmark$
-
-La **única solución** es $n = 86$.
-
-*Nota.* Podemos confirmar esto directamente: si $n = \overline{ab}$ con $a, b \in \{0,\ldots,9\}$, la ecuación $10a + b + a + b = 100$ da $11a + 2b = 100$. Las únicas soluciones enteras no negativas con $a \leq 9$ y $b \leq 9$ son $a = 8, b = 6$, es decir, $n = 86$.
+**La única solución es $n = 86$.**
 
 ## La fórmula de Legendre
 
-La representación en base $p$ de un entero $n$ permite calcular exactamente la valuación $p$-ádica de $n!$. Este resultado, conocido como la **fórmula de Legendre**, es una de las herramientas más útiles en divisibilidad olímpica.
-
 ## Teorema
 
-**(Legendre, 1808)** Sea $p$ un primo y $n$ un entero positivo. Entonces:
+**(Legendre)** Sea $p$ un primo y $n$ un entero positivo. Entonces:
 
 $$v_p(n!) = \sum_{k=1}^{\infty} \left\lfloor \frac{n}{p^k} \right\rfloor = \frac{n - s_p(n)}{p - 1},$$
 
@@ -231,177 +215,70 @@ donde $s_p(n)$ es la suma de los dígitos de $n$ en base $p$.
 
 ## Demostración
 
-**Paso 1: la fórmula de suelo.** En el producto $n! = 1 \cdot 2 \cdots n$, el exponente de $p$ es
-
-$$v_p(n!) = \#\{1 \leq j \leq n : p \mid j\} + \#\{1 \leq j \leq n : p^2 \mid j\} + \cdots$$
-
-El número de múltiplos de $p^k$ en $\{1, \ldots, n\}$ es exactamente $\lfloor n/p^k \rfloor$. Por tanto:
+**Paso 1: la fórmula de suelo.** En el producto $n! = 1 \cdot 2 \cdots n$, el número de múltiplos de $p^k$ en $\{1, \ldots, n\}$ es $\lfloor n/p^k \rfloor$. Sumando sobre todos los $k$:
 
 $$v_p(n!) = \sum_{k=1}^{\infty} \left\lfloor \frac{n}{p^k} \right\rfloor.$$
 
-La suma es finita pues $\lfloor n/p^k \rfloor = 0$ para $p^k > n$.
+**Paso 2: conexión con la base $p$.** Sea $n = a_r p^r + \cdots + a_0$ en base $p$. Entonces $\lfloor n/p^j \rfloor = \sum_{i=j}^{r} a_i p^{i-j}$. Sumando sobre $j = 1, \ldots, r$:
 
-**Paso 2: conexión con la base $p$.** Sea $n = a_r p^r + a_{r-1} p^{r-1} + \cdots + a_1 p + a_0$ la representación de $n$ en base $p$ (con $0 \leq a_i \leq p-1$). Calculamos cada piso:
-
-$$\left\lfloor \frac{n}{p} \right\rfloor = a_r p^{r-1} + a_{r-1} p^{r-2} + \cdots + a_1,$$
-
-$$\left\lfloor \frac{n}{p^2} \right\rfloor = a_r p^{r-2} + a_{r-1} p^{r-3} + \cdots + a_2,$$
-
-$$\vdots$$
-
-$$\left\lfloor \frac{n}{p^j} \right\rfloor = \sum_{i=j}^{r} a_i\, p^{i-j}.$$
-
-Sumando sobre $j = 1, 2, \ldots, r$:
-
-$$\sum_{j=1}^{r} \left\lfloor \frac{n}{p^j} \right\rfloor = \sum_{j=1}^{r} \sum_{i=j}^{r} a_i\, p^{i-j} = \sum_{i=1}^{r} a_i \sum_{j=1}^{i} p^{i-j} = \sum_{i=1}^{r} a_i \left(p^{i-1} + p^{i-2} + \cdots + 1\right).$$
-
-Usando la suma de la progresión geométrica:
-
-$$= \sum_{i=1}^{r} a_i \cdot \frac{p^i - 1}{p - 1} = \frac{1}{p-1} \sum_{i=1}^{r} a_i\,(p^i - 1).$$
-
-Desarrollando:
-
-$$= \frac{1}{p-1}\left(\sum_{i=1}^{r} a_i\, p^i - \sum_{i=1}^{r} a_i\right) = \frac{1}{p-1}\left(\sum_{i=0}^{r} a_i\, p^i - a_0 - \sum_{i=1}^{r} a_i\right) = \frac{n - s_p(n)}{p - 1}. \quad \blacksquare$$
+$$\sum_{j=1}^{r} \left\lfloor \frac{n}{p^j} \right\rfloor = \sum_{i=1}^{r} a_i \cdot \frac{p^i - 1}{p - 1} = \frac{1}{p-1}\left(\sum_{i=1}^{r} a_i p^i - \sum_{i=1}^{r} a_i\right) = \frac{n - s_p(n)}{p - 1}. \quad \blacksquare$$
 
 ## Corolario
 
-**(Kummer, 1852)** $v_p\!\binom{m+n}{m}$ es igual al número de **acarreos** que se producen al sumar $m$ y $n$ en base $p$.
+**(Kummer)** $v_p\!\binom{m+n}{m}$ es el número de **acarreos** al sumar $m$ y $n$ en base $p$.
 
-*Demostración rápida.* Por definición de coeficiente binomial: $\binom{m+n}{m} = \frac{(m+n)!}{m!\,n!}$, así que $v_p\!\binom{m+n}{m} = v_p((m+n)!) - v_p(m!) - v_p(n!)$. Aplicando Legendre:
-
-$$v_p\!\binom{m+n}{m} = \frac{(m+n) - s_p(m+n)}{p-1} - \frac{m - s_p(m)}{p-1} - \frac{n - s_p(n)}{p-1} = \frac{s_p(m) + s_p(n) - s_p(m+n)}{p-1}.$$
-
-Cada acarreo al sumar dígitos en base $p$ reduce la suma de dígitos en exactamente $p - 1$ (se produce cuando la suma de dos dígitos supera $p - 1$: el dígito baja en $p-1$ y el siguiente sube en $1$). Por tanto la expresión anterior cuenta exactamente los acarreos. $\blacksquare$
+*Demostración.* $v_p\binom{m+n}{m} = \frac{s_p(m)+s_p(n)-s_p(m+n)}{p-1}$, y cada acarreo reduce la suma de dígitos en $p-1$. $\blacksquare$
 
 ## El teorema de Lucas
 
-El teorema de Lucas reduce el cálculo de $\binom{n}{k} \pmod p$ a coeficientes binomiales de dígitos individuales en base $p$. Es especialmente útil cuando $n$ y $k$ son grandes pero $p$ es pequeño.
-
 ## Teorema
 
-**(Lucas, 1878)** Sea $p$ primo. Sean $n$ y $k$ enteros no negativos con representaciones en base $p$:
-
-$$n = n_r p^r + \cdots + n_1 p + n_0, \qquad k = k_r p^r + \cdots + k_1 p + k_0.$$
-
-Entonces:
+**(Lucas)** Sea $p$ primo. Sean $n = n_r p^r + \cdots + n_0$ y $k = k_r p^r + \cdots + k_0$ en base $p$. Entonces:
 
 $$\binom{n}{k} \equiv \prod_{i=0}^{r} \binom{n_i}{k_i} \pmod{p}.$$
 
-En particular, $\binom{n}{k} \equiv 0 \pmod p$ si y solo si existe algún índice $i$ con $k_i > n_i$.
+En particular, $\binom{n}{k} \equiv 0 \pmod p$ si existe algún $i$ con $k_i > n_i$.
 
 ## Demostración
 
-Trabajamos en $\mathbb{F}_p[x]$, el anillo de polinomios con coeficientes en $\mathbb{Z}/p\mathbb{Z}$.
+En $\mathbb{F}_p[x]$: $(1+x)^p \equiv 1 + x^p$ (los coeficientes intermedios $\binom{p}{j}$ son divisibles por $p$). Por tanto $(1+x)^{p^j} \equiv 1 + x^{p^j}$, y:
 
-**Lema previo** (Identidad de Frobenius). Para todo primo $p$:
+$$(1+x)^n \equiv \prod_{i=0}^r (1+x^{p^i})^{n_i} \pmod p.$$
 
-$$(1 + x)^p \equiv 1 + x^p \pmod{p}.$$
-
-*Demostración del lema.* Por el teorema binomial, $(1+x)^p = \sum_{j=0}^p \binom{p}{j} x^j$. Para $1 \leq j \leq p-1$, el coeficiente $\binom{p}{j} = \frac{p!}{j!(p-j)!}$ es divisible por $p$ (el numerador tiene el factor $p$ y el denominador no, pues $j < p$ y $p-j < p$). Por tanto todos los términos intermedios se anulan módulo $p$, quedando solo $j=0$ y $j=p$. $\square$
-
-**Prueba del teorema.** Aplicando el lema iteradamente:
-
-$$(1+x)^{p^j} \equiv 1 + x^{p^j} \pmod{p}.$$
-
-Por tanto:
-
-$$(1+x)^n = (1+x)^{n_0 + n_1 p + \cdots + n_r p^r} = \prod_{i=0}^r \left[(1+x)^{p^i}\right]^{n_i} \equiv \prod_{i=0}^r (1 + x^{p^i})^{n_i} \pmod{p}.$$
-
-Expandiendo cada factor con el teorema binomial:
-
-$$\prod_{i=0}^r (1 + x^{p^i})^{n_i} = \prod_{i=0}^r \sum_{k_i=0}^{n_i} \binom{n_i}{k_i} x^{k_i p^i}.$$
-
-El coeficiente de $x^k = x^{k_0 + k_1 p + \cdots + k_r p^r}$ en este producto es $\prod_{i=0}^r \binom{n_i}{k_i}$ (pues la representación en base $p$ es única, los distintos sumandos $k_i p^i$ no interfieren entre sí).
-
-Por otro lado, el coeficiente de $x^k$ en $(1+x)^n$ es $\binom{n}{k}$. Igualando:
-
-$$\binom{n}{k} \equiv \prod_{i=0}^r \binom{n_i}{k_i} \pmod{p}. \quad \blacksquare$$
+El coeficiente de $x^k = x^{k_0 + k_1 p + \cdots}$ en el lado derecho es $\prod_i \binom{n_i}{k_i}$. $\blacksquare$
 
 ## Ejemplo
 
-### Aplicaciones de la fórmula de Legendre
-
 **Ejemplo 6.** Calcular $v_3(100!)$.
 
-La representación de $100$ en base $3$: $100 = 81 + 18 + 1 = 3^4 + 2\cdot 3^2 + 1$, es decir, $100 = (10201)_3$. Entonces $s_3(100) = 1 + 0 + 2 + 0 + 1 = 4$. Por Legendre:
+$100 = (10201)_3$, $s_3(100) = 4$. Por Legendre: $v_3(100!) = (100-4)/2 = 48$.
 
-$$v_3(100!) = \frac{100 - 4}{3 - 1} = \frac{96}{2} = 48.$$
+**Ejemplo 7.** ¿Es $\binom{100}{35}$ divisible por $7$?
 
-*Verificación directa.* $\lfloor 100/3 \rfloor + \lfloor 100/9 \rfloor + \lfloor 100/27 \rfloor + \lfloor 100/81 \rfloor = 33 + 11 + 3 + 1 = 48$. $\checkmark$
-
----
-
-**Ejemplo 7.** ¿Para cuántos valores de $k$ con $0 \leq k \leq 2^n$ se tiene $2 \nmid \binom{2^n}{k}$?
-
-Por Lucas con $p = 2$: la representación de $2^n$ en base $2$ es $1\underbrace{00\cdots0}_{n}$. Para que $\binom{2^n}{k} \not\equiv 0 \pmod 2$, necesitamos $k_i \leq (2^n)_i$ para todo dígito $i$. Los únicos dígitos no nulos de $2^n$ son el de posición $0$ (que vale $0$) y el de posición $n$ (que vale $1$). Por tanto $k$ debe tener $k_i = 0$ para $i \neq n$ y $k_n \in \{0, 1\}$. Esto da exactamente $k \in \{0, 2^n\}$: solo dos valores impares de coeficiente binomial.
-
----
-
-**Ejemplo 8.** Calcular $v_2\binom{2n}{n}$ y deducir que $\binom{2n}{n}$ es siempre par para $n \geq 1$.
-
-Por Kummer: $v_2\binom{2n}{n}$ es el número de acarreos al sumar $n + n = 2n$ en base $2$. Cuando se suman dos copias de $n$, el primer dígito de $n$ en base $2$ que sea $1$ producirá un acarreo (pues $1 + 1 = 10_2$). Para $n \geq 1$, $n$ tiene al menos un dígito $1$ en base $2$, así que hay al menos un acarreo. Luego $v_2\binom{2n}{n} \geq 1$, es decir, $2 \mid \binom{2n}{n}$.
-
-Más precisamente: $v_2\binom{2n}{n} = s_2(n)$, el número de unos en la representación binaria de $n$.
-
----
-
-### Una aplicación directa del teorema de Lucas
-
-**Ejemplo 9.** Calcular $\binom{100}{35} \pmod 7$.
-
-Representamos $100$ y $35$ en base $7$:
-$$100 = 2 \cdot 49 + 0 \cdot 7 + 2 = (202)_7, \qquad 35 = 5 \cdot 7 + 0 = (050)_7.$$
-
-Por Lucas:
-
-$$\binom{100}{35} \equiv \binom{2}{0}\binom{0}{5}\binom{2}{2} \pmod 7.$$
-
-Como $5 > 0$, el factor $\binom{0}{5} = 0$. Por tanto:
-
-$$\binom{100}{35} \equiv 0 \pmod 7.$$
-
-Intuitivamente: el dígito de $35$ en posición $1$ (base $7$) es $5$, pero el de $100$ es $0 < 5$, lo que provoca el cero.
+$100 = (202)_7$, $35 = (050)_7$. El dígito de $35$ en posición $1$ es $5 > 0$, el de $100$ es $0$. Por Lucas, $\binom{0}{5} = 0$, así $7 \mid \binom{100}{35}$.
 
 ## Aplicaciones
 
-Las bases numéricas aparecen de forma natural en los siguientes contextos olímpicos:
+**Criterios de divisibilidad.** El Lema da inmediatamente los criterios para $b-1$ y $b+1$ en cualquier base.
 
-**Criterios de divisibilidad.** Cuando un problema pregunta por divisibilidad de una expresión que involucra dígitos, el Lema del capítulo suele ser la clave: $n \equiv s_b(n) \pmod{b-1}$ y $n \equiv \sum (-1)^i a_i \pmod{b+1}$.
+**Valuación de factoriales y coeficientes binomiales.** Legendre y Kummer son los métodos estándar.
 
-**Valuación de factoriales y coeficientes binomiales.** La fórmula de Legendre es el método estándar para calcular $v_p(n!)$, $v_p\binom{n}{k}$, y para determinar cuántos ceros tiene $n!$ al final (caso $p = 5$, dividiendo por el exceso de $5$ sobre $2$).
-
-**Demostrar divisibilidad por potencias de primos.** El teorema de Kummer convierte preguntas sobre $v_p\binom{n}{k}$ en conteo de acarreos, lo que a menudo da una interpretación combinatoria o permite razonar sobre la paridad de ciertas expresiones.
-
-**Problemas de representación.** Preguntas como *"¿para cuántos $n$ entre $1$ y $N$ los dígitos de $n$ en base $b$ son todos distintos?"* o *"¿cuántos enteros de $k$ dígitos en base $b$ son divisibles por $d$?"* se resuelven combinando la representación posicional con conteo.
-
-**Elección estratégica de la base.** Si un problema menciona una expresión que depende de $n \pmod{b-1}$ o $n \pmod{b+1}$, conviene escribir $n$ en base $b$ y explotar la congruencia de dígitos.
+**Elección estratégica de la base.** Base $2$: paridad iterada. Base $p$: valuación $p$-ádica. Base $b = $ módulo del problema: divisibilidad directa.
 
 ## Observación
 
-**Sobre la elección de la base.** La base no es un dato fijo del problema: es una herramienta que el resolutor elige. Algunos patrones orientadores:
-
-- **Base $2$:** problemas de paridad iterada, juegos de Nim, potencias de $2$ que dividen a expresiones.
-- **Base $3$:** conjuntos sin progresiones aritméticas de longitud $3$, problemas tipo Cantor.
-- **Base $p$ primo:** valuación $p$-ádica, fórmulas de Legendre, Kummer, Lucas.
-- **Base $b = $ módulo + 1:** divisibilidad por $b - 1$ via suma de dígitos.
-- **Base $10$:** problemas explícitos sobre dígitos decimales.
-
-**Sobre Kummer y Lucas.** Ambos son consecuencias directas de Legendre, pero su formulación independiente hace que sean más rápidos de aplicar en contexto. Conviene memorizarlos como herramientas de primer acceso:
-- Kummer: $v_p\binom{m+n}{m}$ = número de acarreos al sumar $m$ y $n$ en base $p$.
-- Lucas: reducir $\binom{n}{k} \pmod p$ a un producto de coeficientes de dígitos.
-
-**Sobre la fórmula de Legendre y los ceros de $n!$.** El número de ceros al final de $n!$ es $v_5(n!) = \frac{n - s_5(n)}{4}$ (no $v_2(n!)$, pues siempre hay más factores $2$ que $5$). Para $n = 100$: $s_5(100) = s_5((400)_5) = 4$, así que $v_5(100!) = (100 - 4)/4 = 24$ ceros.
+El número de ceros al final de $n!$ es $v_5(n!) = (n - s_5(n))/4$. Para $n = 100$: $s_5(100) = s_5((400)_5) = 4$, así $v_5(100!) = 96/4 = 24$ ceros.
 
 ## Problemas relacionados
 
-- **(OMG 2015, regional).** Hallar todos los enteros positivos $n$ tales que $n + s_{10}(n) = 100$. *(Solución desarrollada en el Ejemplo 5.)*
+- **(Clásico)** Hallar todos los enteros positivos $n$ tales que $n + s_{10}(n) = 100$. *(Solución en el Ejemplo 5.)*
 
-- **(Clásico).** Demostrar que el número de ceros al final de $n!$ es $\left\lfloor n/5 \rfloor + \lfloor n/25 \right\rfloor + \lfloor n/125 \rfloor + \cdots$ Calcular explícitamente para $n = 1000$.
+- **(Clásico)** Demostrar que el número de ceros al final de $n!$ es $\lfloor n/5 \rfloor + \lfloor n/25 \rfloor + \lfloor n/125 \rfloor + \cdots$ Calcular para $n = 1000$.
 
-- **(OME 2009).** Demostrar que $\binom{2n}{n}$ es par para todo $n \geq 1$. *(Aplicación de Kummer en base $2$: ver Ejemplo 8.)*
+- **(Clásico)** Demostrar que $\binom{2n}{n}$ es par para todo $n \geq 1$ usando Kummer en base $2$.
 
-- **(Clásico de Lucas).** Sea $p = 5$. Calcular $\binom{2025}{175} \pmod 5$.
+- **(Clásico)** Calcular $\binom{p^k}{j} \pmod{p^{k-v_p(j)}}$ usando Lucas iterado.
 
-- **(ISL 2000, N1 adaptado).** Determinar todos los enteros positivos $n$ tales que $n$ divide a $2^{n-1} + 1$. *(Pista: analizar la valuación $p$-ádica de $2^{n-1} + 1$ según los dígitos de $n-1$ en base $p$.)*
+- **(Clásico)** Sea $f(n)$ el número de representaciones de $n$ como suma de potencias distintas de $2$. Demostrar que $f(n)$ es siempre una potencia de $2$ y relacionar $f(n)$ con los dígitos de $n$ en base $2$.
 
-- **(Putnam 1994, B-4).** Sea $f(n)$ el número de representaciones de $n$ como suma de potencias distintas de $2$. Demostrar que $f(n)$ es siempre una potencia de $2$ y relacionar $f(n)$ con los dígitos de $n$ en base $2$.
+- **(Clásico)** Hallar todos los $n$ con $s_{10}(n^2) = s_{10}(n)^2$.
