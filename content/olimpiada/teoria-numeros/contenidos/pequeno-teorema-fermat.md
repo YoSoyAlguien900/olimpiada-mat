@@ -108,26 +108,27 @@ $42 = 2 \cdot 3 \cdot 7$. Verificamos divisibilidad por cada primo:
 - Por $3$: $n^3 \equiv n \pmod 3$, así $n^7 = n^{3 \cdot 2 + 1} = (n^3)^2 \cdot n \equiv n^2 \cdot n = n^3 \equiv n \pmod 3$.
 - Por $2$: $n^2 \equiv n \pmod 2$ (pues $n^2 - n = n(n-1)$ siempre par), así $n^7 = n^{2 \cdot 3 + 1} \equiv n^{0+1} = n \pmod 2$.
 
-Como $\gcd(2, 3) = \gcd(2,7) = \gcd(3,7) = 1$, por TCR: $42 \mid n^7 - n$. $\square$
+Como los tres primos $2, 3, 7$ son distintos, si $p \mid n^7 - n$ para $p \in \{2, 3, 7\}$, entonces $2 \cdot 3 \cdot 7 = 42 \mid n^7 - n$. $\square$
 
 ---
 
-### Torres y exponentes iterados
+### Torres de exponentes
 
-**Ejemplo 5.** Calcular $2^{3^{4^5}} \pmod{7}$.
+**Ejemplo 5.** Calcular $3^{3^{100}} \pmod{7}$.
 
-Por PTF: $2^6 \equiv 1 \pmod 7$. Necesitamos $3^{4^5} \pmod 6$.
+Por PTF: las potencias de $3$ módulo $7$ tienen ciclo de longitud $6$:
 
-Como $6 = 2 \cdot 3$, por TCR necesitamos $3^{4^5} \pmod 2$ y $\pmod 3$.
+$$3^1 \equiv 3,\ 3^2 \equiv 2,\ 3^3 \equiv 6,\ 3^4 \equiv 4,\ 3^5 \equiv 5,\ 3^6 \equiv 1 \pmod 7.$$
 
-- Módulo $2$: $3 \equiv 1$, así $3^{4^5} \equiv 1 \pmod 2$.
-- Módulo $3$: $3 \equiv 0$, así $3^{4^5} \equiv 0 \pmod 3$.
+Necesitamos $3^{100} \pmod 6$ para reducir el exponente. Las potencias de $3$ módulo $6$:
 
-Por TCR: $3^{4^5} \equiv 3 \pmod 6$ (el único en $\{0,\ldots,5\}$ que es $\equiv 1 \pmod 2$ y $\equiv 0 \pmod 3$).
+$$3^1 = 3,\quad 3^2 = 9 \equiv 3,\quad 3^3 \equiv 3,\ldots$$
 
-Luego $2^{3^{4^5}} \equiv 2^3 = 8 \equiv 1 \pmod 7$.
+Siempre $3^k \equiv 3 \pmod 6$ para todo $k \geq 1$ (porque $3 \cdot 3 = 9 = 6 + 3$). Luego $3^{100} \equiv 3 \pmod 6$.
 
-**Respuesta: $2^{3^{4^5}} \equiv 1 \pmod 7$.**
+Por tanto $3^{3^{100}} \equiv 3^3 = 27 \equiv 6 \pmod 7$.
+
+**Respuesta: $3^{3^{100}} \equiv 6 \pmod 7$.**
 
 ---
 

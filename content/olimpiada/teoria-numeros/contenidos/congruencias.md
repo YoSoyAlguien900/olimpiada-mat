@@ -108,11 +108,14 @@ $$x \equiv x_0, \; x_0 + \tfrac{n}{d}, \; x_0 + 2\tfrac{n}{d}, \; \ldots, \; x_0
 
 **Ejemplo 1.** Calcular $7^{100} \pmod{13}$.
 
-Por el Pequeño Teorema de Fermat, $7^{12} \equiv 1 \pmod{13}$ (pues $13$ es primo y $13 \nmid 7$). Dividimos: $100 = 12 \cdot 8 + 4$, así
+Calculamos las potencias de $7$ módulo $13$ hasta encontrar el ciclo:
 
-$$7^{100} = (7^{12})^8 \cdot 7^4 \equiv 1^8 \cdot 7^4 = 7^4 \pmod{13}.$$
+$$7^1 \equiv 7, \quad 7^2 \equiv 10 \equiv -3, \quad 7^3 \equiv -21 \equiv 5, \quad 7^4 \equiv 35 \equiv 9,$$
+$$7^5 \equiv 63 \equiv 11 \equiv -2, \quad 7^6 \equiv -14 \equiv 12 \equiv -1, \quad 7^{12} \equiv 1.$$
 
-Calculamos $7^2 = 49 = 3 \cdot 13 + 10 \equiv 10 \equiv -3 \pmod{13}$, y $7^4 \equiv (-3)^2 = 9 \pmod{13}$.
+El ciclo se repite cada $12$ pasos. Como $100 = 12 \cdot 8 + 4$:
+
+$$7^{100} = (7^{12})^8 \cdot 7^4 \equiv 1^8 \cdot 9 = 9 \pmod{13}.$$
 
 **Respuesta: $7^{100} \equiv 9 \pmod{13}$.**
 
@@ -131,17 +134,17 @@ Como $2026 = 4 \cdot 506 + 2$, se tiene $7^{2026} \equiv 7^2 \equiv 9 \pmod{10}$
 
 ### Torres de exponentes
 
-**Ejemplo 3.** Hallar el resto de $2026^{2026^{2026}}$ al dividir entre $7$.
+**Ejemplo 3.** Hallar el último dígito de $7^{2026}$.
 
-**Paso 1.** Por el Pequeño Teorema de Fermat, $a^6 \equiv 1 \pmod 7$ para $\gcd(a, 7) = 1$. Necesitamos $2026^{2026^{2026}} \pmod 7$, y para eso necesitamos el exponente $2026^{2026} \pmod 6$.
+Buscamos $7^{2026} \pmod{10}$. Calculamos el ciclo de las potencias de $7$ módulo $10$:
 
-**Paso 2.** $2026 = 2 \cdot 3 \cdot 337 + 4 \equiv 4 \pmod 6$. El ciclo de $4^k$ módulo $6$ es $4, 4, 4, \ldots$ (siempre $4$, porque $4^2 = 16 \equiv 4$). Así $2026^{2026} \equiv 4 \pmod 6$.
+$$7^1 \equiv 7, \quad 7^2 \equiv 9, \quad 7^3 \equiv 3, \quad 7^4 \equiv 1, \quad 7^5 \equiv 7, \ldots$$
 
-**Paso 3.** $2026 = 289 \cdot 7 + 3 \equiv 3 \pmod 7$. Entonces $2026^{2026^{2026}} \equiv 3^4 \pmod 7$.
+El ciclo $7, 9, 3, 1$ tiene longitud $4$. Como $2026 = 4 \cdot 506 + 2$:
 
-$3^2 = 9 \equiv 2$, $3^4 \equiv 4 \pmod 7$.
+$$7^{2026} \equiv 7^2 \equiv 9 \pmod{10}.$$
 
-**Respuesta: el resto es $4$.**
+**El último dígito de $7^{2026}$ es $9$.**
 
 ---
 
@@ -208,7 +211,7 @@ Los módulos más útiles son $4, 8, 9, 16, 7, 11$. Por ejemplo: $x^2 + y^2 \equ
 
 **Criterios de divisibilidad como congruencias.** Todos los criterios de divisibilidad son simplemente afirmaciones sobre $n$ módulo un número: divisibilidad por $9$ es $n \equiv 0 \pmod 9$, divisibilidad por $7$ requiere saber $n \pmod 7$. En vez de memorizar reglas, es más poderoso saber que $10 \equiv 3 \pmod 7$ y construir el criterio cuando se necesita.
 
-**La función de Euler $\varphi$.** El orden del grupo $(\mathbb Z/n\mathbb Z)^*$ (las unidades) es $\varphi(n)$. Por el teorema de Lagrange, el orden de cualquier elemento $a$ (es decir, el menor $d$ con $a^d \equiv 1$) divide a $\varphi(n)$. Esta es la versión general del Pequeño Teorema de Fermat.
+**Periodicidad de las potencias.** Para cualquier $a$ con $\gcd(a, n) = 1$, la sucesión $a, a^2, a^3, \ldots$ módulo $n$ es periódica: eventualmente vuelve a $1$. El menor exponente con esa propiedad se llama el **orden** de $a$ módulo $n$. Estos conceptos se estudian en profundidad en los capítulos de Pequeño Teorema de Fermat y Orden Multiplicativo.
 
 ## Problemas relacionados
 

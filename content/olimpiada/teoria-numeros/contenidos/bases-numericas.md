@@ -1,8 +1,8 @@
 ---
 title: "Bases numéricas"
-preview: "Todo entero positivo admite una única representación en cualquier base $b \\geq 2$. El lenguaje de los dígitos desbloquea la fórmula de Legendre, el teorema de Kummer y el teorema de Lucas: tres herramientas centrales en divisibilidad olímpica."
+preview: "Todo entero positivo admite una única representación en cualquier base $b \\geq 2$. Los criterios de divisibilidad clásicos (por 9, 11, 7, 13…) son consecuencias directas de la aritmética de las potencias de la base."
 dificultad: iniciacion
-tags: [bases, representacion, dígitos, divisibilidad, legendre, kummer, lucas]
+tags: [bases, representacion, dígitos, divisibilidad]
 prerequisites: [divisibilidad-basica]
 author: "Adrián García Bouzas"
 updated: "2026-06-03"
@@ -12,7 +12,7 @@ Los sistemas posicionales son tan cotidianos que casi pasan inadvertidos. Escrib
 
 Los babilonios usaron base $60$ (de ahí que un minuto tenga $60$ segundos y un grado $60$ minutos de arco). Los mayas usaron base $20$. Los ordenadores modernos usan base $2$. Pero para el matemático olímpico, la elección más frecuente es **base $p$ con $p$ primo**, porque desbloquea tres resultados fundamentales: la **fórmula de Legendre** para $v_p(n!)$, el **teorema de Kummer** para $v_p\binom{m+n}{m}$, y el **teorema de Lucas** para $\binom{n}{k} \pmod p$.
 
-Este capítulo cubre la teoría de forma sistemática: primero la existencia y unicidad de la representación, luego los criterios de divisibilidad derivados de la base, y finalmente las tres aplicaciones clásicas con sus demostraciones completas.
+Este capítulo cubre la teoría fundamental: la existencia y unicidad de la representación, y los criterios de divisibilidad que se siguen directamente de ella. Las aplicaciones avanzadas (fórmula de Legendre, teorema de Kummer, teorema de Lucas) requieren herramientas que se estudian en capítulos posteriores.
 
 ## Definición
 
@@ -203,82 +203,36 @@ Como $11 \mid 22$, se tiene $11 \mid 7\,392\,814$.
 
 **La única solución es $n = 86$.**
 
-## La fórmula de Legendre
-
-## Teorema
-
-**(Legendre)** Sea $p$ un primo y $n$ un entero positivo. Entonces:
-
-$$v_p(n!) = \sum_{k=1}^{\infty} \left\lfloor \frac{n}{p^k} \right\rfloor = \frac{n - s_p(n)}{p - 1},$$
-
-donde $s_p(n)$ es la suma de los dígitos de $n$ en base $p$.
-
-## Demostración
-
-**Paso 1: la fórmula de suelo.** En el producto $n! = 1 \cdot 2 \cdots n$, el número de múltiplos de $p^k$ en $\{1, \ldots, n\}$ es $\lfloor n/p^k \rfloor$. Sumando sobre todos los $k$:
-
-$$v_p(n!) = \sum_{k=1}^{\infty} \left\lfloor \frac{n}{p^k} \right\rfloor.$$
-
-**Paso 2: conexión con la base $p$.** Sea $n = a_r p^r + \cdots + a_0$ en base $p$. Entonces $\lfloor n/p^j \rfloor = \sum_{i=j}^{r} a_i p^{i-j}$. Sumando sobre $j = 1, \ldots, r$:
-
-$$\sum_{j=1}^{r} \left\lfloor \frac{n}{p^j} \right\rfloor = \sum_{i=1}^{r} a_i \cdot \frac{p^i - 1}{p - 1} = \frac{1}{p-1}\left(\sum_{i=1}^{r} a_i p^i - \sum_{i=1}^{r} a_i\right) = \frac{n - s_p(n)}{p - 1}. \quad \blacksquare$$
-
-## Corolario
-
-**(Kummer)** $v_p\!\binom{m+n}{m}$ es el número de **acarreos** al sumar $m$ y $n$ en base $p$.
-
-*Demostración.* $v_p\binom{m+n}{m} = \frac{s_p(m)+s_p(n)-s_p(m+n)}{p-1}$, y cada acarreo reduce la suma de dígitos en $p-1$. $\blacksquare$
-
-## El teorema de Lucas
-
-## Teorema
-
-**(Lucas)** Sea $p$ primo. Sean $n = n_r p^r + \cdots + n_0$ y $k = k_r p^r + \cdots + k_0$ en base $p$. Entonces:
-
-$$\binom{n}{k} \equiv \prod_{i=0}^{r} \binom{n_i}{k_i} \pmod{p}.$$
-
-En particular, $\binom{n}{k} \equiv 0 \pmod p$ si existe algún $i$ con $k_i > n_i$.
-
-## Demostración
-
-En $\mathbb{F}_p[x]$: $(1+x)^p \equiv 1 + x^p$ (los coeficientes intermedios $\binom{p}{j}$ son divisibles por $p$). Por tanto $(1+x)^{p^j} \equiv 1 + x^{p^j}$, y:
-
-$$(1+x)^n \equiv \prod_{i=0}^r (1+x^{p^i})^{n_i} \pmod p.$$
-
-El coeficiente de $x^k = x^{k_0 + k_1 p + \cdots}$ en el lado derecho es $\prod_i \binom{n_i}{k_i}$. $\blacksquare$
-
-## Ejemplo
-
-**Ejemplo 6.** Calcular $v_3(100!)$.
-
-$100 = (10201)_3$, $s_3(100) = 4$. Por Legendre: $v_3(100!) = (100-4)/2 = 48$.
-
-**Ejemplo 7.** ¿Es $\binom{100}{35}$ divisible por $7$?
-
-$100 = (202)_7$, $35 = (050)_7$. El dígito de $35$ en posición $1$ es $5 > 0$, el de $100$ es $0$. Por Lucas, $\binom{0}{5} = 0$, así $7 \mid \binom{100}{35}$.
-
 ## Aplicaciones
 
-**Criterios de divisibilidad.** El Lema da inmediatamente los criterios para $b-1$ y $b+1$ en cualquier base.
+**Elección estratégica de la base.** La base no es un dato fijo del problema: es una herramienta. Criterio práctico:
 
-**Valuación de factoriales y coeficientes binomiales.** Legendre y Kummer son los métodos estándar.
+- **Base 10**: criterios estándar por 3, 9, 11.
+- **Base 2**: problemas de paridad, potencias de 2, representaciones binarias.
+- **Base 7 (o cualquier primo $p$)**: si el problema pregunta divisibilidad por $p \pm 1$, la suma (o suma alternada) de dígitos en base $p$ da la respuesta directamente.
+- **Base $b = $ módulo del problema**: si aparece divisibilidad por $b-1$ o $b+1$, trabajar en base $b$.
 
-**Elección estratégica de la base.** Base $2$: paridad iterada. Base $p$: valuación $p$-ádica. Base $b = $ módulo del problema: divisibilidad directa.
+**Aplicaciones avanzadas.** La representación en base $p$ permite calcular:
+- Cuántas veces divide $p$ a un factorial $n!$ — **Fórmula de Legendre**, estudiada en el capítulo de *Valuación $p$-ádica*.
+- El exponente de $p$ en un coeficiente binomial — **Teorema de Kummer**, idem.
+- El valor de $\binom{n}{k} \pmod p$ — **Teorema de Lucas**, en el capítulo dedicado.
+
+Estos resultados requieren las herramientas de aritmética modular y valuaciones que se desarrollan en capítulos posteriores.
 
 ## Observación
 
-El número de ceros al final de $n!$ es $v_5(n!) = (n - s_5(n))/4$. Para $n = 100$: $s_5(100) = s_5((400)_5) = 4$, así $v_5(100!) = 96/4 = 24$ ceros.
+**El criterio para $7$, $11$ y $13$.** Como $10^3 = 1000 \equiv 1 \pmod{7}$, $\pmod{11}$ y $\pmod{13}$ (a la vez, pues $7 \cdot 11 \cdot 13 = 1001$ y $1000 \equiv -1 \pmod{1001}$), podemos procesar los dígitos de tres en tres. Esto explica el criterio: "separa los últimos tres dígitos, réstalos a los anteriores; el resultado es divisible por $7$, $11$ o $13$ si y solo si el original lo era." Formalmente: $n \equiv \overline{a_{2}a_{1}a_{0}} - \overline{a_{5}a_{4}a_{3}} + \cdots \pmod{1001}$.
 
 ## Problemas relacionados
 
 - **(Clásico)** Hallar todos los enteros positivos $n$ tales que $n + s_{10}(n) = 100$. *(Solución en el Ejemplo 5.)*
 
-- **(Clásico)** Demostrar que el número de ceros al final de $n!$ es $\lfloor n/5 \rfloor + \lfloor n/25 \rfloor + \lfloor n/125 \rfloor + \cdots$ Calcular para $n = 1000$.
+- **(OMG 2013/P1)** Dado un entero $n$ en base decimal, formamos el entero $k$ restando del número formado por las tres últimas cifras de $n$ el número formado por las cifras anteriores. Demostrar que $n$ es divisible por $7$, $11$ o $13$ si y solo si $k$ también lo es.
 
-- **(Clásico)** Demostrar que $\binom{2n}{n}$ es par para todo $n \geq 1$ usando Kummer en base $2$.
+- **(OMG 2024/P1)** Determinar el menor entero positivo $n$ tal que la suma $A(n) = 1 + 11 + 111 + \cdots + \underbrace{11\cdots1}_{n}$ sea divisible por $45$.
 
-- **(Clásico)** Calcular $\binom{p^k}{j} \pmod{p^{k-v_p(j)}}$ usando Lucas iterado.
+- **(Clásico)** Sea $f(n)$ el número de representaciones de $n$ como suma de potencias de $2$ distintas. Demostrar que $f(n)$ es siempre una potencia de $2$ (incluyendo $2^0 = 1$) y que $f(n)$ depende únicamente de los dígitos de $n$ en base $2$.
 
-- **(Clásico)** Sea $f(n)$ el número de representaciones de $n$ como suma de potencias distintas de $2$. Demostrar que $f(n)$ es siempre una potencia de $2$ y relacionar $f(n)$ con los dígitos de $n$ en base $2$.
+- **(Clásico)** Encontrar todos los enteros positivos que son palíndromos en base $2$ y en base $3$ simultáneamente.
 
-- **(Clásico)** Hallar todos los $n$ con $s_{10}(n^2) = s_{10}(n)^2$.
+- **(Clásico)** Probar que $n$ es divisible por $b+1$ si y solo si su suma alternada de dígitos en base $b$ lo es. Verificar con $b = 3$: criterio de divisibilidad por $4$ en base $3$.
