@@ -5,7 +5,7 @@ dificultad: iniciacion
 competencia: "IMO 1959 P1"
 tags: [irreducible, euclides, mcd, guiado]
 prerequisites: [divisibilidad-basica, euclides-bezout]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

@@ -4,7 +4,7 @@ preview: "Si se colocan $n+1$ objetos en $n$ cajas, alguna caja contiene al meno
 dificultad: iniciacion
 tags: [palomar, combinatoria, principio-cajas, dirichlet]
 prerequisites: []
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-10"
 ---
 

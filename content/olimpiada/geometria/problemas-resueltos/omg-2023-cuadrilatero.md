@@ -5,7 +5,7 @@ dificultad: regional
 competencia: "OMG 2023"
 tags: [cuadrilatero-ciclico, perpendicularidad, ortocentro, OMG]
 prerequisites: [angulos-inscritos, semejanza]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-12"
 ---
 

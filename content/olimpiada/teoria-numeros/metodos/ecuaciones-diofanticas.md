@@ -4,7 +4,7 @@ preview: "Factorización, módulos pequeños, descenso infinito, ecuación de Pe
 dificultad: nacional
 tags: [diofanticas, factorizacion, pell, cuadrados, modular, descenso]
 prerequisites: [congruencias, euclides-bezout, pequeno-teorema-fermat]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

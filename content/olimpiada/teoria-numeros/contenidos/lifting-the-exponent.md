@@ -4,7 +4,7 @@ preview: "Una herramienta poderosa para calcular la valuación p-ádica de expre
 dificultad: nacional
 tags: [valuacion-p-adica, primos, divisibilidad, exponentes]
 prerequisites: [valuacion-p-adica, congruencias-basicas]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-01-15"
 ---
 

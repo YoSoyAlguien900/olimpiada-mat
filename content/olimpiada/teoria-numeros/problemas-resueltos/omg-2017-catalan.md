@@ -5,7 +5,7 @@ dificultad: regional
 competencia: "OMG 2017"
 tags: [combinatoria, divisibilidad, factoriales, catalan]
 prerequisites: [divisibilidad-basica]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-10"
 ---
 

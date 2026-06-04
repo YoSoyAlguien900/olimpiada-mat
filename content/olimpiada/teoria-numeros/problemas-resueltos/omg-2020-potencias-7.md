@@ -5,7 +5,7 @@ dificultad: regional
 competencia: "OMG 2020"
 tags: [fermat, congruencias, divisibilidad, modular]
 prerequisites: [pequeno-teorema-fermat]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-10"
 ---
 

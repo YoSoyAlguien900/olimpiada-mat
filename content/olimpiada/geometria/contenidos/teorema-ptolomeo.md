@@ -4,7 +4,7 @@ preview: "En un cuadrilátero cíclico, el producto de las diagonales iguala a l
 dificultad: nacional
 tags: [cuadrilatero-ciclico, longitudes, identidad-metrica]
 prerequisites: [angulos-inscritos, semejanza]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-01-11"
 ---
 

@@ -4,7 +4,7 @@ preview: "La razón cruzada de cuatro puntos alineados $(A, B; C, D)$ es un inva
 dificultad: nacional
 tags: [razon-cruzada, armonica, proyectiva, polo, polar]
 prerequisites: [polos-polares, semejanza]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

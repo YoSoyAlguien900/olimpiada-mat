@@ -4,7 +4,7 @@ preview: "Sea $M$ el punto medio del arco $BC$ del circuncírculo que no contien
 dificultad: regional
 tags: [incentro, excentro, arco, lema, tridente]
 prerequisites: [puntos-notables-triangulo, angulos-inscritos]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

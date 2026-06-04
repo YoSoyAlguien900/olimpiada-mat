@@ -5,7 +5,7 @@ dificultad: regional
 competencia: "OMG 2014"
 tags: [potencia, tangencia, circunferencias, guiado]
 prerequisites: [potencia-de-un-punto, eje-radical]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

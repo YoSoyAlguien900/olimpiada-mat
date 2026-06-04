@@ -4,7 +4,7 @@ preview: "Una función aritmética es multiplicativa si $f(mn) = f(m)f(n)$ cuand
 dificultad: regional
 tags: [multiplicativas, sigma, tau, mobius, convolucion, inversion]
 prerequisites: [divisibilidad-basica, funcion-euler]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

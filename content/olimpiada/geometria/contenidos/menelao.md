@@ -4,7 +4,7 @@ preview: "Tres puntos sobre las rectas que contienen los lados de un triángulo 
 dificultad: regional
 tags: [colinealidad, razones-signadas, triangulo, proyectiva, transversal]
 prerequisites: [semejanza, ceva]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-04"
 ---
 

@@ -4,7 +4,7 @@ preview: "Para un primo $p$ y enteros $n, k$ con expansiones $n = \\sum a_i p^i$
 dificultad: regional
 tags: [lucas, binomiales, modular, base-p]
 prerequisites: [bases-numericas, congruencias]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

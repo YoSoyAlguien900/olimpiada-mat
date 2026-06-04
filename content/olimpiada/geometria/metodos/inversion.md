@@ -4,7 +4,7 @@ preview: "La inversión convierte circunferencias en rectas (y viceversa), revel
 dificultad: nacional
 tags: [inversion, transformaciones, circunferencias]
 prerequisites: [potencia-de-un-punto, geometria-euclidea]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-01-13"
 ---
 

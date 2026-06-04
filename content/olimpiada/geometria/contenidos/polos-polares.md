@@ -4,7 +4,7 @@ preview: "Dada una circunferencia $\\omega$ y un punto $P$, la polar de $P$ es u
 dificultad: nacional
 tags: [polo, polar, dualidad, conicas, proyectiva]
 prerequisites: [potencia-de-un-punto, inversion]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

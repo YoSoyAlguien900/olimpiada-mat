@@ -4,7 +4,7 @@ preview: "Si $p$ es primo y $\\gcd(a, p) = 1$, entonces $a^{p-1} \\equiv 1 \\pmo
 dificultad: regional
 tags: [fermat, congruencias, primos, potencias, orden]
 prerequisites: [congruencias, divisibilidad-basica]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

@@ -5,7 +5,7 @@ dificultad: elite
 competencia: "USAMO 2010, Problema 6"
 tags: [USAMO, sucesiones, descenso, combinatoria]
 prerequisites: [descenso-infinito, principio-extremo]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-12"
 ---
 

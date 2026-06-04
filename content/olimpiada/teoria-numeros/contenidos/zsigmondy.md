@@ -4,7 +4,7 @@ preview: "Para casi todos los $n$, el número $a^n - b^n$ tiene un divisor primo
 dificultad: nacional
 tags: [zsigmondy, divisores-primitivos, potencias, ciclotomicos, orden]
 prerequisites: [orden-multiplicativo, polinomios-ciclotomicos, lifting-the-exponent]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

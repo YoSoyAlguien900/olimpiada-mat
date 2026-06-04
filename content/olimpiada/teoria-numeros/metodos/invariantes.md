@@ -4,7 +4,7 @@ preview: "Encuentra una magnitud que no cambia bajo las operaciones permitidas, 
 dificultad: regional
 tags: [invariante, semi-invariante, monovariante, paridad, coloraciones]
 prerequisites: [paridad-invariante]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-11"
 ---
 

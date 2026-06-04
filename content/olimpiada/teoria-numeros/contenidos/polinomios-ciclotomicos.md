@@ -4,7 +4,7 @@ preview: "Para cada $n \\geq 1$, $\\Phi_n(x)$ tiene como raíces exactamente las
 dificultad: nacional
 tags: [ciclotomicos, raices-unidad, irreducibilidad, divisibilidad, fermat, galois]
 prerequisites: [polinomios, raices-primitivas, funciones-multiplicativas]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-04"
 ---
 

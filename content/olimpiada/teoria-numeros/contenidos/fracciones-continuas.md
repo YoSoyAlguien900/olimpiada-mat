@@ -4,7 +4,7 @@ preview: "Todo número real admite una única expansión en fracción continua. 
 dificultad: nacional
 tags: [fracciones-continuas, convergentes, pell, aproximacion-diofantica, periodica]
 prerequisites: [euclides-bezout, ecuaciones-diofanticas]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-04"
 ---
 

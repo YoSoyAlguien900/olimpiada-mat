@@ -4,7 +4,7 @@ preview: "La técnica de demostración más fundamental de la matemática discre
 dificultad: iniciacion
 tags: [induccion, induccion-fuerte, demostracion, buen-orden]
 prerequisites: []
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

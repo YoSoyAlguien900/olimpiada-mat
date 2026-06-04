@@ -4,7 +4,7 @@ preview: "En todo triángulo, los nueve puntos especiales — pies de las altura
 dificultad: nacional
 tags: [triangulo, nueve-puntos, euler, ortocentro, circunferencia]
 prerequisites: [angulos-inscritos, recta-de-euler]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-10"
 ---
 

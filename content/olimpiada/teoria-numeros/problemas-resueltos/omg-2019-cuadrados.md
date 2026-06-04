@@ -5,7 +5,7 @@ dificultad: regional
 competencia: "OMG 2019"
 tags: [cuadrados, acotacion, polinomios]
 prerequisites: [divisibilidad-basica]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-10"
 ---
 

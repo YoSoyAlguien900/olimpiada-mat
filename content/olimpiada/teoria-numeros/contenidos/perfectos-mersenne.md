@@ -4,7 +4,7 @@ preview: "Un entero es perfecto si es igual a la suma de sus divisores propios. 
 dificultad: regional
 tags: [perfectos, mersenne, sigma, abundantes, euclides-euler]
 prerequisites: [funciones-multiplicativas, divisibilidad-basica]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-04"
 ---
 

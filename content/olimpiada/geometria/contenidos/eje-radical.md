@@ -4,7 +4,7 @@ preview: "Dadas dos circunferencias, el lugar geométrico de los puntos con igua
 dificultad: regional
 tags: [eje-radical, centro-radical, potencia, circunferencias]
 prerequisites: [potencia-de-un-punto]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

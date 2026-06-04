@@ -4,7 +4,7 @@ preview: "Dados tres puntos $A, B, C$, ¿qué punto $P$ minimiza $|PA| + |PB| + 
 dificultad: regional
 tags: [fermat, torricelli, optimizacion, minimo]
 prerequisites: [trigonometria-triangulo]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

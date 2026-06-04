@@ -4,7 +4,7 @@ preview: "Todo entero positivo admite una única representación en cualquier ba
 dificultad: iniciacion
 tags: [bases, representacion, dígitos, divisibilidad, legendre, kummer, lucas]
 prerequisites: [divisibilidad-basica]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

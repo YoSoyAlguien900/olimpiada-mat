@@ -4,7 +4,7 @@ preview: "Desigualdad triangular, isoperimétrica, Weitzenböck, Erdős–Mordel
 dificultad: nacional
 tags: [desigualdades, triangulo, isoperimetrica, weitzenbock, erdos-mordell]
 prerequisites: [semejanza, trigonometria-triangulo]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-04"
 ---
 

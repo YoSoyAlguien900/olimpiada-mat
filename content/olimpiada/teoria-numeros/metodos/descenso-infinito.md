@@ -4,7 +4,7 @@ preview: "Una técnica de demostración donde una hipotética solución mínima 
 dificultad: nacional
 tags: [descenso-infinito, diofanticas, irracionalidad, pitagoras]
 prerequisites: [divisibilidad-basica, euclides-bezout]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

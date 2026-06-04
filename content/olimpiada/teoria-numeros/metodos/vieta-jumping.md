@@ -4,7 +4,7 @@ preview: "Una técnica de descenso infinito refinada para ecuaciones diofántica
 dificultad: nacional
 tags: [vieta, descenso, diofantica, cuadratica]
 prerequisites: [descenso-infinito, polinomios]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

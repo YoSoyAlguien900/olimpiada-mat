@@ -4,7 +4,7 @@ preview: "Cuando la geometría sintética no progresa, las coordenadas siempre f
 dificultad: nacional
 tags: [coordenadas, cartesianas, baricentricas, complejas, metodos]
 prerequisites: [angulos-inscritos, semejanza]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-11"
 ---
 

@@ -4,7 +4,7 @@ preview: "El lenguaje básico de la teoría de números: divisores, múltiplos, 
 dificultad: iniciacion
 tags: [divisibilidad, mcd, mcm, primos, factorizacion, TFA]
 prerequisites: []
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

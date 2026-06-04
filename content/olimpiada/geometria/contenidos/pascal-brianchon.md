@@ -4,7 +4,7 @@ preview: "Pascal: los lados opuestos de un hexágono inscrito en una cónica se 
 dificultad: nacional
 tags: [pascal, brianchon, hexagono, ciclico, colinealidad, concurrencia, dualidad]
 prerequisites: [angulos-circunferencia, menelao, polos-polares]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-04"
 ---
 

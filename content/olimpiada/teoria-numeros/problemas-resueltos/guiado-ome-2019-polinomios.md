@@ -5,7 +5,7 @@ dificultad: nacional
 competencia: "OME 2019"
 tags: [polinomios, factoriales, crecimiento, modular, guiado]
 prerequisites: [pequeno-teorema-fermat, polinomios]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

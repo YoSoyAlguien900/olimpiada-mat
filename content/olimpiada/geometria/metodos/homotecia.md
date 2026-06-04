@@ -4,7 +4,7 @@ preview: "Una homotecia es una dilatación centrada. La composición de dos homo
 dificultad: regional
 tags: [homotecia, transformaciones, semejanza, tangencia]
 prerequisites: [semejanza]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-12"
 ---
 

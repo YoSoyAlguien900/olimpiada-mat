@@ -4,7 +4,7 @@ preview: "Para cualquier recta por $P$ que corta a $\\omega$ en $A$ y $B$, el pr
 dificultad: regional
 tags: [circunferencia, potencia, eje-radical, conciclos, inversion]
 prerequisites: [angulos-circunferencia, semejanza]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-04"
 ---
 
@@ -22,6 +22,34 @@ Nótese:
 - Si $P$ está **fuera** de $\omega$: $OP > r$, así $\text{pow}(P, \omega) > 0$.
 - Si $P$ está **sobre** $\omega$: $OP = r$, así $\text{pow}(P, \omega) = 0$.
 - Si $P$ está **dentro** de $\omega$: $OP < r$, así $\text{pow}(P, \omega) < 0$.
+
+```geofig
+// P interior: dos cuerdas AB y CD se cortan en P
+size 7 6
+circle 0 0 2.5
+point  0.5  0.3  P  -0.25  -0.22
+point  1.87  1.66  A  0.2  0.15
+point -1.66 -1.86  B -0.2 -0.2
+point -1.32  2.12  C -0.25  0.15
+point  2.12 -1.32  D  0.22 -0.2
+segment A B
+segment C D
+label 0 -3.1 "PA·PB = PC·PD (P interior)"
+```
+
+```geofig
+// P exterior: dos secantes desde P
+size 9 6
+circle 0 0 2.5
+point  3.5  0    P  0.2  -0.22
+point  2.5  0    A  0.15 -0.25
+point -2.5  0    B -0.22 -0.2
+point  2.42  0.62 C  0.18  0.22
+point -0.67  2.41 D -0.25  0.2
+segment P B
+segment P D
+label 0.5 -3.1 "PA·PB = PC·PD (P exterior)"
+```
 
 ## Teorema
 

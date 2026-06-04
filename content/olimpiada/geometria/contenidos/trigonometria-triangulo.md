@@ -4,7 +4,7 @@ preview: "Las leyes fundamentales que relacionan lados y ángulos de un triángu
 dificultad: regional
 tags: [trigonometria, ley-senos, ley-cosenos, identidades]
 prerequisites: [semejanza]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

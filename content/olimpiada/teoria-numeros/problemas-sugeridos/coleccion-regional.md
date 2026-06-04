@@ -4,7 +4,7 @@ preview: "Veinte problemas de fases autonómicas españolas (OMG, Madrid, Catalu
 dificultad: regional
 tags: [coleccion, problemas, fase-regional, OMG]
 prerequisites: [pequeno-teorema-fermat, angulos-inscritos]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-11"
 ---
 

@@ -4,7 +4,7 @@ preview: "En todo triángulo no equilátero, el circuncentro $O$, el baricentro 
 dificultad: nacional
 tags: [recta-euler, ortocentro, baricentro, circuncentro]
 prerequisites: [baricentro, ortocentro, vectores]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-01-08"
 ---
 

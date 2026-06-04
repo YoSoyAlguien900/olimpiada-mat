@@ -4,7 +4,7 @@ preview: "Veinte problemas calibrados al nivel de la Fase Nacional Española y o
 dificultad: nacional
 tags: [coleccion, OME, ibero, fase-nacional]
 prerequisites: [orden-multiplicativo, ceva, inversion]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-12"
 ---
 

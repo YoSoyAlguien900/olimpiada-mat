@@ -5,7 +5,7 @@ dificultad: nacional
 competencia: "IMO 1988 P6"
 tags: [vieta, descenso, cuadrados, diofantica, guiado]
 prerequisites: [vieta-jumping, descenso-infinito]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

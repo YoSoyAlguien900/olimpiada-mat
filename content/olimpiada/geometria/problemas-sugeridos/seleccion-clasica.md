@@ -4,7 +4,7 @@ preview: "Diez problemas que cubren ángulos inscritos, potencia, semejanza y co
 dificultad: nacional
 tags: [problemas, entrenamiento, triangulo, circunferencias]
 prerequisites: [potencia-de-un-punto, teorema-ptolomeo]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-01-19"
 ---
 

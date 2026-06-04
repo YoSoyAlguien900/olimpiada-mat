@@ -4,7 +4,7 @@ preview: "$(p-1)! \\equiv -1 \\pmod p$ si y solo si $p$ es primo. Probamos esta 
 dificultad: nacional
 tags: [wilson, primos, demostracion, polinomios]
 prerequisites: [pequeno-teorema-fermat, congruencias]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-12"
 ---
 

@@ -5,7 +5,7 @@ dificultad: regional
 competencia: "OMG 2021"
 tags: [sucesiones, divisibilidad, descenso, OMG]
 prerequisites: [divisibilidad-basica, descenso-infinito]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-12"
 ---
 

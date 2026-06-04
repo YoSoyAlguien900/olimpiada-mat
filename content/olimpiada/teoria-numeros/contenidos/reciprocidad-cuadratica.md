@@ -4,7 +4,7 @@ preview: "El 'theorema aureum' de Gauss: determinar si $p$ es cuadrado módulo $
 dificultad: nacional
 tags: [reciprocidad, legendre, residuos-cuadraticos, primos, gauss]
 prerequisites: [pequeno-teorema-fermat, orden-multiplicativo]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

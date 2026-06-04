@@ -4,7 +4,7 @@ preview: "Tres rectas, cada una perpendicular a un lado del triángulo desde un 
 dificultad: regional
 tags: [carnot, perpendiculares, concurrencia, distancias]
 prerequisites: [pitagoras]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

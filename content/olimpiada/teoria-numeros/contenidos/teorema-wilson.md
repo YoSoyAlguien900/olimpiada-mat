@@ -4,7 +4,7 @@ preview: "$(p-1)! \\equiv -1 \\pmod p$ caracteriza primalidad. Una identidad bel
 dificultad: nacional
 tags: [wilson, factoriales, primos, congruencias]
 prerequisites: [congruencias, pequeno-teorema-fermat]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-07"
 ---
 

@@ -5,7 +5,7 @@ dificultad: nacional
 competencia: "OME 2012 (Fase Nacional)"
 tags: [ortocentro, circuncirculo, reflexion, angulos]
 prerequisites: [angulos-inscritos, potencia-de-un-punto]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-10"
 ---
 

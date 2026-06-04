@@ -4,7 +4,7 @@ preview: "Para resolver un problema, considera el objeto con valor mínimo o má
 dificultad: iniciacion
 tags: [extremo, minimo, demostraciones, combinatoria]
 prerequisites: []
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-11"
 ---
 

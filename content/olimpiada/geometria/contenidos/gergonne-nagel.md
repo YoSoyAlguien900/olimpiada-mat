@@ -4,7 +4,7 @@ preview: "Dos puntos clásicos del triángulo: Gergonne (intersección de cevian
 dificultad: regional
 tags: [gergonne, nagel, cevianas, incirculo, excirculo]
 prerequisites: [ceva, puntos-notables-triangulo]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

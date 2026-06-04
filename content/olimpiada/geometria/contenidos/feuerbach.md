@@ -4,7 +4,7 @@ preview: "La circunferencia de los nueve puntos es tangente internamente al inc�
 dificultad: nacional
 tags: [feuerbach, nueve-puntos, incirculo, excirculo, tangencia, vectores]
 prerequisites: [circunferencia-nueve-puntos, puntos-notables-triangulo, trigonometria-triangulo]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-04"
 ---
 

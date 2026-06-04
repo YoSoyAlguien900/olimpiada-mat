@@ -4,7 +4,7 @@ preview: "Incentro, circuncentro, baricentro, ortocentro y los tres excentros. L
 dificultad: regional
 tags: [incentro, circuncentro, baricentro, ortocentro, excentros, euler]
 prerequisites: [angulos-inscritos, ceva]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

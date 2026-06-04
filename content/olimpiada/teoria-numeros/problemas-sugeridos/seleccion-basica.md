@@ -4,7 +4,7 @@ preview: "Doce problemas escalonados por dificultad para entrenar las técnicas 
 dificultad: nacional
 tags: [problemas, entrenamiento, divisibilidad, congruencias]
 prerequisites: [pequeno-teorema-fermat, orden-multiplicativo]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-01-18"
 ---
 

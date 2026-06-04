@@ -4,7 +4,7 @@ preview: "Para todo primo $p$, el grupo multiplicativo $(\\mathbb{Z}/p\\mathbb{Z
 dificultad: nacional
 tags: [raices-primitivas, grupo-multiplicativo, orden, ciclico, logaritmo-discreto]
 prerequisites: [orden-multiplicativo, pequeno-teorema-fermat, polinomios]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-04"
 ---
 

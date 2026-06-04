@@ -4,7 +4,7 @@ preview: "Tres cevianas de un triángulo son concurrentes si y solo si el produc
 dificultad: regional
 tags: [concurrencia, cevianas, razones, triangulo, baricentro, gergonne]
 prerequisites: [semejanza]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-04"
 ---
 
@@ -17,6 +17,24 @@ La prueba es elegante porque usa el principio más elemental: si dos triángulos
 Sea $ABC$ un triángulo. Una **ceviana** desde el vértice $A$ es un segmento $AX$ donde $X$ está sobre la recta $BC$ (generalmente, sobre el segmento $BC$ para cevianas internas, pero el teorema también funciona con cevianas externas). Los teoremas de Ceva y Menelao trabajan con cevianas de los tres vértices simultáneamente.
 
 ## Teorema
+
+```geofig
+// Cevianas AX, BY, CZ concurrentes en P
+size 8 7
+point -3   -1.5  B -0.25 -0.2
+point  3   -1.5  C  0.25 -0.2
+point  0    2.8  A  0.1   0.25
+point  0.3 -1.5  X  0.1  -0.3
+point  1.62  0.9  Y  0.28  0.1
+point -1.2   0.4  Z -0.32  0.1
+point  0.22  0.1  P  0.28 -0.18
+segment A B
+segment B C
+segment C A
+segment A X
+segment B Y
+segment C Z
+```
 
 **(Ceva)** Sea $ABC$ un triángulo y sean $X \in BC$, $Y \in CA$, $Z \in AB$ (sobre los segmentos o sus prolongaciones). Las cevianas $AX$, $BY$, $CZ$ son **concurrentes** si y solo si
 

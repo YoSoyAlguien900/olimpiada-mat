@@ -4,8 +4,9 @@ import { AppShell } from '@/components/AppShell';
 import { buildIndex, CATEGORIAS, SUBSECCIONES, type ContentMeta } from '@/lib/content';
 
 export const metadata = {
-  title: 'Olimpiada Matemática — Material de élite',
-  description: 'Teoría, problemas y demostraciones de Geometría y Teoría de Números para olímpicos.',
+  title: 'Olimpiada Matemática — Adrián García Bouzas',
+  description: 'Material de teoría, problemas y demostraciones de Geometría y Teoría de Números. Autoría: Adrián García Bouzas.',
+  authors: [{ name: 'Adrián García Bouzas' }],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

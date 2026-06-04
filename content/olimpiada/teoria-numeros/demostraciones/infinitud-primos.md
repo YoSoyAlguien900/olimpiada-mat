@@ -4,7 +4,7 @@ preview: "Hay infinitos primos. La demostración de Euclides es el primer teorem
 dificultad: regional
 tags: [primos, infinitud, euclides, euler, demostracion]
 prerequisites: [divisibilidad-basica]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-11"
 ---
 

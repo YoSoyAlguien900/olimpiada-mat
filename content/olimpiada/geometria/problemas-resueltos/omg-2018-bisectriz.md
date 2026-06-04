@@ -5,7 +5,7 @@ dificultad: regional
 competencia: "OMG 2018"
 tags: [bisectriz, circuncirculo, potencia, semejanza]
 prerequisites: [angulos-inscritos, potencia-de-un-punto]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-10"
 ---
 

@@ -4,7 +4,7 @@ preview: "Si $AD$ es una ceviana del triángulo $ABC$ con $D \\in BC$, entonces 
 dificultad: regional
 tags: [stewart, cevianas, longitudes, triangulo]
 prerequisites: [semejanza]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-12"
 ---
 

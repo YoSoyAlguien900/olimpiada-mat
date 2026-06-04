@@ -5,7 +5,7 @@ dificultad: regional
 competencia: "OMG 2016"
 tags: [divisibilidad, digitos, modular, guiado]
 prerequisites: [congruencias, bases-numericas]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

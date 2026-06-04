@@ -4,7 +4,7 @@ preview: "Dos triángulos son semejantes si tienen los mismos ángulos. Los crit
 dificultad: iniciacion
 tags: [semejanza, triangulo, AA, LAL, homotecia-espiral, proporcion]
 prerequisites: []
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-04"
 ---
 
@@ -52,6 +52,22 @@ La semejanza aparece en cuatro situaciones:
 ## Ejemplo
 
 ### Semejanza por ángulo común
+
+```geofig
+// Triángulo rectángulo ABC con altura CH a la hipotenusa
+size 8 6
+point -3   0   B -0.2 -0.25
+point  3   0   A  0.2 -0.25
+point  0.6  2.4  C  0.1  0.25
+point  0.6  0   H  0.1 -0.25
+segment A B
+segment A C
+segment B C
+segment C H
+rightangle H C A
+rightangle H B C
+label 0 -0.8 "H"
+```
 
 **Ejemplo 1.** (Altura sobre la hipotenusa) En el triángulo rectángulo $ABC$ con ángulo recto en $C$, sea $H$ el pie de la altura desde $C$. Demostrar que $\triangle ACH \sim \triangle ABC$.
 

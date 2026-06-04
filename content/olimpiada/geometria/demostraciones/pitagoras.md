@@ -4,7 +4,7 @@ preview: "El teorema más demostrado de la historia. Una galería de cuatro prue
 dificultad: iniciacion
 tags: [pitagoras, demostracion, triangulo-rectangulo, historia]
 prerequisites: [semejanza]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-11"
 ---
 

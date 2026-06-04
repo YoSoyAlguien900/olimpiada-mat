@@ -4,7 +4,7 @@ preview: "El argumento de paridad consiste en observar que cierta cantidad es pa
 dificultad: iniciacion
 tags: [paridad, invariantes, modular, coloracion, combinatoria]
 prerequisites: [divisibilidad-basica]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

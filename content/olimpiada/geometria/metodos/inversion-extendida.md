@@ -4,7 +4,7 @@ preview: "La inversión es la transformación más poderosa de la geometría sin
 dificultad: nacional
 tags: [inversion, transformaciones, conformes, tangencia]
 prerequisites: [angulos-inscritos, potencia-de-un-punto]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-12"
 ---
 

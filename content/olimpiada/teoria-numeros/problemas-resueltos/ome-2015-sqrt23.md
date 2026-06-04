@@ -5,7 +5,7 @@ dificultad: nacional
 competencia: "OME 2015 (Fase Nacional)"
 tags: [irracionalidad, descenso, extensiones-cuadraticas]
 prerequisites: [descenso-infinito]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-10"
 ---
 

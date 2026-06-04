@@ -4,7 +4,7 @@ preview: "Veinte problemas internacionales (IMO, ISL, IMO TST) seleccionados com
 dificultad: internacional
 tags: [coleccion, IMO, shortlist, internacional]
 prerequisites: [orden-multiplicativo, lifting-the-exponent, inversion]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-11"
 ---
 

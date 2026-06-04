@@ -4,7 +4,7 @@ preview: "El orden de $a$ módulo $n$ es el menor $d \\geq 1$ con $a^d \\equiv 1
 dificultad: nacional
 tags: [orden, congruencias, potencias, raices-primitivas, periodicidad]
 prerequisites: [pequeno-teorema-fermat, euclides-bezout]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

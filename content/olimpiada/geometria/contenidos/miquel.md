@@ -4,7 +4,7 @@ preview: "Dados un triángulo y tres puntos uno en cada lado, los tres circuncí
 dificultad: nacional
 tags: [miquel, concurrencia, circuncirculos, cuadrilatero]
 prerequisites: [angulos-inscritos, cuadrilateros-ciclicos]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

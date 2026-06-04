@@ -4,7 +4,7 @@ preview: "Tres desigualdades centrales de la geometría olímpica: Erdős–Mord
 dificultad: nacional
 tags: [desigualdades, erdos-mordell, weitzenbock, hadwiger]
 prerequisites: [trigonometria-triangulo]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

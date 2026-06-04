@@ -1428,3 +1428,277 @@ a { color: inherit; text-decoration: none; }
   /* Scrollbar: no imprimir */
   ::-webkit-scrollbar { display: none; }
 }
+
+/* ============================================================
+   FIGURAS GEOMÉTRICAS (geofig)
+   ============================================================ */
+
+.geo-fig {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.8em auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.geo-svg {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 320px;
+  max-height: 320px;
+  overflow: visible;
+}
+
+/* Cuando hay dos figuras seguidas, mostrarlas en fila */
+.prose .geo-fig + .geo-fig,
+.cblock-body .geo-fig + .geo-fig {
+  margin-top: -0.5em;
+}
+
+@media (min-width: 600px) {
+  .geo-row {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1.8em 0;
+  }
+  .geo-row .geo-fig { margin: 0; }
+}
+
+/* Ajuste para modo oscuro: las figuras ya usan CSS vars,
+   pero el fondo del cblock puede oscurecerlas */
+[data-theme='dark'] .geo-svg {
+  filter: brightness(1.05);
+}
+
+/* No imprimir el SVG inline style (la versión print ya tiene fondo blanco) */
+@media print {
+  .geo-svg { max-width: 240px; }
+}
+
+/* ============================================================
+   ROADMAP MODAL
+   ============================================================ */
+
+/* Overlay */
+.rm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(26, 22, 18, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  animation: rm-fade-in 0.2s ease both;
+}
+
+@keyframes rm-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Panel */
+.rm-panel {
+  background: var(--paper);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: rm-slide-up 0.22s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes rm-slide-up {
+  from { transform: translateY(12px); opacity: 0.6; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* Header */
+.rm-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 28px;
+  height: 56px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-2);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.rm-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.rm-title-icon {
+  font-size: 18px;
+  color: var(--vermillion);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.rm-title-text {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.rm-subtitle {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .rm-subtitle { display: none; }
+}
+
+/* Legend */
+.rm-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.rm-legend-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.rm-legend-sep {
+  width: 1px;
+  height: 20px;
+  background: var(--rule);
+  margin: 0 4px;
+}
+
+/* Close button */
+.rm-close {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* Canvas */
+.rm-canvas {
+  flex: 1;
+  overflow: auto;
+  padding: 20px 24px;
+  position: relative;
+  cursor: default;
+}
+
+.rm-svg {
+  display: block;
+  /* Allow SVG to be full-width at minimum */
+  min-width: 100%;
+}
+
+/* SVG text labels */
+.rm-col-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  dominant-baseline: middle;
+}
+
+/* Nodes */
+.rm-node-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.rm-node-rect {
+  transition: filter 0.15s;
+}
+
+.rm-node-link:hover .rm-node-rect {
+  filter: brightness(0.94) drop-shadow(0 2px 6px rgba(0,0,0,0.14));
+}
+
+.rm-node-hover {
+  transition: fill 0.15s;
+}
+
+.rm-node-link:hover .rm-node-hover {
+  fill: rgba(0,0,0,0.04);
+}
+
+/* Footer */
+.rm-footer {
+  padding: 10px 28px;
+  border-top: 1px solid var(--rule-soft);
+  background: var(--paper-2);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+/* Roadmap button in topbar */
+.roadmap-btn {
+  position: relative;
+}
+
+.roadmap-btn::after {
+  content: 'Ruta';
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  pointer-events: none;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.roadmap-btn:hover::after {
+  opacity: 1;
+}
+
+/* Dark theme adjustments */
+[data-theme='dark'] .rm-panel {
+  background: var(--paper);
+}
+
+[data-theme='dark'] .rm-header {
+  background: var(--paper-2);
+}
+
+/* Print: hide roadmap */
+@media print {
+  .rm-overlay { display: none !important; }
+}

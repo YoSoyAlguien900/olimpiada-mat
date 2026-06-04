@@ -4,7 +4,7 @@ preview: "Cuando los módulos son coprimos dos a dos, todo sistema de congruenci
 dificultad: regional
 tags: [TCR, chino-resto, congruencias, sistemas, isomorfismo]
 prerequisites: [congruencias, euclides-bezout]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

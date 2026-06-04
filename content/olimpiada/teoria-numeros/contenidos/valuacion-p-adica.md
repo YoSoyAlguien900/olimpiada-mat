@@ -4,7 +4,7 @@ preview: "Para un primo $p$ y un entero $n \\neq 0$, la valuación $v_p(n)$ es e
 dificultad: regional
 tags: [valuacion-p-adica, primos, factorizacion, LTE, irracionalidad]
 prerequisites: [divisibilidad-basica, euclides-bezout]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

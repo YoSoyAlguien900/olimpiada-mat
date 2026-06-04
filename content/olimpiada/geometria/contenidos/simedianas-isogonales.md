@@ -4,7 +4,7 @@ preview: "La reflexión de una mediana sobre la bisectriz interna es la simedian
 dificultad: nacional
 tags: [simedianas, isogonales, lemoine, conjugados]
 prerequisites: [ceva, semejanza]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

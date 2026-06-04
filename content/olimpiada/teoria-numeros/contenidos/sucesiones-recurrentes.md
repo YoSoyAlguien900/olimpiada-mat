@@ -4,7 +4,7 @@ preview: "Una sucesión recurrente lineal de orden $k$ satisface $a_{n+k} = c_1 
 dificultad: regional
 tags: [recurrencias, fibonacci, lucas, binet, pisano, diofanticas]
 prerequisites: [polinomios, congruencias]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

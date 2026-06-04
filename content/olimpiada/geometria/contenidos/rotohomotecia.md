@@ -4,7 +4,7 @@ preview: "Una rotohomotecia es la composición de una rotación con una homoteci
 dificultad: nacional
 tags: [rotohomotecia, similitud-espiral, cuadrilatero, transformacion]
 prerequisites: [homotecia, semejanza]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 

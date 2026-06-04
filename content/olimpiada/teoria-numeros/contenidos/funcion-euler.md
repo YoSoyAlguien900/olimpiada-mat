@@ -4,7 +4,7 @@ preview: "La generalización natural del Pequeño Teorema de Fermat: si $\\gcd(a
 dificultad: nacional
 tags: [euler, totient, multiplicatividad, congruencias, grupo-multiplicativo]
 prerequisites: [congruencias, pequeno-teorema-fermat, divisibilidad-basica]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

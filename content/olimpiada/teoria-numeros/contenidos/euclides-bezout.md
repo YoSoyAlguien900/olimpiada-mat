@@ -4,7 +4,7 @@ preview: "El algoritmo más antiguo de las matemáticas calcula el MCD en tiempo
 dificultad: regional
 tags: [mcd, euclides, bezout, diofanticas, inverso-modular]
 prerequisites: [divisibilidad-basica]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

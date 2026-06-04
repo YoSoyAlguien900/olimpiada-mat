@@ -4,7 +4,7 @@ preview: "Fórmulas de Vieta, identidades de Newton, divisibilidad polinómica, 
 dificultad: regional
 tags: [polinomios, vieta, newton, simetricas, eisenstein, raices]
 prerequisites: []
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

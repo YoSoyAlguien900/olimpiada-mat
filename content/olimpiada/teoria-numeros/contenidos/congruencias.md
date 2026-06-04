@@ -4,7 +4,7 @@ preview: "El lenguaje en el que se expresa casi toda la teoría elemental de nú
 dificultad: regional
 tags: [congruencias, modular, residuos, inverso, congruencia-lineal]
 prerequisites: [divisibilidad-basica, euclides-bezout]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-03"
 ---
 

@@ -4,7 +4,7 @@ preview: "El ángulo inscrito es la mitad del central que abarca el mismo arco. 
 dificultad: iniciacion
 tags: [angulos, circunferencia, inscrito, cuadrilatero-ciclico, tangente]
 prerequisites: []
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-06-04"
 ---
 
@@ -23,6 +23,24 @@ Sea $\omega$ una circunferencia de centro $O$ y radio $r$, y sean $A$, $B$ dos p
 El **arco $\widehat{AB}$** subtenido por un ángulo es el arco que queda «dentro» del ángulo. Para un ángulo inscrito $\angle APB$, el arco relevante es el que no contiene a $P$.
 
 ## Teorema
+
+```geofig
+// Ángulo central vs ángulo inscrito sobre el mismo arco AB
+size 7 7
+circle 0 0 2.8
+point  0    0    O  0.18 -0.22
+point -2.2  1.7  A -0.25  0.2
+point  2.2  1.7  B  0.25  0.2
+point  0   -2.8  P  0.1  -0.25
+segment O A
+segment O B
+segment P A
+segment P B
+arc 0 0 0.5 141 39
+arc 0 0 1.1 219 321
+label  0   0.8  "∠AOB"
+label  0  -1.6  "∠APB"
+```
 
 **(Ángulo inscrito)** El ángulo inscrito $\angle APB$ es igual a la mitad del ángulo central $\angle AOB$ que subtiende el mismo arco:
 

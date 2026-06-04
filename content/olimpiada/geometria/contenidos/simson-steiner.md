@@ -4,7 +4,7 @@ preview: "Para todo punto $P$ del circuncírculo de un triángulo, las tres proy
 dificultad: regional
 tags: [simson, steiner, circuncirculo, proyecciones, colinealidad]
 prerequisites: [angulos-inscritos, cuadrilateros-ciclicos]
-author: "Material olímpico"
+author: "Adrián García Bouzas"
 updated: "2026-02-13"
 ---
 
