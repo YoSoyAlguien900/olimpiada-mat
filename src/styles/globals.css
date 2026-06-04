@@ -1341,6 +1341,140 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
+   MÓVIL — teléfonos (≤ 640px)
+   ============================================================ */
+@media (max-width: 640px) {
+
+  /* Variables */
+  :root { --header-h: 54px; }
+
+  /* ── Sidebar: drawer casi full-width ─────────────────────── */
+  .sidebar { width: min(300px, 90vw); }
+
+  /* ── Topbar: solo hamburguesa + título actual + tema ──────── */
+  .topbar { padding: 0 14px; gap: 10px; }
+
+  /* Ocultar búsqueda en móvil */
+  .search { display: none; }
+
+  /* Breadcrumb: solo mostrar la página actual */
+  .crumb > a { display: none; }
+  .crumb > span:not(:last-child) { display: none; }
+  .crumb > span:last-child > .sep { display: none; }
+  .crumb .current { font-size: 12px; }
+
+  /* Ocultar botón roadmap en móvil */
+  .roadmap-btn { display: none; }
+
+  /* ── Contenido ───────────────────────────────────────────── */
+  .content { padding: 20px 16px 64px; }
+
+  /* ── Home: hero ──────────────────────────────────────────── */
+  .hero { padding: 20px 0 36px; }
+  .hero h1 {
+    font-size: clamp(38px, 11vw, 54px);
+    line-height: 1;
+  }
+  .hero-lede { font-size: 16px; line-height: 1.55; }
+  .hero-eyebrow { font-size: 9px; letter-spacing: 0.2em; }
+  .hero-deco { display: none; }
+
+  .section-rule h2 { font-size: 20px; }
+  .section-rule { margin: 36px 0 20px; }
+
+  /* Disc cards en una columna */
+  .disc-grid { grid-template-columns: 1fr; gap: 14px; }
+  .disc-symbol { font-size: 40px; }
+  .disc-card h3 { font-size: 20px; }
+
+  /* ── Listado de categoría ────────────────────────────────── */
+  .index-head h1 { font-size: clamp(26px, 9vw, 40px); }
+  .index-head p { font-size: 16px; }
+
+  /* Entradas: sin número ni flecha */
+  .entry { grid-template-columns: 1fr; gap: 6px; padding: 16px 0; }
+  .entry-num { display: none; }
+  .entry-arrow { display: none; }
+  .entry:hover { padding-left: 0; background: var(--paper-2); padding: 16px 10px; border-radius: 4px; }
+  .entry-title { font-size: 18px; }
+  .entry-preview { font-size: 14px; }
+
+  /* Filter bar: scroll horizontal para los chips */
+  .filter-tiers {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .filter-tiers::-webkit-scrollbar { display: none; }
+  .tier-chip { font-size: 10px; padding: 5px 10px; gap: 5px; flex-shrink: 0; }
+  .filter-controls { flex-direction: column; gap: 8px; }
+  .filter-search { min-width: 0; }
+
+  /* ── Página de documento ─────────────────────────────────── */
+  .doc-head { padding-bottom: 24px; margin-bottom: 32px; }
+  .doc-head h1 { font-size: clamp(24px, 8vw, 38px); line-height: 1.1; }
+  .doc-preview { font-size: 16px; }
+  .doc-meta { gap: 10px; flex-direction: column; align-items: flex-start; }
+  .doc-actions { top: 0; right: 0; }
+
+  /* Prose */
+  .prose { font-size: 16px; line-height: 1.65; }
+  .prose h3 { font-size: 18px; }
+  .prose h4 { font-size: 13px; }
+
+  /* Bloques semánticos */
+  .cblock { margin: 20px 0; }
+  .cblock-header { padding: 10px 14px; }
+  .cblock-body { padding: 14px 14px; }
+  .cblock-label { font-size: 9.5px; letter-spacing: 0.16em; }
+
+  /* KaTeX: scroll horizontal en fórmulas largas */
+  .katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 6px 0;
+    margin: 1em -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Navegación prev/next: apilar */
+  .doc-nav { grid-template-columns: 1fr; gap: 10px; margin-top: 48px; }
+  .doc-nav a.next { text-align: left; }
+  .doc-nav-label { font-size: 9px; }
+  .doc-nav-title { font-size: 15px; }
+
+  /* Tags */
+  .tag { font-size: 9px; padding: 2px 6px; }
+  .tier-badge { font-size: 9px; padding: 3px 8px 3px 20px; }
+  .tier-badge::before { left: 6px; width: 6px; height: 6px; }
+
+  /* Figuras geométricas */
+  .geo-svg { max-width: 100%; }
+
+  /* Roadmap modal: canvas más pequeño */
+  .rm-header { flex-wrap: wrap; height: auto; min-height: 54px; padding: 8px 14px; gap: 8px; }
+  .rm-legend { display: none; }
+  .rm-subtitle { display: none; }
+  .rm-canvas { padding: 12px; }
+
+  /* Footer home */
+  footer { margin-top: 56px; }
+}
+
+/* ── Tabletas (641px – 900px): ajustes menores ─────────────── */
+@media (min-width: 641px) and (max-width: 900px) {
+  .topbar { padding: 0 20px; gap: 12px; }
+  .search { width: 200px; max-width: 30vw; }
+  .content { padding: 36px 28px 80px; }
+  .hero h1 { font-size: clamp(44px, 7vw, 72px); }
+  .doc-head h1 { font-size: clamp(28px, 5vw, 46px); }
+  .disc-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+}
+
+/* ============================================================
    IMPRESIÓN / EXPORTAR A PDF
    ============================================================ */
 @media print {

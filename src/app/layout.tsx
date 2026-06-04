@@ -7,6 +7,7 @@ export const metadata = {
   title: 'Olimpiada Matemática — Adrián García Bouzas',
   description: 'Material de teoría, problemas y demostraciones de Geometría y Teoría de Números. Autoría: Adrián García Bouzas.',
   authors: [{ name: 'Adrián García Bouzas' }],
+  viewport: 'width=device-width, initial-scale=1',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
