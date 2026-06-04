@@ -87,6 +87,19 @@ export default function HomePage() {
         ))}
       </div>
 
+      <footer style={{
+        marginTop: '80px',
+        paddingTop: '24px',
+        borderTop: '1px solid var(--rule-soft)',
+        fontFamily: 'var(--mono)',
+        fontSize: '11px',
+        letterSpacing: '0.14em',
+        textTransform: 'uppercase',
+        color: 'var(--ink-muted)',
+        opacity: 0.6,
+      }}>
+        Desarrollado por Adrián García Bouzas
+      </footer>
     </>
   );
 }
