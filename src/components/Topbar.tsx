@@ -32,7 +32,9 @@ function Crumbs({ pathname }: { pathname: string }) {
   let path = '';
   parts.forEach((p) => {
     path += '/' + p;
-    crumbs.push({ label: labels[p] || decodeURIComponent(p), href: path });
+    // /olimpiada no tiene página propia → redirige al inicio
+    const href = path === '/olimpiada' ? '/' : path;
+    crumbs.push({ label: labels[p] || decodeURIComponent(p), href });
   });
 
   return (
