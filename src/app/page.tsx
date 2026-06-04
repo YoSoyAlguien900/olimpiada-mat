@@ -19,8 +19,8 @@ export default function HomePage() {
           de élite.
         </h1>
         <p className="hero-lede">
-          Un cuaderno digital de referencia para quienes preparan olimpiadas matemáticas. Teoremas, métodos,
-          demostraciones rigurosas y problemas seleccionados — organizado como un libro, navegado como una app.
+          Mis apuntes de olimpiada. Lo que me hubiera gustado tener cuando empecé: teoría bien explicada,
+          demostraciones completas, problemas con contexto real — todo en el mismo sitio.
         </p>
       </section>
 
@@ -87,24 +87,6 @@ export default function HomePage() {
         ))}
       </div>
 
-      <div className="section-rule">
-        <span className="section-rule-num">04</span>
-        <h2>Sobre el formato</h2>
-      </div>
-
-      <div style={{ fontFamily: 'var(--serif)', fontSize: 18, lineHeight: 1.7, color: 'var(--ink-2)', maxWidth: 720 }}>
-        <p>
-          Cada entrada vive en un archivo Markdown con un encabezado YAML que declara título, dificultad,
-          prerrequisitos y etiquetas. El cuerpo se divide en secciones semánticas reconocidas por el
-          renderizador — <code>## Enunciado</code>, <code>## Demostración</code>, <code>## Ejemplo</code> — que se
-          transforman en bloques tipográficos diferenciados.
-        </p>
-        <p>
-          Todas las expresiones matemáticas se escriben en LaTeX, entre <code>$…$</code> para inline y{' '}
-          <code>$$…$$</code> para display, renderizadas con KaTeX. Añadir contenido nuevo es crear un{' '}
-          <code>.md</code> en la carpeta correspondiente — la página lo indexa automáticamente.
-        </p>
-      </div>
     </>
   );
 }
