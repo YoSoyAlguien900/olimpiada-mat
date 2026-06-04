@@ -56,7 +56,7 @@ Una colección para consolidar las técnicas básicas de teoría de números. Lo
 
 ---
 
-**12.** Probar que para todo primo $p > 3$, el numerador de la suma $1 + \frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{p-1}$ es divisible por $p^2$. *(Teorema de Wolstenholme.)*
+**12.** Probar que para todo primo $p$ y todo entero $a$ con $\gcd(a, p) = 1$, se tiene $(a + p)^{p-1} \equiv a^{p-1} \pmod{p^2}$.
 
 ---
 

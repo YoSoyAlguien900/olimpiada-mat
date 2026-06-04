@@ -218,8 +218,8 @@ Los módulos más útiles son $4, 8, 9, 16, 7, 11$. Por ejemplo: $x^2 + y^2 \equ
 
 - **(OMG 2009/P4)** Determinar los valores de $n$ para los que el número $3^{2n+1} - 2^{2n+1} - 6^n$ es compuesto.
 
-- **(Clásico)** Probar que $n^7 - n$ es divisible por $42$ para todo entero $n$.
-
 - **(Clásico)** Demostrar que si $p$ es primo y $p > 3$, entonces $p^2 \equiv 1 \pmod{24}$.
 
 - **(Clásico)** Demostrar que no existen enteros $x, y, z$ con $x^2 + y^2 = 3z^2$ salvo $x = y = z = 0$.
+
+- **(Clásico)** Hallar todos los enteros positivos $n$ tales que $n^2 + 1$ sea divisible por $n + 1$.

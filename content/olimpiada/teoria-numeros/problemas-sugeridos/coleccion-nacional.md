@@ -102,6 +102,12 @@ A este nivel se espera que el alumno escriba demostraciones completas. Cada prob
 
 ---
 
+---
+
+**21. (Clásico, Wolstenholme)** Probar que para todo primo $p > 3$, el numerador de $1 + \frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{p-1}$ (escrito como fracción irreducible) es divisible por $p^2$.
+
+---
+
 ## Observación
 
 Estos $20$ problemas abarcan el rango P1–P3 de un examen nacional típico. El nivel de P1 corresponde a los problemas $1$–$5$; P2–P3 a los problemas $6$–$15$; los $16$–$20$ son de nivel IMO P1–P2. Si logras resolver $14$ de los $20$ con demostración completa, estás en buen nivel para una fase nacional.

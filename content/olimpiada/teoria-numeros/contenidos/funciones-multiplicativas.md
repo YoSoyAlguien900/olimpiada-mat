@@ -212,8 +212,6 @@ Por multiplicatividad: $f(n) = \prod_{p^k \| n} (2k + 1)$. Esta función es mult
 
 ## Problemas relacionados
 
-- **(OMG 2008/P6)** Consideramos $17$ números enteros positivos tales que ninguno tiene un factor primo mayor que $7$. Demostrar que el producto de al menos dos de ellos es un cuadrado perfecto.
-
 - **(Clásico)** Probar que $\sum_{d \mid n} \mu(d)/d = \varphi(n)/n$ para todo $n \geq 1$.
 
 - **(Clásico)** Hallar una fórmula para $\sum_{d^2 \mid n} \mu(d)$ en términos de los factores primos de $n$.

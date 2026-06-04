@@ -84,5 +84,10 @@ La forma más fina del principio — el **palomar infinito** — afirma: si se d
 
 ## Problemas relacionados
 
-- **Erdős-Ko-Rado** (combinatoria extremal): cuántos subconjuntos $k$-arios de $\{1, \ldots, n\}$ pueden ser pairwise interesantes.
-- **Existencia de un Hamilton subseguencia monótona** (Erdős-Szekeres).
+- **(OMG 2008/P6)** Consideramos $17$ números enteros positivos, ninguno con un factor primo mayor que $7$. Demostrar que el producto de al menos dos de ellos es un cuadrado perfecto. *(Los primos $\leq 7$ son $2, 3, 5, 7$ — $4$ primos; considera la paridad de cada exponente.)*
+
+- **(IMO 1985/P4)** Dado un conjunto de $1985$ enteros positivos distintos, ninguno con divisor primo mayor que $26$, probar que contiene cuatro elementos distintos cuyo producto es la cuarta potencia de un entero.
+
+- **(Clásico)** Entre cualquier $n+1$ enteros, dos tienen la misma diferencia módulo $n$.
+
+- **(Clásico, Erdős-Szekeres)** En toda sucesión de más de $mn$ reales distintos, existe una subsucesión creciente de longitud $m+1$ o una decreciente de longitud $n+1$.
