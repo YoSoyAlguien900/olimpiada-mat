@@ -167,12 +167,12 @@ Recíprocamente, si $p \equiv 1 \pmod 4$, sea $g$ una raíz primitiva módulo $p
 
 ## Problemas relacionados
 
-- **(Clásico)** Demostrar que si $p$ es primo y $p \equiv 3 \pmod 4$, entonces $-1$ no es residuo cuadrático módulo $p$.
+- **(IMO 2005/P4)** Determinar todos los enteros positivos que son coprimos con todos los términos de la sucesión $a_n = 2^n + 3^n + 6^n - 1$, para $n \geq 1$.
 
-- **(Clásico)** Sea $p$ primo y $a \in \{1, \ldots, p-1\}$. Probar que $\sum_{k=0}^{p-1} a^k \equiv 0 \pmod p$ si $a \not\equiv 1 \pmod p$.
+- **(IMO 2009/P1)** Sea $n$ un entero positivo y sean $a_1, \ldots, a_k$ ($k \geq 2$) enteros distintos en $\{1, \ldots, n\}$ tales que $n \mid a_i(a_{i+1} - 1)$ para $i = 1, \ldots, k-1$. Probar que $n \nmid a_k(a_1 - 1)$.
 
 - **(Clásico)** Probar que si $p \mid 2^n - 1$, entonces $\operatorname{ord}_p(2) \mid n$. Deducir que todo primo impar que divide a $2^p - 1$ (con $p$ primo) es $\equiv 1 \pmod p$.
 
 - **(Clásico)** Hallar el menor primo $p$ tal que $\operatorname{ord}_p(2) = 10$.
 
-- **(Clásico)** Probar que la ecuación $x^n \equiv 1 \pmod p$ tiene exactamente $\gcd(n, p-1)$ soluciones en $\{1, \ldots, p-1\}$.
+- **(Clásico)** Probar que $x^n \equiv 1 \pmod p$ tiene exactamente $\gcd(n, p-1)$ soluciones en $\{1, \ldots, p-1\}$.

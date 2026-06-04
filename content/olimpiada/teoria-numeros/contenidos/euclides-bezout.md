@@ -194,12 +194,12 @@ Así $5 \cdot (-5) - 13 \cdot (-2) = -25 + 26 = 1$, es decir $5x = 1 + 13 \cdot 
 
 ## Problemas relacionados
 
-- **(Clásico)** Si $\gcd(a, b) = 1$ y $p$ es primo con $p \mid a + b$ y $p \mid ab$, obtener una contradicción.
+- **(OMG 2018/P1)** Sean $a \geq 1$, $b \geq 1$ números naturales. Denotamos por $D$ su máximo común divisor y $M$ su mínimo común múltiplo. Demostrar que $D^2 + M^2 \geq a^2 + b^2$.
 
-- **(Clásico)** Hallar todos los pares de enteros positivos $(a, b)$ con $\gcd(a, b) = 1$ y $\frac{1}{a} + \frac{1}{b} = \frac{1}{n}$ para un entero $n$ dado.
+- **(OME Nacional 2018/P5)** Sean $a$ y $b$ dos números positivos primos entre sí. Se dice que un entero positivo $n$ es **débil** si no puede escribirse como $n = ax + by$ para enteros $x, y \geq 0$. Probar que si $n$ es débil y $n < ab/6$, entonces existe un entero $k \geq 2$ tal que $kn$ es débil.
 
 - **(Clásico)** Si $\gcd(a, b) = 1$, probar que $\gcd(a + b, a^2 - ab + b^2) \in \{1, 3\}$.
 
-- **(Clásico, moneda de Frobenius)** Si $a, b$ son enteros positivos con $\gcd(a, b) = 1$, demostrar que todo entero $n \geq (a-1)(b-1)$ es representable como $ax + by$ con $x, y \geq 0$. El número $(a-1)(b-1) - 1$ es el mayor no representable.
+- **(Clásico, moneda de Frobenius)** Si $\gcd(a, b) = 1$, demostrar que todo entero $n \geq (a-1)(b-1)$ es representable como $ax + by$ con $x, y \geq 0$. El mayor no representable es $(a-1)(b-1) - 1$.
 
 - **(Clásico)** Encontrar todos los pares de enteros positivos $(x, y)$ tales que $x^2 y + x + y$ sea múltiplo de $xy^2 + y + x$.

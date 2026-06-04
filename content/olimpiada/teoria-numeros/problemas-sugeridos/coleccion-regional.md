@@ -1,79 +1,113 @@
 ---
-title: "Colección regional — Olimpíada Gallega y autonómicas"
-preview: "Veinte problemas de fases autonómicas españolas (OMG, Madrid, Cataluña, Andalucía…) seleccionados para entrenar el nivel regional. Sin solución detallada: la pelea es parte del aprendizaje."
+title: "Colección regional — Olimpiada Matemática Galega"
+preview: "Problemas reales de la OMG (1999–2026) seleccionados por tema. Todos los enunciados son oficiales. Nivel: fase autonómica, equivalente a bachillerato con preparación olímpica."
 dificultad: regional
 tags: [coleccion, problemas, fase-regional, OMG]
-prerequisites: [pequeno-teorema-fermat, angulos-inscritos]
+prerequisites: [pequeno-teorema-fermat, congruencias, euclides-bezout]
 author: "Adrián García Bouzas"
-updated: "2026-02-11"
+updated: "2026-06-05"
 ---
 
-Veinte problemas en el rango de la **Olimpíada Matemática Galega** y otras fases autonómicas españolas. El criterio de selección: un alumno preparado debería resolver al menos diez en dos sesiones de cuatro horas. Si te bloqueas, no recurras de inmediato a la solución; intenta encontrar **dos** caminos distintos antes de rendirte.
+Problemas reales extraídos de los exámenes oficiales de la **Olimpiada Matemática Galega** (OMG). Los enunciados están en castellano; los originales en gallego están disponibles en el archivo oficial.
 
-## Teoría de números
+---
 
-**1.** Demuestra que para todo $n \geq 1$, $11^{n+2} + 12^{2n+1}$ es divisible por $133$.
+## Divisibilidad y congruencias
 
-**2.** Hallar todos los enteros positivos $n$ tales que $n^2 + 1$ es divisible por $n + 1$.
+**1. (OMG 2008/P3)** Demostrar que $2222^{5555} + 5555^{2222}$ es múltiplo de $7$.
 
-**3.** Si $a, b$ son enteros positivos coprimos y $a + b$ divide a $a^2 + b^2$, demostrar que $a + b$ divide a $a - b$ módulo algo específico.
+---
 
-**4.** Demostrar que existen infinitos primos de la forma $4k + 3$.
+**2. (OMG 2009/P4)** Determinar los valores de $n$ para los que el número $3^{2n+1} - 2^{2n+1} - 6^n$ es compuesto.
 
-**5.** Si $n$ es un entero positivo, ¿cuántos pares ordenados $(a, b)$ de enteros positivos satisfacen $\operatorname{mcm}(a, b) = n$?
+---
 
-**6.** Hallar todos los $n$ tales que $\sigma(n) = 2n$ (números perfectos pares conocidos).
+**3. (OMG 2011/P5)** Sea $n = 2^r - 16^s$, donde $r$ y $s$ son enteros positivos. Determinar las condiciones que deben cumplir $r$ y $s$ para que el resto de la división de $n$ por $7$ sea $5$. Calcular el menor $n > 0$ que cumple esta condición.
 
-**7.** Demostrar que entre 21 enteros positivos cualesquiera, dos tienen un cociente que es potencia de 2.
+---
 
-## Combinatoria elemental
+**4. (OMG 2013/P1)** Dado un número entero $n$ escrito en base decimal, formamos el entero $k$ restando del número formado por las tres últimas cifras de $n$ el número formado por las cifras anteriores. Demostrar que $n$ es divisible por $7$, $11$ o $13$ si y solo si $k$ también lo es.
 
-**8.** En un tablero $7 \times 7$ se colocan fichas de $1 \times 3$. ¿Es posible cubrir el tablero menos la casilla central?
+---
 
-**9.** Una rana salta sobre los enteros: en cada paso avanza $a$ o retrocede $b$, con $a, b \in \mathbb N$, $\gcd(a, b) = 1$. Demostrar que llega a cualquier entero suficientemente grande.
+**5. (OMG 2024/P1)** Determinar el menor número entero positivo $n$ tal que la suma
 
-**10.** ¿Cuántos números de 6 cifras tienen al menos un dígito repetido?
+$$A(n) = \underbrace{1}_{1} + \underbrace{11}_{2} + \underbrace{111}_{3} + \cdots + \underbrace{11\cdots1}_{n}$$
 
-**11.** En un torneo de fútbol, cada equipo juega contra cada otro una vez. Demostrar que hay un equipo que ganó a todos los demás directa o indirectamente (transitivamente).
+sea divisible por $45$.
 
-**12.** En una reunión de 6 personas, cualesquiera dos son amigas o desconocidas. Demostrar que hay tres mutuamente amigas o tres mutuamente desconocidas.
+---
 
-## Geometría sintética
+## MCD, MCM y números enteros
 
-**13.** En un triángulo $ABC$, las bisectrices interna y externa del ángulo $A$ cortan a la mediatriz de $BC$ en $P$ y $Q$. Demostrar que $P, Q, B, C$ son concíclicos.
+**6. (OMG 2018/P1)** Sean $a \geq 1$, $b \geq 1$ números naturales. Sean $D = \gcd(a, b)$ su máximo común divisor y $M = \text{lcm}(a, b)$ su mínimo común múltiplo. Demostrar que $D^2 + M^2 \geq a^2 + b^2$.
 
-**14.** Sea $\Omega$ una circunferencia y $A, B, C, D$ cuatro puntos en ella tales que $AB \parallel CD$. Demostrar que $|AC| = |BD|$.
+---
 
-**15.** En un cuadrado $ABCD$ de lado 1, sea $P$ un punto interior con $|PA|^2 + |PC|^2 = |PB|^2 + |PD|^2$. Demostrar que $P$ está sobre alguna diagonal.
+**7. (OMG 2015/P4)** Los enteros positivos $x, y, z$ cumplen $x + 2y = z$ y $x^2 - 4y^2 + z^2 = 310$. Determina todos los posibles valores del producto $xyz$.
 
-**16.** Sea $ABCD$ un cuadrilátero cíclico cuyas diagonales se cortan en $E$. Si $|AB| = 6, |CD| = 4, |BE| = 3, |DE| = 2$, hallar $|BD|$.
+---
 
-**17.** En un triángulo equilátero $ABC$ se inscriben tres círculos congruentes mutuamente tangentes, cada uno tangente a dos lados. Si el lado del triángulo es 1, hallar el radio de los círculos.
+**8. (OMG 2019/P1)** Para cada número de cuatro cifras $\overline{abcd}$, denotamos por $S$ el número $S = \overline{abcd} - \overline{dcba}$. Demostrar que $S$ es múltiplo de $37$ si y solo si las dos cifras centrales del número $\overline{abcd}$ son iguales.
 
-## Álgebra y desigualdades
+---
 
-**18.** Si $a, b, c$ son reales positivos con $abc = 1$, demostrar que
+## Ecuaciones diofánticas
 
-$$
-\frac{1}{a + b + 1} + \frac{1}{b + c + 1} + \frac{1}{c + a + 1} \;\leq\; 1.
-$$
+**9. (OMG 2017/P4)** Describir todas las soluciones enteras positivas $(m, n)$ de la ecuación $8m - 7 = n^2$ y dar el primer valor de $m > 1959$ (si existe) mayor que $1959$.
 
-**19.** Sean $x, y, z$ reales positivos con $x + y + z = 1$. Demostrar que
+---
 
-$$
-\frac{x}{1 - x} + \frac{y}{1 - y} + \frac{z}{1 - z} \;\geq\; \frac{3}{2}.
-$$
+**10. (OMG 2009/P6)** Encontrar todos los enteros $a$, $b$ y $c$ que satisfacen:
 
-**20.** Hallar todos los polinomios $P(x)$ de coeficientes reales tales que $P(x^2) = (P(x))^2$ para todo $x$.
+$$|a + b| + c = 19, \qquad ab + |c| = 97.$$
+
+---
+
+**11. (OMG 2023/P6)** Encontrar todos los enteros positivos $a, b, c \geq 1$ que satisfagan
+
+$$2^a + 7^b = c^2 + 4.$$
+
+---
+
+**12. (OMG 2019/P5)** ¿Existen números naturales $m, n \geq 1$ tales que $n^2 + 2018mn + 2019m + n - 2019m^2$ sea un número primo?
+
+---
+
+## Números primos y estructura multiplicativa
+
+**13. (OMG 2008/P6)** Consideramos $17$ números enteros positivos tales que ninguno tiene un factor primo mayor que $7$. Demostrar que el producto de al menos dos de ellos es un cuadrado perfecto.
+
+---
+
+**14. (OMG 2018/P5)** Sea $n$ un número natural. Probar que si la última cifra de $7^n$ es $3$, la penúltima es $4$.
+
+---
+
+**15. (OMG 2024/P6)** Sean $a, b, c \in \mathbb{Z}$ tres enteros y $p \geq 5$ un número primo. Demostrar que si $an^2 + bn + c$ es el cuadrado de un entero para $2p - 1$ valores consecutivos de $n$, entonces $b^2 - 4ac$ es múltiplo de $p$.
+
+---
+
+---
+
+## Problemas de OMG años anteriores
+
+**16. (OMG 2000/P5)** Probar que no existen números enteros $m$ y $n$ tales que
+
+$$419m^4 + 150m^2n + 1875n^2 = 2000.$$
+
+---
+
+**17. (OMG 2001/P1)** Determinar el número natural $n$ que es el producto de los primos $p$, $q$ y $r$, sabiendo que $r - q = 2p$ y $rq + p^2 = 676$.
+
+---
+
+**18. (OMG 2000/P3)** Los números $1, 2, 3, \ldots, 2n$ se reparten en dos grupos de $n$ números. En cada grupo se calculan las sumas de todos los posibles pares (incluyendo pares de la forma $a + a$) y se determinan los restos al dividir estas sumas entre $2n$. Demostrar que en ambos grupos se obtienen exactamente los mismos restos.
+
+---
 
 ## Observación
 
-Los enunciados están extraídos o adaptados de las **fases autonómicas** de la OME (Galicia, Madrid, Cataluña, Andalucía) entre 2010 y 2024, además de la **OMG**. Las soluciones oficiales están en el archivo de cada olimpiada — recomiendo intentar antes de consultarlas, aunque sea en cinco minutos.
+Estos problemas son representativos del nivel $\mathbf{P3}$–$\mathbf{P6}$ de la OMG (los primeros dos problemas de la prueba son habitualmente de menor dificultad). Los problemas $1$–$8$ corresponden al nivel de los primeros sesenta minutos de un buen preparado; los $9$–$15$ exigen una idea no trivial.
 
-Si tras 45 minutos un problema no progresa: marca dónde te atascaste exactamente y vuelve dos días después. La mayoría de los problemas regionales se desbloquean al *ver el patrón* que se te escapó la primera vez.
-
-## Sugerencias por dificultad
-
-- **Fáciles (warm-up):** 1, 2, 8, 10, 12, 14, 18.
-- **Intermedios:** 3, 5, 7, 9, 11, 13, 15, 17, 19.
-- **Difíciles (P5/P6 regional):** 4, 6, 16, 20.
+Los enunciados originales en gallego están en el archivo `archivo/OMG_Problemas/`. Los problemas no tienen solución en esta colección: el objetivo es el trabajo autónomo.

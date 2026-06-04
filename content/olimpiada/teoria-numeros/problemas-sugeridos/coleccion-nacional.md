@@ -1,91 +1,107 @@
 ---
-title: "Colección nacional — Fase Nacional OME e Iberoamericana juvenil"
-preview: "Veinte problemas calibrados al nivel de la Fase Nacional Española y olimpiadas iberoamericanas juveniles. Requieren combinación de técnicas y resistencia para problemas de tres horas."
+title: "Colección nacional — Fase Nacional OME"
+preview: "Problemas reales de la Fase Nacional de la Olimpiada Española (2008–2025) y de la IMO, calibrados al nivel de bachillerato avanzado con preparación olímpica sólida."
 dificultad: nacional
-tags: [coleccion, OME, ibero, fase-nacional]
-prerequisites: [orden-multiplicativo, ceva, inversion]
+tags: [coleccion, OME, fase-nacional]
+prerequisites: [orden-multiplicativo, funcion-euler, raices-primitivas, ecuaciones-diofanticas]
 author: "Adrián García Bouzas"
-updated: "2026-02-12"
+updated: "2026-06-05"
 ---
 
-El nivel **nacional** corresponde a la Fase Nacional de la OME y a las olimpiadas iberoamericanas juveniles (Cono Sur, Ibero juvenil). Los problemas requieren típicamente combinar dos o tres técnicas y resistencia para escribir demostraciones completas. Cada problema debería llevar entre 45 y 90 minutos.
+Problemas reales extraídos de los exámenes oficiales de la **Fase Nacional de la Olimpiada Española** y de la **IMO** (problemas P1–P3). Los enunciados son exactos; están disponibles en los archivos oficiales en `archivo/Olimpiada_Española/` y `archivo/IMO_Problemas/`.
 
-## Teoría de números
+A este nivel se espera que el alumno escriba demostraciones completas. Cada problema debería llevar entre 45 y 90 minutos.
 
-**1. OME 2018, P2.** Hallar todas las soluciones enteras de $x^4 + 4 = y^2$.
+---
 
-**2. OME 2014, P4.** Sea $p$ un primo impar. Demostrar que $\binom{2p}{p} \equiv 2 \pmod p$.
+## Divisibilidad y factorización
 
-**3. Cono Sur 2017, P4.** Demostrar que existe $n$ con $\sigma(n) > 100 \cdot n$ (donde $\sigma$ es la suma de divisores).
+**1. (OME Nacional 2008/P1)** Halla dos enteros positivos $a$ y $b$ conociendo su suma $S$ y su mínimo común múltiplo $M$. Aplícalo en el caso de que $S = 3972$ y $M = 985928$.
 
-**4. Ibero 2019, P3.** Sean $a, b$ enteros positivos tales que $\frac{a}{b} + \frac{b}{a} \in \mathbb Z$. Demostrar que $a = b$.
+---
 
-**5. OME 2010, P5.** Hallar todos los enteros positivos $n$ tales que $2^n + 12^n + 2014^n$ es un cuadrado perfecto.
+**2. (OME Nacional 2008/P4)** Sean $p$ y $q$ dos números primos positivos diferentes. Prueba que existen enteros positivos $a$ y $b$ tales que la media aritmética de todos los divisores positivos del número $n = p^a q^b$ es un número entero.
 
-**6. OME 2020, P3.** Hallar todos los polinomios $P(x) \in \mathbb Z[x]$ tales que $P(n) \mid 2^n - 1$ para todo $n \geq 1$.
+---
 
-## Combinatoria
+**3. (OME Nacional 2010/P1)** Una **sucesión pucelana** es una sucesión creciente de dieciséis números impares positivos consecutivos cuya suma es un cubo perfecto. ¿Cuántas sucesiones pucelanas tienen solamente números de tres cifras?
 
-**7. Cono Sur 2018, P5.** Se colorean los $n$ enteros $1, 2, \ldots, n$ con tres colores. Demostrar que si $n \geq 6$, existen $a, b, c$ del mismo color con $a + b = c$.
+---
 
-**8. Ibero 2015, P5.** En un tablero $n \times n$, cada casilla está coloreada de blanco o negro. *(Análisis combinatorio fino.)*
+**4. (IMO 1992/P1)** Hallar todos los enteros $a$, $b$, $c$ con $1 < a < b < c$ tales que $(a-1)(b-1)(c-1)$ sea divisor de $abc - 1$.
 
-**9. OME 2016, P6.** ¿Es posible particionar $\{1, 2, \ldots, 2016\}$ en clases de igual suma? Caracterizar todos los tamaños posibles de las clases.
+---
 
-**10. OME 2022, P2.** Sea $n$ un entero positivo. Demostrar que existe un entero $k$ con $1 \leq k \leq n$ tal que $k$ y $n - k$ son ambos coprimos con $n$.
+**5. (IMO 1997/P5)** Hallar todos los pares $(a, b)$ de enteros con $a, b \geq 1$ que satisfagan $a^{b^2} = b^a$.
 
-## Geometría
+---
 
-**11. OME 2011, P5.** Sea $ABC$ un triángulo y $P$ un punto en su interior. *(Configuración angular profunda.)*
+**6. (IMO 1998/P4)** Determinar todos los pares $(a, b)$ de enteros positivos tales que $ab^2 + b + 7$ divida a $a^2 b + a + b$.
 
-**12. Ibero 2016, P4.** Sea $ABC$ un triángulo escaleno con circuncírculo $\Omega$. Las bisectrices interna y externa del ángulo $A$ cortan a $BC$ en $D$ y $E$. *(Lema del incentro y reflexiones.)*
+---
 
-**13. OME 2017, P3.** Demostrar que en un triángulo escaleno, las tres mediatrices de los lados, las tres bisectrices de los ángulos y la recta de Euler concurren en a lo sumo tres puntos.
+## Congruencias y residuos
 
-**14. Cono Sur 2014, P3.** En un cuadrilátero cíclico $ABCD$, sea $P$ la intersección de las diagonales. Demostrar que $|AP|/|PC| = |AB||AD|/|CB||CD|$.
+**7. (OME Nacional 2015/P2)** Sea $p$ un número primo positivo dado. Demostrar que existe un entero $\alpha$ tal que $\alpha(\alpha-1) + 3$ es divisible por $p$ si y solo si existe un entero $\beta$ tal que $\beta(\beta-1) + 25$ es divisible por $p$.
 
-**15. OME 2009, P5.** Sea $ABCDEF$ un hexágono convexo. Las diagonales $AD, BE, CF$ son concurrentes si y solo si $\frac{|AB|}{|BC|} \cdot \frac{|CD|}{|DE|} \cdot \frac{|EF|}{|FA|} = 1$. *(Versión hexagonal de Ceva.)*
+---
 
-**16. Ibero 2018, P6.** Sean $\omega_1, \omega_2, \omega_3$ tres circunferencias tangentes entre sí dos a dos. *(Configuración con inversión.)*
+**8. (IMO 1991/P2)** Sea $n > 6$ un entero y sean $a_1, a_2, \ldots, a_k$ todos los naturales menores que $n$ y coprimos con $n$. Si $a_2 - a_1 = a_3 - a_2 = \cdots = a_k - a_{k-1} > 0$, probar que $n$ es primo o una potencia de $2$.
 
-## Álgebra y desigualdades
+---
 
-**17. OME 2013, P5.** Sea $P(x) = x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0$ con coeficientes reales no negativos. Si $P(1) = 1$, hallar el máximo posible de $P(2)$.
+**9. (IMO 1995/P3)** Sea $p$ un número primo impar. ¿Cuántos subconjuntos de $p$ elementos de $\{1, 2, \ldots, 2p\}$ tienen suma divisible por $p$?
 
-**18. Cono Sur 2019, P2.** Sean $a, b, c > 0$ con $a + b + c = 3$. Demostrar que
+---
 
-$$
-a^a b^b c^c \;\geq\; 1.
-$$
+**10. (IMO 2001/P6)** Sean $a, b, c, d$ enteros con $a > b > c > d > 0$ tales que $ac + bd = (b+d+a-c)(b+d-a+c)$. Probar que $ab + cd$ no es primo.
 
-**19. OME 2008, P4.** Sea $f: \mathbb R \to \mathbb R$ una función continua tal que $f(x + y) = f(x) f(y)$ para todos $x, y \in \mathbb R$. Hallar todas las posibles $f$.
+---
 
-**20. Ibero 2017, P3.** Sea $\{a_n\}$ una sucesión de reales positivos con $a_{n+1} = a_n + 1/a_n$. *(Análisis asintótico fino.)*
+## Ecuaciones diofánticas
 
-## Cómo trabajarlos
+**11. (OME Nacional 2017/P1)** Determina el número de valores distintos de la expresión $\dfrac{n^2 - 2}{n^2 - n + 2}$, donde $n \in \{1, 2, \ldots, 100\}$.
 
-Estos problemas están diseñados para ser **resueltos en una sesión de 3-4 horas con tres problemas similares**. Para entrenar:
+---
 
-1. **Toma tres problemas distintos** (uno de cada área) y ataca por **al menos 45 minutos cada uno**, sin consultar.
-2. **No leas la solución sin haber escrito tu intento, aunque parcial.** El acto de escribir cristaliza las ideas.
-3. **Después de resolverlo, intenta dar una segunda demostración por otra técnica.** Esto consolida la intuición sobre cuándo cada técnica es relevante.
-4. **Mantén una libreta de "técnicas reconocibles"**: cada problema añade una herramienta al repertorio.
+**12. (OME Nacional 2015/P4)** Sea $m \geq 1$ un entero positivo, $a$ y $b$ enteros positivos distintos, estrictamente mayores que $m^2$ y estrictamente menores que $m^2 + m$. Hallar todos los enteros $d$ que dividan al producto $ab$ y satisfagan $m^2 < d < m^2 + m$.
+
+---
+
+**13. (OME Nacional 2018/P1)** Determina todos los enteros positivos $x$ tales que $2^x + 1$ sea un cuadrado perfecto, pero entre los números $2^x + 2, 2^x + 3, \ldots, 3^x + 2$ no haya ningún cuadrado perfecto.
+
+---
+
+**14. (OME Nacional 2023/P3)** Halla todas las cuaternas $(a, b, c, d)$ de números enteros positivos que cumplen $a^2 + b^2 = c^2 + d^2$ y que $ac + bd$ es divisor de $a^2 + b^2$.
+
+---
+
+**15. (IMO 2006/P4)** Determinar todos los pares $(x, y)$ de enteros tales que $1 + 2^x + 2^{2x+1} = y^2$.
+
+---
+
+## Números primos y estructura
+
+**16. (IMO 2003/P6)** Sea $p$ primo. Demostrar que existe un primo $q$ tal que $n^p - p$ no es divisible por $q$ para ningún entero positivo $n$.
+
+---
+
+**17. (IMO 2005/P4)** Determinar todos los enteros positivos que son coprimos con todos los términos de la sucesión infinita $a_n = 2^n + 3^n + 6^n - 1$, para $n \geq 1$.
+
+---
+
+**18. (IMO 2007/P5)** Sean $a$ y $b$ enteros positivos. Demostrar que si $4ab - 1$ divide a $(4a^2 - 1)^2$, entonces $a = b$.
+
+---
+
+**19. (OME Nacional 2018/P5)** Sean $a$ y $b$ dos números positivos primos entre sí. Se dice que un entero positivo $n$ es **débil** si no puede escribirse como $n = ax + by$ para enteros $x, y \geq 0$. Probar que si $n$ es débil y $n < ab/6$, entonces existe un entero $k \geq 2$ tal que $kn$ también es débil.
+
+---
+
+**20. (IMO 2009/P1)** Sea $n$ un entero positivo y sean $a_1, \ldots, a_k$ ($k \geq 2$) enteros distintos en $\{1, \ldots, n\}$ tales que $n \mid a_i(a_{i+1} - 1)$ para $i = 1, \ldots, k-1$. Probar que $n \nmid a_k(a_1 - 1)$.
+
+---
 
 ## Observación
 
-A diferencia del nivel regional, donde una sola técnica clave suele resolverlos, los problemas nacionales **típicamente combinan dos**. Por ejemplo:
-
-- **Geometría + álgebra**: una configuración geométrica que se reduce a una ecuación polinómica.
-- **Aritmética + combinatoria**: contar configuraciones con cierta propiedad modular.
-- **Polinomios + inducción**: usar polinomios auxiliares y luego inducir sobre el grado.
-
-Identificar **qué combinación de técnicas** es relevante es la habilidad central a desarrollar en este nivel.
-
-## Soluciones
-
-Las soluciones oficiales están disponibles en:
-
-- **OME:** archivo de la Real Sociedad Matemática Española (www.rsme.es/olimpiada).
-- **Iberoamericanas:** archivo del comité organizador (varía cada año).
-- **AoPS Foro:** discusiones detalladas con soluciones alternativas.
-- **Recopilaciones:** los libros *Problemas de la Olimpiada Matemática Iberoamericana* y *Olimpiadas Matemáticas Españolas*.
+Estos $20$ problemas abarcan el rango P1–P3 de un examen nacional típico. El nivel de P1 corresponde a los problemas $1$–$5$; P2–P3 a los problemas $6$–$15$; los $16$–$20$ son de nivel IMO P1–P2. Si logras resolver $14$ de los $20$ con demostración completa, estás en buen nivel para una fase nacional.

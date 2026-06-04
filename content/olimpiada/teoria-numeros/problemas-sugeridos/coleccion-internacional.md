@@ -1,85 +1,107 @@
 ---
-title: "Colección IMO y shortlist — selección clásica"
-preview: "Veinte problemas internacionales (IMO, ISL, IMO TST) seleccionados como entrenamiento de nivel internacional. Cada uno presenta una idea técnica reconocible: identifícala, no la copies."
+title: "Colección internacional — IMO clásica de teoría de números"
+preview: "Problemas reales de la IMO seleccionados cronológicamente: desde los primeros problemas de divisibilidad (1959–1970) hasta los clásicos modernos. Cada uno presenta una idea técnica central."
 dificultad: internacional
-tags: [coleccion, IMO, shortlist, internacional]
-prerequisites: [orden-multiplicativo, lifting-the-exponent, inversion]
+tags: [coleccion, IMO, internacional, numeros]
+prerequisites: [orden-multiplicativo, lifting-the-exponent, raices-primitivas, zsigmondy]
 author: "Adrián García Bouzas"
-updated: "2026-02-11"
+updated: "2026-06-05"
 ---
 
-Veinte problemas de competiciones internacionales (IMO, ISL, USA TST, Romanian TST, China MO) seleccionados para introducir las técnicas de nivel internacional. **No esperes resolverlos en una sentada**: un problema IMO bien atacado lleva entre dos y cinco horas a alguien preparado. La lectura de cada enunciado debería sugerir inmediatamente una *clase* de técnica relevante.
+Selección de problemas reales de la **IMO** (International Mathematical Olympiad) de teoría de números, organizados cronológicamente. Los enunciados son exactos y están disponibles en el archivo `archivo/IMO_Problemas/`. Cada problema tiene una idea técnica dominante indicada entre paréntesis.
 
-## Teoría de números
+A este nivel, una solución completa lleva entre 2 y 4 horas. El objetivo no es resolver todos, sino identificar la técnica y desarrollar el argumento.
 
-**1. IMO 1988/6.** Si $a, b$ son enteros positivos tales que $ab + 1 \mid a^2 + b^2$, demostrar que $\frac{a^2 + b^2}{ab + 1}$ es un cuadrado perfecto. *(Salto del descenso de Vieta — el problema más famoso de la historia.)*
+---
 
-**2. IMO 2003/6.** Sea $p$ un primo. Demostrar que existen infinitos $n$ tales que $p \mid 2^n - n$. *(Construcción y LTE.)*
+## Problemas clásicos (1959–1995)
 
-**3. ISL 2014/N3.** Para cada entero $n \geq 2$, sea $A_n$ el número de enteros positivos $m$ tales que la distancia de $n$ al múltiplo de $m$ más cercano es menor que la distancia de $n$ al cuadrado más cercano de $m$. Para qué $n$ es $A_n$ impar. *(Análisis combinatorio fino.)*
+**1. (IMO 1964/P1)** (a) Hallar todos los enteros positivos $n$ para los cuales $2^n - 1$ es divisible por $7$. (b) Probar que no existe ningún entero positivo $n$ para el cual $2^n + 1$ sea divisible por $7$. *(Orden multiplicativo de 2 módulo 7.)*
 
-**4. USA TST 2010/3.** Demostrar que existe un conjunto infinito $S$ de enteros positivos tal que para todo subconjunto finito $T \subset S$, el número $\sum_{t \in T} t$ es libre de cuadrados. *(Construcción tipo greedy.)*
+---
 
-**5. IMO 2019/4.** Hallar todos los pares $(k, n)$ de enteros positivos tales que $k! = (2^n - 1)(2^n - 2)(2^n - 4) \cdots (2^n - 2^{n-1})$. *(Cotas y valuación.)*
+**2. (IMO 1985/P4)** Dado un conjunto $M$ de $1985$ enteros positivos distintos, ninguno de los cuales tiene un divisor primo mayor que $26$, probar que $M$ contiene al menos un subconjunto de cuatro elementos distintos cuyo producto es la cuarta potencia de un entero. *(Palomar + factorización.)*
 
-## Combinatoria
+---
 
-**6. IMO 2007/3.** En un torneo matemático hay un cierto número de participantes. Algunos compitieron entre sí... *(Grafos extremales.)*
+**3. (IMO 1988/P6)** Sean $a, b$ enteros positivos tales que $ab + 1$ divide a $a^2 + b^2$. Demostrar que $\dfrac{a^2 + b^2}{ab + 1}$ es el cuadrado de un entero. *(Vieta jumping — el problema más famoso de la IMO.)*
 
-**7. ISL 2018/C5.** Hallar el menor entero $k$ con la propiedad de que existen $k$ enteros positivos $a_1 < a_2 < \cdots < a_k$ con $\sum 1/a_i^2 = 51/2020$. *(Construcción y cota greedy.)*
+---
 
-**8. IMO 2015/6.** La sucesión $a_1, a_2, \ldots$ está definida por $a_1 = a$ y $a_{n+1} = a_n - 1/a_n$ si $a_n \neq 0$. Hallar todos los $a$ reales tales que la sucesión es periódica. *(Sistemas dinámicos discretos.)*
+**4. (IMO 1990/P3)** Determinar todos los enteros $n > 1$ tales que $\dfrac{2^n + 1}{n^2}$ es un entero. *(Orden multiplicativo y caso-por-caso.)*
 
-**9. ISL 2017/C4.** Una secuencia de enteros positivos $a_1, a_2, \ldots, a_n$ se llama *balanceada* si... *(Argumento extremal con dependencia mutua.)*
+---
 
-**10. IMO 2020/4.** Hay un país con $2^n$ aeropuertos. *(Combinatoria con paridad sutil.)*
+**5. (IMO 1991/P2)** Sea $n > 6$ un entero y sean $a_1, a_2, \ldots, a_k$ todos los naturales menores que $n$ y coprimos con $n$. Si $a_2 - a_1 = a_3 - a_2 = \cdots = a_k - a_{k-1} > 0$, probar que $n$ es primo o una potencia de $2$. *(Raíces primitivas y progresiones aritméticas.)*
 
-## Geometría
+---
 
-**11. IMO 2009/2.** Sea $ABC$ un triángulo con circuncentro $O$. Los puntos $P, Q$ están en $CA, AB$ respectivamente. *(Lema del incentro, puntos especiales.)*
+**6. (IMO 1992/P1)** Hallar todos los enteros $a, b, c$ con $1 < a < b < c$ tales que $(a-1)(b-1)(c-1)$ divida a $abc - 1$. *(Búsqueda acotada + divisibilidad.)*
 
-**12. IMO 2014/3.** En un cuadrilátero convexo $ABCD$, $\angle ABC = \angle CDA = 90°$. Sea $H$ el pie de la perpendicular desde $A$ a $BD$. *(Inversión y reflexiones.)*
+---
 
-**13. ISL 2011/G5.** Sea $ABC$ un triángulo no equilátero, con circuncírculo $\Omega$. Sean $\omega_a, \omega_b, \omega_c$ las circunferencias tangentes internamente a... *(Inversión y configuraciones de tangencia.)*
+**7. (IMO 1994/P4)** Determinar todos los pares ordenados $(m, n)$ de enteros positivos tales que $\dfrac{n^3 + 1}{mn - 1}$ sea un entero. *(Factorización y acotación.)*
 
-**14. IMO 2018/1.** Sea $\Gamma$ el circuncírculo del triángulo acutángulo $ABC$. Los puntos $D, E$ están en los segmentos $AB, AC$ respectivamente tales que $|AD| = |AE|$. *(Reflexiones y simetrías de ángulos.)*
+---
 
-**15. ISL 2019/G6.** Sea $ABCD$ un cuadrilátero convexo cíclico con circuncírculo $\Omega$. Sean $E = AC \cap BD$, $F = AD \cap BC$. *(Configuración compleja, requiere análisis multietapa.)*
+**8. (IMO 1995/P3)** Sea $p$ un número primo impar. ¿Cuántos subconjuntos de $p$ elementos de $\{1, 2, \ldots, 2p\}$ tienen suma divisible por $p$? *(Raíces de la unidad y conteo modular.)*
 
-## Álgebra y desigualdades
+---
 
-**16. IMO 2001/2.** Sean $a, b, c$ reales positivos. Demostrar que $\frac{a}{\sqrt{a^2 + 8bc}} + \frac{b}{\sqrt{b^2 + 8ca}} + \frac{c}{\sqrt{c^2 + 8ab}} \geq 1$. *(Cauchy-Schwarz / SOS.)*
+## Problemas modernos (1997–2009)
 
-**17. IMO 2006/3.** Hallar el menor real $M$ tal que la desigualdad $|ab(a^2 - b^2) + bc(b^2 - c^2) + ca(c^2 - a^2)| \leq M(a^2 + b^2 + c^2)^2$ se cumple para todos $a, b, c$ reales. *(Lagrange y casos de igualdad.)*
+**9. (IMO 1997/P5)** Hallar todos los pares $(a, b)$ de enteros con $a, b \geq 1$ que satisfagan $a^{b^2} = b^a$. *(Valuación p-ádica y comparación de exponentes.)*
 
-**18. USA TST 2009/4.** Sea $P(x)$ un polinomio de grado $\geq 1$ con coeficientes enteros. *(Polinomios y aritmética.)*
+---
 
-**19. ISL 2016/A7.** Hallar todos los polinomios $P(x, y) \in \mathbb R[x, y]$ tales que $P(x+y, y-x) = P(x, y)$ para todos $x, y$ reales. *(Sustituciones inteligentes.)*
+**10. (IMO 1998/P4)** Determinar todos los pares $(a, b)$ de enteros positivos tales que $ab^2 + b + 7$ divida a $a^2b + a + b$. *(Manipulación algebraica + acotación.)*
 
-**20. IMO 2008/3.** Demostrar que existen infinitos enteros positivos $n$ tales que $n^2 + 1$ tiene un divisor primo mayor que $2n + \sqrt{2n}$. *(Análisis fino sobre la distribución de divisores primos.)*
+---
 
-## Cómo trabajarlos
+**11. (IMO 2000/P5)** ¿Puede existir un número $N$ divisible por exactamente $2000$ primos distintos, tal que $N \mid 2^N + 1$? *(Zsigmondy y divisores primitivos.)*
 
-1. **Lee y olvida.** Lee el enunciado, deja pasar un día, y luego intenta reconstruirlo de memoria. Si no puedes, no lo has entendido todavía.
-2. **Cinco minutos de trabajo, cinco de descanso.** El cerebro resuelve problemas IMO mientras descansa.
-3. **Por cada problema, lleva una lista de las ideas que probaste y por qué fallaron.** Esto se vuelve oro al estudiar más problemas.
-4. **No leas la solución antes de 90 minutos.** Incluso si crees que el problema te supera.
+---
+
+**12. (IMO 2001/P6)** Sean $a > b > c > d > 0$ enteros tales que $ac + bd = (b+d+a-c)(b+d-a+c)$. Probar que $ab + cd$ no es primo. *(Identidades algebraicas y factorización.)*
+
+---
+
+**13. (IMO 2002/P4)** Sean $d_1 < d_2 < \cdots < d_k$ los divisores positivos del entero $n > 1$. Sea $D = d_1 d_2 + d_2 d_3 + \cdots + d_{k-1} d_k$. Demostrar que $D < n^2$ y hallar todos los $n$ para los cuales $D$ divide a $n^2$. *(Funciones multiplicativas.)*
+
+---
+
+**14. (IMO 2003/P2)** Hallar todos los pares $(m, n)$ de enteros positivos tales que $\dfrac{m^2}{2mn^2 - n^3 + 1}$ sea un entero positivo. *(Vieta jumping / análisis de casos.)*
+
+---
+
+**15. (IMO 2003/P6)** Sea $p$ primo. Demostrar que existe un primo $q$ tal que para ningún entero positivo $n$ se tiene $q \mid n^p - p$. *(Orden multiplicativo y primitivos.)*
+
+---
+
+**16. (IMO 2004/P6)** Llamamos a un entero positivo **alternante** si sus dígitos consecutivos tienen paridades distintas. Hallar todos los enteros positivos $n$ que tienen un múltiplo alternante. *(Bases numéricas + TCR.)*
+
+---
+
+**17. (IMO 2005/P4)** Determinar todos los enteros positivos que son coprimos con todos los términos de la sucesión $a_n = 2^n + 3^n + 6^n - 1$, $n \geq 1$. *(Orden multiplicativo + caso primo.)*
+
+---
+
+**18. (IMO 2006/P4)** Determinar todos los pares $(x, y)$ de enteros tales que $1 + 2^x + 2^{2x+1} = y^2$. *(Factorización en $\mathbb{Z}$ y acotación.)*
+
+---
+
+**19. (IMO 2007/P5)** Sean $a, b$ enteros positivos. Demostrar que si $4ab - 1$ divide a $(4a^2 - 1)^2$, entonces $a = b$. *(Variante del Vieta jumping.)*
+
+---
+
+**20. (IMO 2009/P1)** Sea $n$ un entero positivo y $a_1, \ldots, a_k$ ($k \geq 2$) enteros distintos en $\{1, \ldots, n\}$ tales que $n \mid a_i(a_{i+1} - 1)$ para $i = 1, \ldots, k-1$. Probar que $n \nmid a_k(a_1 - 1)$. *(Orden multiplicativo y combinatoria modular.)*
+
+---
 
 ## Observación
 
-Los problemas IMO se eligen para que **una sola idea brillante** los desbloquee. Esa idea suele ser:
+Estos $20$ problemas son todos IMO reales; sus soluciones oficiales están en el archivo correspondiente. La técnica dominante de cada uno está indicada para orientar la búsqueda de ideas, no para revelar la solución.
 
-- Un truco algebraico no obvio (factorización, identidad polinómica).
-- Una construcción auxiliar geométrica (un punto, una circunferencia, una reflexión).
-- Una invariante combinatoria escondida.
-- Una elección de coordenadas o sistema que rompe la simetría aparente.
+El camino habitual: (1) leer el enunciado con atención, (2) hacer casos pequeños a mano, (3) identificar la estructura algebraica o modular, (4) aplicar la técnica del capítulo relevante, (5) verificar la solución caso a caso.
 
-Identificar **qué clase de idea** se busca es a veces más útil que encontrarla.
-
-## Soluciones
-
-Las soluciones oficiales y comentarios extensos están en:
-
-- **AoPS (Art of Problem Solving)** para todos los problemas con foros de discusión.
-- **IMO Compendium** (libro) con análisis técnico.
-- **Evan Chen's lecture notes** (web) para una perspectiva moderna y unificada.
+Si resuelves correctamente $6$ de los $20$ con demostración completa, estás en nivel IMO competitivo.

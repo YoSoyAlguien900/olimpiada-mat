@@ -212,14 +212,14 @@ Los módulos más útiles son $4, 8, 9, 16, 7, 11$. Por ejemplo: $x^2 + y^2 \equ
 
 ## Problemas relacionados
 
-- **(Clásico)** Probar que $n^7 - n$ es divisible por $42$ para todo entero $n$. *(Hint: $42 = 2 \cdot 3 \cdot 7$, usar PTF para cada primo.)*
+- **(OMG 2008/P3)** Demostrar que $2222^{5555} + 5555^{2222}$ es múltiplo de $7$.
+
+- **(OMG 2011/P5)** Sea $n = 2^r - 16^s$ donde $r, s$ son enteros positivos. Determinar las condiciones que deben cumplir $r$ y $s$ para que el resto de la división de $n$ por $7$ sea $5$. Calcular el menor $n > 0$ que lo cumple.
+
+- **(OMG 2009/P4)** Determinar los valores de $n$ para los que el número $3^{2n+1} - 2^{2n+1} - 6^n$ es compuesto.
+
+- **(Clásico)** Probar que $n^7 - n$ es divisible por $42$ para todo entero $n$.
 
 - **(Clásico)** Demostrar que si $p$ es primo y $p > 3$, entonces $p^2 \equiv 1 \pmod{24}$.
 
-- **(Clásico)** Probar que $\underbrace{11\cdots1}_{p-1\text{ unos}}$ es divisible por $p$ para todo primo $p > 5$.
-
-- **(Clásico)** Demostrar que no existen enteros $x, y, z$ con $x^2 + y^2 = 3z^2$ salvo $x = y = z = 0$. *(Módulo $3$.)*
-
-- **(Clásico)** ¿Cuál es el último dígito de $\underbrace{7^{7^{7^{\cdots}}}}_{2026 \text{ sietes}}$?
-
-- **(Clásico)** Hallar todos los enteros positivos $n$ tales que $3^n + 4^n$ sea divisible por $5$.
+- **(Clásico)** Demostrar que no existen enteros $x, y, z$ con $x^2 + y^2 = 3z^2$ salvo $x = y = z = 0$.

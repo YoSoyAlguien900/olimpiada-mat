@@ -211,14 +211,14 @@ Directamente: $n \mid x^2 + 1$ implica $x^2 \equiv -1 \pmod n$. Esto es posible 
 
 ## Problemas relacionados
 
-- **(Clásico)** Hallar todos los pares de enteros positivos $(a, b)$ con $a^2 + b \mid a + b^2$.
+- **(IMO 2006/P4)** Determinar todos los pares $(x, y)$ de enteros tales que $1 + 2^x + 2^{2x+1} = y^2$.
 
-- **(Clásico)** Para qué primos $p$ tiene solución $x^2 \equiv -3 \pmod p$?
+- **(IMO 1994/P4)** Determinar todos los pares ordenados $(m, n)$ de enteros positivos tales que $\dfrac{n^3 + 1}{mn - 1}$ sea un entero.
+
+- **(OMG 2017/P4)** Describir todas las soluciones enteras positivas $(m, n)$ de la ecuación $8m - 7 = n^2$ y dar el primer valor de $m > 1$ (si existe) mayor que $1959$.
+
+- **(OMG 2019/P5)** ¿Existen naturales $m, n \geq 1$ de forma que $n^2 + 2018mn + 2019m + n - 2019m^2$ sea un número primo?
 
 - **(Clásico, Pell)** La ecuación $x^2 - 3y^2 = 1$ tiene infinitas soluciones. Encontrar las primeras tres y la recurrencia que las genera.
 
-- **(Clásico)** Hallar todas las soluciones enteras de $x^2 + y^2 = z^2$ (ternas pitagóricas). Demostrar que son exactamente $(x, y, z) = k(m^2-n^2, 2mn, m^2+n^2)$ con $m > n > 0$, $\gcd(m,n) = 1$, $m \not\equiv n \pmod 2$.
-
-- **(Clásico)** Resolver completamente $\frac{1}{x} + \frac{1}{y} = \frac{1}{n}$ en enteros positivos.
-
-- **(Clásico)** Probar que $x^3 + y^3 = z^3$ no tiene solución en enteros positivos. *(Caso $n=3$ del último teorema de Fermat, demostrable elementalmente.)*
+- **(Clásico)** Hallar todos los pares de enteros positivos $(a, b)$ con $a^2 + b \mid a + b^2$.

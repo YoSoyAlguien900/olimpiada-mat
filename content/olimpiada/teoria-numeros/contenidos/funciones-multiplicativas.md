@@ -212,12 +212,12 @@ Por multiplicatividad: $f(n) = \prod_{p^k \| n} (2k + 1)$. Esta función es mult
 
 ## Problemas relacionados
 
+- **(OMG 2008/P6)** Consideramos $17$ números enteros positivos tales que ninguno tiene un factor primo mayor que $7$. Demostrar que el producto de al menos dos de ellos es un cuadrado perfecto.
+
 - **(Clásico)** Probar que $\sum_{d \mid n} \mu(d)/d = \varphi(n)/n$ para todo $n \geq 1$.
 
 - **(Clásico)** Hallar una fórmula para $\sum_{d^2 \mid n} \mu(d)$ en términos de los factores primos de $n$.
 
-- **(Clásico)** Sea $f$ completamente multiplicativa con $f(p) = p + 1$ para todo primo $p$. Calcular $f(p^k)$.
+- **(Clásico)** Demostrar que $\sigma(n) < 2n$ para todo $n$ primo, y encontrar el menor $n$ compuesto con $\sigma(n) > 2n$.
 
-- **(Clásico)** Demostrar que $\sigma(n) < 2n$ para todo primo $n$, y $\sigma(n) > 2n$ para $n = 12$.
-
-- **(Clásico)** Probar que $\sum_{n \leq N} \tau(n) = \sum_{d \leq N} \lfloor N/d \rfloor$ y estimar esta suma asintóticamente como $N \log N + O(N)$.
+- **(Clásico)** Probar que $\sum_{n \leq N} \tau(n) = \sum_{d \leq N} \lfloor N/d \rfloor$ y estimar esta suma como $N \log N + O(N)$.

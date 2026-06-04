@@ -182,14 +182,12 @@ Si $y$ es impar: $y^3 - x^2 = 3$; módulo $8$: $y^3 \equiv \pm 1, \pm 3$ y $x^2 
 
 ## Problemas relacionados
 
-- **(Clásico)** Determinar todos los primos $p$ para los cuales $\left(\frac{5}{p}\right) = 1$ usando reciprocidad.
+- **(OME Nacional 2015/P2)** Sea $p$ un número primo positivo dado. Demostrar que existe un entero $\alpha$ tal que $\alpha(\alpha - 1) + 3$ es divisible por $p$ si y solo si existe un entero $\beta$ tal que $\beta(\beta - 1) + 25$ es divisible por $p$.
 
-- **(Clásico)** Probar que si $p \equiv 3 \pmod 4$, entonces $x^4 \equiv -4 \pmod p$ no tiene solución.
+- **(Clásico)** Determinar todos los primos $p$ para los cuales $\left(\frac{5}{p}\right) = 1$ usando reciprocidad cuadrática.
 
 - **(Clásico)** Sea $p$ primo con $p \equiv 1 \pmod 3$. Probar que existe $a$ con $a^2 + a + 1 \equiv 0 \pmod p$.
 
-- **(Clásico, sumas de Gauss)** Para primo impar $p$, calcular $\sum_{a=1}^{p-1} \left(\frac{a}{p}\right) a$.
-
-- **(Clásico)** Probar que todo primo $p \equiv 1 \pmod 4$ es suma de dos cuadrados. *(Hint: $-1$ es RC módulo $p$; usar descenso de Fermat.)*
+- **(Clásico)** Probar que todo primo $p \equiv 1 \pmod 4$ es suma de dos cuadrados. *(Usar que $-1$ es RC módulo $p$ y descenso de Fermat.)*
 
 - **(Clásico)** Determinar para qué primos $p$ se tiene $\left(\frac{3}{p}\right) = 1$.
