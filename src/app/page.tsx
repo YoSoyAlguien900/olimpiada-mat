@@ -78,8 +78,8 @@ export default function HomePage() {
       <div className="disc-grid">
         {CATEGORIAS.map((c, i) => (
           <div key={c.id} className="disc-card" style={{ cursor: 'default' }}>
-            <div className="disc-symbol" style={{ fontSize: 28 }}>
-              §{String(i + 1).padStart(2, '0')}
+            <div className="disc-symbol" style={{ fontSize: 22, fontFamily: 'var(--mono)', fontStyle: 'normal', letterSpacing: '0.1em', opacity: 0.7 }}>
+              {String(i + 1).padStart(2, '0')}
             </div>
             <h3 style={{ fontSize: 20 }}>{c.label}</h3>
             <p>{c.descripcion}</p>
