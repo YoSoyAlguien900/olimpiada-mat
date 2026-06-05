@@ -4,12 +4,13 @@ import { useMemo, useRef } from 'react';
 import { DIFICULTADES, type ContentMeta, type Dificultad, type Subseccion } from '@/lib/constants';
 
 // ─── Layout constants ────────────────────────────────────────────────────────
-const NW = 180;       // node width
-const NH = 68;        // node height
-const COL_GAP = 88;   // horizontal gap between columns
-const ROW_GAP = 28;   // vertical gap between nodes in same column
-const PAD_X = 44;     // left/right padding
-const PAD_TOP = 60;   // room for column labels
+const NW = 176;         // node width
+const NH = 68;          // node height
+const SUBLANE_GAP = 36; // gap entre sub-columnas dentro de un nivel
+const ZONE_GAP = 56;    // gap entre zonas de distinto nivel
+const ROW_GAP = 28;     // gap vertical entre nodos de la misma sub-columna
+const PAD_X = 40;       // padding horizontal exterior
+const PAD_TOP = 60;     // espacio para etiquetas de columna
 const PAD_BOT = 44;
 
 const DIFFS: Dificultad[] = ['iniciacion', 'regional', 'nacional', 'internacional', 'elite'];
@@ -37,6 +38,7 @@ interface LayoutNode {
   y: number;
   col: number;
   row: number;
+  sublane: number;
 }
 
 interface LayoutEdge {
@@ -46,9 +48,8 @@ interface LayoutEdge {
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 function wrapTitle(raw: string): [string, string] {
-  // Strip simple LaTeX $ ... $ for display
   const title = raw.replace(/\$([^$]+)\$/g, (_, m) => m.replace(/[\\{}^_]/g, ''));
-  const MAX = 24;
+  const MAX = 22;
   if (title.length <= MAX) return [title, ''];
   const cut = title.lastIndexOf(' ', MAX);
   const line1 = cut > 0 ? title.slice(0, cut) : title.slice(0, MAX);
@@ -64,6 +65,31 @@ function catLabel(c: string): string {
   return '?';
 }
 
+/** Asigna sub-lanes topológicas dentro de un grupo del mismo nivel.
+ *  Lane 0 = sin prerequisitos del mismo nivel.
+ *  Lane k = todos sus prerequisitos del mismo nivel están en lane < k. */
+function computeSubLanes(nodes: ContentMeta[]): Map<string, number> {
+  const slugSet = new Set(nodes.map(n => n.slug));
+  const lanes = new Map<string, number>(nodes.map(n => [n.slug, 0]));
+
+  let changed = true;
+  let guard = 0;
+  while (changed && guard++ < 20) {
+    changed = false;
+    for (const node of nodes) {
+      const sameLevel = (node.prerequisites || []).filter(p => slugSet.has(p));
+      if (!sameLevel.length) continue;
+      const maxLane = Math.max(...sameLevel.map(p => lanes.get(p) ?? 0));
+      const wanted = maxLane + 1;
+      if ((lanes.get(node.slug) ?? 0) < wanted) {
+        lanes.set(node.slug, wanted);
+        changed = true;
+      }
+    }
+  }
+  return lanes;
+}
+
 // ─── Component ───────────────────────────────────────────────────────────────
 interface Props {
   subseccion: Subseccion;
@@ -74,14 +100,13 @@ interface Props {
 export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
 
-  const { nodes, edges, activeDiffs, svgW, svgH } = useMemo(() => {
-    // Filter to this subsection, only contenidos + metodos + demostraciones
+  const { nodes, edges, activeDiffs, zoneLayout, svgW, svgH } = useMemo(() => {
     const relevant = allDocs.filter(
       d => d.subseccion === subseccion &&
         (d.categoria === 'contenidos' || d.categoria === 'metodos' || d.categoria === 'demostraciones'),
     );
 
-    // Group by difficulty, sort within group (contenidos first, then alpha)
+    // Agrupar por dificultad y ordenar
     const groups = Object.fromEntries(DIFFS.map(d => [d, [] as ContentMeta[]])) as Record<Dificultad, ContentMeta[]>;
     relevant.forEach(m => { if (groups[m.dificultad]) groups[m.dificultad].push(m); });
     DIFFS.forEach(d => {
@@ -92,20 +117,59 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
       });
     });
 
-    // Solo mostrar columnas que tienen nodos
     const activeDiffs = DIFFS.filter(d => groups[d].length > 0);
 
-    // Compute layout positions (solo columnas activas)
+    // Computar sublanes por nivel
+    const subLanesPerDiff = Object.fromEntries(
+      activeDiffs.map(d => [d, computeSubLanes(groups[d])])
+    ) as Record<Dificultad, Map<string, number>>;
+
+    // Ancho de cada zona = max_sublanes * NW + (max_sublanes-1) * SUBLANE_GAP
+    const maxSubLanePerDiff = Object.fromEntries(
+      activeDiffs.map(d => {
+        const lanes = subLanesPerDiff[d];
+        const max = lanes.size ? Math.max(...Array.from(lanes.values())) : 0;
+        return [d, max];
+      })
+    ) as Record<Dificultad, number>;
+
+    const zoneWidthOf = (d: Dificultad) =>
+      (maxSubLanePerDiff[d] + 1) * NW + maxSubLanePerDiff[d] * SUBLANE_GAP;
+
+    // Posición X de inicio de cada zona
+    const zoneLayout: Record<Dificultad, { startX: number; width: number; labelCx: number }> = {} as any;
+    let curX = PAD_X;
+    activeDiffs.forEach((d, i) => {
+      const w = zoneWidthOf(d);
+      zoneLayout[d] = { startX: curX, width: w, labelCx: curX + w / 2 };
+      curX += w + (i < activeDiffs.length - 1 ? ZONE_GAP : 0);
+    });
+
+    // Contar filas por sub-lane dentro de cada nivel
+    const rowCounters = Object.fromEntries(
+      activeDiffs.map(d => {
+        const maxSublane = maxSubLanePerDiff[d];
+        return [d, new Array(maxSublane + 1).fill(0) as number[]];
+      })
+    ) as Record<Dificultad, number[]>;
+
+    // Asignar posiciones
     const nodeMap = new Map<string, LayoutNode>();
     activeDiffs.forEach((diff, colIdx) => {
-      const x = PAD_X + colIdx * (NW + COL_GAP);
-      groups[diff].forEach((meta, rowIdx) => {
-        const y = PAD_TOP + rowIdx * (NH + ROW_GAP);
-        nodeMap.set(meta.slug, { meta, x, y, col: colIdx, row: rowIdx });
+      const sublanes = subLanesPerDiff[diff];
+      const { startX } = zoneLayout[diff];
+      const counters = rowCounters[diff];
+
+      groups[diff].forEach(meta => {
+        const sublane = sublanes.get(meta.slug) ?? 0;
+        const row = counters[sublane]++;
+        const x = startX + sublane * (NW + SUBLANE_GAP);
+        const y = PAD_TOP + row * (NH + ROW_GAP);
+        nodeMap.set(meta.slug, { meta, x, y, col: colIdx, row, sublane });
       });
     });
 
-    // Build edges
+    // Aristas
     const edges: LayoutEdge[] = [];
     nodeMap.forEach(node => {
       (node.meta.prerequisites || []).forEach(prereqSlug => {
@@ -114,7 +178,7 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
       });
     });
 
-    // Dimensions
+    // Dimensiones del SVG
     let maxX = 0, maxY = 0;
     nodeMap.forEach(n => {
       maxX = Math.max(maxX, n.x + NW);
@@ -125,6 +189,7 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
       nodes: Array.from(nodeMap.values()),
       edges,
       activeDiffs,
+      zoneLayout,
       svgW: maxX + PAD_X,
       svgH: maxY + PAD_BOT,
     };
@@ -144,7 +209,7 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
             <span className="rm-subtitle">Los nodos muestran qué estudiar antes de avanzar</span>
           </div>
           <div className="rm-legend">
-            {DIFFS.map(d => {
+            {DIFFS.filter(d => zoneLayout[d]).map(d => {
               const info = DIFICULTADES.find(x => x.id === d)!;
               return (
                 <span key={d} className="rm-legend-chip" style={{ borderColor: DIFF_COLORS[d], color: DIFF_COLORS[d] }}>
@@ -178,129 +243,112 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
                 markerWidth="7" markerHeight="7" orient="auto">
                 <path d="M0,1 L7,4 L0,7" fill="none" stroke="var(--rule)" strokeWidth="1" strokeLinejoin="round" />
               </marker>
-              <marker id="rm-arr-cross" viewBox="0 0 8 8" refX="7" refY="4"
-                markerWidth="7" markerHeight="7" orient="auto">
+              <marker id="rm-arr-same" viewBox="0 0 8 8" refX="7" refY="4"
+                markerWidth="6" markerHeight="6" orient="auto">
                 <path d="M0,1 L7,4 L0,7" fill="none" stroke="#b8a888" strokeWidth="1" strokeLinejoin="round" />
               </marker>
             </defs>
 
-            {/* Column background bands — solo columnas activas */}
-            {activeDiffs.map((diff, i) => {
-              const x = PAD_X + i * (NW + COL_GAP) - 10;
+            {/* Fondos de zona por nivel */}
+            {activeDiffs.map(diff => {
+              const { startX, width } = zoneLayout[diff];
               return (
-                <rect key={diff} x={x} y={0} width={NW + 20} height={svgH}
-                  fill={DIFF_COLORS[diff]} fillOpacity={0.04} rx={6} />
+                <rect key={diff}
+                  x={startX - 8} y={0}
+                  width={width + 16} height={svgH}
+                  fill={DIFF_COLORS[diff]} fillOpacity={0.04} rx={8}
+                />
               );
             })}
 
-            {/* Column labels */}
-            {activeDiffs.map((diff, i) => {
-              const cx = PAD_X + i * (NW + COL_GAP) + NW / 2;
+            {/* Etiquetas de nivel — centradas en la zona */}
+            {activeDiffs.map(diff => {
+              const { labelCx } = zoneLayout[diff];
               const info = DIFICULTADES.find(d => d.id === diff)!;
               return (
-                <text key={`cl-${diff}`} x={cx} y={34} textAnchor="middle"
+                <text key={`lbl-${diff}`} x={labelCx} y={36} textAnchor="middle"
                   className="rm-col-label" fill={DIFF_COLORS[diff]}>
                   {info.label}
                 </text>
               );
             })}
 
-            {/* Edges */}
+            {/* Aristas */}
             {edges.map((edge, idx) => {
               const fx = edge.from.x + NW;
               const fy = edge.from.y + NH / 2;
               const tx = edge.to.x;
               const ty = edge.to.y + NH / 2;
-              const sameCol = edge.from.col === edge.to.col;
+
+              const sameZone = edge.from.col === edge.to.col;
+              const goingRight = tx > fx;
+              const markerId = sameZone ? 'rm-arr-same' : 'rm-arr';
 
               let d: string;
-              const markerId = sameCol ? 'rm-arr-cross' : 'rm-arr';
-
-              if (!sameCol && tx > fx) {
-                // Normal left-to-right: cubic bezier
+              if (goingRight) {
+                // Izquierda → derecha (cross-zone o sublane)
                 const mx = (fx + tx) / 2;
                 d = `M${fx},${fy} C${mx},${fy} ${mx},${ty} ${tx},${ty}`;
-              } else if (!sameCol && tx <= fx) {
-                // Backward edge: route around (below both nodes)
-                const by = Math.max(edge.from.y, edge.to.y) + NH + 28;
-                d = `M${fx},${fy} Q${fx + 20},${by} ${(fx + tx) / 2},${by} Q${tx - 20},${by} ${tx},${ty}`;
+              } else if (!sameZone) {
+                // Arista hacia atrás (rara) — curva por arriba
+                const ay = Math.min(fy, ty) - 40;
+                d = `M${fx},${fy} Q${fx + 20},${ay} ${(fx + tx) / 2},${ay} Q${tx - 20},${ay} ${tx},${ty}`;
               } else {
-                // Same column: route on the left side
-                const lx = edge.from.x - 18;
-                d = `M${edge.from.x},${fy} Q${lx},${fy} ${lx},${(fy + ty) / 2} Q${lx},${ty} ${edge.to.x},${ty}`;
+                // Misma zona, misma sublane → flecha vertical corta
+                const mx2 = edge.from.x - 20;
+                d = `M${edge.from.x},${fy} Q${mx2},${fy} ${mx2},${(fy + ty) / 2} Q${mx2},${ty} ${edge.to.x},${ty}`;
               }
 
               return (
-                <path
-                  key={idx}
-                  d={d}
-                  fill="none"
-                  stroke={sameCol ? '#b8a888' : 'var(--rule)'}
-                  strokeWidth={sameCol ? 1 : 1.2}
-                  strokeDasharray={sameCol ? '4 3' : undefined}
-                  opacity={0.7}
+                <path key={idx} d={d} fill="none"
+                  stroke={sameZone ? '#b8a888' : 'var(--rule)'}
+                  strokeWidth={sameZone ? 1.2 : 1.4}
+                  strokeDasharray={sameZone ? '5 3' : undefined}
+                  opacity={0.75}
                   markerEnd={`url(#${markerId})`}
                 />
               );
             })}
 
-            {/* Nodes */}
+            {/* Nodos */}
             {nodes.map(node => {
               const { meta, x, y } = node;
               const [line1, line2] = wrapTitle(meta.title);
               const col = DIFF_COLORS[meta.dificultad];
               const bg = DIFF_BG[meta.dificultad];
-              const href = meta.href;
               const cat = catLabel(meta.categoria);
               const hasLine2 = line2.length > 0;
 
               return (
-                <a key={meta.slug} href={href} onClick={onClose} className="rm-node-link">
-                  {/* Node background */}
+                <a key={meta.slug} href={meta.href} onClick={onClose} className="rm-node-link">
                   <rect x={x} y={y} width={NW} height={NH}
                     fill={bg} stroke={col} strokeWidth={1.4} rx={5}
                     className="rm-node-rect" />
-
-                  {/* Left accent bar */}
-                  <rect x={x} y={y + 2} width={4} height={NH - 4}
-                    fill={col} rx={2} />
-
-                  {/* Category badge */}
+                  <rect x={x} y={y + 2} width={4} height={NH - 4} fill={col} rx={2} />
                   <rect x={x + NW - 22} y={y + 4} width={18} height={16}
                     fill={col} fillOpacity={0.15} rx={3} />
                   <text x={x + NW - 13} y={y + 15} textAnchor="middle"
                     fontSize={9} fontFamily="var(--mono)" fill={col} fontWeight={700}>
                     {cat}
                   </text>
-
-                  {/* Title text */}
-                  <text
-                    x={x + 12}
-                    y={hasLine2 ? y + 22 : y + 33}
-                    fontSize={10.5}
-                    fontFamily="var(--sans)"
-                    fill="var(--ink)"
-                    fontWeight={500}
-                  >
+                  <text x={x + 12} y={hasLine2 ? y + 24 : y + 37}
+                    fontSize={10.5} fontFamily="var(--sans)" fill="var(--ink)" fontWeight={500}>
                     {line1}
                   </text>
                   {hasLine2 && (
-                    <text x={x + 12} y={y + 36}
+                    <text x={x + 12} y={y + 40}
                       fontSize={10.5} fontFamily="var(--sans)" fill="var(--ink-2)" fontWeight={400}>
                       {line2}
                     </text>
                   )}
-
-                  {/* Hover overlay */}
-                  <rect x={x} y={y} width={NW} height={NH}
-                    fill="transparent" rx={5} className="rm-node-hover" />
+                  <rect x={x} y={y} width={NW} height={NH} fill="transparent" rx={5} className="rm-node-hover" />
                 </a>
               );
             })}
           </svg>
         </div>
 
-        {/* ── Footer hint ────────────────────────────────────────────────── */}
+        {/* ── Footer ────────────────────────────────────────────────────── */}
         <div className="rm-footer">
           <span>Las flechas indican prerequisitos recomendados · Haz clic en cualquier nodo para abrir el contenido</span>
         </div>
