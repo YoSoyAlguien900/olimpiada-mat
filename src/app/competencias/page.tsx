@@ -1,8 +1,27 @@
 import Link from 'next/link';
 import { DIFICULTADES } from '@/lib/content';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Competencias y calibrado · Olimpiada Matemática',
+export const metadata: Metadata = {
+  title: 'Competencias y calibrado de dificultad',
+  description:
+    'Sistema de dificultad en cinco niveles (Iniciación, Regional, Nacional, Internacional, Élite) anclado a competencias reales: OMG, OME, IMO, Iberoamericana, USAMO.',
+  keywords: [
+    'niveles de dificultad olimpiada',
+    'OMG olimpíada matemática galega',
+    'OME olimpiada matemática española',
+    'IMO internacional',
+    'calibrado dificultad matemáticas',
+  ],
+  alternates: {
+    canonical: 'https://olimpiada-mat.vercel.app/competencias',
+  },
+  openGraph: {
+    title: 'Competencias y calibrado de dificultad · Olimpiada Matemática',
+    description:
+      'Sistema de dificultad en cinco niveles anclado a competencias reales: OMG, OME, IMO, Iberoamericana, USAMO.',
+    url: 'https://olimpiada-mat.vercel.app/competencias',
+  },
 };
 
 export default function CompetenciasPage() {

@@ -1,5 +1,41 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { buildIndex, SUBSECCIONES, CATEGORIAS } from '@/lib/content';
+
+export const metadata: Metadata = {
+  title: 'Olimpiada Matemática — Material de élite',
+  description:
+    'Apuntes de olimpiada matemática: teoría bien explicada, demostraciones completas y problemas con contexto real de Geometría y Teoría de Números. Calibrado desde OMG hasta IMO.',
+  alternates: {
+    canonical: 'https://olimpiada-mat.vercel.app',
+  },
+  openGraph: {
+    title: 'Olimpiada Matemática — Material de élite',
+    description:
+      'Apuntes de olimpiada matemática: teoría bien explicada, demostraciones completas y problemas con contexto real de Geometría y Teoría de Números. Calibrado desde OMG hasta IMO.',
+    url: 'https://olimpiada-mat.vercel.app',
+    type: 'website',
+  },
+};
+
+const homeJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Olimpiada Matemática',
+  url: 'https://olimpiada-mat.vercel.app',
+  description:
+    'Material de élite para preparación de olimpiadas matemáticas: Geometría y Teoría de Números, calibrado por competencia (OMG → OME → IMO).',
+  inLanguage: 'es',
+  author: {
+    '@type': 'Person',
+    name: 'Adrián García Bouzas',
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://olimpiada-mat.vercel.app/olimpiada/geometria/contenidos',
+    'query-input': 'required name=search_term_string',
+  },
+};
 
 export default function HomePage() {
   const index = buildIndex();
@@ -11,6 +47,10 @@ export default function HomePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
+      />
       <section className="hero">
         <div className="hero-deco">∫</div>
         <div className="hero-eyebrow">Vol. I · Edición 2026</div>
