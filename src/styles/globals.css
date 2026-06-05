@@ -1328,11 +1328,12 @@ a { color: inherit; text-decoration: none; }
   z-index: 3;
 }
 
-/* La región principal: dejamos su fondo translúcido para que se
-   perciba el movimiento del backdrop, pero el texto siga nítido */
+/* Sin z-index en .main: el roadmap overlay (position:fixed, z-index:200)
+   participa en el contexto raíz y supera al sidebar (z-index:3).
+   Con z-index:2 aquí, .main creaba un stacking context propio y el
+   sidebar (z-index:3 en el mismo nivel) ganaba a todo lo de dentro. */
 .main {
   position: relative;
-  z-index: 2;
   background: transparent;
 }
 
