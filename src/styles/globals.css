@@ -114,11 +114,8 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 900px) {
   /* En móvil el canvas ya está fuera del .app (AppShell usa fragment).
-     display:block elimina el grid y evita filas fantasma. */
+     display:block elimina el grid. */
   .app, .app.collapsed { display: block; }
-
-  /* Defensa extra: el sidebar nunca contribuye al layout aunque position:fixed falle */
-  .sidebar { contain: layout; }
 }
 
 /* ====== SIDEBAR ====== */
@@ -136,13 +133,27 @@ a { color: inherit; text-decoration: none; }
 .app.collapsed .sidebar { transform: translateX(-100%); position: fixed; }
 
 @media (max-width: 900px) {
+  /* En móvil: display:none garantiza CERO contribución al layout.
+     Algunos navegadores Android reservan espacio para position:fixed
+     con height:100vh aunque esté fuera del flujo — display:none lo evita. */
   .sidebar {
+    display: none;
     position: fixed;
     z-index: 50;
     width: var(--sidebar-w);
-    transform: translateX(-100%);
+    height: 100vh;
+    transform: none;
+    transition: none;
   }
-  .app.mobile-open .sidebar { transform: translateX(0); }
+  .app.mobile-open .sidebar {
+    display: block;
+    animation: sidebar-in 0.25s ease forwards;
+  }
+}
+
+@keyframes sidebar-in {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
 }
 
 .sidebar-scrim {
