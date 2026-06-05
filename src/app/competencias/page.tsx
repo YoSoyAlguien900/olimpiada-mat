@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     'calibrado dificultad matemáticas',
   ],
   alternates: {
-    canonical: 'https://olimpiada-mat.vercel.app/competencias',
+    canonical: 'https://olimpiadamatematica.com/competencias',
   },
   openGraph: {
     title: 'Competencias y calibrado de dificultad · Olimpiada Matemática',
     description:
       'Sistema de dificultad en cinco niveles anclado a competencias reales: OMG, OME, IMO, Iberoamericana, USAMO.',
-    url: 'https://olimpiada-mat.vercel.app/competencias',
+    url: 'https://olimpiadamatematica.com/competencias',
   },
 };
 

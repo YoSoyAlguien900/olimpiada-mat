@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     'Apuntes de olimpiada matemática: teoría bien explicada, demostraciones completas y problemas con contexto real de Geometría y Teoría de Números. Calibrado desde OMG hasta IMO.',
   alternates: {
-    canonical: 'https://olimpiada-mat.vercel.app',
+    canonical: 'https://olimpiadamatematica.com',
   },
   openGraph: {
     title: 'Olimpiada Matemática — Material de élite',
     description:
       'Apuntes de olimpiada matemática: teoría bien explicada, demostraciones completas y problemas con contexto real de Geometría y Teoría de Números. Calibrado desde OMG hasta IMO.',
-    url: 'https://olimpiada-mat.vercel.app',
+    url: 'https://olimpiadamatematica.com',
     type: 'website',
   },
 };
@@ -22,7 +22,7 @@ const homeJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Olimpiada Matemática',
-  url: 'https://olimpiada-mat.vercel.app',
+  url: 'https://olimpiadamatematica.com',
   description:
     'Material de élite para preparación de olimpiadas matemáticas: Geometría y Teoría de Números, calibrado por competencia (OMG → OME → IMO).',
   inLanguage: 'es',
@@ -32,7 +32,7 @@ const homeJsonLd = {
   },
   potentialAction: {
     '@type': 'SearchAction',
-    target: 'https://olimpiada-mat.vercel.app/olimpiada/geometria/contenidos',
+    target: 'https://olimpiadamatematica.com/olimpiada/geometria/contenidos',
     'query-input': 'required name=search_term_string',
   },
 };

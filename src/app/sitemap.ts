@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { buildIndex, CATEGORIAS, SUBSECCIONES } from '@/lib/content';
 
-const BASE = 'https://olimpiada-mat.vercel.app';
+const BASE = 'https://olimpiadamatematica.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const index = buildIndex();

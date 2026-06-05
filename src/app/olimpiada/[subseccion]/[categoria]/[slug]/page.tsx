@@ -12,7 +12,7 @@ import {
 } from '@/lib/content';
 import { PdfExportButton } from '@/components/PdfExportButton';
 
-const BASE = 'https://olimpiada-mat.vercel.app';
+const BASE = 'https://olimpiadamatematica.com';
 
 interface Params {
   params: { subseccion: string; categoria: string; slug: string };

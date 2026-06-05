@@ -4,7 +4,7 @@ import { AppShell } from '@/components/AppShell';
 import { buildIndex, CATEGORIAS, SUBSECCIONES, type ContentMeta } from '@/lib/content';
 import type { Metadata } from 'next';
 
-const BASE = 'https://olimpiada-mat.vercel.app';
+const BASE = 'https://olimpiadamatematica.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
@@ -66,6 +66,9 @@ export const metadata: Metadata = {
     creator: '@adriangb',
   },
   category: 'education',
+  verification: {
+    google: '19dc8e839402a14c',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

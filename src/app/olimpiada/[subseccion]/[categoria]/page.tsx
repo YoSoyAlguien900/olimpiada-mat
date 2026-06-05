@@ -9,7 +9,7 @@ import {
 } from '@/lib/content';
 import CategoryClient from './CategoryClient';
 
-const BASE = 'https://olimpiada-mat.vercel.app';
+const BASE = 'https://olimpiadamatematica.com';
 
 interface Params {
   params: { subseccion: string; categoria: string };
