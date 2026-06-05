@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Sidebar } from './Sidebar';
 import { Topbar } from './Topbar';
@@ -42,23 +41,26 @@ export function AppShell({ children, index, allDocs }: Props) {
   if (mobileOpen) classes.push('mobile-open');
 
   return (
-    <div className={classes.join(' ')}>
+    <>
+      {/* Canvas fuera del .app — nunca afecta el layout del grid/block */}
       <MathBackdrop />
-      <Sidebar index={index} pathname={pathname} />
-      <div className="sidebar-scrim" onClick={() => setMobileOpen(false)} />
-      <div className="main">
-        <Topbar
-          onToggleSidebar={() => {
-            if (window.innerWidth <= 900) setMobileOpen((v) => !v);
-            else setCollapsed((v) => !v);
-          }}
-          theme={theme}
-          onToggleTheme={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}
-          pathname={pathname}
-          allDocs={allDocs}
-        />
-        <main className="content">{children}</main>
+      <div className={classes.join(' ')}>
+        <Sidebar index={index} pathname={pathname} />
+        <div className="sidebar-scrim" onClick={() => setMobileOpen(false)} />
+        <div className="main">
+          <Topbar
+            onToggleSidebar={() => {
+              if (window.innerWidth <= 900) setMobileOpen((v) => !v);
+              else setCollapsed((v) => !v);
+            }}
+            theme={theme}
+            onToggleTheme={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}
+            pathname={pathname}
+            allDocs={allDocs}
+          />
+          <main className="content">{children}</main>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

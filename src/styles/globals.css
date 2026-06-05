@@ -113,9 +113,12 @@ a { color: inherit; text-decoration: none; }
 .app.collapsed { grid-template-columns: 1fr; }
 
 @media (max-width: 900px) {
-  /* Sidebar y canvas son position:fixed en móvil — no hacen falta columnas de grid.
-     display:block evita que el sidebar cree una fila invisible de 100vh. */
+  /* En móvil el canvas ya está fuera del .app (AppShell usa fragment).
+     display:block elimina el grid y evita filas fantasma. */
   .app, .app.collapsed { display: block; }
+
+  /* Defensa extra: el sidebar nunca contribuye al layout aunque position:fixed falle */
+  .sidebar { contain: layout; }
 }
 
 /* ====== SIDEBAR ====== */
