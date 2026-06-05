@@ -4,13 +4,13 @@ import { useMemo, useRef } from 'react';
 import { DIFICULTADES, type ContentMeta, type Dificultad, type Subseccion } from '@/lib/constants';
 
 // ─── Layout constants ────────────────────────────────────────────────────────
-const NW = 172;       // node width
-const NH = 58;        // node height
-const COL_GAP = 68;   // horizontal gap between columns
-const ROW_GAP = 14;   // vertical gap between nodes in same column
-const PAD_X = 36;     // left/right padding
-const PAD_TOP = 52;   // room for column labels
-const PAD_BOT = 36;
+const NW = 180;       // node width
+const NH = 68;        // node height
+const COL_GAP = 88;   // horizontal gap between columns
+const ROW_GAP = 28;   // vertical gap between nodes in same column
+const PAD_X = 44;     // left/right padding
+const PAD_TOP = 60;   // room for column labels
+const PAD_BOT = 44;
 
 const DIFFS: Dificultad[] = ['iniciacion', 'regional', 'nacional', 'internacional', 'elite'];
 
@@ -74,7 +74,7 @@ interface Props {
 export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
 
-  const { nodes, edges, svgW, svgH } = useMemo(() => {
+  const { nodes, edges, activeDiffs, svgW, svgH } = useMemo(() => {
     // Filter to this subsection, only contenidos + metodos + demostraciones
     const relevant = allDocs.filter(
       d => d.subseccion === subseccion &&
@@ -92,9 +92,12 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
       });
     });
 
-    // Compute layout positions
+    // Solo mostrar columnas que tienen nodos
+    const activeDiffs = DIFFS.filter(d => groups[d].length > 0);
+
+    // Compute layout positions (solo columnas activas)
     const nodeMap = new Map<string, LayoutNode>();
-    DIFFS.forEach((diff, colIdx) => {
+    activeDiffs.forEach((diff, colIdx) => {
       const x = PAD_X + colIdx * (NW + COL_GAP);
       groups[diff].forEach((meta, rowIdx) => {
         const y = PAD_TOP + rowIdx * (NH + ROW_GAP);
@@ -121,6 +124,7 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
     return {
       nodes: Array.from(nodeMap.values()),
       edges,
+      activeDiffs,
       svgW: maxX + PAD_X,
       svgH: maxY + PAD_BOT,
     };
@@ -180,21 +184,21 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
               </marker>
             </defs>
 
-            {/* Column background bands */}
-            {DIFFS.map((diff, i) => {
+            {/* Column background bands — solo columnas activas */}
+            {activeDiffs.map((diff, i) => {
               const x = PAD_X + i * (NW + COL_GAP) - 10;
               return (
                 <rect key={diff} x={x} y={0} width={NW + 20} height={svgH}
-                  fill={DIFF_COLORS[diff]} fillOpacity={0.035} rx={6} />
+                  fill={DIFF_COLORS[diff]} fillOpacity={0.04} rx={6} />
               );
             })}
 
             {/* Column labels */}
-            {DIFFS.map((diff, i) => {
+            {activeDiffs.map((diff, i) => {
               const cx = PAD_X + i * (NW + COL_GAP) + NW / 2;
               const info = DIFICULTADES.find(d => d.id === diff)!;
               return (
-                <text key={`cl-${diff}`} x={cx} y={30} textAnchor="middle"
+                <text key={`cl-${diff}`} x={cx} y={34} textAnchor="middle"
                   className="rm-col-label" fill={DIFF_COLORS[diff]}>
                   {info.label}
                 </text>

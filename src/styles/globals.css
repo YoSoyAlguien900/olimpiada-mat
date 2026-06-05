@@ -1315,10 +1315,11 @@ a { color: inherit; text-decoration: none; }
      queda translúcida para que se vea el efecto. */
 }
 
-/* App necesita posicionarse por encima del canvas */
+/* Canvas movido fuera de .app — ya no necesitamos z-index aquí.
+   Sin z-index en .app no se crea stacking context, y el roadmap
+   (position:fixed, z-index:200) queda sobre el sidebar sin conflictos. */
 .app {
   position: relative;
-  z-index: 1;
 }
 
 /* Sidebar y Topbar mantienen su fondo opaco como antes */
