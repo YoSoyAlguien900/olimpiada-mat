@@ -26,6 +26,22 @@ $$
 
 con igualdad si y sólo si $ABCD$ es un cuadrilátero cíclico convexo (en el orden indicado).
 
+```geofig
+// Cuadrilátero cíclico ABCD: AC·BD = AB·CD + AD·BC
+size 8 8
+circle 0 0 3
+point  0.52  2.95  A  0.1   0.22
+point -2.95  0.52  B -0.28  0.12
+point -1.03 -2.82  C -0.22 -0.28
+point  2.82 -1.03  D  0.25 -0.22
+segment A B
+segment B C
+segment C D
+segment D A
+dash A C
+dash B D
+```
+
 ## Demostración
 
 **Método clásico (Ptolomeo).** Sea $E$ un punto sobre la diagonal $BD$ tal que $\angle BAE = \angle CAD$. Como $\angle ABE = \angle ABD = \angle ACD$ (ángulos inscritos sobre el arco $AD$), los triángulos $ABE$ y $ACD$ son semejantes:

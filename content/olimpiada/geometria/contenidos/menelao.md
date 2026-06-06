@@ -22,6 +22,23 @@ donde las razones son **signadas**: $\overline{BX}/\overline{XC} > 0$ si $X$ est
 
 **Convención de signos.** En cada razón $\overline{PQ}/\overline{QR}$, el signo es positivo si los tres puntos están en el orden $P, Q, R$ o $R, Q, P$ sobre la recta (es decir, $Q$ entre $P$ y $R$), y negativo si $Q$ está fuera del segmento $PR$.
 
+```geofig
+// Transversal de Menelao: X en BC extendido, Y en CA, Z en AB — los tres colineales
+size 10 7
+point  0    2.5  A  0.1   0.25
+point -2.5 -1.5  B -0.25 -0.22
+point  2.5 -1.5  C  0.25 -0.22
+point  4   -1.5  X  0.22 -0.22
+point  1.5  0.1  Y  0.22  0.15
+point -0.64  1.47 Z -0.32  0.15
+segment A B
+segment B C
+segment C A
+dash C X
+dash X Y
+dash Y Z
+```
+
 ## Demostración
 
 **Dirección $(\Rightarrow)$: colineales implica producto $= -1$.**

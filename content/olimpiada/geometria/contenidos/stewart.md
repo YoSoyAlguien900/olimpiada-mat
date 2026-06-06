@@ -22,6 +22,24 @@ $$
 b^2 m + c^2 n \;=\; a d^2 + amn.
 $$
 
+```geofig
+// Ceviana AD con BD = m, DC = n, AD = d
+size 8 7
+point  0    3   A  0.1   0.22
+point -3   -2   B -0.25 -0.22
+point  3   -2   C  0.25 -0.22
+point  0.5 -2   D  0.12 -0.28
+segment A B
+segment B C
+segment C A
+segment A D
+label -1.8  0.6  "c"
+label  2    0.6  "b"
+label -1.25 -2.4 "m"
+label  1.75 -2.4 "n"
+label  0.7   0.5  "d"
+```
+
 ## Demostración
 
 **Vía teorema del coseno.** Sean $\angle ADB = \theta$ y $\angle ADC = \pi - \theta$ (suplementarios). Aplicamos el teorema del coseno en los triángulos $ABD$ y $ACD$:

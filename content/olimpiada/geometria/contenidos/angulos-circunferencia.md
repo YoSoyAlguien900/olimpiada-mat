@@ -24,6 +24,16 @@ El **arco $\widehat{AB}$** subtenido por un ángulo es el arco que queda «dentr
 
 ## Teorema
 
+**(Ángulo inscrito)** El ángulo inscrito $\angle APB$ es igual a la mitad del ángulo central $\angle AOB$ que subtiende el mismo arco:
+
+$$\angle APB \;=\; \frac{1}{2} \angle AOB.$$
+
+**Corolario 1.** Todos los ángulos inscritos que abarcan el mismo arco son iguales.
+
+**Corolario 2.** (Ángulo en semicírculo) Si $AB$ es diámetro de $\omega$, entonces $\angle APB = 90°$ para todo $P \in \omega$, $P \neq A, B$.
+
+**Corolario 3.** (Ángulo semiinscrito = ángulo inscrito) El ángulo que forma una cuerda $AB$ con la tangente a $\omega$ en $A$ es igual al ángulo inscrito en el arco opuesto: $\angle(AB, t_A) = \angle APB$ para $P$ en el arco que no contiene el punto de tangencia.
+
 ```geofig
 // Ángulo central vs ángulo inscrito sobre el mismo arco AB
 size 7 7
@@ -41,16 +51,6 @@ arc 0 0 1.1 219 321
 label  0   0.8  "∠AOB"
 label  0  -1.6  "∠APB"
 ```
-
-**(Ángulo inscrito)** El ángulo inscrito $\angle APB$ es igual a la mitad del ángulo central $\angle AOB$ que subtiende el mismo arco:
-
-$$\angle APB \;=\; \frac{1}{2} \angle AOB.$$
-
-**Corolario 1.** Todos los ángulos inscritos que abarcan el mismo arco son iguales.
-
-**Corolario 2.** (Ángulo en semicírculo) Si $AB$ es diámetro de $\omega$, entonces $\angle APB = 90°$ para todo $P \in \omega$, $P \neq A, B$.
-
-**Corolario 3.** (Ángulo semiinscrito = ángulo inscrito) El ángulo que forma una cuerda $AB$ con la tangente a $\omega$ en $A$ es igual al ángulo inscrito en el arco opuesto: $\angle(AB, t_A) = \angle APB$ para $P$ en el arco que no contiene el punto de tangencia.
 
 ## Demostración
 

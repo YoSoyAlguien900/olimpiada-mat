@@ -16,6 +16,30 @@ Sea $ABC$ un triángulo con circuncírculo $\Omega$, y $P$ un punto cualquiera d
 
 La recta que contiene a $X, Y, Z$ se llama **línea de Simson** de $P$ respecto al triángulo $ABC$ (también llamada **recta de Wallace–Simson**, atribución históricamente más correcta).
 
+```geofig
+// Línea de Simson: P en el circuncírculo, X Y Z proyecciones colineales
+size 8 8
+circle 0 0 3
+point  0    3    A  0.1   0.22
+point -2.6 -1.5  B -0.25 -0.22
+point  2.6 -1.5  C  0.25 -0.22
+point  3    0    P  0.22 -0.18
+point  3   -1.5  X  0.22 -0.22
+point  2.05 -0.55 Y  0.25  0.12
+point -0.55  2.05 Z -0.32  0.15
+segment A B
+segment B C
+segment C A
+dash P X
+dash P Y
+dash P Z
+dash X Y
+dash Y Z
+rightangle X P B
+rightangle Y P A
+rightangle Z P B
+```
+
 ## Demostración
 
 Sean $X, Y, Z$ las proyecciones. Consideramos el cuadrilátero $PYAZ$. Como $\angle PYA = \angle PZA = 90°$, $PYAZ$ es cíclico (los cuatro están en el círculo de diámetro $PA$). Análogamente, $PXBZ$ es cíclico (en el círculo de diámetro $PB$), y $PXCY$ es cíclico.

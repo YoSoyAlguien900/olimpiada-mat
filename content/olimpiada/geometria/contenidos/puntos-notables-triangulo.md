@@ -21,6 +21,24 @@ Sea $ABC$ un triángulo con lados $a = |BC|$, $b = |CA|$, $c = |AB|$, semiperím
 - Es el **centroide** físico (centro de masas si las tres masas en los vértices son iguales).
 - Coordenadas baricéntricas: $G = (1:1:1)$.
 
+```geofig
+// Las tres medianas AD, BE, CF se cortan en el baricentro G
+size 8 8
+point  0    3.2  A  0.1   0.25
+point -3   -1.8  B -0.25 -0.22
+point  3   -1.8  C  0.25 -0.22
+point  0   -1.8  D  0.12 -0.28
+point  1.5  0.7  E  0.22  0.12
+point -1.5  0.7  F -0.32  0.12
+point  0   -0.13 G  0.22 -0.18
+segment A B
+segment B C
+segment C A
+segment A D
+segment B E
+segment C F
+```
+
 ### Circuncentro $O$
 
 **Definición.** Intersección de las tres mediatrices. Equidista de los tres vértices: $|OA| = |OB| = |OC| = R$ (circunradio).
@@ -31,6 +49,22 @@ R \;=\; \frac{a}{2\sin A} \;=\; \frac{b}{2\sin B} \;=\; \frac{c}{2\sin C} \;=\; 
 $$
 
 **Coordenadas baricéntricas:** $O = (a^2(b^2+c^2-a^2) : b^2(c^2+a^2-b^2) : c^2(a^2+b^2-c^2))$.
+
+```geofig
+// Circuncentro O: equidista de los tres vértices (OA = OB = OC = R)
+size 9 9
+circle 0 -0.2 3.4
+point  0    3.2  A  0.1   0.22
+point -3   -1.8  B -0.25 -0.22
+point  3   -1.8  C  0.25 -0.22
+point  0   -0.2  O  0.22 -0.18
+segment A B
+segment B C
+segment C A
+dash O A
+dash O B
+dash O C
+```
 
 ### Incentro $I$
 
@@ -45,6 +79,19 @@ $$
 
 **Caracterización angular.** El incentro es el único punto interior $P$ tal que las distancias a los tres lados son iguales.
 
+```geofig
+// Incentro I: centro de la circunferencia inscrita tangente a los tres lados
+size 8 8
+circle 0 -0.1 1.7
+point  0    3.2  A  0.1   0.25
+point -3   -1.8  B -0.25 -0.22
+point  3   -1.8  C  0.25 -0.22
+point  0   -0.1  I  0.22 -0.18
+segment A B
+segment B C
+segment C A
+```
+
 ### Ortocentro $H$
 
 **Definición.** Intersección de las tres alturas.
@@ -58,6 +105,27 @@ $$
 - $|AH| = 2R |\cos A|$ (y análogas para $|BH|, |CH|$).
 - En triángulo acutángulo, $H$ es interior; en obtusángulo, exterior.
 - $H$ y $A$ son **isogonales conjugados** respecto a $\triangle BCO$.
+
+```geofig
+// Ortocentro H: intersección de las tres alturas AD, BE, CF
+size 8 8
+point  0    3.2  A  0.1   0.25
+point -3   -1.8  B -0.25 -0.22
+point  3   -1.8  C  0.25 -0.22
+point  0    0    H  0.22 -0.18
+point  0   -1.8  D  0.12 -0.28
+point  1.41  0.85 E  0.22  0.12
+point -1.41  0.85 F -0.32  0.12
+segment A B
+segment B C
+segment C A
+segment A D
+segment B E
+segment C F
+rightangle D A B
+rightangle E B A
+rightangle F C A
+```
 
 ## Los excentros $I_A$, $I_B$, $I_C$
 
@@ -86,6 +154,22 @@ $$
 Es decir, $G$ está en el segmento $OH$, dividiéndolo en razón $1:2$ desde $O$.
 
 **Demostración.** Con $O$ como origen, $\vec{OG} = \frac{A+B+C}{3}$ y $\vec{OH} = A+B+C$. La relación es directa: $\vec{OH} = 3\vec{OG}$. $\blacksquare$
+
+```geofig
+// Recta de Euler: O, G, H colineales con OG:GH = 1:2
+size 9 7
+point  0    3   A  0.1   0.22
+point -3   -2   B -0.25 -0.22
+point  2.5 -1.5 C  0.25 -0.22
+point -0.39 -0.16 O  0.12 -0.26
+point -0.17 -0.17 G  0.12  0.15
+point  0.29 -0.17 H  0.18 -0.26
+segment A B
+segment B C
+segment C A
+dash O G
+dash G H
+```
 
 **Punto $N$ (centro de la circunferencia de los nueve puntos).** Es el punto medio de $OH$, también en la recta de Euler. Su posición exacta es
 

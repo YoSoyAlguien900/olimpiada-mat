@@ -18,6 +18,14 @@ Sea $ABC$ un triángulo. Una **ceviana** desde el vértice $A$ es un segmento $A
 
 ## Teorema
 
+**(Ceva)** Sea $ABC$ un triángulo y sean $X \in BC$, $Y \in CA$, $Z \in AB$ (sobre los segmentos o sus prolongaciones). Las cevianas $AX$, $BY$, $CZ$ son **concurrentes** si y solo si
+
+$$\frac{\overline{BX}}{\overline{XC}} \cdot \frac{\overline{CY}}{\overline{YA}} \cdot \frac{\overline{AZ}}{\overline{ZB}} \;=\; +1,$$
+
+donde las razones son **signadas**: positivas cuando el punto divide el segmento interiormente, negativas cuando lo hace exteriormente.
+
+Para el caso más común (las tres cevianas internas, $X, Y, Z$ en el interior de los lados), todas las razones son positivas y el producto es $+1$.
+
 ```geofig
 // Cevianas AX, BY, CZ concurrentes en P
 size 8 7
@@ -35,14 +43,6 @@ segment A X
 segment B Y
 segment C Z
 ```
-
-**(Ceva)** Sea $ABC$ un triángulo y sean $X \in BC$, $Y \in CA$, $Z \in AB$ (sobre los segmentos o sus prolongaciones). Las cevianas $AX$, $BY$, $CZ$ son **concurrentes** si y solo si
-
-$$\frac{\overline{BX}}{\overline{XC}} \cdot \frac{\overline{CY}}{\overline{YA}} \cdot \frac{\overline{AZ}}{\overline{ZB}} \;=\; +1,$$
-
-donde las razones son **signadas**: positivas cuando el punto divide el segmento interiormente, negativas cuando lo hace exteriormente.
-
-Para el caso más común (las tres cevianas internas, $X, Y, Z$ en el interior de los lados), todas las razones son positivas y el producto es $+1$.
 
 ## Demostración
 

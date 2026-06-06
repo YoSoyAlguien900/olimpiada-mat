@@ -53,22 +53,6 @@ La semejanza aparece en cuatro situaciones:
 
 ### Semejanza por ángulo común
 
-```geofig
-// Triángulo rectángulo ABC con altura CH a la hipotenusa
-size 8 6
-point -3   0   B -0.2 -0.25
-point  3   0   A  0.2 -0.25
-point  0.6  2.4  C  0.1  0.25
-point  0.6  0   H  0.1 -0.25
-segment A B
-segment A C
-segment B C
-segment C H
-rightangle H C A
-rightangle H B C
-label 0 -0.8 "H"
-```
-
 **Ejemplo 1.** (Altura sobre la hipotenusa) En el triángulo rectángulo $ABC$ con ángulo recto en $C$, sea $H$ el pie de la altura desde $C$. Demostrar que $\triangle ACH \sim \triangle ABC$.
 
 $\angle AHC = 90° = \angle ACB$ y $\angle A = \angle A$. Por AA: $\triangle ACH \sim \triangle ABC$.
@@ -76,6 +60,21 @@ $\angle AHC = 90° = \angle ACB$ y $\angle A = \angle A$. Por AA: $\triangle ACH
 La razón: $AH/AC = AC/AB$, así $AC^2 = AH \cdot AB$ (relación clave). Análogamente $BC^2 = BH \cdot AB$.
 
 Sumando: $AC^2 + BC^2 = (AH + BH) \cdot AB = AB^2$, que es el **teorema de Pitágoras**. La semejanza prueba Pitágoras. $\square$
+
+```geofig
+// Triángulo rectángulo ABC con altura CH a la hipotenusa
+size 8 6
+point -3   0   B -0.2 -0.25
+point  3   0   A  0.2 -0.25
+point  0.6  2.4  C  0.1  0.25
+point  0.6  0   H  0.12 -0.28
+segment A B
+segment A C
+segment B C
+segment C H
+rightangle H C A
+rightangle H B C
+```
 
 ---
 

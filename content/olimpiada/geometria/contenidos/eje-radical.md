@@ -24,6 +24,20 @@ Es negativa si $P$ está dentro de $\omega$, cero si está sobre $\omega$, posit
 
 **Teorema.** Dadas dos circunferencias $\omega_1, \omega_2$ no concéntricas, el lugar geométrico de los puntos $P$ con $\operatorname{pot}_{\omega_1}(P) = \operatorname{pot}_{\omega_2}(P)$ es una **recta perpendicular a la línea de centros $O_1 O_2$**. Esta recta se llama **eje radical** de $\omega_1$ y $\omega_2$.
 
+```geofig
+// Eje radical: recta perpendicular a O1O2 donde la potencia es igual
+size 9 8
+circle -1.5 0 1.5
+circle  2   0 1.2
+point -1.5  0  O1  0.18 -0.25
+point  2    0  O2  0.18 -0.25
+point  0.37  3.6  P  0.18  0.15
+point  0.37 -3.6  Q  0.18 -0.25
+segment O1 O2
+dash P Q
+label 1.4 3.1 "eje radical"
+```
+
 ## Demostración
 
 Sean $\omega_i$ definidas por $(x - x_i)^2 + (y - y_i)^2 = r_i^2$, o equivalentemente $x^2 + y^2 - 2x_i x - 2y_i y + (x_i^2 + y_i^2 - r_i^2) = 0$. La potencia de $P = (x, y)$ es
