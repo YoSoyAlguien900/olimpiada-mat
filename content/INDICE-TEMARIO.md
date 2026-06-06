@@ -142,11 +142,67 @@ Inventario completo del temario olímpico para Teoría de Números y Geometría.
 
 ---
 
+---
+
+## ÁLGEBRA
+
+### Desigualdades fundamentales (iniciación · regional)
+
+- ✅ Desigualdad AM-GM: casos $n=2$, $n=3$, caso general, forma ponderada
+- ✅ Cauchy-Schwarz: forma clásica y forma de Engel/Titu/Sedrakyan
+- ✅ Sucesiones y recurrencias lineales: ecuación característica, Fibonacci
+
+### Polinomios (regional · nacional)
+
+- ✅ Vieta, teorema del factor, identidades algebraicas, simétricos elementales
+- ⏳ Polinomios ciclotómicos sobre $\mathbb R$
+- ⏳ Polinomios de Chebyshev
+
+### Desigualdades intermedias (regional · nacional)
+
+- ✅ Convexidad y desigualdad de Jensen
+- ✅ Desigualdad de Schur ($t$ general; forma en $e_1, e_2, e_3$)
+- ⏳ Rearrangement inequality
+- ⏳ Power mean inequality
+
+### Desigualdades avanzadas (nacional · internacional)
+
+- ✅ Muirhead y mayorización: $[x_1,\ldots,x_n] \geq [y_1,\ldots,y_n]$
+- ⏳ Popoviciu, Vornicu–Schur
+
+### Ecuaciones funcionales (nacional · internacional)
+
+- ✅ Tipos principales: Cauchy aditiva, Cauchy multiplicativa, Jensen funcional
+- ⏳ Ecuaciones de Pexider
+- ⏳ Ecuaciones con condición aritmética (e.g., $f(mn)=f(m)f(n)$)
+
+### Métodos
+
+- ✅ Sustitución y normalización (suma $= 1$, producto $= 1$, Ravi, trigonométrica)
+- ✅ Sum of Squares (SOS) y método $uvw$
+- ✅ Tangent Line Trick (TLT)
+- ✅ Cómo atacar ecuaciones funcionales: sustituciones, inducción, regularidad
+- ⏳ Multiplicadores de Lagrange en olympiada
+- ⏳ Funciones generatrices (convex-hull trick)
+
+### Demostraciones
+
+- ✅ Tres demostraciones de AM-GM (Cauchy hacia adelante-atrás, convexidad, reordenamiento)
+- ✅ Dos demostraciones de Cauchy-Schwarz (discriminante, identidad de Lagrange)
+
+### Problemas resueltos / guiados
+
+| Nivel | Disponibles |
+|---|---|
+| regional | ✅ Ecuación de Cauchy funcional (guiado) |
+| nacional | IMO 1995/P2 (Cauchy-Schwarz) + ✅ IMO 2000/P2 (guiado) |
+| internacional | IMO 2001/P2 (raíces), IMO 2010/P1 (funcional) |
+
+---
+
 ## Áreas no cubiertas (futuras expansiones)
 
 - **Combinatoria:** grafos, conteo doble, principio extremal, Ramsey, juegos.
-- **Álgebra:** desigualdades clásicas (AM-GM, Cauchy, Jensen, Schur),
-  ecuaciones funcionales, polinomios sobre $\mathbb R$, series.
 
 ---
 

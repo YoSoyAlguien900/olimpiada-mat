@@ -15,11 +15,12 @@ export const CATEGORIAS: { id: Categoria; label: string; descripcion: string }[]
   { id: 'problemas-sugeridos', label: 'Problemas sugeridos', descripcion: 'Ejercicios para practicar' },
 ];
 
-export type Subseccion = 'geometria' | 'teoria-numeros';
+export type Subseccion = 'geometria' | 'teoria-numeros' | 'algebra';
 
 export const SUBSECCIONES: { id: Subseccion; label: string; descripcion: string; simbolo: string }[] = [
   { id: 'teoria-numeros', label: 'Teoría de Números', descripcion: 'Aritmética modular, primos, ecuaciones diofánticas', simbolo: 'ℕ' },
   { id: 'geometria', label: 'Geometría', descripcion: 'Sintética, proyectiva, transformaciones, inversión', simbolo: '△' },
+  { id: 'algebra', label: 'Álgebra', descripcion: 'Desigualdades, ecuaciones funcionales, polinomios sobre ℝ', simbolo: '∑' },
 ];
 
 export type Seccion = 'olimpiada';

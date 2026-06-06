@@ -452,6 +452,7 @@ export function buildIndex() {
   const tree: Record<Subseccion, Record<Categoria, ContentMeta[]>> = {
     geometria: {} as any,
     'teoria-numeros': {} as any,
+    algebra: {} as any,
   };
   for (const sub of SUBSECCIONES) {
     for (const cat of CATEGORIAS) {
