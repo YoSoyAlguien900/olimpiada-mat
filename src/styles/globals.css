@@ -1749,6 +1749,29 @@ a { color: inherit; text-decoration: none; }
   margin: 0 4px;
 }
 
+/* Level toggle buttons */
+.rm-level-toggle {
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: opacity 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.rm-level-toggle:hover {
+  opacity: 0.75;
+}
+
+.rm-level-toggle--off {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
 /* Close button */
 .rm-close {
   flex-shrink: 0;
