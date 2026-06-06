@@ -194,10 +194,10 @@ $(\Leftarrow)$: Si $\angle BAC = \angle BDC$, entonces $D$ está sobre la circun
 
 - **(Clásico)** Sea $ABCD$ un cuadrilátero cíclico. Demostrar que $\angle ACB = \angle ADB$.
 
-- **(OMG 2018)** En la circunferencia $\omega$, $AB$ es diámetro. $C$ y $D$ son puntos de la semicircunferencia con $C$ entre $A$ y $D$. La tangente en $C$ corta a $BD$ en $E$. Demostrar que $CE$ bisecta al ángulo $\angle ACD$.
+- **(Clásico)** En la circunferencia $\omega$, $AB$ es diámetro. $C$ y $D$ son puntos de la semicircunferencia con $C$ entre $A$ y $D$. La tangente en $C$ corta a $BD$ en $E$. Demostrar que $CE$ bisecta al ángulo $\angle ACD$.
 
 - **(Clásico)** Sea $\omega$ la circunferencia circunscrita al triángulo $ABC$. La bisectriz desde $A$ corta a $\omega$ en el punto medio $M_A$ del arco $\widehat{BC}$ que no contiene a $A$. Probar que $M_A B = M_A C = M_A I$ donde $I$ es el incentro.
 
-- **(IMO 2008/P1)** Sea $H$ el ortocentro del triángulo $ABC$. El circuncírculo de $BHC$ tiene radio $R' = R$ (igual que el circuncírculo de $ABC$). Demostrar esto usando el ángulo inscrito.
+- **(Clásico)** Sea $H$ el ortocentro del triángulo $ABC$. El circuncírculo de $BHC$ tiene radio $R' = R$ (igual que el circuncírculo de $ABC$). Demostrarlo usando el ángulo inscrito.
 
 - **(Teorema de Simson)** Si $P$ es un punto del circuncírculo del triángulo $ABC$, los pies de las perpendiculares desde $P$ a los tres lados son colineales. *(Demostrar usando ángulos inscritos y el criterio de cuatro puntos concíclicos.)*
