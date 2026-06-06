@@ -3,7 +3,7 @@ title: "Potencia de un punto respecto a una circunferencia"
 preview: "Para cualquier recta por $P$ que corta a $\\omega$ en $A$ y $B$, el producto $PA \\cdot PB$ es constante: es la potencia de $P$. Este invariante conecta secantes, tangentes, cuerdas y abre la puerta al eje radical y la inversión."
 dificultad: regional
 tags: [circunferencia, potencia, eje-radical, conciclos, inversion]
-prerequisites: [angulos-circunferencia, semejanza]
+prerequisites: [angulos-inscritos, semejanza]
 author: "Adrián García Bouzas"
 updated: "2026-06-04"
 ---

@@ -3,7 +3,7 @@ title: "Recta de Euler: O, G, H son colineales"
 preview: "En todo triángulo no equilátero, el circuncentro $O$, el baricentro $G$ y el ortocentro $H$ son colineales, con $\\overrightarrow{OH} = 3 \\overrightarrow{OG}$."
 dificultad: nacional
 tags: [recta-euler, ortocentro, baricentro, circuncentro]
-prerequisites: [baricentro, ortocentro, vectores]
+prerequisites: [puntos-notables-triangulo]
 author: "Adrián García Bouzas"
 updated: "2026-01-08"
 ---

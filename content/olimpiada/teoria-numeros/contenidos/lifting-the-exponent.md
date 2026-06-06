@@ -3,7 +3,7 @@ title: "Lema del Levantamiento del Exponente (LTE)"
 preview: "Una herramienta poderosa para calcular la valuación p-ádica de expresiones del tipo $v_p(a^n \\pm b^n)$, esencial para problemas olímpicos sobre divisibilidad."
 dificultad: nacional
 tags: [valuacion-p-adica, primos, divisibilidad, exponentes]
-prerequisites: [valuacion-p-adica, congruencias-basicas]
+prerequisites: [valuacion-p-adica, congruencias]
 author: "Adrián García Bouzas"
 updated: "2026-01-15"
 ---

@@ -3,7 +3,7 @@ title: "Teoremas de Pascal y Brianchon"
 preview: "Pascal: los lados opuestos de un hexágono inscrito en una cónica se cortan en tres puntos colineales. Brianchon (dual): las diagonales principales de un hexágono circunscrito concurren. Dos herramientas poderosas para colinealidad y concurrencia."
 dificultad: nacional
 tags: [pascal, brianchon, hexagono, ciclico, colinealidad, concurrencia, dualidad]
-prerequisites: [angulos-circunferencia, menelao, polos-polares]
+prerequisites: [angulos-inscritos, menelao, polos-polares]
 author: "Adrián García Bouzas"
 updated: "2026-06-04"
 ---

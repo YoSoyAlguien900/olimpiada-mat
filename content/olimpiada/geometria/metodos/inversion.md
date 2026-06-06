@@ -3,7 +3,7 @@ title: "Inversión: una transformación que linealiza circunferencias"
 preview: "La inversión convierte circunferencias en rectas (y viceversa), revelando estructuras lineales ocultas en configuraciones aparentemente complejas."
 dificultad: nacional
 tags: [inversion, transformaciones, circunferencias]
-prerequisites: [potencia-de-un-punto, geometria-euclidea]
+prerequisites: [potencia-de-un-punto, semejanza]
 author: "Adrián García Bouzas"
 updated: "2026-01-13"
 ---
