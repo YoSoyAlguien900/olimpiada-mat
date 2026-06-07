@@ -30,6 +30,31 @@ $$
 c^2 \;=\; 4 \cdot \tfrac{1}{2}ab + (b - a)^2 \;=\; 2ab + b^2 - 2ab + a^2 \;=\; a^2 + b^2. \quad \blacksquare
 $$
 
+```geofig
+// Disección de Bhaskara: cuadrado de lado c, cuatro triángulos en molinete y un cuadrado central de lado |b-a|
+size 5.6 5.6
+point -2.5 -2.5  A   -0.32 -0.05
+point  2.5 -2.5  B    0.22 -0.05
+point  2.5  2.5  C    0.22  0.18
+point -2.5  2.5  D   -0.32  0.18
+point  0.7 -0.1  V1   0.16  0.05
+point  0.1  0.7  V2   0.05  0.2
+point -0.7  0.1  V3  -0.34  0.05
+point -0.1 -0.7  V4  -0.05 -0.28
+segment A B
+segment B C
+segment C D
+segment D A
+segment A V1
+segment B V2
+segment C V3
+segment D V4
+segment V1 V2
+segment V2 V3
+segment V3 V4
+segment V4 V1
+```
+
 ### Demostración 2: por semejanza
 
 Es la demostración estándar moderna.
@@ -53,6 +78,21 @@ Sumando:
 $$
 AC^2 + BC^2 \;=\; AB \cdot (AH + BH) \;=\; AB \cdot AB \;=\; AB^2. \quad \blacksquare
 $$
+
+```geofig
+// H = pie de la altura desde C: los triángulos ABC, ACH, CBH son semejantes (mismos ángulos)
+size 5.8 3.0
+point -2.5  -1.2   A   -0.05  -0.28
+point  2.5  -1.2   B    0.22  -0.28
+point  0.7   1.2   C    0.05   0.22
+point  0.7  -1.2   H    0.05  -0.28
+segment A B
+segment A C
+segment B C
+dash C H
+rightangle C A B
+rightangle H C B
+```
 
 ### Demostración 3: por reordenación
 
@@ -85,6 +125,21 @@ Y con $|\vec u| = a$, $|\vec v| = b$, $|\vec u + \vec v| = c$:
 $$
 c^2 \;=\; a^2 + b^2. \quad \blacksquare
 $$
+
+```geofig
+// u ⊥ v: la hipotenusa es u + v, y |u+v|² = |u|² + |v|² por la distributividad del producto escalar
+size 3.5 2.5
+point -1.5 -1   O   -0.32 -0.05
+point  1.5 -1   U    0.05 -0.28
+point  1.5  1   S    0.16  0.1
+segment O U
+segment U S
+dash O S
+rightangle U O S
+label -0.15 -1.3  "u"
+label  1.65  0.0  "v"
+label -1.05  0.15 "u+v"
+```
 
 ## Observación
 

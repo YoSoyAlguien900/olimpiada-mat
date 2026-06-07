@@ -38,6 +38,22 @@ Sea $ABC$ un triángulo con lados $a = |BC|$, $b = |CA|$, $c = |AB|$, semiperím
 
 El punto de tangencia de $\mathcal{N}$ con $\omega$ se llama el **punto de Feuerbach**.
 
+```geofig
+// Triángulo 3-4-5: incírculo (centro I, r = 1) y circunferencia de los nueve puntos (centro N, R/2 = 1.25), tangentes internamente en F
+size 7.5 6.5
+point -1.5 -2   A  -0.32 -0.15
+point  1.5 -2   B   0.28 -0.15
+point -1.5  2   C  -0.32  0.15
+circle -0.75 -1  1.25
+circle -0.5  -1  1
+point -0.75 -1  N  -0.08  0.34
+point -0.5  -1  I  -0.08 -0.32
+point  0.5  -1  F   0.18  0.1
+segment A B
+segment B C
+segment C A
+```
+
 ## Demostración
 
 Tomamos el circuncentro $O$ como origen y usamos vectores. Cada vértice tiene $|OA| = |OB| = |OC| = R$.

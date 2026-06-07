@@ -23,19 +23,28 @@ $$
 $$
 
 ```geofig
-// Circunferencia de los nueve puntos pasa por los tres puntos medios de los lados
-size 9 9
-circle -0.05 -0.17 1.59
-point  0    3    A  0.1   0.22
-point -3   -2    B -0.25 -0.22
-point  2.5 -1.5  C  0.25 -0.22
-point -0.25 -1.75 Ma  0.12 -0.28
-point  1.25  0.75 Mb  0.22  0.12
-point -1.5   0.5  Mc -0.35  0.12
-point -0.05 -0.17 N  0.22 -0.18
+// ABC, ortocentro H y los nueve puntos sobre la circunferencia de los nueve puntos
+size 8.5 5.2
+circle -0.88 -0.40 1.92
+point -1.75  2.1   A   0.0   0.28
+point -3.75 -2.1   B  -0.32 -0.08
+point  3.75 -2.1   C   0.28 -0.08
+point -1.75  0.52  H   0.2  -0.05
+point  0    -2.1   Ma   0.06 -0.3
+point  1     0     Mb   0.26  0.08
+point -2.75  0     Mc  -0.42  0.08
+point -1.75 -2.1   Ha  -0.06 -0.3
+point -0.99  1.52  Hb   0.26  0.1
+point -2.36  0.81  Hc  -0.42  0.05
+point -1.75  1.31  Ea   0.2   0.18
+point -2.75 -0.79  Eb  -0.42 -0.08
+point  1    -0.79  Ec   0.26 -0.18
 segment A B
 segment B C
 segment C A
+dash H A
+dash H B
+dash H C
 ```
 
 ## Demostración

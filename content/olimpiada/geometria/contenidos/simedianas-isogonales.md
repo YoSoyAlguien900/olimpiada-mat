@@ -14,6 +14,23 @@ Sea $ABC$ un triángulo y sea $AM$ la mediana desde $A$ (con $M$ punto medio de 
 
 Equivalente: dos rectas que pasan por $A$ son **isogonales** si una es la reflexión de la otra sobre la bisectriz interna de $\angle BAC$. La simediana es la **isogonal** de la mediana.
 
+```geofig
+// La simediana AS es la reflexión de la mediana AM sobre la bisectriz AD: M, D, S son tres puntos distintos de BC
+size 6.4 5.0
+point -1.75   2.15   A    0.05  0.28
+point -2.75  -1.85   B   -0.34 -0.05
+point  2.75  -2.15   C    0.28 -0.05
+point  0     -2.0    M    0.16 -0.26
+point -0.558 -1.97   D   -0.06 -0.32
+point -1.073 -1.942  S   -0.3  -0.22
+segment A B
+segment B C
+segment C A
+dash A M
+segment A D
+segment A S
+```
+
 ## Propiedades fundamentales
 
 **Propiedad 1.** Las tres simedianas (una desde cada vértice) **concurren** en un punto llamado **punto de Lemoine** o **punto simediano** $K$.
@@ -31,6 +48,22 @@ $$
 **Propiedad 4 (tangentes).** La simediana desde $A$ es la **diagonal del paralelogramo** cuyas tangentes al circuncírculo en $B$ y $C$ son lados.
 
 Equivalentemente: si $T$ es la intersección de las tangentes al circuncírculo en $B$ y $C$, entonces **$A, K, T$ son colineales**, donde la recta $AT$ es la simediana desde $A$.
+
+```geofig
+// T = intersección de las tangentes al circuncírculo en B y C; la recta AT es la simediana desde A
+size 5.6 6.0
+circle 0 0.1935 2.5
+point  0      2.6935  A    0.12   0.18
+point -1.25  -1.9715  B   -0.32  -0.05
+point  1.25  -1.9715  C    0.22  -0.05
+point  0     -2.6935  T    0.16  -0.18
+segment A B
+segment B C
+segment C A
+segment B T
+segment C T
+segment A T
+```
 
 ## Demostración de la concurrencia
 

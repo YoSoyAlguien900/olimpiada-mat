@@ -26,6 +26,24 @@ $$
 
 **Demostración.** Consideramos la altura desde $A$ al lado $BC$: tiene longitud $b \sin C = c \sin B$. Por tanto $b/\sin B = c/\sin C$. La igualdad con $2R$ se sigue del teorema del ángulo inscrito: la cuerda $a$ subtiende un ángulo $A$ en el vértice opuesto, así que el ángulo central es $2A$, y $a = 2R \sin A$. $\blacksquare$
 
+```geofig
+// El ángulo central que subtiende a = BC es 2A (el doble del inscrito): a = 2R sin A
+size 5.7 5.7
+circle 0 0 2.5
+point -0.434  2.462  A   0.05  0.26
+point -1.915 -1.607  B  -0.34 -0.05
+point  1.915 -1.607  C   0.28 -0.05
+point  0      0      O  -0.08  0.22
+segment A B
+segment B C
+segment C A
+dash O B
+dash O C
+arc 0 0 0.6 220 320
+label -0.32 -0.62 "2A"
+label -0.12 -2.0  "a"
+```
+
 ## Ley de cosenos
 
 $$
@@ -35,6 +53,20 @@ $$
 (y las dos identidades simétricas obvias).
 
 **Demostración.** Colocamos el triángulo en coordenadas con $C$ en el origen, $B$ sobre el eje $x$, $A$ en posición arbitraria. Calculamos $|AB|^2$ por la fórmula de distancia y simplificamos. $\blacksquare$
+
+```geofig
+// Coordenadas: C en el origen, B en el eje x, A arbitrario; |AB|² se calcula por distancia
+size 5.2 4.0
+point -2     -1.41   C  -0.1   -0.28
+point  2     -1.41   B   0.22  -0.28
+point -0.974  1.409  A   0.05   0.24
+point -0.974 -1.41   H  -0.05  -0.28
+segment C B
+segment C A
+segment A B
+dash A H
+rightangle H A C
+```
 
 **Caso particular.** Si $C = \pi/2$ (triángulo rectángulo), $\cos C = 0$, recuperamos **Pitágoras**: $c^2 = a^2 + b^2$.
 
@@ -128,6 +160,24 @@ $$
 $$
 |IH|^2 \;=\; 2r^2 - 4R^2 \cos A \cos B \cos C.
 $$
+
+```geofig
+// Triángulo de Euler O, H, I dentro del circuncírculo: las tres distancias notables |OI|, |OH|, |IH|
+size 3.9 5.4
+circle  0.8035 -0.056  2.5
+point  1.2375  2.406   A    0.05  0.26
+point -1.6585  0.378   B   -0.34  0.05
+point  1.6585 -2.406   C    0.22 -0.26
+point  0.8035 -0.056   O    0.16  0.05
+point -0.3695  0.490   H   -0.34  0.05
+point  0.2525  0.295   I    0.12 -0.22
+segment A B
+segment B C
+segment C A
+dash O H
+dash O I
+dash I H
+```
 
 ## Aplicaciones
 

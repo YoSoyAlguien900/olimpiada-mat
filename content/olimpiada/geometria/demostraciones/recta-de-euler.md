@@ -18,6 +18,22 @@ Sea $ABC$ un triángulo no equilátero. Sean $O$ su circuncentro, $G$ su baricen
 2. $G$ divide al segmento $OH$ en razón $1:2$ (con $G$ entre $O$ y $H$).
 3. Equivalentemente, $\overrightarrow{OH} = 3 \overrightarrow{OG}$.
 
+```geofig
+// O, G, H colineales sobre la recta de Euler (línea discontinua), con OH = 3·OG
+size 5.6 5.6
+circle 0 0 2.5
+point -0.218    2.490    A     0.05  0.26
+point -2.349   -0.855    B    -0.34 -0.05
+point  1.915   -1.607    C     0.22 -0.26
+point  0        0        O    -0.08  0.2
+point -0.2173   0.00933  G     0.12 -0.05
+point -0.652    0.028    H    -0.32  0.05
+segment A B
+segment B C
+segment C A
+dash O H
+```
+
 ## Demostración
 
 Trabajamos con vectores tomando $O$ como origen, de modo que $|\overrightarrow{OA}| = |\overrightarrow{OB}| = |\overrightarrow{OC}| = R$ (el circunradio).
@@ -63,6 +79,19 @@ O \xrightarrow{1} G \xrightarrow{1/2} N \xrightarrow{3/2} H,
 $$
 
 en proporción $2 : 1 : 3$ a lo largo de la recta.
+
+```geofig
+// Posiciones relativas de O, G, N, H sobre la recta de Euler, en proporción 2 : 1 : 3
+size 7 1.8
+point -3 0  O  -0.05  0.32
+point -1 0  G  -0.05  0.32
+point  0 0  N  -0.05  0.32
+point  3 0  H  -0.05  0.32
+segment O H
+label -2.0 -0.5 "2"
+label -0.5 -0.5 "1"
+label  1.5 -0.5 "3"
+```
 
 ## Aplicaciones
 

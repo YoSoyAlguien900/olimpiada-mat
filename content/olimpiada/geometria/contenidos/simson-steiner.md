@@ -89,6 +89,30 @@ $$
 2. La recta que los contiene **pasa por el ortocentro $H$** del triángulo.
 3. Esta recta es paralela a la línea de Simson de $P$, y está al doble de distancia de $P$.
 
+```geofig
+// Línea de Steiner X'Y'Z' (reflexiones de P): colineal, pasa por H, y es paralela a la línea de Simson XYZ a doble distancia
+size 6 10.6
+circle 0  0.4445  3
+point -0.521  3.3989   A    0.05  0.26
+point -2.598 -1.0555   B   -0.34 -0.05
+point  2.598 -1.0555   C    0.26 -0.05
+point  1.928  2.7426   P    0.18  0.12
+point  1.928 -1.0555   X    0.18 -0.22
+point  0.594  1.8066   Y    0.2   0.1
+point -0.335  3.7975   Z   -0.05  0.26
+point  1.928 -4.8536   X'   0.16 -0.22
+point -0.741  0.8705   Y'  -0.36  0.05
+point -2.598  4.8535   Z'  -0.36  0.1
+point -0.521  0.399    H   -0.32 -0.1
+segment A B
+segment B C
+segment C A
+dash X Z
+segment Z' X'
+dash P X'
+dash P Z'
+```
+
 ## Demostración
 
 La reflexión $X'$ de $P$ sobre $BC$ satisface: $X = $ punto medio de $PX'$. Así que la línea de Simson (que pasa por $X$) y la línea de Steiner (que pasa por $X'$) son **homotéticas** desde $P$ con razón $2$. Por tanto la línea de Steiner es paralela a la de Simson y a doble distancia.

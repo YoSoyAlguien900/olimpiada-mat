@@ -40,6 +40,21 @@ Equivalentemente, $P'$ está sobre la semirrecta $OP$ y $|OP| \cdot |OP'| = r^2$
 
 Tomemos cualquier punto $P \in \ell$, $P \neq A$. Por el teorema del ángulo inscrito y el cálculo de potencia, el ángulo $\angle OP'A' = 90°$, así que $P'$ está sobre la circunferencia con diámetro $OA'$. Esta es la imagen completa de $\ell$.
 
+```geofig
+// A = pie de la perpendicular, A' su imagen (diámetro de ω'); para todo P ∈ ℓ, ∠OP'A' = 90° (Tales)
+size 3.2 3.6
+circle  0.6665 -0.833  0.667
+point  0.6665  1.5     A     0.1   0.2
+point  0.6665 -1.5     O    -0.08 -0.22
+point  0.6665 -0.1667  A'    0.16  0.05
+point -1.3335  1.5     P    -0.1   0.2
+point  0.0511 -0.5769  P'    0.05  0.22
+dash O A
+dash O P
+segment A' P'
+rightangle P' O A'
+```
+
 **(4) Conformalidad.** Las dos curvas que se cortan en $P$ con cierto ángulo se mapean a dos curvas (rectas/circunferencias) que se cortan en $P'$ con el mismo ángulo. La demostración elegante usa que la inversión es composición de una **reflexión sobre la circunferencia** y una conjugación compleja, y ambas son antiholomorfas.
 
 ## Ejemplo
@@ -49,6 +64,21 @@ Tomemos cualquier punto $P \in \ell$, $P \neq A$. Por el teorema del ángulo ins
 El punto $B \to B'$ sobre $AB$ con $AB' = r^2/AB = AC$. Es decir, $B'$ es **un punto sobre $AB$ con $AB' = AC$**. Similarmente $C \to C'$ sobre $AC$ con $AC' = AB$.
 
 La circunferencia $\omega$ que pasa por $A, B, C$ (circuncírculo) pasa por $A$, así que se transforma en una **recta**: la recta $B'C'$. Por construcción, esta recta es paralela al... — un cálculo verifica que es paralela a $BC$ rotada por $\angle BAC$.
+
+```geofig
+// B' ∈ AB con AB' = AC, C' en la semirrecta AC con AC' = AB: △AB'C' ≅ △ACB, así que B'C' = BC
+size 4.6 4.4
+point -2     -1.8975  A     -0.05  0.26
+point  2     -1.8975  B      0.22 -0.05
+point -1      1.1025  C      0.05  0.22
+point  1.162 -1.8975  B'     0.1  -0.28
+point -0.735  1.8975  C'    -0.36  0.05
+segment A B
+segment B C
+segment C A
+dash C C'
+segment B' C'
+```
 
 **Ejemplo 2.** El **lema PoP** (potencia del punto) tiene una demostración trivial vía inversión. Dada una circunferencia $\omega$ y un punto $P$ exterior, la inversión centrada en $P$ con razón igual a la potencia $\operatorname{pot}_\omega(P)$ mapea $\omega$ a sí misma. Las dos intersecciones de una secante por $P$ se intercambian, y el producto de sus distancias a $P$ es exactamente la potencia.
 

@@ -28,12 +28,6 @@ El **arco $\widehat{AB}$** subtenido por un ángulo es el arco que queda «dentr
 
 $$\angle APB \;=\; \frac{1}{2} \angle AOB.$$
 
-**Corolario 1.** Todos los ángulos inscritos que abarcan el mismo arco son iguales.
-
-**Corolario 2.** (Ángulo en semicírculo) Si $AB$ es diámetro de $\omega$, entonces $\angle APB = 90°$ para todo $P \in \omega$, $P \neq A, B$.
-
-**Corolario 3.** (Ángulo semiinscrito = ángulo inscrito) El ángulo que forma una cuerda $AB$ con la tangente a $\omega$ en $A$ es igual al ángulo inscrito en el arco opuesto: $\angle(AB, t_A) = \angle APB$ para $P$ en el arco que no contiene el punto de tangencia.
-
 ```geofig
 // Ángulo central vs ángulo inscrito sobre el mismo arco AB
 size 7 7
@@ -50,6 +44,39 @@ arc 0 0 0.5 141 39
 arc 0 0 1.1 219 321
 label  0   0.8  "∠AOB"
 label  0  -1.6  "∠APB"
+```
+
+**Corolario 1.** Todos los ángulos inscritos que abarcan el mismo arco son iguales.
+
+**Corolario 2.** (Ángulo en semicírculo) Si $AB$ es diámetro de $\omega$, entonces $\angle APB = 90°$ para todo $P \in \omega$, $P \neq A, B$.
+
+```geofig
+// AB diámetro; el ángulo APB es siempre recto
+size 7 6
+circle 0 0 2.5
+point -2.5  0    A -0.3  -0.25
+point  2.5  0    B  0.28 -0.25
+point -1.61 1.92 P -0.1   0.3
+segment A B
+segment P A
+segment P B
+rightangle P A B
+```
+
+**Corolario 3.** (Ángulo semiinscrito = ángulo inscrito) El ángulo que forma una cuerda $AB$ con la tangente a $\omega$ en $A$ es igual al ángulo inscrito en el arco opuesto: $\angle(AB, t_A) = \angle APB$ para $P$ en el arco que no contiene el punto de tangencia.
+
+```geofig
+// Tangente TA, cuerda AB, y ángulo inscrito desde P en el arco opuesto
+size 7 7
+circle 0 0 2.5
+point -2.5   0     A -0.35  0.05
+point  1.25  2.165 B  0.28  0.15
+point  0.43 -2.46  P  0.05 -0.32
+point -2.5  -1.7   T -0.35 -0.05
+segment T A
+segment A B
+segment P A
+segment P B
 ```
 
 ## Demostración
@@ -122,6 +149,19 @@ Por el Corolario 3: el ángulo semiinscrito $= 40°$ es igual al ángulo inscrit
 
 **Ejemplo 5.** (Configuración clásica) Dos cuerdas $AB$ y $CD$ de una circunferencia se cortan en el punto interior $P$. Demostrar que $\angle APC = \angle DPB$ y calcular $\angle APC$ en términos de los arcos.
 
+```geofig
+// Cuerdas AB y CD que se cortan en P
+size 7.5 7.5
+circle 0 0 2.5
+point -2.35  0.855  A -0.32  0.12
+point  1.92 -1.61   B  0.28 -0.18
+point -0.43  2.46   C -0.05  0.3
+point -0.43 -2.46   D -0.05 -0.32
+point -0.43 -0.25   P -0.36 -0.02
+segment A B
+segment C D
+```
+
 Los ángulos $\angle APC$ y $\angle DPB$ son ángulos opuestos por el vértice en $P$, así son iguales.
 
 Para calcular $\angle APC$: en el triángulo $\triangle APC$, el ángulo en $A$ es $\angle CAB$ (inscrito que abarca $\widehat{BC}$), y el ángulo en $C$ es $\angle ACD$ (inscrito que abarca $\widehat{AD}$). Por la suma de ángulos:
@@ -138,19 +178,32 @@ El ángulo formado por dos cuerdas que se cortan es la semisuma de los arcos que
 
 ### Problema olímpico
 
-**Ejemplo 6.** (Eje del ángulo) Sean $AB$ un diámetro de $\omega$ y $C$ un punto de la semicircunferencia. La tangente a $\omega$ en $C$ corta a la recta $AB$ en $T$. Demostrar que $TC$ es bisectriz del ángulo $\angle ACB$.
+**Ejemplo 6.** Sean $AB$ un diámetro de $\omega$, $C$ un punto de la semicircunferencia (distinto de $A$ y $B$), y $T$ el punto donde la tangente a $\omega$ en $C$ corta a la recta $AB$. Demostrar que $TC$ es bisectriz del ángulo $\angle ACB$ **si y solo si** $C$ es el punto medio del arco $\widehat{AB}$ (equivalentemente, $CA = CB$).
 
-Como $AB$ es diámetro, $\angle ACB = 90°$ (Corolario 2). Por el ángulo semiinscrito en $C$:
+```geofig
+// AB diámetro, C en la semicircunferencia, tangente en C corta a AB en T
+size 9.5 4.2
+circle 0 0 2.5
+point -3.89  0      T -0.05 -0.32
+point -2.5   0      A -0.08 -0.32
+point  2.5   0      B  0.08 -0.32
+point -1.61  1.915  C -0.08  0.3
+segment T C
+segment A B
+segment C A
+segment C B
+rightangle C A B
+```
 
-$$\angle(CA, \text{tangente en }C) = \angle CBA, \qquad \angle(CB, \text{tangente en }C) = \angle CAB.$$
+Por el Corolario 2, $\angle ACB = 90°$ siempre, sin importar dónde esté $C$ (ángulo en semicírculo). Por el ángulo semiinscrito (Corolario 3), la tangente $TC$ forma con las cuerdas $CA$ y $CB$ los ángulos
 
-Pero $\angle CBA + \angle CAB = 90°$ (suma en triángulo rectángulo). Luego los dos ángulos que la tangente forma con $CA$ y $CB$ son iguales ($45°$ cada uno si el triángulo es isósceles, pero en general se compensan):
+$$\angle TCA = \angle CBA, \qquad \angle TCB = \angle CAB$$
 
-$$\angle TCА = \angle CBА, \qquad \angle TCB = \angle CAB.$$
+(cada cuerda vista desde el arco opuesto). Por tanto:
 
-La bisectriz del ángulo recto $\angle ACB$ divide el ángulo en dos de $45°$. La tangente en $C$ es perpendicular al radio $OC$, y la bisectriz de $\angle ACB$ es perpendicular al segmento que une $C$ con el punto medio del arco $\widehat{AB}$... que es $C$ mismo. El argumento directo: $\angle TCA = \angle CBA$ y $\angle TCB = \angle CAB$; como $\angle CBA = \angle CAB = 45°$ exactamente cuando $C$ es el punto medio, esto no da la bisectriz en general.
+$$TC \text{ biseca } \angle ACB \iff \angle TCA = \angle TCB \iff \angle CBA = \angle CAB \iff CA = CB \iff C \text{ es el punto medio de } \widehat{AB}. \qquad \blacksquare$$
 
-*Corrección del enunciado:* lo que sí es cierto es que $TC$ **no** es bisectriz de $\angle ACB$ en general; lo que se demuestra via ángulo semiinscrito es que $TC$ es tangente y que $\angle TCA = \angle ABC$ (lo que implica $TA^2 = TB \cdot $ algo, conectando con potencia del punto). Este ejemplo ilustra cómo el ángulo semiinscrito da igualdades de ángulos que permiten detectar paralelismos e isósceles.
+*(El enunciado ingenuo "$TC$ siempre biseca $\angle ACB$" —que uno podría sospechar al ver que $\angle ACB = 90°$ es constante— es falso: solo ocurre en el caso simétrico $C = $ punto medio del arco. El ángulo semiinscrito convierte la pregunta "¿biseca?" en una comparación directa entre $\angle CAB$ y $\angle CBA$, es decir, en la pregunta de si $\triangle ABC$ es isósceles.)*
 
 ## El criterio del cuadrilátero cíclico
 
@@ -163,6 +216,24 @@ Un cuadrilátero $ABCD$ es inscriptible en una circunferencia si y solo si:
 **(ii)** $\angle BAC = \angle BDC$ (dos ángulos sobre el mismo lado de $BD$ son iguales), **o equivalentemente,**
 
 **(iii)** $\angle ABD = \angle ACD$ (ángulos sobre el mismo lado de $AD$ son iguales).
+
+```geofig
+// ABCD cíclico: ∠BAC y ∠BDC subtienden el mismo arco BC
+size 7.5 7.5
+circle 0 0 2.5
+point -2.35 -0.855  A -0.32 -0.15
+point -1.25  2.165  B -0.05  0.3
+point  1.92  1.61   C  0.28  0.15
+point  1.25 -2.165  D  0.1  -0.32
+segment A B
+segment B C
+segment C D
+segment D A
+segment A C
+segment B D
+label -0.95  0.35 "∠BAC"
+label  0.85 -0.55 "∠BDC"
+```
 
 ## Demostración
 

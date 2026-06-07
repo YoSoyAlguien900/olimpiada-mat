@@ -22,6 +22,24 @@ $$P = A_1A_2 \cap A_4A_5, \qquad Q = A_2A_3 \cap A_5A_6, \qquad R = A_3A_4 \cap 
 
 Entonces **$P$, $Q$, $R$ son colineales**. La recta $PQR$ se llama la **línea de Pascal** del hexágono.
 
+```geofig
+// Hexágono A1A2A3A4A5A6 inscrito en ω; los lados opuestos (A1A2,A4A5), (A2A3,A5A6), (A3A4,A6A1) se cortan en P, Q, R colineales
+size 6.5 6.5
+circle  0      0     2.5
+point  0.434  2.462  A1   0.05  0.28
+point -1.915  1.607  A2  -0.42  0.1
+point -2.462 -0.434  A3  -0.42 -0.1
+point -0.855 -2.349  A4  -0.05 -0.32
+point  1.25  -2.165  A5   0.2  -0.28
+point  2.462 -0.434  A6   0.28 -0.05
+segment A1 A2
+segment A2 A3
+segment A3 A4
+segment A4 A5
+segment A5 A6
+segment A6 A1
+```
+
 ## Demostración
 
 Usaremos el **teorema de Menelao** y propiedades de los ángulos inscritos.

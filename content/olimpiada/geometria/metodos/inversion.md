@@ -24,6 +24,16 @@ $$
 \iota(\mathbf{x}) = \frac{r^2}{|\mathbf{x}|^2} \mathbf{x}.
 $$
 
+```geofig
+// Inversión de centro O y radio r: P (exterior a ω) y su imagen P' (interior), con OP · OP' = r²
+size 5.6 4.6
+circle -0.4335 -0.004 2
+point -0.4335 -0.004  O    -0.32  -0.05
+point  2.4335  2.004  P     0.1    0.2
+point  0.5025  0.651  P'    0.12   0.15
+segment O P
+```
+
 ## Propiedades fundamentales
 
 **P1.** $\iota$ es involutiva: $\iota \circ \iota = \operatorname{id}$.
@@ -43,6 +53,20 @@ $$
 | Recta | No | Circunferencia por $O$ |
 | Circunferencia | Sí | Recta no pasante por $O$ |
 | Circunferencia | No | Circunferencia |
+
+```geofig
+// Una recta ℓ que no pasa por O se transforma en una circunferencia ω' que sí pasa por O
+size 7 3.6
+circle 0 -0.833 0.667
+point -3       1.5     E1    -0.08  0.24
+point  3       1.5     E2     0.05  0.24
+point  0      -1.5     O     -0.08 -0.05
+point -2       1.5     A     -0.05  0.24
+point -0.6154 -0.5769  A'     0.14 -0.05
+segment E1 E2
+dash O A
+label -0.15  1.95 "ℓ"
+```
 
 **P5.** La inversión **preserva ángulos** (es conforme). En particular, tangencias se preservan.
 
@@ -73,6 +97,21 @@ El problema, originalmente sobre circunferencias, se transforma en uno sobre rec
 ## Ejemplo
 
 **Problema.** Tres circunferencias $\omega_1, \omega_2, \omega_3$ pasan por un punto común $P$ y se cortan dos a dos en otros puntos $A_{12}, A_{13}, A_{23}$. Probar que los puntos $A_{12}, A_{13}, A_{23}$ son colineales si y sólo si las tres circunferencias tienen un segundo punto común.
+
+```geofig
+// Tres circunferencias por P, con segundas intersecciones A12, A13, A23
+size 6.6 7.1
+circle  1.2795  0.644   1.581
+circle -1.2205  1.444   1.640
+circle  0.0795 -1.456   1.628
+point -0.2205  0.144   P     -0.32  -0.05
+point  0.3485  1.922   A12    0.1    0.2
+point  1.6105 -0.902   A13    0.18  -0.05
+point -0.9155 -0.168   A23   -0.46  -0.05
+segment A12 A13
+segment A13 A23
+segment A23 A12
+```
 
 *Solución.* Invertimos respecto a $P$ con radio cualquiera. Las tres circunferencias se vuelven tres **rectas** $\ell_1, \ell_2, \ell_3$. Los puntos $A_{ij}$ se transforman en las intersecciones $\ell_i \cap \ell_j$.
 

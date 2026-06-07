@@ -140,6 +140,25 @@ Sea $N$ el punto donde $AB$ y $CD$ se encuentran (si no son paralelas — pero s
 
 *Alternativamente:* usando proporciones y semejanza. Por las diagonales del trapecio, $AP/PC = BP/PD = AB/CD$. Sea $k = AB/CD$. La recta $PM$ (con $M$ punto medio de $AB$) corta a $CD$ en $Q$. Por sección de líneas proporcionales, $Q$ es el punto medio de $CD$. $\square$
 
+```geofig
+// Trapecio ABCD, AB ∥ CD; diagonales se cortan en P; la recta MQ (M punto medio de AB) pasa por P y corta CD en su punto medio Q
+size 8 6
+point -2  2    A  -0.05  0.28
+point  2  2    B   0.18  0.28
+point  3 -2    C   0.18 -0.28
+point -3 -2    D  -0.32 -0.28
+point  0  0.4  P   0.16  0.14
+point  0  2    M   0.16  0.18
+point  0 -2    Q   0.16 -0.3
+segment A B
+segment B C
+segment C D
+segment D A
+segment A C
+segment B D
+dash M Q
+```
+
 ## Aplicaciones
 
 **Colinealidades estándar.** Los siguientes resultados se prueban con Menelao:

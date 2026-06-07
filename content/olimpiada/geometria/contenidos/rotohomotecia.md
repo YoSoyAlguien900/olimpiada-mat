@@ -17,6 +17,19 @@ Una **rotohomotecia** (o **similitud espiral**) con centro $O$, ángulo $\theta$
 
 Equivalentemente, en el plano complejo con $O$ como origen, una rotohomotecia es la multiplicación por $z \mapsto \alpha z$ donde $\alpha = k e^{i\theta}$.
 
+```geofig
+// Rotohomotecia de centro O: envía P a P' con |OP'| = k·|OP| y ángulo ∠POP' = θ
+size 2.6 3.0
+point -1      -1.149  O   -0.32  -0.05
+point  1      -1.149  P    0.18  -0.05
+point  0.929   1.149  P'   0.12   0.16
+segment O P
+segment O P'
+dash P P'
+arc -1 -1.149 0.6 0 50
+label -0.42 -0.8 "θ"
+```
+
 **Casos especiales:**
 - $\theta = 0$: homotecia pura.
 - $k = 1$: rotación pura.
@@ -43,6 +56,23 @@ Equivalentemente, $O$ es la intersección de los lugares geométricos: $\{P : \a
 - $\omega_2 = $ circuncírculo de $\triangle (C, D, AB \cap CD)$.
 
 Entonces $\omega_1$ y $\omega_2$ se cortan en el punto $X = AB \cap CD$ y en otro punto $P$, que es **el centro de la rotohomotecia que envía $AB \mapsto CD$** (y simultáneamente el de la que envía $AC \mapsto BD$).
+
+```geofig
+// X = AB ∩ CD; los dos circuncírculos por X se cortan de nuevo en P, centro de la rotohomotecia que envía A→C, B→D
+size 8 5.2
+circle  1.25  0      2.1506
+circle -1.25  0      2.1506
+point  3      -1.25   A    0.18  -0.05
+point  0.5     1.25   B    0.2    0.12
+point  2.5     1.75   C    0.18   0.18
+point -2.5     1.75   D   -0.32   0.18
+point  0       1.75   X    0.1    0.22
+point  0      -1.75   P    0.1   -0.28
+segment A X
+segment C D
+segment P A
+segment P C
+```
 
 **Corolario.** El centro de la rotohomotecia que envía $A \mapsto C$, $B \mapsto D$ coincide con el de la que envía $A \mapsto B$, $C \mapsto D$. Es decir, una rotohomotecia tiene "doble vida" en cuadriláteros.
 

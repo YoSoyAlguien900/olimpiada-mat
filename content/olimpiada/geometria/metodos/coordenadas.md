@@ -38,6 +38,20 @@ $$
 
 Y con $a + b + c = 2s$ y $ab = 2[ABC]$: $r = [ABC]/s$. Recuperamos la fórmula general $r = \text{Área}/\text{semiperímetro}$. $\blacksquare$
 
+```geofig
+// A = (0,0), B = (a,0), C = (0,b): el incentro está en (r,r), a distancia r de ambos catetos
+size 4.6 3.6
+circle -1 -0.5 1
+point -2    -1.5   A    -0.28  -0.05
+point  2    -1.5   B     0.22  -0.05
+point -2     1.5   C    -0.28   0.1
+point -1    -0.5   I     0.16   0.05
+segment A B
+segment B C
+segment C A
+rightangle A B C
+```
+
 ## Coordenadas baricéntricas
 
 **Cuándo usar:**
@@ -77,6 +91,24 @@ La mediana $AD$ pasa por $A = (1:0:0)$ y $D = (0:1:1)$: su ecuación es $y - z =
 Similarmente, $BE$: $x - z = 0$; $CF$: $x - y = 0$.
 
 Las tres ecuaciones se satisfacen simultáneamente en $x = y = z$, es decir, el baricentro $G = (1:1:1)$. ✓ $\blacksquare$
+
+```geofig
+// D, E, F puntos medios de los lados; las medianas AD, BE, CF concurren en G
+size 4.4 3.7
+point -0.2     1.6     A    0.05  0.26
+point -1.9    -1.4     B   -0.34 -0.05
+point  1.9    -1.6     C    0.22 -0.26
+point  0      -1.5     D    0.16 -0.26
+point  0.85    0.0     E    0.2   0.12
+point -1.05    0.1     F   -0.36  0.1
+point -0.0667 -0.4667  G    0.12 -0.05
+segment A B
+segment B C
+segment C A
+segment A D
+segment B E
+segment C F
+```
 
 ## Coordenadas complejas
 

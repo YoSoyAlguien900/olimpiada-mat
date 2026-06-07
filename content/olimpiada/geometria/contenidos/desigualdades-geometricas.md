@@ -18,6 +18,30 @@ $$
 
 con igualdad si y solo si $ABC$ es equilátero y $P$ es su centro.
 
+```geofig
+// P interior; distancias a los vértices (continuas) y a los lados (discontinuas, perpendiculares)
+size 9 7
+point  0    3      A   0.05  0.3
+point -3   -1.5    B  -0.32 -0.05
+point  3   -1.5    C   0.28 -0.05
+point  0.3  0.2    P   0.16  0.12
+point  0.3 -1.5    Fa   0.12 -0.3
+point  1.385 0.923 Fb   0.28  0.05
+point -1.2  1.2    Fc  -0.42  0.05
+segment A B
+segment B C
+segment C A
+segment P A
+segment P B
+segment P C
+dash P Fa
+dash P Fb
+dash P Fc
+rightangle Fa P B
+rightangle Fb P C
+rightangle Fc P A
+```
+
 ## Demostración (esbozo)
 
 Construcción: por cada lado, considerar la **reflexión del punto $P$** respecto a la bisectriz correspondiente; las distancias se traducen a relaciones trigonométricas.

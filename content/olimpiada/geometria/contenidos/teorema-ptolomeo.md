@@ -64,6 +64,24 @@ $$
 
 Pero $BE + ED = BD$, de donde se concluye $BD \cdot AC = AB \cdot CD + AD \cdot BC$. $\square$
 
+```geofig
+// Construcción auxiliar: E ∈ BD con ∠BAE = ∠CAD; △ABE ∼ △ACD y △ABC ∼ △AED
+size 8 8
+circle 0 0 3
+point  0.52   2.95   A  0.1   0.22
+point -2.95   0.52   B -0.28  0.12
+point -1.03  -2.82   C -0.22 -0.28
+point  2.82  -1.03   D  0.25 -0.22
+point -0.042 -0.261  E  0.12  0.18
+segment A B
+segment B C
+segment C D
+segment D A
+dash A C
+segment B D
+segment A E
+```
+
 **Método por inversión.** Sea $\iota$ la inversión centrada en $A$ con radio arbitrario $r$. Esta transforma los puntos $B, C, D$ en $B', C', D'$ con $AX \cdot AX' = r^2$. La fórmula de distancia bajo inversión:
 
 $$
@@ -87,6 +105,22 @@ La inversión también prueba inmediatamente la **desigualdad** de Ptolomeo: par
 ## Ejemplo
 
 **Problema.** Si $ABC$ es un triángulo equilátero inscrito en una circunferencia $\omega$ y $P$ es un punto del arco $BC$ que no contiene a $A$, probar que $PA = PB + PC$.
+
+```geofig
+// Triángulo equilátero ABC inscrito; P en el arco BC: Ptolomeo en ABPC da PA = PB + PC
+size 5.6 5.6
+circle 0  0      2.5
+point  0      2.5    A   0.05  0.26
+point -2.165 -1.25   B  -0.34 -0.05
+point  2.165 -1.25   C   0.26 -0.05
+point  0     -2.5    P   0.1  -0.28
+segment A B
+segment B C
+segment C A
+segment P A
+segment P B
+segment P C
+```
 
 *Solución.* Aplicamos Ptolomeo al cuadrilátero cíclico $ABPC$:
 

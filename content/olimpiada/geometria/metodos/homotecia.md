@@ -12,6 +12,27 @@ updated: "2026-02-12"
 
 Una **homotecia** de centro $O$ y razón $k \neq 0$ es la transformación $h_{O, k}: P \mapsto P'$ con $\vec{OP'} = k \vec{OP}$. Es decir, $P'$ está sobre la recta $OP$, a distancia $|k| \cdot |OP|$ de $O$, del mismo lado si $k > 0$ y del lado opuesto si $k < 0$.
 
+```geofig
+// Homotecia de centro O y razón k > 1: el triángulo ABC se transforma en A'B'C', con vértices alineados con O
+size 2.5 2.9
+point -1.04 -0.4    O    -0.32  -0.05
+point -0.44  0.6    A    -0.32   0.05
+point  0.26 -0.2    B     0.18  -0.2
+point -0.64 -0.9    C    -0.32  -0.1
+point -0.08  1.2    A'    0.1    0.18
+point  1.04 -0.08   B'    0.18   0.05
+point -0.4  -1.2    C'   -0.05  -0.26
+dash O A'
+dash O B'
+dash O C'
+segment A B
+segment B C
+segment C A
+segment A' B'
+segment B' C'
+segment C' A'
+```
+
 ## Propiedades
 
 1. **Linealidad.** Una homotecia transforma rectas en rectas paralelas (o coincidentes si pasan por $O$).
@@ -57,6 +78,27 @@ Las medianas $AM_A, BM_B, CM_C$ de un triángulo $ABC$ concurren en el baricentr
 
 Esta homotecia transforma el triángulo $ABC$ en el triángulo medial $M_A M_B M_C$, dividiendo todas las distancias por 2.
 
+```geofig
+// Homotecia de centro G y razón -1/2: ABC se transforma en su triángulo medial Ma Mb Mc
+size 4.4 3.7
+point -0.2     1.6     A     0.05  0.26
+point -1.9    -1.4     B    -0.34 -0.05
+point  1.9    -1.6     C     0.22 -0.26
+point  0      -1.5     Ma    0.16 -0.26
+point  0.85    0.0     Mb    0.2   0.12
+point -1.05    0.1     Mc   -0.36  0.1
+point -0.0667 -0.4667  G     0.12 -0.05
+segment A B
+segment B C
+segment C A
+segment Ma Mb
+segment Mb Mc
+segment Mc Ma
+dash A Ma
+dash B Mb
+dash C Mc
+```
+
 ### Aplicación 2: dos circunferencias y la línea de centros
 
 Dadas dos circunferencias $\omega_1$ y $\omega_2$ con centros $O_1, O_2$ y radios $r_1, r_2$, hay dos homotecias que mapean $\omega_1$ a $\omega_2$:
@@ -65,6 +107,22 @@ Dadas dos circunferencias $\omega_1$ y $\omega_2$ con centros $O_1, O_2$ y radio
 - **Homotecia negativa** con centro interno $P_-$ y razón $-r_2/r_1$.
 
 Los centros $P_\pm$ están sobre la recta $O_1 O_2$ y son los puntos donde se intersecan las **tangentes comunes** (externas para $P_+$, internas para $P_-$).
+
+```geofig
+// P = centro externo (intersección de las tangentes comunes externas), Q = centro interno; ambos en la recta O1O2
+size 11.5 6.7
+circle -2.75 0 1
+circle  2.25 0 3
+point -5.25  0    P    -0.08  0.24
+point -1.5   0    Q    -0.08  0.24
+point -2.75  0    O1   -0.08  0.24
+point  2.25  0    O2   -0.08  0.24
+point  1.05  2.75 T1    0.16  0.12
+point  1.05 -2.75 T2    0.16 -0.22
+dash P O2
+dash P T1
+dash P T2
+```
 
 ### Aplicación 3: el teorema de Monge
 

@@ -105,6 +105,25 @@ $$\frac{BH_A}{H_AC} = \frac{c \cos B}{b \cos C}$$
 
 **Ejemplo 1.** Demostrar que las cevianas que unen cada vértice con el punto de tangencia del incírculo en el lado opuesto concurren.
 
+```geofig
+// Incírculo de ABC; D, E, F tangencias; AD, BE, CF concurren en el punto de Gergonne G
+size 7.5 5
+circle 0 -0.61 1.39
+point  0    2     A  0.05  0.3
+point -2.5 -2     B -0.32 -0.05
+point  2.5 -2     C  0.28 -0.05
+point  0   -2     D  0.05 -0.32
+point  1.17  0.12 E  0.28  0.08
+point -1.17  0.12 F -0.32  0.08
+point  0   -0.56  G  0.22  0.12
+segment A B
+segment B C
+segment C A
+segment A D
+segment B E
+segment C F
+```
+
 Sean $D$, $E$, $F$ los puntos de tangencia del incírculo en $BC$, $CA$, $AB$ respectivamente. Por las propiedades de las tangentes desde un punto exterior:
 
 $$BD = s - b, \quad DC = s - c$$

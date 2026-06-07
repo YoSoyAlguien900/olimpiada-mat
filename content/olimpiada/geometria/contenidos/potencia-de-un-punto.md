@@ -63,6 +63,22 @@ donde el producto es **con signos**: $\overrightarrow{PA} > 0$ si $A$ está en l
 - **$P$ interior, dos cuerdas:** $PA \cdot PB = PC \cdot PD$ (ambos positivos, $P$ entre los puntos).
 - **$P$ exterior, tangente:** $PT^2 = PA \cdot PB$ donde $T$ es el punto de tangencia.
 
+```geofig
+// Tangente PT y secante PAB desde P exterior: PT² = PA·PB = pow(P, ω)
+size 8 6
+circle -1     0      2.5
+point -1      0      O   -0.1   0.32
+point  3.5    0      P    0.2  -0.25
+point  0.389  2.079  T    0.18  0.18
+point  1.5    0      A    0.05 -0.3
+point -3.5    0      B   -0.22 -0.25
+segment O T
+segment P T
+segment B P
+rightangle T O P
+label -0.6 -2.85 "PT² = PA · PB"
+```
+
 ## Demostración
 
 Sea $M$ el punto medio de $AB$ y $OM \perp AB$ (el radio al punto medio de una cuerda es perpendicular a ella). Aplicamos el teorema de Pitágoras al triángulo rectángulo $OMP$:
@@ -80,6 +96,23 @@ Ahora observamos que $MP - MA = PA$ y $MP + MA = PB$ con signo apropiado (cuando
 $$OP^2 - r^2 = (MP - MA)(MP + MA) = PA \cdot PB$$
 
 (con convención de signos coherente). $\blacksquare$
+
+```geofig
+// El radio OM es perpendicular a la cuerda AB en su punto medio M; OP² = OM² + MP² (Pitágoras en OMP y OMA)
+size 6.5 7.5
+circle 0  0.75  2.5
+point  0     0.75   O   -0.32  0.05
+point  1     0.75   M    0.05  0.28
+point  1     3.041  A    0.18  0.12
+point  1    -1.541  B    0.18 -0.1
+point  1    -3.25   P    0.18 -0.25
+segment O M
+segment O A
+segment O P
+segment A B
+dash B P
+rightangle A M O
+```
 
 **Demostración alternativa via triángulos semejantes.** Para dos secantes desde $P$ exterior, que cortan a $\omega$ en $\{A, A'\}$ y $\{B, B'\}$:
 
@@ -172,6 +205,22 @@ $Z$ está en la recta $XY$, que es el eje radical. Cualquier circunferencia que 
 *Aclaración:* el resultado $ZX = ZY$ dice que $Z$ equidista de $X$ e $Y$, lo que sería verdad si $Z$ es el punto medio de $XY$ o si $XY$ es perpendicular a la recta $ABCD$. De hecho, el eje radical es perpendicular a la línea de centros, que es $ABCD$. Así el eje radical $XY$ es perpendicular a $ABCD$, y su intersección $Z$ con $ABCD$ satisface que $XZ \perp ZY$... no, $X, Y, Z$ son colineales (todos en $XY$), así $ZX = ZY$ solo si $Z$ es punto medio de $XY$.
 
 *Este es un resultado más sutil.* La demostración usa que $Z$ está en la mediatriz de $XY$ (que es perpendicular a $XY$ y... no puede pasar por $Z$ si $Z \in XY$ a menos que $X = Y$). Revisar el enunciado: la afirmación es que $ZX = ZY$ **no** en el sentido de que $Z$ es el punto medio de $XY$, sino que es un resultado sobre los productos $ZX \cdot ZY$... **La afirmación del IMO es simplemente $ZX = ZY$, lo que dice que $Z$ es el punto medio de $XY$ en la recta.** Esto es cierto porque $Z$ está en la mediatriz de $XY$ (la mediatriz de $XY$ pasa por los centros de ambas circunferencias, y como la línea $ABCD$ pasa por los centros, la mediatriz $\perp XY$ intersecta a $ABCD$ en $Z$, que equidista de $X$ e $Y$ sobre $XY$).
+
+```geofig
+// IMO 1995/1: A,B,C,D colineales; las circunferencias de diámetros AC y BD se cortan en X,Y; XY ∩ BC = Z, eje radical, ZX = ZY
+size 8 7
+circle -0.5  0      3
+circle  1.5  0      2
+point -3.5   0      A   -0.05  0.3
+point -0.5   0      B    0.22  0.28
+point  2.5   0      C   -0.05  0.3
+point  3.5   0      D    0.22  0.28
+point  1.75  1.984  X    0.2   0.12
+point  1.75 -1.984  Y    0.2  -0.25
+point  1.75  0      Z   -0.32  0.08
+segment A D
+dash X Y
+```
 
 ## El eje radical
 

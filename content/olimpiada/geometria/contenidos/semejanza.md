@@ -19,6 +19,23 @@ Dos triángulos $\triangle ABC$ y $\triangle A'B'C'$ son **semejantes** (se escr
 
 La correspondencia de vértices importa: $\triangle ABC \sim \triangle A'B'C'$ indica que $A \leftrightarrow A'$, $B \leftrightarrow B'$, $C \leftrightarrow C'$.
 
+```geofig
+// ABC y A'B'C' semejantes (misma forma, distinta escala)
+size 9 5.5
+point -3.6 -1.6  A  -0.3  -0.25
+point -0.4 -1.6  B   0.28 -0.25
+point -2.6  1.6  C   0.05  0.3
+point  1.0 -0.8  A' -0.3  -0.25
+point  2.6 -0.8  B'  0.28 -0.25
+point  1.5  0.8  C'  0.05  0.3
+segment A B
+segment B C
+segment C A
+segment A' B'
+segment B' C'
+segment C' A'
+```
+
 ## Teorema
 
 **(Criterios de semejanza)** Dos triángulos son semejantes si y solo si se cumple alguno de:
@@ -106,6 +123,23 @@ $$\frac{BD}{DC} = \frac{BA}{AE} = \frac{c}{b}. \qquad \square$$
 
 **Ejemplo 4.** Sea $ABCD$ un cuadrilátero cíclico con diagonales $AC$ y $BD$ intersectándose en $P$. Demostrar que $\triangle APB \sim \triangle DPC$.
 
+```geofig
+// Cuadrilátero cíclico ABCD, diagonales AC y BD se cortan en P
+size 7.5 7.5
+circle 0 0 2.5
+point -2.35 -0.855  A -0.32 -0.15
+point -1.61  1.915  B -0.32  0.12
+point  1.61  1.915  C  0.28  0.12
+point  1.915 -1.607 D  0.28 -0.2
+point -0.284 0.591  P  0.16  0.2
+segment A B
+segment B C
+segment C D
+segment D A
+segment A C
+segment B D
+```
+
 $\angle PAB = \angle PDC$ (inscritos sobre el arco $BC$). $\angle APB = \angle DPC$ (opuestos por el vértice). Por AA: $\triangle APB \sim \triangle DPC$.
 
 De la semejanza: $PA/PD = PB/PC = AB/DC$. En particular $PA \cdot PC = PB \cdot PD$ (potencia del punto $P$). $\square$
@@ -134,6 +168,20 @@ Combinando ambas partes: $MI = MB = MC$. $\blacksquare$
 
 **Ejemplo 6.** (Tangente y secante desde un punto exterior) Sea $P$ un punto exterior a una circunferencia $\omega$. Una tangente desde $P$ toca $\omega$ en $T$, y una secante por $P$ corta a $\omega$ en $A$ y $B$ (con $A$ entre $P$ y $B$). Probar que $\triangle PAT \sim \triangle PTB$ (con la correspondencia $P \leftrightarrow P$, $A \leftrightarrow T$, $T \leftrightarrow B$), y deducir que $PT^2 = PA \cdot PB$.
 
+```geofig
+// Tangente PT y secante PAB desde P, con triángulos PAT y PTB semejantes
+size 9 4.7
+circle 0 0 2 ω
+point  4.2   0     P  0.3   0.18
+point  2     0     A  0.05 -0.32
+point -2     0     B -0.1  -0.32
+point  0.95  1.76  T  0.08  0.28
+segment P T
+segment P B
+segment T A
+segment T B
+```
+
 *Resolución.* El ángulo en $P$ es **común** a ambos triángulos: tanto $\angle APT$ (en $\triangle PAT$) como $\angle TPB$ (en $\triangle PTB$) están formados por el rayo $PT$ y el rayo $PA = PB$ (la secante), así $\angle APT = \angle TPB$.
 
 Para el segundo par de ángulos, usamos el **ángulo semiinscrito** (Corolario 3 del teorema del ángulo inscrito: el ángulo entre una tangente y una cuerda iguala al ángulo inscrito en el arco opuesto). La tangente $PT$ y la cuerda $TA$ forman un ángulo $\angle PTA$ que es igual al ángulo inscrito que abarca el arco $\widehat{TA}$ desde el lado opuesto, es decir, $\angle PTA = \angle TBA$. Como $A$ está entre $P$ y $B$, el ángulo $\angle TBA$ es el mismo que $\angle TBP$ (ángulo del triángulo $PTB$ en el vértice $B$). Luego
@@ -155,6 +203,24 @@ Toda **semejanza directa** del plano (que preserva orientación) es una **homote
 ## Teorema
 
 **(Homotecia espiral)** Dada cualquier semejanza directa $f$ con razón $k \neq 1$ y ángulo $\theta$, existe un único punto fijo $Z$ (el **centro de la homotecia espiral**) tal que $f$ es la composición de la homotecia de centro $Z$ y razón $k$ con la rotación de centro $Z$ y ángulo $\theta$.
+
+```geofig
+// Centro Z; triángulo ZAB y su imagen ZA'B' (rotada y escalada)
+size 9 8
+point  0     0     Z  0.08  0.32
+point -2.4  -0.6   A -0.34  0.08
+point -1.0  -2.0   B -0.32 -0.05
+point -1.46 -3.0   A' -0.42 -0.08
+point  1.2  -2.77  B'  0.3  -0.05
+segment Z A
+segment Z B
+segment A B
+dash Z A'
+dash Z B'
+dash A' B'
+```
+
+*(El triángulo $\triangle ZAB$ —trazo continuo— y su imagen $\triangle ZA'B'$ —trazo discontinuo— son semejantes y comparten el centro $Z$: $f$ los relaciona girando un ángulo $\theta = \angle AZA' = \angle BZB'$ y escalando en razón $k = ZA'/ZA = ZB'/ZB$.)*
 
 ## Demostración
 

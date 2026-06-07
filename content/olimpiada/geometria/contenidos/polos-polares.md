@@ -14,6 +14,21 @@ Sea $\omega$ una circunferencia de centro $O$ y radio $r$, y sea $P \neq O$ un p
 
 Recíprocamente, dada una recta $\ell$ que no pasa por $O$, su **polo** es el único punto cuya polar es $\ell$.
 
+```geofig
+// Polar de P: recta perpendicular a OP por el inverso P' (con |OP|·|OP'| = r²); coincide con la recta T1T2 de los puntos de tangencia desde P
+size 7 5
+circle -1    0      2
+point -1     0      O   -0.08  0.3
+point  3     0      P    0.18  0.15
+point  0     0      P'  -0.05  0.28
+point  0     1.732  T1   0.16  0.12
+point  0    -1.732  T2   0.16 -0.28
+segment O P
+segment P T1
+segment P T2
+dash T1 T2
+```
+
 ## Caracterizaciones equivalentes
 
 Sea $\omega$ con ecuación $x^2 + y^2 = r^2$ (centro en el origen). Para $P = (x_0, y_0)$:

@@ -24,6 +24,16 @@ $$
 (A, B; C, D) \;=\; \frac{(c-a)(d-b)}{(c-b)(d-a)}.
 $$
 
+```geofig
+// Cuatro puntos colineales A, B, C, D: su razón cruzada (A,B;C,D) es el invariante fundamental
+size 6.5 2.4
+point -2.75  0   A  -0.05  0.32
+point -0.75  0   B  -0.05  0.32
+point  1.25  0   C  -0.05  0.32
+point  2.75  0   D  -0.05  0.32
+segment A D
+```
+
 ## Razón cruzada de un haz de rectas
 
 Sea $P$ un punto y $\ell_1, \ell_2, \ell_3, \ell_4$ cuatro rectas por $P$. Su **razón cruzada** se define como el valor común $(A, B; C, D)$ cuando $A, B, C, D$ son las intersecciones de las rectas con **cualquier** transversal — y este valor **no depende** de la transversal.
@@ -41,6 +51,26 @@ $$
 $$
 (A, B; C, D) \;=\; (A', B'; C', D').
 $$
+
+```geofig
+// Proyección desde P de A,B,C,D ∈ ℓ1 hacia A',B',C',D' ∈ ℓ2: la razón cruzada se conserva
+size 10.5 6.5
+point  0.917  2.75   P    0.05  0.26
+point -2.083 -0.25   A   -0.05  0.26
+point -0.083 -0.25   B   -0.05  0.26
+point  1.417 -0.25   C   -0.05  0.26
+point  2.917 -0.25   D   -0.05  0.26
+point -4.583 -2.75   A'  -0.08 -0.32
+point -0.917 -2.75   B'  -0.08 -0.32
+point  1.833 -2.75   C'  -0.08 -0.32
+point  4.583 -2.75   D'  -0.08 -0.32
+dash P A'
+dash P B'
+dash P C'
+dash P D'
+segment A D
+segment A' D'
+```
 
 **Demostración.** Aplicar la ley de senos en los triángulos $\triangle PAC$, etc. y simplificar. La igualdad de ángulos vistos desde $P$ es el ingrediente clave. $\blacksquare$
 
@@ -89,6 +119,22 @@ Es decir, $D$ y $E$ son conjugados armónicos respecto a $B, C$.
 $$
 \frac{|BD|}{|DC|} \cdot \frac{|EC|}{|EB|} \;=\; \frac{c}{b} \cdot \frac{b}{-c} \;=\; -1. \quad \blacksquare
 $$
+
+```geofig
+// Bisectrices interna y externa desde A cortan a la recta BC en D, E: (B,C;D,E) = -1
+size 7.6 2.5
+point -0.964  1.0    A   -0.05  0.28
+point -0.984 -0.5    B   -0.1  -0.32
+point  3.016 -1.0    C    0.22 -0.05
+point  0.024 -0.626  D    0.08  0.26
+point -3.016 -0.246  E   -0.08  0.26
+segment A B
+segment A C
+segment B C
+segment A D
+segment A E
+dash E B
+```
 
 ### Configuraciones armónicas clásicas
 

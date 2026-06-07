@@ -18,6 +18,24 @@ Sea $ABC$ un triángulo. Sean $X \in BC$, $Y \in CA$, $Z \in AB$ tres puntos (di
 
 Entonces **$\omega_A$, $\omega_B$, $\omega_C$ pasan por un punto común** llamado el **punto de Miquel** de la tripleta $(X, Y, Z)$.
 
+```geofig
+// ωA=(AYZ), ωB=(BZX), ωC=(CXY) concurren en el punto de Miquel M
+size 7 6.2
+circle  0.779  1.261   1.660
+circle -1.33  -0.5825  1.8675
+circle  1.67  -1.395   1.5297
+point  0.17   2.805   A   0.05  0.28
+point -2.83  -1.695   B  -0.34 -0.06
+point  3.17  -1.695   C   0.28 -0.06
+point  0.17  -1.695   X   0.05 -0.3
+point  1.97   0.105   Y   0.26  0.1
+point -0.88   1.23    Z  -0.4   0.08
+point  0.526 -0.379   M   0.18  0.1
+segment A B
+segment B C
+segment C A
+```
+
 ## Demostración
 
 Sean $\omega_A$ y $\omega_B$ los dos primeros circuncírculos. Se cortan en $Z$ y en otro punto, llamémoslo $M$.

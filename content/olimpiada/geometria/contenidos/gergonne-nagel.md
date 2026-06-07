@@ -12,9 +12,46 @@ updated: "2026-02-13"
 
 **Definición.** Sea $ABC$ un triángulo con incírculo $\omega$ tangente a los lados $BC, CA, AB$ en los puntos $D, E, F$ respectivamente. Las tres cevianas $AD, BE, CF$ son **concurrentes**, y su punto de intersección se llama el **punto de Gergonne** $G_e$ del triángulo.
 
+```geofig
+// Punto de Gergonne: cevianas AD, BE, CF a los puntos de tangencia del incírculo
+size 8 6.5
+circle -0.5  -0.327  1.323
+point -0.75  1.657   A   0.05  0.28
+point -3    -1.65    B  -0.32 -0.08
+point  3    -1.65    C   0.28 -0.08
+point -0.5  -1.65    D   0.05 -0.3
+point  0.375 0.665   E   0.26  0.1
+point -1.594 0.417   F  -0.42  0.08
+point -0.624 -0.02   Ge  0.16  0.16
+segment A B
+segment B C
+segment C A
+segment A D
+segment B E
+segment C F
+```
+
 ## Punto de Nagel
 
 **Definición.** Sea $\omega_A$ el excírculo opuesto a $A$, tangente al lado $BC$ en $D'$. Análogamente $E'$ ($\omega_B$ tangente a $CA$) y $F'$ ($\omega_C$ tangente a $AB$). Las cevianas $AD', BE', CF'$ son **concurrentes**, y su punto de intersección se llama el **punto de Nagel** $N$ del triángulo.
+
+```geofig
+// Punto de Nagel: cevianas AD', BE', CF' a los puntos de tangencia de los excírculos
+size 8 6.5
+point -0.75   1.657   A   0.05  0.28
+point -3     -1.65    B  -0.32 -0.08
+point  3     -1.65    C   0.28 -0.08
+point  0.5   -1.65    D'  0.05 -0.3
+point  1.875 -0.658   E'  0.26 -0.16
+point -2.156 -0.41    F' -0.46 -0.08
+point  0.25  -0.989   N   0.16  0.16
+segment A B
+segment B C
+segment C A
+segment A D'
+segment B E'
+segment C F'
+```
 
 ## Demostración de la concurrencia
 

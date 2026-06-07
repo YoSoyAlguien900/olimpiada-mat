@@ -21,6 +21,23 @@ Es decir, $B, C, I, I_A$ están **todos** sobre una circunferencia de centro $M$
 - **Lema del Incentro-Excentro**.
 - **Fact Five** (en literatura inglesa).
 
+```geofig
+// "Tridente": la bisectriz desde A pasa por I, M, Ia; los puntos B, C, I, Ia equidistan de M
+size 7.5 8.5
+circle -0.218  1.491  2.5
+circle  0     -1.0    3.044
+point -0.218   3.991  A    0.05  0.28
+point -2.567   0.636  B   -0.34  0.05
+point  2.244   1.057  C    0.28  0.08
+point  0      -1.0    M    0.18 -0.05
+point -0.133   2.042  I   -0.05  0.26
+point  0.132  -4.045  Ia   0.2  -0.12
+segment A B
+segment B C
+segment C A
+segment A Ia
+```
+
 ## Demostración
 
 **Parte 1: $|MB| = |MC|$.** Inmediato porque $M$ es el punto medio del arco $\widehat{BC}$.

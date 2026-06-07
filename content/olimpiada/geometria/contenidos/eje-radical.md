@@ -20,6 +20,21 @@ Es negativa si $P$ está dentro de $\omega$, cero si está sobre $\omega$, posit
 
 **Equivalencias.** Si una recta por $P$ corta a $\omega$ en $A, B$, entonces $\operatorname{pot}_\omega(P) = \overline{PA} \cdot \overline{PB}$ (con signo). Si $PT$ es tangente desde $P$ con $T \in \omega$, entonces $\operatorname{pot}_\omega(P) = |PT|^2$.
 
+```geofig
+// Potencia de P: secante PAB y tangente PT, con OT ⟂ PT
+size 7.5 6
+circle -1    0      2
+point  -1    0      O  -0.08  0.3
+point   3    0      P   0.18  0.15
+point  -3    0      A  -0.42  0.05
+point   1    0      B   0.16  0.18
+point   0    1.732  T   0.16  0.15
+segment P A
+segment P T
+dash O T
+rightangle T O P
+```
+
 ## Eje radical
 
 **Teorema.** Dadas dos circunferencias $\omega_1, \omega_2$ no concéntricas, el lugar geométrico de los puntos $P$ con $\operatorname{pot}_{\omega_1}(P) = \operatorname{pot}_{\omega_2}(P)$ es una **recta perpendicular a la línea de centros $O_1 O_2$**. Esta recta se llama **eje radical** de $\omega_1$ y $\omega_2$.

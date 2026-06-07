@@ -24,6 +24,20 @@ $$a + b > c, \qquad b + c > a, \qquad c + a > b.$$
 
 Equivalentemente, $|a - b| < c < a + b$ para cualesquiera dos lados $a, b$.
 
+```geofig
+// Triángulo ABC con lados a = BC, b = CA, c = AB
+size 7 6
+point  0    2.6  A  0.05  0.28
+point -2.4 -1.4  B -0.32 -0.05
+point  2.4 -1.4  C  0.28 -0.05
+segment A B
+segment B C
+segment C A
+label  0     -1.95 "a"
+label  1.65   0.55 "b"
+label -1.85   0.55 "c"
+```
+
 ## Demostración
 
 En el triángulo $ABC$, el segmento $AB$ es el camino más corto entre $A$ y $B$. El camino $A \to C \to B$ tiene longitud $AC + CB = b + a$. Como el camino directo es siempre el más corto: $c = AB < b + a$. $\blacksquare$
@@ -111,6 +125,30 @@ Hadwiger-Finsler es estrictamente más fuerte: el término extra $(a-b)^2 + (b-c
 $$R_a + R_b + R_c \;\geq\; 2(d_a + d_b + d_c),$$
 
 con igualdad si y solo si el triángulo es equilátero y $P$ es su centro.
+
+```geofig
+// P interior; distancias a vértices R_a,R_b,R_c (continuas) y a los lados d_a,d_b,d_c (discontinuas, perpendiculares)
+size 9 7.5
+point  0     3.2    A   0.05  0.28
+point -3.3  -1.4    B  -0.32 -0.05
+point  2.7  -1.6    C   0.28 -0.05
+point -0.3   0.0    P  -0.08  0.18
+point -0.35 -1.498  Fa  0.05 -0.32
+point  1.295 0.897  Fb  0.28  0.08
+point -1.617 0.946  Fc -0.46  0.05
+segment A B
+segment B C
+segment C A
+segment P A
+segment P B
+segment P C
+dash P Fa
+dash P Fb
+dash P Fc
+rightangle Fa P B
+rightangle Fb P C
+rightangle Fc P A
+```
 
 ## Demostración
 

@@ -28,6 +28,24 @@ $$
 
 Equivalentemente, $T$ es el único punto del plano desde el cual los tres lados del triángulo $ABC$ se ven bajo ángulos iguales.
 
+```geofig
+// Punto de Fermat-Torricelli T: los tres ángulos en T miden 120°
+size 9 7
+point  0     3      A  0.05  0.3
+point -3    -1.5    B -0.32 -0.05
+point  3    -1.5    C  0.28 -0.05
+point  0     0.232  T  0.16  0.12
+segment A B
+segment B C
+segment C A
+segment T A
+segment T B
+segment T C
+arc 0 0.232 0.6  90 210
+arc 0 0.232 0.6 210 330
+arc 0 0.232 0.6 330 450
+```
+
 **Caso 2: algún ángulo del triángulo $ABC$ es $\geq 120°$ (digamos en $A$).**
 
 El punto óptimo es el vértice $A$ mismo. (El "mínimo" se alcanza degenerado.)

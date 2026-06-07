@@ -143,6 +143,23 @@ $$
 
 **El triángulo $I_A I_B I_C$** tiene como ortocentro al incentro $I$ del triángulo original. Sus lados pasan por los vértices de $\triangle ABC$.
 
+```geofig
+// Excentro I_A: tangente al lado BC y a las prolongaciones de AB y AC más allá de B y C
+size 2.8 8.5
+circle 0  -2.50    1.22
+point  0      3.72   A    0.12   0.2
+point -1     -1.28   B   -0.32  -0.05
+point  1     -1.28   C    0.22  -0.05
+point  0     -2.50   Ia   0.18   0.05
+point -1.196 -2.261  P   -0.36  -0.05
+point  1.196 -2.261  Q    0.16  -0.05
+segment A B
+segment A C
+segment B C
+dash B P
+dash C Q
+```
+
 ## La recta de Euler
 
 **Teorema.** En todo triángulo no equilátero, los puntos $O$, $G$, $H$ son **colineales**, y

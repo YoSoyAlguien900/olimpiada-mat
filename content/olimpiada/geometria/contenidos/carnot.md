@@ -18,6 +18,27 @@ $$
 
 (Aquí, las longitudes están medidas con signo, y la condición se puede reescribir como una identidad de **diferencias de cuadrados**.)
 
+```geofig
+// X, Y, Z en los lados de ABC; perpendiculares a los lados concurren en P
+size 9 7
+point  0    3     A  0.05  0.3
+point -3   -1.5   B -0.32 -0.05
+point  3   -1.5   C  0.28 -0.05
+point  0   -1.5   X  0.05 -0.32
+point  1.5  0.75  Y  0.28  0.08
+point -1.5  0.75  Z -0.32  0.08
+point  0   -0.25  P  0.18  0.12
+segment A B
+segment B C
+segment C A
+segment P X
+segment P Y
+segment P Z
+rightangle X P B
+rightangle Y P C
+rightangle Z P A
+```
+
 ## Demostración
 
 **(⇒)** Supongamos que las tres perpendiculares concurren en un punto $P$. Por el **teorema de Pitágoras** aplicado a $\triangle PXB$ y $\triangle PXC$ (rectos en $X$):
