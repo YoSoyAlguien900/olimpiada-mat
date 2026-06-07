@@ -87,7 +87,6 @@ Inventario completo del temario olímpico para Teoría de Números y Geometría.
 - ✅ Congruencia de triángulos y triángulos isósceles
 - ✅ Teorema de la base media (segmento medio)
 - ✅ Paralelogramos: criterios y propiedades
-- ✅ Áreas de triángulos: bases, alturas y razones
 - ✅ Ángulos en la circunferencia
 - ✅ Semejanza
 - ✅ Potencia de un punto

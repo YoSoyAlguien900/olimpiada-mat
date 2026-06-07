@@ -1322,10 +1322,19 @@ a { color: inherit; text-decoration: none; }
   position: relative;
 }
 
-/* Sidebar y Topbar mantienen su fondo opaco como antes */
-.sidebar {
-  position: sticky;
-  z-index: 3;
+/* Sidebar y Topbar mantienen su fondo opaco como antes.
+   OJO: esta regla debe quedar limitada a escritorio — si se aplica sin
+   media query, su `position: sticky; z-index: 3` pisa (por orden de
+   cascada) las reglas del drawer móvil de la línea ~139
+   (`position: fixed; z-index: 50`), dejando el sidebar por DEBAJO del
+   .sidebar-scrim (z-index: 40) en móvil: los toques en sus enlaces y
+   botones terminan en el scrim (que solo cierra el drawer) y la barra
+   lateral parece no responder al tacto. */
+@media (min-width: 901px) {
+  .sidebar {
+    position: sticky;
+    z-index: 3;
+  }
 }
 
 /* Sin z-index en .main: el roadmap overlay (position:fixed, z-index:200)
