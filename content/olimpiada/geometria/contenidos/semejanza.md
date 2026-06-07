@@ -112,47 +112,41 @@ De la semejanza: $PA/PD = PB/PC = AB/DC$. En particular $PA \cdot PC = PB \cdot 
 
 ---
 
-**Ejemplo 5.** (La armonía de la semejanza) Sea $M$ el punto medio del arco $\widehat{BC}$ del circuncírculo de $\triangle ABC$ que no contiene a $A$. Demostrar que $MA = MB = MC$... espera, eso no es correcto en general. La afirmación correcta: $MA^2 = MB \cdot MC$. Demostrar esto.
+**Ejemplo 5.** (El Lema del Incentro) Sea $ABC$ un triángulo con incentro $I$, y sea $M$ el punto medio del arco $\widehat{BC}$ del circuncírculo que no contiene a $A$. Demostrar que $MI = MB = MC$.
 
-Hmm, ¿es cierto esto? Con $M$ el punto medio del arco $BC$ (no contiene $A$), tenemos $\widehat{BM} = \widehat{MC}$, así $MB = MC$ (cuerdas iguales). Pero $MA = MB = MC$ solo para el equilátero.
+*Resolución.* Sean $\alpha = \angle A$, $\beta = \angle B$, $\gamma = \angle C$ los ángulos del triángulo (con $\alpha+\beta+\gamma = 180°$).
 
-La afirmación correcta es: por el Lema del Incentro, $MI = MB = MC$. Eso es lo que se puede demostrar con semejanza.
+**$MB = MC$.** Como $M$ es el punto medio del arco $\widehat{BC}$, los arcos $\widehat{BM}$ y $\widehat{MC}$ son iguales, y arcos iguales son subtendidos por cuerdas iguales: $MB = MC$. (Equivalentemente: $AM$ es la bisectriz de $\angle A$ —pasa por el punto medio del arco opuesto—, así $\angle MAB = \angle MAC = \alpha/2$, ángulos inscritos sobre $\widehat{BM}$ y $\widehat{MC}$ respectivamente; arcos iguales producen cuerdas iguales.)
 
-**Ejemplo reformulado:** En el circuncírculo del triángulo $ABC$, sea $M$ el punto medio del arco $\widehat{BC}$ que no contiene a $A$. El incentro $I$ satisface $MI = MB = MC$.
+**$MI = MB$.** Como $AM$ es la bisectriz de $\angle BAC$ y $I$ es el incentro, los puntos $A$, $I$, $M$ son colineales (la bisectriz desde $A$ pasa por $I$ y corta de nuevo al circuncírculo en $M$). Calculemos los ángulos $\angle MBI$ y $\angle MIB$ del triángulo $\triangle MBI$:
 
-*Demostración.* $MI = MB$: como $M$ está en la bisectriz desde $A$ (por simetría del arco), y $\angle MAI = \angle MIA$ (usando que $\angle MAB = \angle MAC$ y calculando los ángulos en $\triangle MAI$)... la demostración es por ángulos y es el "Lema del Incentro", desarrollado en el capítulo de puntos notables.
+- $\angle MBI = \angle MBC + \angle CBI$. Por un lado, $\angle MBC = \angle MAC = \dfrac{\alpha}{2}$ (ángulos inscritos que abarcan el arco $\widehat{MC}$). Por otro, $\angle CBI = \dfrac{\beta}{2}$ ($BI$ es bisectriz de $\angle B$). Así $\angle MBI = \dfrac{\alpha}{2} + \dfrac{\beta}{2}$.
+
+- $\angle MIB$ es el ángulo exterior del triángulo $\triangle ABI$ en el vértice $I$ (pues $A$, $I$, $M$ son colineales con $I$ entre $A$ y $M$). Por el teorema del ángulo exterior, $\angle MIB = \angle IAB + \angle IBA = \dfrac{\alpha}{2} + \dfrac{\beta}{2}$.
+
+Luego $\angle MBI = \angle MIB = \dfrac{\alpha+\beta}{2}$, así el triángulo $\triangle MBI$ es isósceles con $MI = MB$ (teorema del triángulo isósceles, recíproco).
+
+Combinando ambas partes: $MI = MB = MC$. $\blacksquare$
+
+*(Este lema —a veces llamado "Fact 5"— es una de las herramientas más citadas en geometría olímpica: dice que $M$ es el centro de una circunferencia que pasa por $B$, $C$, $I$ y también por el excentro $I_A$, ya que $\angle ICI_A = 90°$ y $M$ resulta ser el punto medio de $II_A$. Volveremos a él en el capítulo de puntos notables del triángulo.)*
 
 ---
 
-**Ejemplo 6.** (Problema olímpico) En el triángulo $ABC$, sea $D$ el pie de la altura desde $A$. Sea $P$ cualquier punto del segmento $AD$. La circunferencia $\omega_1$ pasa por $B$ y $P$ y es tangente a $BC$; la circunferencia $\omega_2$ pasa por $C$ y $P$ y es tangente a $BC$. Probar que los radios de $\omega_1$ y $\omega_2$ son iguales.
+**Ejemplo 6.** (Tangente y secante desde un punto exterior) Sea $P$ un punto exterior a una circunferencia $\omega$. Una tangente desde $P$ toca $\omega$ en $T$, y una secante por $P$ corta a $\omega$ en $A$ y $B$ (con $A$ entre $P$ y $B$). Probar que $\triangle PAT \sim \triangle PTB$ (con la correspondencia $P \leftrightarrow P$, $A \leftrightarrow T$, $T \leftrightarrow B$), y deducir que $PT^2 = PA \cdot PB$.
 
-*Resolución.* Sea $r_1$ el radio de $\omega_1$ y $r_2$ el de $\omega_2$. $\omega_1$ es tangente a $BC$ en $B$ (o en otro punto — verifiquemos). Si $\omega_1$ pasa por $B$ y es tangente a $BC$ en $B$, el centro de $\omega_1$ está en la perpendicular a $BC$ en $B$.
+*Resolución.* El ángulo en $P$ es **común** a ambos triángulos: tanto $\angle APT$ (en $\triangle PAT$) como $\angle TPB$ (en $\triangle PTB$) están formados por el rayo $PT$ y el rayo $PA = PB$ (la secante), así $\angle APT = \angle TPB$.
 
-Sea $O_1$ el centro de $\omega_1$, con $O_1 B \perp BC$. La potencia de $D$ respecto a $\omega_1$: $D$ está sobre $BC$, así $\text{pow}(D, \omega_1) = DB^2$ (tangente desde $D$ a $\omega_1$ en $B$, si $B$ es el punto de tangencia). Pero $D$ también está en la cuerda $BP$, así $\text{pow}(D, \omega_1) = DB \cdot DP$ (para secante $DBP$... wait, $D$ is on $BC$, and $B, P$ are on $\omega_1$. The "secant" from $D$ through $B$ and $P$ is not a line through $D$ unless $D, B, P$ are collinear — which is only if $P$ is on $BC$, which it's not since $P$ is on the altitude from $A$).
+Para el segundo par de ángulos, usamos el **ángulo semiinscrito** (Corolario 3 del teorema del ángulo inscrito: el ángulo entre una tangente y una cuerda iguala al ángulo inscrito en el arco opuesto). La tangente $PT$ y la cuerda $TA$ forman un ángulo $\angle PTA$ que es igual al ángulo inscrito que abarca el arco $\widehat{TA}$ desde el lado opuesto, es decir, $\angle PTA = \angle TBA$. Como $A$ está entre $P$ y $B$, el ángulo $\angle TBA$ es el mismo que $\angle TBP$ (ángulo del triángulo $PTB$ en el vértice $B$). Luego
 
-This example is getting too complex for this chapter. Let me replace it with a simpler one.
+$$\angle PTA = \angle TBP.$$
 
-**Ejemplo 6 (reemplazado).** Triángulos semejantes en una configuración de tangentes y secantes.
+Así, en $\triangle PAT$ y $\triangle PTB$ tenemos $\angle P$ común y $\angle PTA = \angle PBT$. Por el criterio **AA**, $\triangle PAT \sim \triangle PTB$ con la correspondencia $P \leftrightarrow P$, $T \leftrightarrow B$, $A \leftrightarrow T$ —exactamente la del enunciado—.
 
-Sea $P$ un punto exterior a una circunferencia $\omega$. Una tangente desde $P$ toca $\omega$ en $T$. Una secante por $P$ intersecta $\omega$ en $A$ y $B$ (con $A$ entre $P$ y $B$). Probar que $\triangle PAT \sim \triangle PTB$.
+De la semejanza se obtiene la proporción entre lados correspondientes:
 
-$\angle P$ es común. $\angle PAT = \angle ATB$? No, usamos: $\angle PTA$ y $\angle TBA$.
+$$\frac{PA}{PT} = \frac{PT}{PB} = \frac{AT}{TB} \qquad \Longrightarrow \qquad PT^2 = PA \cdot PB.$$
 
-$\angle TBP = \angle TBP$. Por el ángulo semiinscrito en $T$: $\angle PTB = \angle TAB$ (el ángulo que forma la tangente $PT$ con la cuerda $TB$ iguala al inscrito en el arco $TB$ visto desde el lado opuesto, que es $\angle TAB$).
-
-Hmm: $\angle(PT, TB) = $ ángulo inscrito sobre arco $TB$ = $\angle TAB$.
-
-$\angle PTA = \angle TBA$ (el ángulo entre la tangente $PT$ y la cuerda $TA$ iguala al inscrito sobre arco $TA$ = $\angle TBA$).
-
-Así $\triangle PAT$ y $\triangle PTB$: $\angle PAT = \angle PTA$... NO wait, we need to set up the correspondence correctly.
-
-$\angle TPA$ = common (both share $\angle P$). $\angle PAT$ in $\triangle PAT$: at vertex $A$ looking at $T$, this is $\angle TAB$... Hmm.
-
-Let me just use the power of the point as the conclusion: $PT^2 = PA \cdot PB$.
-
-In $\triangle PAT$ and $\triangle PTB$: $\angle P$ is common. $\angle PTA = \angle TBA$ (ángulo semiinscrito = ángulo inscrito sobre arco $TA$). By AA: $\triangle PAT \sim \triangle PTB$ (with $A \leftrightarrow T \leftrightarrow B$ and $P \leftrightarrow P$).
-
-From similarity: $PA/PT = PT/PB$, so $PT^2 = PA \cdot PB$ (power of the point). $\square$
+Esta última igualdad es la **potencia del punto** $P$ respecto a $\omega$: el cuadrado de la tangente iguala al producto de los segmentos de cualquier secante. La semejanza $\triangle PAT \sim \triangle PTB$ es, precisamente, la razón geométrica que hay detrás de esa fórmula. $\blacksquare$
 
 ## Homotecia espiral
 
@@ -192,12 +186,14 @@ Sea $f$ la semejanza que envía $A \mapsto A'$ y $B \mapsto B'$. Si $k \neq 1$, 
 
 ## Problemas relacionados
 
-- **(Clásico)** En un triángulo $ABC$, la circunferencia de diámetro $BC$ corta a las alturas $BH_B$ y $CH_C$ en puntos $M$ y $N$. Probar que $MN \parallel BC$ usando semejanza.
+- **(Clásico)** Sea $ABC$ un triángulo y $H_B$, $H_C$ los pies de las alturas desde $B$ y desde $C$ respectivamente. Demostrar que $H_B$ y $H_C$ pertenecen a la circunferencia de diámetro $BC$.
 
-- **(OMG 2018)** Sea $P$ un punto interior del triángulo $ABC$. Las rectas $AP$, $BP$, $CP$ cortan a los lados opuestos en $D$, $E$, $F$. Probar que $\frac{AP}{PD} + \frac{BP}{PE} + \frac{CP}{PF} = \frac{[ABC]}{[DEF]} + 2$ usando semejanzas en los sub-triángulos.
+- **(Clásico)** Sea $P$ un punto interior del triángulo $ABC$. Las rectas $AP$, $BP$, $CP$ cortan a los lados opuestos en $D$, $E$, $F$. Probar que
 
-- **(Clásico)** Sea $ABCD$ un cuadrilátero con $\angle A + \angle C = 180°$. Demostrar que $ABCD$ es cíclico usando el recíproco del teorema del ángulo inscrito y semejanza.
+$$\frac{AP}{PD} + \frac{BP}{PE} + \frac{CP}{PF} = \frac{[ABC]}{[DEF]} + 2.$$
 
-- **(Clásico, altura al cuadrado)** En el triángulo $ABC$ con altura $h = CD$, demostrar $CD^2 = AD \cdot DB$ directamente por semejanza (sin usar coordenadas).
+- **(Clásico)** Sea $ABCD$ un cuadrilátero con $\angle A + \angle C = 180°$. Demostrar que $ABCD$ es cíclico.
 
-- **(IMO 2009/2)** Sea $ABCD$ un cuadrilátero con $AB \cdot CD = BC \cdot DA$. Demostrar que la diagonal que biseca el ángulo entre $AB$ y $CD$ también biseca el ángulo entre $BC$ y $DA$.
+- **(Clásico)** En el triángulo rectángulo $ABC$ con ángulo recto en $C$, sea $D$ el pie de la altura desde $C$ sobre la hipotenusa $AB$. Demostrar que $CD^2 = AD \cdot DB$ directamente por semejanza de triángulos.
+
+- **(IMO 2009/2)** Sea $ABC$ un triángulo con circuncentro $O$. Los puntos $P$ y $Q$ son puntos interiores de los lados $CA$ y $AB$ respectivamente. Sean $K$, $L$ y $M$ los puntos medios de los segmentos $BP$, $CQ$ y $PQ$ respectivamente, y sea $\Gamma$ la circunferencia que pasa por $K$, $L$ y $M$. Supongamos que la recta $PQ$ es tangente a la circunferencia $\Gamma$. Probar que $OP = OQ$.
