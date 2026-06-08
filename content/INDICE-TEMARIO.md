@@ -181,8 +181,10 @@ Inventario completo del temario olímpico para Teoría de Números, Geometría, 
 ### Métodos
 
 - ✅ Sustitución y normalización (suma $= 1$, producto $= 1$, Ravi, trigonométrica)
+- ✅ Sumas telescópicas
 - ✅ Sum of Squares (SOS) y método $uvw$
 - ✅ Tangent Line Trick (TLT)
+- ✅ Coeficientes indeterminados (factorización de polinomios, Sophie Germain, irreducibilidad)
 - ✅ Cómo atacar ecuaciones funcionales: sustituciones, inducción, regularidad
 - ⏳ Multiplicadores de Lagrange en olympiada
 - ⏳ Funciones generatrices (convex-hull trick)
