@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { DIFICULTADES, SUBSECCIONES, type ContentMeta, type Dificultad, type Subseccion } from '@/lib/constants';
 
 // ─── Layout constants ────────────────────────────────────────────────────────
@@ -29,6 +29,22 @@ const DIFF_BG: Record<Dificultad, string> = {
   nacional:      '#f7f1e5',
   internacional: '#faeaea',
   elite:         '#f0e8e8',
+};
+
+const DIFF_COLORS_DARK: Record<Dificultad, string> = {
+  iniciacion:    '#8aa05a',
+  regional:      '#6a85c4',
+  nacional:      '#d4a85a',
+  internacional: '#e85a4a',
+  elite:         '#f08070',
+};
+
+const DIFF_BG_DARK: Record<Dificultad, string> = {
+  iniciacion:    '#1e2618',
+  regional:      '#191f2c',
+  nacional:      '#261e12',
+  internacional: '#271512',
+  elite:         '#231515',
 };
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -96,6 +112,21 @@ interface Props {
 export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
   const [hiddenDiffs, setHiddenDiffs] = useState<Set<Dificultad>>(new Set());
+  const [isDark, setIsDark] = useState(() =>
+    typeof document !== 'undefined' && document.documentElement.dataset.theme === 'dark'
+  );
+  useEffect(() => {
+    const check = () => setIsDark(document.documentElement.dataset.theme === 'dark');
+    const obs = new MutationObserver(check);
+    obs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => obs.disconnect();
+  }, []);
+
+  const cols = isDark ? DIFF_COLORS_DARK : DIFF_COLORS;
+  const bgs  = isDark ? DIFF_BG_DARK     : DIFF_BG;
+  const inkText  = isDark ? '#ede4d3' : '#1a1612';
+  const inkText2 = isDark ? '#b8a888' : '#2d2620';
+  const ruleColor = isDark ? '#6a5a48' : '#b8a888';
 
   const { nodesByDiff, allEdges, allActiveDiffs, zoneLayout, zoneWidths, svgW, svgH } = useMemo(() => {
     const relevant = allDocs.filter(
@@ -227,8 +258,8 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
                   key={d}
                   className={`rm-legend-chip rm-level-toggle${isHidden ? ' rm-level-toggle--off' : ''}`}
                   style={{
-                    borderColor: isHidden ? 'var(--rule)' : DIFF_COLORS[d],
-                    color: isHidden ? 'var(--ink-muted)' : DIFF_COLORS[d],
+                    borderColor: isHidden ? 'var(--rule)' : cols[d],
+                    color: isHidden ? 'var(--ink-muted)' : cols[d],
                   }}
                   onClick={() => toggleDiff(d)}
                   title={isHidden ? `Mostrar ${info.label}` : `Ocultar ${info.label}`}
@@ -265,7 +296,7 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
               </marker>
               <marker id="rm-arr-same" viewBox="0 0 8 8" refX="7" refY="4"
                 markerWidth="6" markerHeight="6" orient="auto">
-                <path d="M0,1 L7,4 L0,7" fill="none" stroke="#b8a888" strokeWidth="1" strokeLinejoin="round" />
+                <path d="M0,1 L7,4 L0,7" fill="none" stroke={ruleColor} strokeWidth="1" strokeLinejoin="round" />
               </marker>
             </defs>
 
@@ -324,14 +355,14 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
                   <rect
                     x={-8} y={0}
                     width={zoneWidth + 16} height={svgH}
-                    fill={DIFF_COLORS[diff]} fillOpacity={0.04} rx={8}
+                    fill={cols[diff]} fillOpacity={0.04} rx={8}
                   />
                   {/* Zone label */}
                   <text
                     x={zoneWidth / 2} y={36}
                     textAnchor="middle"
                     className="rm-col-label"
-                    fill={DIFF_COLORS[diff]}
+                    fill={cols[diff]}
                   >
                     {info.label}
                   </text>
@@ -353,7 +384,7 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
                     }
                     return (
                       <path key={`we-${idx}`} d={d} fill="none"
-                        stroke="#b8a888" strokeWidth={1.2} strokeDasharray="5 3"
+                        stroke={ruleColor} strokeWidth={1.2} strokeDasharray="5 3"
                         opacity={0.75} markerEnd="url(#rm-arr-same)"
                       />
                     );
@@ -363,8 +394,8 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
                   {zoneNodes.map(node => {
                     const { meta, x, y } = node;
                     const [line1, line2] = wrapTitle(meta.title);
-                    const col = DIFF_COLORS[meta.dificultad];
-                    const bg = DIFF_BG[meta.dificultad];
+                    const col = cols[meta.dificultad];
+                    const bg = bgs[meta.dificultad];
                     const cat = catLabel(meta.categoria);
                     const hasLine2 = line2.length > 0;
 
@@ -381,12 +412,12 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
                           {cat}
                         </text>
                         <text x={x + 12} y={hasLine2 ? y + 24 : y + 37}
-                          fontSize={10.5} fontFamily="var(--sans)" fill="#1a1612" fontWeight={500}>
+                          fontSize={10.5} fontFamily="var(--sans)" fill={inkText} fontWeight={500}>
                           {line1}
                         </text>
                         {hasLine2 && (
                           <text x={x + 12} y={y + 40}
-                            fontSize={10.5} fontFamily="var(--sans)" fill="#2d2620" fontWeight={400}>
+                            fontSize={10.5} fontFamily="var(--sans)" fill={inkText2} fontWeight={400}>
                             {line2}
                           </text>
                         )}
