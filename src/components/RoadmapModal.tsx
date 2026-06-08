@@ -381,12 +381,12 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
                           {cat}
                         </text>
                         <text x={x + 12} y={hasLine2 ? y + 24 : y + 37}
-                          fontSize={10.5} fontFamily="var(--sans)" fill="var(--ink)" fontWeight={500}>
+                          fontSize={10.5} fontFamily="var(--sans)" fill="#1a1612" fontWeight={500}>
                           {line1}
                         </text>
                         {hasLine2 && (
                           <text x={x + 12} y={y + 40}
-                            fontSize={10.5} fontFamily="var(--sans)" fill="var(--ink-2)" fontWeight={400}>
+                            fontSize={10.5} fontFamily="var(--sans)" fill="#2d2620" fontWeight={400}>
                             {line2}
                           </text>
                         )}
