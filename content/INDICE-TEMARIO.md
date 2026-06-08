@@ -1,6 +1,6 @@
 # ÍNDICE MAESTRO — Material teórico olímpico (v2)
 
-Inventario completo del temario olímpico para Teoría de Números y Geometría.
+Inventario completo del temario olímpico para Teoría de Números, Geometría, Álgebra y Combinatoria.
 
 - ✅ Cubierto
 - ⏳ Pendiente
@@ -61,7 +61,6 @@ Inventario completo del temario olímpico para Teoría de Números y Geometría.
 - ✅ Descenso infinito
 - ✅ Vieta jumping
 - ✅ Inducción
-- ✅ Palomar
 - ✅ Principio del extremo
 - ✅ Invariantes
 - ✅ Ecuaciones diofánticas
@@ -203,9 +202,54 @@ Inventario completo del temario olímpico para Teoría de Números y Geometría.
 
 ---
 
-## Áreas no cubiertas (futuras expansiones)
+## COMBINATORIA
 
-- **Combinatoria:** grafos, conteo doble, principio extremal, Ramsey, juegos.
+### Conteo fundamental (iniciación · regional)
+
+- ✅ Principios de conteo: suma, producto, permutaciones, variaciones, combinaciones, estrellas y barras
+- ✅ Coeficientes binomiales: simetría, Pascal, binomio de Newton, Vandermonde, hockey stick
+- ✅ Principio de inclusión-exclusión, desarreglos, criba de Eratóstenes-Legendre
+- ✅ Recurrencias combinatorias: última pieza, Fibonacci, Catalan vía primer retorno, Stirling
+
+### Enumeración avanzada (nacional)
+
+- ✅ Funciones generadoras (OGF, EGF, diccionario, teorema de Euler de particiones)
+- ✅ Números de Catalan: tres formulaciones, reflexión, recurrencia convolutiva
+- ✅ Particiones, números de Stirling y de Bell, fórmula de Dobinski
+
+### Teoría de grafos (regional · nacional)
+
+- ✅ Fundamentos: lema del apretón de manos, árboles, caminos eulerianos, fórmula de Cayley
+- ✅ Coloraciones: número cromático, polinomio cromático, teorema de los cuatro colores
+
+### Combinatoria extremal (internacional · élite)
+
+- ✅ Teoría extremal de conjuntos: Sperner (LYM), Erdős–Ko–Rado, compresión
+- ✅ Teorema de Hall y emparejamientos: SDR, teorema de König
+- ✅ Números de Ramsey: cota recursiva, $R(3,3)=6$, cota probabilística de Erdős
+
+### Métodos
+
+- ✅ Palomar
+- ✅ Conteo doble
+- ✅ Invariantes y coloración
+- ✅ Método biyectivo
+- ✅ Argumento extremal combinatorio
+- ✅ Método probabilístico (esperanza, segundo momento, alteración)
+- ✅ Juegos combinatorios: P/N-posiciones, teorema de Bouton (Nim), Sprague-Grundy
+
+### Demostraciones
+
+- ✅ Tres demostraciones del teorema del binomio (combinatoria, inducción, Taylor)
+- ✅ Tres demostraciones de la fórmula de Catalan (reflexión, funciones generadoras, lema del ciclo)
+
+### Problemas resueltos / guiados
+
+| Nivel | Disponibles |
+|---|---|
+| iniciación | ✅ Tablero mutilado (guiado) |
+| nacional | ✅ IMO 1987/P1 — puntos fijos (guiado), ✅ Mantel y triángulos (clásico), ✅ Juego del 15 y paridad (guiado) |
+| internacional | ✅ IMO 1998/P2 — jueces y concursantes (clásico) |
 
 ---
 
@@ -233,4 +277,4 @@ diferencia un texto **didáctico** de uno **enciclopédico**.
 
 ---
 
-*Última actualización: febrero 2026.*
+*Última actualización: junio 2026.*

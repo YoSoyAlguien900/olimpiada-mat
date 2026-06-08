@@ -453,6 +453,7 @@ export function buildIndex() {
     geometria: {} as any,
     'teoria-numeros': {} as any,
     algebra: {} as any,
+    combinatoria: {} as any,
   };
   for (const sub of SUBSECCIONES) {
     for (const cat of CATEGORIAS) {

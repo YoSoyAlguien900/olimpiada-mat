@@ -1,0 +1,47 @@
+---
+title: "Colección internacional: Ramsey, extremal de conjuntos, probabilidad y juegos"
+preview: "Quince problemas en la frontera de la combinatoria olímpica: donde Ramsey, Sperner, el método probabilístico y la teoría de juegos dejan de ser curiosidades y se convierten en herramientas de trabajo cotidianas."
+dificultad: internacional
+tags: [coleccion, ramsey, extremal-conjuntos, probabilistico, juegos, internacional]
+prerequisites: [ramsey, teoria-extremal-conjuntos, metodo-probabilistico, juegos-combinatorios-estrategias, teorema-hall-matchings]
+author: "Adrián García Bouzas"
+updated: "2026-06-08"
+---
+
+Esta colección reúne problemas representativos del nivel de las fases finales de olimpiadas nacionales y de competiciones internacionales (IMO, ISL, Putnam). Cada uno requiere identificar —entre un repertorio de técnicas avanzadas: [ramsey](../contenidos/ramsey), [teoria-extremal-conjuntos](../contenidos/teoria-extremal-conjuntos), el [metodo-probabilistico](../metodos/metodo-probabilistico), los [juegos-combinatorios-estrategias](../metodos/juegos-combinatorios-estrategias) y el [teorema-hall-matchings](../contenidos/teorema-hall-matchings)— cuál es la herramienta correcta, y luego ejecutarla con precisión. No es una colección para resolver de un tirón: cada problema merece, como mínimo, una sesión completa de reflexión antes de consultar las pistas.
+
+## Problemas
+
+1. Demostrar que $R(3, 4) = 9$: que todo coloreado de $K_9$ con dos colores contiene un triángulo en el primer color o un $K_4$ en el segundo, y que existe un coloreado de $K_8$ que evita ambos.
+2. Sea $\mathcal{F}$ una familia de subconjuntos de $\{1, \ldots, n\}$ tal que ningún miembro contiene a otro (una anticadena). Demostrar, usando el teorema de Sperner, que $|\mathcal{F}| \leq \binom{n}{\lfloor n/2 \rfloor}$, y caracterizar cuándo se da la igualdad.
+3. En una cuadrícula $n \times n$ se colorean las casillas con $n$ colores, cada color usado exactamente $n$ veces. Demostrar que existen dos filas y dos columnas cuyas cuatro intersecciones contienen al menos tres colores distintos — usando un argumento combinado de conteo doble y extremal.
+4. (Erdős–Ko–Rado) Sea $\mathcal{F}$ una familia de subconjuntos de tamaño $k$ de $\{1,\ldots,n\}$ (con $n \geq 2k$) tal que cualesquiera dos miembros de $\mathcal{F}$ se intersecan. Demostrar que $|\mathcal{F}| \leq \binom{n-1}{k-1}$.
+5. Demostrar que en cualquier secuencia de $n^2+1$ números reales distintos existe una subsecuencia (no necesariamente contigua) creciente de longitud $n+1$ o decreciente de longitud $n+1$ (teorema de Erdős–Szekeres) — y conectar la prueba con la estructura de Ramsey sobre pares ordenados.
+6. Un conjunto de $100$ personas se sienta en una mesa redonda. Demostrar, usando el método probabilístico (linealidad de la esperanza sobre rotaciones), que existe una rotación de la mesa tras la cual al menos $10$ personas quedan frente al mismo asiento que ocupaban originalmente — o, alternativamente, deducir una cota inferior sobre el número de coincidencias garantizadas.
+7. Demostrar que para todo $n$, existe un grafo con $n$ vértices y número cromático mayor que $\log_2 n$ pero sin triángulos — usando el método probabilístico junto con el método de alteración (eliminar un vértice de cada triángulo encontrado).
+8. En el juego de Nim con $k$ montones de tamaños $a_1, \ldots, a_k$, generalizar el teorema de Bouton al caso en que cada jugador puede retirar fichas de **hasta dos** montones simultáneamente (en cantidades posiblemente distintas). Determinar las posiciones perdedoras.
+9. (Hall regular) Demostrar que todo grafo bipartito $k$-regular (con $k \geq 1$) admite un emparejamiento perfecto, y deducir que sus aristas se pueden particionar en exactamente $k$ emparejamientos perfectos disjuntos (teorema de König sobre coloración de aristas en grafos bipartitos).
+10. Sea $n$ un entero positivo. Dos jugadores se turnan escribiendo, en una pizarra inicialmente vacía, un número entero entre $1$ y $n$ no escrito previamente, con la condición de que la suma de todos los números escritos hasta ese momento sea siempre menor o igual que algún límite $L$. Determinar, para distintos valores de $L$ y $n$, cuál jugador tiene estrategia ganadora — identificando la estructura de Nim subyacente.
+11. Demostrar que entre cualquier conjunto de $2^n$ personas en las que cada par se conoce o no, existe un subconjunto de al menos $n+1$ personas que se conocen todas mutuamente, o un subconjunto de al menos $n+1$ que son mutuamente desconocidas — comparando esta cota con la de Erdős–Szekeres para Ramsey diagonal.
+12. (ISL) Sea $G$ un grafo con $n$ vértices tal que todo subconjunto de $k$ vértices contiene una arista. Determinar el número mínimo posible de aristas de $G$ en función de $n$ y $k$ — usando un argumento extremal sobre conjuntos independientes maximales.
+13. En una competición con $n$ jugadores y $m$ rondas, cada ronda divide a los jugadores en parejas que juegan entre sí (suponiendo $n$ par). Demostrar, usando el teorema de Hall, que es posible organizar $n-1$ rondas de modo que cada jugador se enfrente exactamente una vez a cada uno de los demás (un "torneo round-robin" completo).
+14. Demostrar que existe una constante $c > 0$ tal que, para todo $n$, hay una familia de al menos $c \cdot 2^n / \sqrt{n}$ subconjuntos de $\{1,\ldots,n\}$ que forman una anticadena de tamaño máximo — refinando el teorema de Sperner con una estimación cuantitativa vía la fórmula de Stirling.
+15. (Juego de Chomp generalizado) En el juego de Chomp sobre un tablero infinito en una dirección ($\mathbb{N} \times [m]$), demostrar mediante un argumento de estrategia robada que el primer jugador tiene estrategia ganadora, y explicar por qué este argumento —a diferencia del análisis completo de Nim— no revela cuál es esa estrategia.
+
+## Pistas
+
+1. Para la cota superior, fija un vértice de $K_9$ y analiza, por palomar, cuántas aristas de cada color salen de él; para la construcción en $K_8$, prueba con dos copias de $C_5$ (ciclo de cinco vértices) coloreadas adecuadamente.
+2. Considera todas las $n!$ cadenas maximales (permutaciones vistas como cadenas de subconjuntos anidados); cada miembro de la anticadena "bloquea" una fracción acotada de cadenas — esto es la desigualdad LYM.
+3. Aplica conteo doble sobre pares (color, fila que lo contiene) y deriva, por palomar, la existencia de filas con perfiles de color suficientemente distintos; combina con un argumento extremal sobre la fila con más colores.
+4. Usa el argumento circular de Katona: dispón los elementos en un círculo aleatorio y cuenta, para cada rotación, cuántos miembros de $\mathcal F$ son "arcos" — la condición de intersección limita drásticamente cuántos arcos disjuntos puede haber por rotación.
+5. A cada elemento $a_i$ asígnale el par $(c_i, d_i)$ = (longitud de la subsecuencia creciente más larga que termina en $a_i$, longitud de la decreciente más larga); demuestra que esta asignación es inyectiva y aplica palomar sobre $n^2 + 1$ pares con coordenadas en $\{1,\ldots,n\}$.
+6. Define, para cada rotación $r$ y cada persona $i$, el indicador de "coincidencia"; calcula la esperanza del número total de coincidencias sumando sobre todas las rotaciones y todas las personas, y aplica el principio del promedio sobre las rotaciones.
+7. Colorea cada arista al azar con probabilidad $p$ cuidadosamente elegida; acota la esperanza del número de triángulos y del número de conjuntos independientes grandes, y elimina un vértice por cada triángulo "molesto" — balancea $p$ para que sobrevivan suficientes vértices con número cromático grande.
+8. Prueba primero con dos montones; conjetura la condición ganadora en términos de alguna combinación bit a bit distinta del XOR simple, y verifica mediante la caracterización recursiva P/N.
+9. Aplica la condición de Hall: para cualquier subconjunto $S$ de un lado, cuenta las aristas que salen de $S$ usando la $k$-regularidad, y deduce $|N(S)| \geq |S|$; itera el emparejamiento perfecto sobre el grafo restante tras remover cada uno.
+10. Identifica el "espacio de jugadas restantes" como una suma de componentes independientes (cada número disponible es, en cierto sentido, un montón de tamaño $1$) y relaciona la condición de suma acotada con un juego de tipo Nim o subtracción.
+11. Aplica la cota recursiva de Erdős–Szekeres para $R(s,t)$: demuestra por inducción que $R(s,t) \leq \binom{s+t-2}{s-1}$, y verifica que esta cota implica la afirmación para el tamaño $2^n$.
+12. Considera un conjunto independiente maximal $I$; por hipótesis, $|I| < k$ (de lo contrario contradiría la condición); relaciona el tamaño de $G \setminus I$ con una cota inferior sobre el número de aristas usando que cada vértice fuera de $I$ tiene un vecino en $I$.
+13. Modela el problema como una sucesión de emparejamientos perfectos en $K_n$ (para $n$ par) o en $K_n$ menos un vértice (para $n$ impar); el teorema de König sobre coloración de aristas en grafos bipartitos —o su análogo para grafos completos— garantiza la descomposición.
+14. Aplica la fórmula de Stirling a $\binom{n}{\lfloor n/2 \rfloor}$ para obtener una estimación asintótica, y construye una anticadena de tamaño cercano a esa cota usando el nivel central de subconjuntos.
+15. Supón que el segundo jugador tuviera estrategia ganadora; demuestra que el primer jugador podría "robar" esa estrategia haciendo una primera jugada inocua, contradiciendo la suposición — el argumento es no constructivo por naturaleza, y esa es precisamente su fuerza y su limitación.

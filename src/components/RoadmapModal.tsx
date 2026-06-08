@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useRef, useState } from 'react';
-import { DIFICULTADES, type ContentMeta, type Dificultad, type Subseccion } from '@/lib/constants';
+import { DIFICULTADES, SUBSECCIONES, type ContentMeta, type Dificultad, type Subseccion } from '@/lib/constants';
 
 // ─── Layout constants ────────────────────────────────────────────────────────
 const NW = 176;         // node width
@@ -198,7 +198,7 @@ export function RoadmapModal({ subseccion, allDocs, onClose }: Props) {
     });
   };
 
-  const subsecLabel = subseccion === 'teoria-numeros' ? 'Teoría de Números' : 'Geometría';
+  const subsecLabel = SUBSECCIONES.find(s => s.id === subseccion)?.label ?? subseccion;
 
   // Cross-zone edges where both endpoints are visible
   const crossZoneEdges = allEdges.filter(e => {

@@ -149,6 +149,16 @@ export default function CompetenciasPage() {
           <h3>Geometría</h3>
           <p>Sintética clásica, transformaciones, inversión, geometría del triángulo.</p>
         </Link>
+        <Link href="/olimpiada/algebra/contenidos" className="disc-card">
+          <div className="disc-symbol">∑</div>
+          <h3>Álgebra</h3>
+          <p>Desigualdades, ecuaciones funcionales, polinomios, sucesiones.</p>
+        </Link>
+        <Link href="/olimpiada/combinatoria/contenidos" className="disc-card">
+          <div className="disc-symbol">⬡</div>
+          <h3>Combinatoria</h3>
+          <p>Conteo, grafos, extremal de conjuntos, Ramsey, juegos y probabilidad.</p>
+        </Link>
       </div>
     </>
   );
