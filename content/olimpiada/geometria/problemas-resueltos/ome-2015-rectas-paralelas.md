@@ -17,12 +17,15 @@ Sean $r$ y $s$ dos rectas paralelas, y $A$ un punto fijo a igual distancia de am
 // r (abajo) y s (arriba) paralelas; A equidistante; ∠BAC=90º; D segunda intersección de AC con r;
 // Q pie de la perpendicular fija desde A a r; P pie de la perpendicular variable desde A a BC
 size 7.4 5.8
+anchor -1.9  1     sL
+anchor  1.0  1     sR
 point -1.6  -1     B   -0.1  -0.32
 point  0    -1     Q    0.18 -0.28
 point  0.63 -1     D    0.2  -0.28
 point -0.63  1     C   -0.08  0.28
-point  0     0     A   -0.28  0.07
+point  0     0     A    0.20 -0.22
 point -0.9   0.44  P   -0.37  0.06
+segment sL sR
 segment B D
 segment A B
 segment C D

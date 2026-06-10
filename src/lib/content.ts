@@ -188,6 +188,7 @@ export function listMeta(
 //  segment A B           — segmento entre puntos nombrados
 //  dash    A B           — segmento discontinuo
 //  arc  0 0 2.5  30 150  — arco de ángulo 30° a 150°
+//  anchor  1.8  1.6  A   — punto nombrado SIN punto visible (solo para usar en segment/dash)
 //  rightangle H A B      — marca de ángulo recto en H hacia A y B
 //  label  0.5 -2.8 "PA·PB = cte"  — texto libre (puede tener espacios)
 //  ```
@@ -198,6 +199,7 @@ type GeoCmd =
   | { type: 'size'; W: number; H: number }
   | { type: 'circle'; cx: number; cy: number; r: number; lbl: string }
   | { type: 'point';  x: number;  y: number; lbl: string; dx: number; dy: number }
+  | { type: 'anchor'; x: number;  y: number; lbl: string }
   | { type: 'segment'; p1: string; p2: string; dashed: boolean }
   | { type: 'arc'; cx: number; cy: number; r: number; a1: number; a2: number }
   | { type: 'rightangle'; v: string; p1: string; p2: string }
@@ -223,6 +225,7 @@ function parseGeofig(src: string): string {
     if (cmd === 'size')  cmds.push({ type: 'size',  W: n(1), H: n(2) || n(1) });
     else if (cmd === 'circle') cmds.push({ type: 'circle', cx: n(1), cy: n(2), r: n(3), lbl: parts[4] ?? '' });
     else if (cmd === 'point')  cmds.push({ type: 'point',  x: n(1),  y: n(2), lbl: parts[3] ?? '', dx: n(4) || 0.18, dy: n(5) || -0.18 });
+    else if (cmd === 'anchor') cmds.push({ type: 'anchor', x: n(1),  y: n(2), lbl: parts[3] ?? '' });
     else if (cmd === 'segment' || cmd === 'seg') cmds.push({ type: 'segment', p1: parts[1], p2: parts[2], dashed: false });
     else if (cmd === 'dash')   cmds.push({ type: 'segment', p1: parts[1], p2: parts[2], dashed: true });
     else if (cmd === 'arc')    cmds.push({ type: 'arc', cx: n(1), cy: n(2), r: n(3), a1: n(4), a2: n(5) });
@@ -241,9 +244,11 @@ function parseGeofig(src: string): string {
   const sx = (x: number) => +(x * SCALE).toFixed(2);
   const sy = (y: number) => +(-y * SCALE).toFixed(2);
 
-  // Named points
+  // Named points (point + anchor)
   const pts = new Map<string, [number, number]>();
-  cmds.forEach(c => { if (c.type === 'point' && c.lbl) pts.set(c.lbl, [c.x, c.y]); });
+  cmds.forEach(c => {
+    if ((c.type === 'point' || c.type === 'anchor') && c.lbl) pts.set(c.lbl, [c.x, c.y]);
+  });
 
   const geo: string[] = [];  // geometric elements (circles, lines)
   const lbls: string[] = []; // text labels (rendered last, on top)
@@ -260,6 +265,8 @@ function parseGeofig(src: string): string {
       if (c.lbl) {
         lbls.push(`<text class="gf-lbl" x="${sx(c.x + c.dx)}" y="${sy(c.y + c.dy)}">${c.lbl}</text>`);
       }
+    } else if (c.type === 'anchor') {
+      // Named position without a visible dot — used only as segment endpoints
     } else if (c.type === 'segment') {
       const p1 = pts.get(c.p1); const p2 = pts.get(c.p2);
       if (p1 && p2) {
@@ -389,10 +396,15 @@ function wrapSemanticBlocks(html: string): string {
     const m = part.match(/^<h2[^>]*>(.*?)<\/h2>$/);
     if (m) {
       flush();
-      const titleText = m[1].replace(/<[^>]+>/g, '').trim();
+      // KaTeX (output: htmlAndMathml) duplica cada fórmula como <span class="katex-mathml">
+      // (MathML + <annotation> con el TeX original) además del <span class="katex-html">
+      // visible. Si despojáramos todas las etiquetas directamente, el contenido de la
+      // fórmula aparecería triplicado en el título. Eliminamos primero el bloque mathml.
+      const cleaned = m[1].replace(/<span class="katex-mathml">[\s\S]*?<\/span>/g, '');
+      const titleText = cleaned.replace(/<[^>]+>/g, '').trim();
       const key = titleText.toLowerCase();
       currentKind = semantic[key] || 'section';
-      currentTitle = titleText;
+      currentTitle = cleaned.trim();
     } else {
       buffer += part;
     }

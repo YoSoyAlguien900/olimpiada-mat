@@ -1048,6 +1048,10 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   font-weight: 600;
 }
+.cblock-label .katex {
+  text-transform: none;
+  letter-spacing: normal;
+}
 .cblock-body { padding: 18px 22px; }
 .cblock-body > *:first-child { margin-top: 0; }
 .cblock-body > *:last-child { margin-bottom: 0; }
