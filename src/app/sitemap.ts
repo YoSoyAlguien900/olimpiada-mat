@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   entries.push(
     { url: BASE, lastModified: new Date(), changeFrequency: 'weekly', priority: 1.0 },
     { url: `${BASE}/competencias`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/faq`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
   );
 
   // Páginas de categoría

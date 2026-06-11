@@ -75,6 +75,13 @@ export function Sidebar({ index, pathname }: Props) {
         >
           Niveles y competencias
         </Link>
+        <Link
+          href="/faq"
+          className={`sb-cat ${pathname.startsWith('/faq') ? 'active' : ''}`}
+          style={{ display: 'block' }}
+        >
+          Preguntas frecuentes
+        </Link>
       </div>
     </aside>
   );
