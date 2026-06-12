@@ -1024,6 +1024,40 @@ a { color: inherit; text-decoration: none; }
   font-size: 14px;
 }
 
+/* ====== CROSS-NAV (seguir explorando) ====== */
+.xnav {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+@media (max-width: 640px) { .xnav { grid-template-columns: 1fr; gap: 24px; } }
+.xnav-title {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 14px;
+}
+.xnav-links { display: flex; flex-direction: column; gap: 8px; }
+.xnav-link {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  width: fit-content;
+  transition: color 0.15s, border-color 0.15s;
+}
+.xnav-link:hover {
+  color: var(--vermillion);
+  border-bottom-color: var(--vermillion);
+}
+
 /* ====== FAQ ====== */
 .faq-list {
   border-top: 1px solid var(--rule);

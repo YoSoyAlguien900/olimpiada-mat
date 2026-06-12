@@ -48,7 +48,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: '¿Quién escribe estos apuntes?',
-    a: 'Adrián García Bouzas. Son los apuntes que le hubiera gustado tener al empezar: teoría bien explicada, demostraciones completas y problemas con contexto real, organizados por competencia.',
+    a: 'Soy Adrián García Bouzas. Este es un proyecto sin ánimo de lucro desarrollado únicamente por mí, con la intención de que cualquier estudiante tenga acceso libre y gratuito al material de olimpiada que a mí me hubiera gustado tener al empezar: teoría bien explicada, demostraciones completas y problemas con contexto real, organizados por competencia.',
   },
 ];
 

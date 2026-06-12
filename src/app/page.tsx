@@ -5,36 +5,38 @@ import { buildIndex, SUBSECCIONES, CATEGORIAS } from '@/lib/content';
 export const metadata: Metadata = {
   title: 'Olimpiada Matemática — Material de élite',
   description:
-    'Apuntes de olimpiada matemática: teoría bien explicada, demostraciones completas y problemas con contexto real de Geometría y Teoría de Números. Calibrado desde OMG hasta IMO.',
+    'Apuntes de olimpiada matemática: teoría bien explicada, demostraciones completas y problemas resueltos de Álgebra, Combinatoria, Geometría y Teoría de Números. Calibrado desde la OMG hasta la IMO.',
   alternates: {
     canonical: 'https://olimpiadamatematica.com',
   },
   openGraph: {
     title: 'Olimpiada Matemática — Material de élite',
     description:
-      'Apuntes de olimpiada matemática: teoría bien explicada, demostraciones completas y problemas con contexto real de Geometría y Teoría de Números. Calibrado desde OMG hasta IMO.',
+      'Apuntes de olimpiada matemática: teoría bien explicada, demostraciones completas y problemas resueltos de Álgebra, Combinatoria, Geometría y Teoría de Números. Calibrado desde la OMG hasta la IMO.',
     url: 'https://olimpiadamatematica.com',
     type: 'website',
   },
 };
 
+const BASE = 'https://olimpiadamatematica.com';
+
 const homeJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'Olimpiada Matemática',
-  url: 'https://olimpiadamatematica.com',
+  '@type': 'CollectionPage',
+  '@id': `${BASE}/#webpage`,
+  url: BASE,
+  name: 'Olimpiada Matemática — Material de élite',
   description:
-    'Material de élite para preparación de olimpiadas matemáticas: Geometría y Teoría de Números, calibrado por competencia (OMG → OME → IMO).',
+    'Material de élite para preparación de olimpiadas matemáticas: Álgebra, Combinatoria, Geometría y Teoría de Números, calibrado por competencia (OMG → OME → IMO).',
   inLanguage: 'es',
-  author: {
-    '@type': 'Person',
-    name: 'Adrián García Bouzas',
-  },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: 'https://olimpiadamatematica.com/olimpiada/geometria/contenidos',
-    'query-input': 'required name=search_term_string',
-  },
+  isPartOf: { '@id': `${BASE}/#website` },
+  about: { '@id': `${BASE}/#org` },
+  author: { '@id': `${BASE}/#person` },
+  hasPart: SUBSECCIONES.map((s) => ({
+    '@type': 'CreativeWork',
+    name: s.label,
+    url: `${BASE}/olimpiada/${s.id}/contenidos`,
+  })),
 };
 
 export default function HomePage() {

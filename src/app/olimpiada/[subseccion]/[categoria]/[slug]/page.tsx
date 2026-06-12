@@ -91,26 +91,24 @@ export default async function DocPage({ params }: Params) {
     description: doc.preview || `${doc.title} — ${cat.label} de ${sub.label}`,
     url: `${BASE}${doc.href}`,
     inLanguage: 'es',
-    author: {
-      '@type': 'Person',
-      name: doc.author || 'Adrián García Bouzas',
-    },
+    isAccessibleForFree: true,
+    author: doc.author
+      ? { '@type': 'Person', name: doc.author }
+      : { '@id': `${BASE}/#person` },
+    publisher: { '@id': `${BASE}/#org` },
     educationalLevel: doc.dificultad,
     learningResourceType: cat.label,
     about: {
       '@type': 'Thing',
       name: sub.label,
     },
-    keywords: (doc.tags || []).join(', '),
+    keywords: [...(doc.tags || []), 'olimpiada matemática', sub.label, cat.label].join(', '),
     dateModified: doc.updated || undefined,
     isPartOf: {
       '@type': 'Course',
       name: 'Olimpiada Matemática — Material de élite',
       url: BASE,
-      provider: {
-        '@type': 'Person',
-        name: 'Adrián García Bouzas',
-      },
+      provider: { '@id': `${BASE}/#org` },
     },
     breadcrumb: {
       '@type': 'BreadcrumbList',

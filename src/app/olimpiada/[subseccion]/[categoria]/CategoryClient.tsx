@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import {
   DIFICULTADES,
+  CATEGORIAS,
+  SUBSECCIONES,
   type ContentMeta,
   type Dificultad,
   type Subseccion,
@@ -70,11 +72,13 @@ export default function CategoryClient({ sub, cat, entries }: Props) {
     <>
       <div className="index-head">
         <div className="index-eyebrow">
-          {sub.label} · {cat.label}
+          Olimpiada Matemática · {sub.label}
         </div>
-        <h1>{cat.label}</h1>
+        <h1>{cat.label} de {sub.label}</h1>
         <p>
-          {cat.descripcion} en el área de {sub.label.toLowerCase()}.
+          {cat.descripcion} de {sub.label.toLowerCase()} para olimpiada matemática, con dificultad
+          calibrada por competencia — desde la Olimpíada Matemática Galega (OMG) hasta la OME y la
+          IMO. {entries.length} {entries.length === 1 ? 'entrada disponible' : 'entradas disponibles'}.
         </p>
       </div>
 
@@ -167,6 +171,29 @@ export default function CategoryClient({ sub, cat, entries }: Props) {
           })}
         </div>
       )}
+
+      <nav className="xnav" aria-label="Seguir explorando">
+        <div className="xnav-group">
+          <span className="xnav-title">Más de {sub.label}</span>
+          <div className="xnav-links">
+            {CATEGORIAS.filter((c) => c.id !== cat.id).map((c) => (
+              <Link key={c.id} href={`/olimpiada/${sub.id}/${c.id}`} className="xnav-link">
+                {c.label} de {sub.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className="xnav-group">
+          <span className="xnav-title">Otras disciplinas</span>
+          <div className="xnav-links">
+            {SUBSECCIONES.filter((s) => s.id !== sub.id).map((s) => (
+              <Link key={s.id} href={`/olimpiada/${s.id}/${cat.id}`} className="xnav-link">
+                {cat.label} de {s.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </nav>
     </>
   );
 }
