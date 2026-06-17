@@ -11,6 +11,7 @@ import {
   type Categoria,
 } from '@/lib/content';
 import { PdfExportButton } from '@/components/PdfExportButton';
+import { RevealController } from '@/components/RevealController';
 
 const BASE = 'https://olimpiadamatematica.com';
 
@@ -187,6 +188,7 @@ export default async function DocPage({ params }: Params) {
       </header>
 
       <div className="prose" dangerouslySetInnerHTML={{ __html: doc.html }} />
+      <RevealController />
 
       <nav className="doc-nav">
         {prev ? (

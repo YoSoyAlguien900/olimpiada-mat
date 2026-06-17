@@ -54,105 +54,89 @@ Este corolario es inmediatamente útil: la ecuación $x^2 + y^2 = n$ no tiene so
 
 ## Ejemplo
 
-Los siguientes ejemplos ilustran la técnica de paridad en orden creciente de sofisticación.
+Los ejemplos siguen un orden creciente de sofisticación: de la imposibilidad directa, al invariante en un proceso, a la coloración y, finalmente, al salto a módulos mayores.
 
 ### Nivel 1: imposibilidad directa
 
 **Ejemplo 1.** Demostrar que la suma de tres números impares cualesquiera es impar.
 
-La suma de tres números impares tiene la misma paridad que $1 + 1 + 1 = 3$, que es impar. $\square$
+*La idea.* Para la paridad **solo importa la clase módulo $2$**: cada impar es $\equiv 1$, así que sumar tres impares es como sumar $1 + 1 + 1$.
 
-**Ejemplo 2.** ¿Es posible que $x^2 + y^2 = 2026$ tenga solución en enteros?
+*Solución.* Tres impares suman lo mismo, módulo $2$, que $1 + 1 + 1 = 3 \equiv 1$. Luego la suma es impar. $\square$
 
-$2026 \equiv 2 \pmod 4$. Pero $x^2 + y^2 \equiv 0, 1, 2 \pmod 4$, y el valor $2 \pmod 4$ requiere $x^2 \equiv y^2 \equiv 1 \pmod 4$, es decir, ambos impares. Pero entonces $x = 2s+1$ y $y = 2t+1$:
+**Ejemplo 2.** ¿Tiene $x^2 + y^2 = 2023$ solución en enteros?
 
-$$x^2 + y^2 = (2s+1)^2 + (2t+1)^2 = 4s^2 + 4s + 4t^2 + 4t + 2 = 4(s^2+s+t^2+t) + 2.$$
+*La idea.* Cuando aparecen cuadrados y se pregunta por (in)existencia, el primer reflejo es mirar **los cuadrados módulo $4$**: solo valen $0$ (si la base es par) o $1$ (si es impar). Eso restringe muchísimo qué números son suma de dos cuadrados.
 
-Necesitamos $2026 = 4m + 2$ para algún $m$, es decir $m = 506$. **¿Es posible?** Sí, la paridad módulo $4$ no descarta. Necesitamos una condición más fina. La representación como suma de dos cuadrados requiere que todo primo $p \equiv 3 \pmod 4$ que divide a $2026 = 2 \cdot 1013 = 2 \cdot 1013$ aparezca con exponente par. $1013$ es primo y $1013 = 4 \cdot 253 + 1 \equiv 1 \pmod 4$. Por tanto **sí hay representación**: $2026 = 25^2 + 39^2 + \ldots$ En este caso la paridad fue necesaria pero no suficiente.
+*Solución.* Como todo cuadrado es $\equiv 0$ o $1 \pmod 4$, la suma $x^2 + y^2$ solo puede ser $\equiv 0, 1$ o $2 \pmod 4$. Pero
 
-**Ejemplo 3.** Demostrar que $n^2 + n + 1$ es siempre impar para entero $n$.
+$$
+2023 = 4 \cdot 505 + 3 \equiv 3 \pmod 4.
+$$
 
-$n^2 + n = n(n+1)$ es el producto de enteros consecutivos, siempre par. Así $n^2 + n + 1 = \text{par} + 1 = \text{impar}$.
+El valor $3$ es inalcanzable, así que **no hay solución**. $\square$
 
----
+*La moraleja.* Ningún número $\equiv 3 \pmod 4$ es suma de dos cuadrados. Es la obstrucción módulo $4$ más usada de toda la olimpiada.
+
+**Ejemplo 3.** Demostrar que $n^2 + n + 1$ es impar para todo entero $n$.
+
+*La idea.* No hace falta distinguir casos: $n^2 + n = n(n+1)$ es producto de dos enteros **consecutivos**, y de dos consecutivos uno siempre es par.
+
+*Solución.* $n(n+1)$ es par (uno de los dos factores lo es), así que $n^2 + n + 1 = (\text{par}) + 1$ es impar. $\square$
 
 ### Nivel 2: invariante en un proceso
 
-**Ejemplo 4.** Sobre una pizarra están escritos los números $1, 2, 3, \ldots, 100$. En cada paso se borran dos números $a, b$ y se escribe $|a - b|$. Tras $99$ pasos queda un número. ¿Puede ese número ser $1$?
+**Ejemplo 4.** En una pizarra están escritos $1, 2, 3, \ldots, 100$. En cada paso se borran dos números $a, b$ y se escribe $|a - b|$. Tras $99$ pasos queda un solo número. ¿Puede ser $1$?
 
-La clave: ¿cuál es el invariante?
+*La idea.* En un proceso, hay que buscar **qué se conserva**. La suma total cambia, pero quizá su *paridad* no: conviene medir en cuánto cambia la suma en cada paso.
 
-La **suma** $S$ de todos los números en la pizarra no es invariante bajo esta operación (ya que $a + b$ es reemplazado por $|a - b|$, la suma cambia). Pero la paridad de $S$ sí lo es: al borrar $a, b$ y escribir $|a-b|$, la suma cambia en
+*Solución.* Al borrar $a, b$ y escribir $|a - b|$, la suma $S$ varía en
 
-$$|a - b| - a - b = \pm(a - b) - a - b.$$
+$$
+|a - b| - (a + b).
+$$
 
-Si $a \geq b$: cambia en $(a-b) - a - b = -2b$, un número par.
+Si $a \geq b$, esto es $(a - b) - (a + b) = -2b$; si $b > a$, es $-2a$. **En ambos casos el cambio es par**, así que la **paridad de $S$ se conserva**.
 
-Si $b > a$: cambia en $(b-a) - a - b = -2a$, un número par.
+La suma inicial es $S_0 = 1 + 2 + \cdots + 100 = \dfrac{100 \cdot 101}{2} = 5050$, que es **par**. Como la paridad no cambia, el número final también es par. Y $1$ es impar, así que **no puede quedar $1$**. $\square$
 
-En ambos casos la suma cambia en un número **par**, así que la **paridad de $S$ es invariante**.
+*La moraleja.* Cuando una magnitud cambia pero su **paridad** se mantiene, esa paridad es el invariante que separa lo posible de lo imposible.
 
-La suma inicial es $S_0 = 1 + 2 + \cdots + 100 = 5050$, que es **par**. Luego el número final también es par. Como $1$ es impar, **no puede ser $1$**. $\square$
+**Ejemplo 5.** Hay $2n + 1$ vasos en una fila, todos boca arriba. En cada paso se voltean **exactamente dos** vasos (cualesquiera). ¿Se pueden poner todos boca abajo?
 
----
+*La idea.* El número de vasos boca arriba es lo natural que mirar. Al voltear dos vasos, ese número cambia poco — y siempre de forma **par**.
 
-**Ejemplo 5.** Inicialmente hay $n$ fichas, todas cara arriba. En cada paso se voltea exactamente $k$ fichas. ¿Se puede llegar a tener todas las fichas cara abajo?
+*Solución.* Sea $f$ el número de vasos boca arriba. Al voltear dos vasos hay tres casos: ambos estaban arriba ($f$ baja en $2$), ambos abajo ($f$ sube en $2$) o uno de cada ($f$ no cambia). En todos, $f$ cambia en una cantidad **par**, luego su paridad se conserva.
 
-Sea $f$ el número de fichas cara arriba. Inicialmente $f = n$. Cada operación cambia $f$ en $\pm k, \pm(k-2), \ldots$; en cualquier caso, $f$ cambia en un número de la misma paridad que $k$.
+Inicialmente $f = 2n + 1$ es **impar**; el objetivo $f = 0$ es **par**. Como la paridad de $f$ no puede cambiar, **es imposible**. $\square$
 
-Si $k$ es impar: cada operación cambia la paridad de $f$. Para pasar de $f = n$ a $f = 0$, necesitamos un número de operaciones que cambie la paridad de $n$ a la de $0 = $ par. Esto requiere que $n$ sea impar (empezar impar, cambiar paridad, llegar a par).
+### Nivel 3: coloración como paridad de la posición
 
-Si $k$ es par: $f$ mantiene su paridad. Para llegar a $f = 0$ (par), se necesita que $n$ también sea par.
+**Ejemplo 6.** (Tablero mutilado) De un tablero de ajedrez $8 \times 8$ se eliminan dos **esquinas opuestas**. ¿Se pueden cubrir las $62$ casillas restantes con $31$ fichas de dominó $1 \times 2$?
 
-**Conclusión:** Se puede llegar a todas cara abajo si y solo si $n \equiv 0 \pmod{\gcd(2, k)}$... (La condición completa es más sutil e involucra el número de pasos disponibles, pero la paridad da la obstrucción básica.)
+*La idea.* Una coloración es una paridad disfrazada: el color de $(i, j)$ es $i + j \bmod 2$. La clave es ver cómo interactúa la **pieza** con esa coloración: un dominó siempre tapa una casilla de cada color.
 
----
+*Solución.* Coloreamos como un tablero de ajedrez: $(i, j)$ es negra si $i + j$ es par, blanca si es impar. Cada dominó cubre exactamente **una negra y una blanca**, así que $31$ dominós cubrirían $31$ de cada color.
 
-### Nivel 3: coloración como paridad extendida
+Las dos esquinas opuestas tienen el **mismo** color (sus coordenadas suman ambas par, p. ej. $(1,1)$ y $(8,8)$): las dos son negras. Al quitarlas quedan $30$ negras y $32$ blancas. Pero cualquier recubrimiento por dominós exige el mismo número de cada color. Como $30 \neq 32$, **es imposible**. $\square$
 
-**Ejemplo 6.** (Tablero mutilado de Gomory) Se elimina la casilla $(1,1)$ y la casilla $(8,8)$ de un tablero de ajedrez de $8 \times 8$. ¿Se puede cubrir el tablero restante de $62$ casillas con $31$ piezas de dominó de $1 \times 2$?
+*La moraleja.* Si una pieza siempre respeta cierto reparto de colores, el **desequilibrio de colores** de la región es una obstrucción infranqueable.
 
-Coloreamos el tablero como tablero de ajedrez: negras las casillas con $i+j$ par, blancas las de $i+j$ impar. Cada pieza de dominó cubre exactamente **una casilla negra y una blanca**. Los $31$ dominós cubrirían $31$ negras y $31$ blancas.
+### Nivel 4: subir a módulo 8
 
-Las casillas eliminadas son $(1,1)$ y $(8,8)$, ambas con $i+j$ par, ambas **negras**. Quedan $30$ negras y $32$ blancas. La diferencia es $2 \neq 0$.
+**Ejemplo 7.** Demostrar que $x^2 + y^2 + z^2 = 7$ no tiene solución en enteros.
 
-Pero los $31$ dominós requieren diferencia $0$. **Imposible.** $\square$
+*La idea.* Módulo $4$ aquí **no basta** (tres impares dan $1+1+1 = 3 \equiv 7 \pmod 4$, no se descarta). Cuando módulo $4$ se queda corto, el siguiente paso natural es **módulo $8$**, donde los cuadrados son aún más rígidos.
 
----
+*Solución.* Módulo $8$, todo cuadrado es $\equiv 0, 1$ o $4$: en efecto, los pares dan $0$ o $4$ y los impares dan $1$ (recuérdese que un impar al cuadrado es $\equiv 1 \pmod 8$). Sumando tres valores de $\{0, 1, 4\}$ se obtiene, módulo $8$, cualquiera de
 
-**Ejemplo 7.** En un tablero de $n \times n$ se tienen fichas. La operación permitida es: elegir cualquier fila o columna y voltear todas las fichas de esa fila/columna. ¿Puede conseguirse que el número de fichas cara arriba sea exactamente $1$?
+$$
+0, 1, 2, 3, 4, 5, 6,
+$$
 
-Sea $f$ el número inicial de fichas cara arriba. Cada operación en una fila/columna cambia el número de fichas cara arriba en $n - 2r$ donde $r$ es el número de fichas cara arriba en esa fila/columna (las cara arriba se voltean para abajo y las cara abajo para arriba). Así $n - 2r \equiv n \pmod 2$.
+pero **nunca $7$** (compruébese: las únicas formas de acercarse son $4+1+1 = 6$ y $4+4+1 = 9 \equiv 1$). Como $7 \equiv 7 \pmod 8$, la ecuación no tiene solución. $\square$
 
-Si $n$ es par: cada operación cambia $f$ por un número par. La paridad de $f$ es invariante. Si $f$ inicial es par, el resultado siempre es par; si inicial es impar, siempre es impar. Para llegar a $1$ (impar), $f$ inicial debe ser impar.
-
-Si $n$ es impar: cada operación cambia $f$ por un número impar, alternando la paridad. Si partimos de $f$ par, tras un número impar de movimientos $f$ es impar.
-
-Así la paridad da condiciones sobre qué configuraciones finales son alcanzables.
-
----
-
-### Nivel 4: cuadrados módulo 4 como herramienta fuerte
-
-**Ejemplo 8.** Demostrar que $x^2 + y^2 + z^2 = 7$ no tiene solución en enteros.
-
-Los cuadrados son $\equiv 0$ o $1 \pmod 4$. Por tanto $x^2 + y^2 + z^2$ puede ser $0, 1, 2, 3 \pmod 4$, pero **no $7 \equiv 3 \pmod 4$**.
-
-Espera — sí puede ser $3 \pmod 4$ (tomando $x, y, z$ todos impares: $1 + 1 + 1 = 3$). El problema entonces es módulo $8$: $x^2 \equiv 0, 1, 4 \pmod 8$ para $x$ par, impar, o $\equiv 2 \pmod 4$ respectivamente. Con un análisis más fino, la suma de tres cuadrados $\equiv 0, 1, 2, 3, 4, 5, 6 \pmod 8$ pero no $\equiv 7 \pmod 8$. Como $7 \equiv 7 \pmod 8$, no hay solución. $\square$
-
-**Teorema (Legendre, 1798).** Un entero $n \geq 0$ es suma de tres cuadrados si y solo si $n$ no es de la forma $4^a(8b + 7)$. La condición módulo $8$ es necesaria y (con la condición módulo $4^a$) suficiente.
-
----
-
-**Ejemplo 9.** *(OMG 2017, regional)* Hay $100$ monedas en una fila, alternando cara-cruz-cara-cruz-... (primera con cara). En cada paso se puede elegir cualquier moneda cara arriba y voltear las dos monedas adyacentes. ¿Se puede llegar a tener todas las monedas con cara?
-
-El **invariante**: sea $S$ la suma de posiciones (de $1$ a $100$) de las monedas con cara arriba. Inicialmente $S = 1 + 3 + 5 + \cdots + 99 = 2500$ (impar... espera, $1 + 3 + \cdots + 99 = 50^2 = 2500$, par).
-
-Cuando se elige la moneda en posición $p$ (cara arriba) y se voltean las adyacentes en $p-1$ y $p+1$: si la moneda $p-1$ era cara, $S$ baja en $p-1$; si era cruz, $S$ sube en $p-1$. Análogo para $p+1$. El cambio de $S$ es $\pm(p-1) \pm (p+1)$, que es siempre par o impar dependiendo de la paridad de $p-1$ y $p+1$.
-
-Como $p-1$ y $p+1$ tienen la misma paridad, $\pm(p-1) \pm(p+1) \equiv 0 \pmod 2$ o $\equiv 0 \pmod 2$ — la suma es siempre par. Así $S$ cambia su paridad en múltiplos de... el análisis completo requiere más trabajo, pero la paridad de $S$ módulo $4$ suele dar la respuesta.
-
-*(Este problema ilustra que a veces la paridad simple no basta y se necesita el módulo $4$, como en el análisis de los cuadrados.)*
+**Teorema (Legendre, 1798).** Un entero $n \geq 0$ es suma de tres cuadrados si y solo si **no** es de la forma $4^a(8b + 7)$. La obstrucción módulo $8$ que acabamos de usar es, de hecho, la única que existe.
 
 ## Aplicaciones
 
@@ -177,14 +161,120 @@ La habilidad en teoría de números es saber qué módulo elegir. La paridad (m�
 
 ## Problemas relacionados
 
-- **(Clásico)** Los números $1, 2, \ldots, 2n$ están escritos en una pizarra. En cada paso se borran dos números $a, b$ y se escribe $|a - b|$. ¿Puede el número final ser impar?
+**Problema 1 (clásico).** Los números $1, 2, \ldots, 2n$ están escritos en una pizarra. En cada paso se borran dos números $a, b$ y se escribe $|a - b|$. ¿Puede el número final ser impar?
 
-- **(Clásico)** En un tablero de $8 \times 8$ se eliminan dos esquinas opuestas. ¿Se puede cubrir el resto con dominós $1 \times 2$? *(Coloración bipartita.)*
+[[pista]]
 
-- **(Clásico)** Demostrar que $x^2 + y^2 \equiv 3 \pmod 4$ no tiene solución entera. Deducir que $x^2 + y^2 + z^2 \equiv 7 \pmod 8$ tampoco.
+Como en el Ejemplo 4, la **paridad de la suma** se conserva. Calcula la paridad de $1 + 2 + \cdots + 2n$.
 
-- **(Clásico)** Hay $n$ luces inicialmente todas apagadas. En cada paso se cambia el estado de exactamente $k$ luces. ¿Para qué valores de $n$ y $k$ se puede llegar a tener exactamente una luz encendida?
+[[/pista]]
 
-- **(Clásico)** Se tienen $n \geq 3$ personas en una rueda. En cada instante, cada persona saluda a su vecino de la derecha y luego se mueven todos un paso. ¿Para qué $n$ es posible que cada par de personas se salude exactamente una vez?
+[[solución]]
 
-- **(Clásico)** En un cuadrado de $n \times n$, un caballo hace un recorrido completo (visita cada casilla exactamente una vez). Demostrar que si $n$ es impar, el recorrido no puede ser cerrado.
+Igual que en el Ejemplo 4, reemplazar $a, b$ por $|a - b|$ cambia la suma en $-2\min(a,b)$, una cantidad par; luego la **paridad de la suma se conserva** durante todo el proceso. El número final, al ser lo único que queda, tiene la misma paridad que la suma inicial
+
+$$
+S_0 = 1 + 2 + \cdots + 2n = \frac{2n(2n+1)}{2} = n(2n+1).
+$$
+
+Como $2n + 1$ es impar, la paridad de $S_0$ es la de $n$. Por tanto el número final es **impar si y solo si $n$ es impar**. Es decir, sí puede ser impar, exactamente cuando $n$ lo es. $\blacksquare$
+
+[[/solución]]
+
+**Problema 2 (clásico).** A un tablero $8 \times 8$ se le eliminan dos esquinas opuestas. ¿Se puede cubrir el resto con dominós $1 \times 2$?
+
+[[pista]]
+
+Colorea como un tablero de ajedrez y cuenta de cada color, recordando que cada dominó cubre uno de cada uno (es el Ejemplo 6).
+
+[[/pista]]
+
+[[solución]]
+
+Coloreamos a la manera del ajedrez ($(i,j)$ negra si $i+j$ es par, blanca si es impar). Cada dominó cubre exactamente una casilla de cada color, así que cualquier recubrimiento necesita el mismo número de negras y de blancas.
+
+Dos esquinas **opuestas** tienen coordenadas que suman ambas un número par (por ejemplo $(1,1)$ y $(8,8)$), así que son del **mismo** color: digamos las dos negras. Al quitarlas quedan $30$ negras y $32$ blancas, y $30 \neq 32$. Por tanto **no se puede** cubrir. $\blacksquare$
+
+[[/solución]]
+
+**Problema 3 (clásico).** Demostrar que $x^2 + y^2 \equiv 3 \pmod 4$ no tiene solución entera. Deducir que $x^2 + y^2 + z^2 \equiv 7 \pmod 8$ tampoco.
+
+[[pista]]
+
+Los cuadrados son $\equiv 0, 1 \pmod 4$ y $\equiv 0, 1, 4 \pmod 8$. Para la segunda parte, observa que $7 \equiv 3 \pmod 4$ obliga a que los tres cuadrados sean impares.
+
+[[/pista]]
+
+[[solución]]
+
+**Primera parte.** Todo cuadrado es $\equiv 0$ o $1 \pmod 4$, así que $x^2 + y^2$ solo puede ser $\equiv 0, 1$ o $2 \pmod 4$. El valor $3$ es inalcanzable: no hay solución.
+
+**Segunda parte.** Supongamos que $x^2 + y^2 + z^2 \equiv 7 \pmod 8$. Reduciendo módulo $4$, sería $\equiv 3 \pmod 4$. Como cada cuadrado es $0$ o $1 \pmod 4$, la única forma de sumar $3$ es que los **tres** sean $\equiv 1 \pmod 4$, es decir, los tres impares. Pero un impar al cuadrado es $\equiv 1 \pmod 8$, luego la suma sería $\equiv 1 + 1 + 1 = 3 \pmod 8$, **no** $7$. Contradicción: no hay solución. $\blacksquare$
+
+[[/solución]]
+
+**Problema 4 (clásico).** Hay $n$ luces, todas apagadas. En cada paso se cambia el estado de exactamente $k$ luces. ¿Para qué $n, k$ se puede llegar a tener exactamente **una** luz encendida?
+
+[[pista]]
+
+El número de luces encendidas cambia, en cada paso, en una cantidad con la misma paridad que $k$. Empieza en $0$. ¿Cuándo puede volverse $1$ (impar)?
+
+[[/pista]]
+
+[[solución]]
+
+Sea $f$ el número de luces encendidas. Si en un paso cambiamos $k$ luces, de las cuales $j$ estaban encendidas, $f$ varía en $(k - j) - j = k - 2j$, cantidad con la **misma paridad que $k$**. Partimos de $f = 0$.
+
+**Si $k$ es par:** $f$ conserva su paridad, luego siempre es par y **nunca** puede valer $1$. Imposible.
+
+**Si $k$ es impar:** la paridad ya no es obstáculo. Veamos que, cuando además $k < n$, sí se logra: tomando dos pasos sobre dos grupos de $k$ luces que comparten $k - 1$ luces, el efecto neto es cambiar **solo las dos** luces en que difieren; así podemos encender o apagar cualquier pareja. Con esas parejas ajustamos las luces de dos en dos, y un último paso de $k$ luces (cantidad impar) deja un número impar de encendidas; combinando, se llega a exactamente una. Si $k = n$, en cambio, el único movimiento posible voltea **todas** las luces, de modo que $f$ solo alterna entre $0$ y $n$, y solo se alcanza $1$ en el caso trivial $n = k = 1$.
+
+**Conclusión:** se puede si y solo si $k$ es **impar** y $k < n$ (más el caso trivial $n = k = 1$). $\blacksquare$
+
+[[/solución]]
+
+**Problema 5 (clásico).** En la expresión $\pm 1 \pm 2 \pm 3 \pm \cdots \pm n$ se eligen libremente los signos. ¿Para qué valores de $n$ puede el resultado ser $0$?
+
+[[pista]]
+
+Cambiar el signo de un término $k$ altera el total en $2k$ (par), así que la **paridad** del resultado es fija: la de $1 + 2 + \cdots + n = \dfrac{n(n+1)}{2}$.
+
+[[/pista]]
+
+[[solución]]
+
+**Obstrucción (paridad).** Partiendo de $+1 + 2 + \cdots + n$, cambiar el signo de un término $k$ resta $2k$, que es par. Luego, sean cuales sean los signos, el resultado tiene siempre la misma paridad que
+
+$$
+1 + 2 + \cdots + n = \frac{n(n+1)}{2}.
+$$
+
+Para que el resultado pueda ser $0$ (par), esa suma debe ser par, es decir $4 \mid n(n+1)$. Como $n$ y $n+1$ son consecutivos (uno par, uno impar), esto ocurre exactamente cuando $n \equiv 0$ o $n \equiv 3 \pmod 4$.
+
+**Suficiencia (construcción).** Cuando $n \equiv 0$ o $3 \pmod 4$, sí se alcanza $0$:
+
+- Cuatro consecutivos con signos $+,-,-,+$ suman $0$: $\;a - (a{+}1) - (a{+}2) + (a{+}3) = 0$.
+- Si $n \equiv 0 \pmod 4$, repartimos $1, \ldots, n$ en bloques de cuatro de ese tipo.
+- Si $n \equiv 3 \pmod 4$, usamos $1 + 2 - 3 = 0$ para los tres primeros y agrupamos el resto (que es múltiplo de $4$) en bloques de cuatro.
+
+**Conclusión:** el resultado puede ser $0$ si y solo si $n \equiv 0$ o $n \equiv 3 \pmod 4$. $\blacksquare$
+
+[[/solución]]
+
+**Problema 6 (clásico).** En un tablero $n \times n$, un caballo recorre todas las casillas exactamente una vez. Demostrar que, si $n$ es impar, el recorrido no puede ser **cerrado** (terminar en una casilla a un salto de la inicial).
+
+[[pista]]
+
+Cada salto de caballo cambia el color (ajedrez) de la casilla. Un recorrido cerrado tiene que volver al color de partida: ¿cuántos saltos hace falta?
+
+[[/pista]]
+
+[[solución]]
+
+Coloreamos el tablero como ajedrez. Un salto de caballo va de $(i,j)$ a una casilla cuya suma de coordenadas cambia de paridad (se mueve $(\pm 1, \pm 2)$ o $(\pm 2, \pm 1)$, y $1 + 2$ es impar), así que **cada salto cambia de color**.
+
+Un recorrido cerrado visita las $n^2$ casillas y vuelve a la inicial, dando $n^2$ saltos en total. Como los colores se alternan a cada salto, volver al color de partida exige un número **par** de saltos. Por tanto $n^2$ debe ser par.
+
+Si $n$ es impar, $n^2$ es impar, contradicción: no existe recorrido cerrado. $\blacksquare$
+
+[[/solución]]

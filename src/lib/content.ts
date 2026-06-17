@@ -413,6 +413,78 @@ function wrapSemanticBlocks(html: string): string {
   return out;
 }
 
+/**
+ * Convierte tokens de revelado en botón + panel animado.
+ *
+ * En el markdown, dentro de ejemplos o problemas sugeridos, el autor escribe:
+ *
+ *   **Problema 3.** Demuestra que …
+ *
+ *   [[pista]]
+ *   Observa que …            ← markdown + LaTeX normales
+ *   [[/pista]]
+ *
+ *   [[solución]]
+ *   Desarrollo completo …
+ *   [[/solución]]
+ *
+ * Cada token queda como su propio párrafo (`<p>[[pista]]</p>`) tras el render;
+ * aquí reemplazamos la región por la estructura interactiva. El contenido
+ * interno ya viene renderizado (fórmulas incluidas), así que solo lo envolvemos.
+ * El comportamiento (clic + animación) lo añade <RevealController> en cliente.
+ */
+function wrapReveals(html: string): string {
+  const kinds: { cls: string; label: string; tokens: string[] }[] = [
+    { cls: 'hint', label: 'Pista', tokens: ['pista'] },
+    { cls: 'solution', label: 'Solución', tokens: ['solución', 'solucion'] },
+  ];
+
+  // 1) Sustituimos cada par de tokens por un marcador, guardando su contenido.
+  //    Conservamos la posición en el HTML para detectar después qué reveals son
+  //    adyacentes y deben compartir barra de botones.
+  const items: { cls: string; label: string; inner: string }[] = [];
+  for (const { cls, label, tokens } of kinds) {
+    const alt = tokens.join('|');
+    const re = new RegExp(
+      `<p>\\s*\\[\\[(?:${alt})\\]\\]\\s*</p>([\\s\\S]*?)<p>\\s*\\[\\[\\/(?:${alt})\\]\\]\\s*</p>`,
+      'g'
+    );
+    html = html.replace(re, (_m, inner) => {
+      const idx = items.length;
+      items.push({ cls, label, inner });
+      return ` RV${idx} `;
+    });
+  }
+  if (!items.length) return html;
+
+  // 2) Agrupamos marcadores adyacentes (solo separados por espacios/saltos) en
+  //    un único bloque: una barra con los botones y, debajo, los paneles.
+  const base = 'rv' + Math.random().toString(36).slice(2, 7);
+  html = html.replace(/(?: RV\d+ \s*)+/g, (run) => {
+    const ids = Array.from(run.matchAll(/ RV(\d+) /g)).map((m) => Number(m[1]));
+    const buttons = ids
+      .map((id) => {
+        const { cls, label } = items[id];
+        const pid = `${base}-${id}`;
+        return `<button class="reveal-btn reveal-btn-${cls}" type="button" aria-expanded="false" aria-controls="${pid}" data-target="${pid}">`
+          + `<span class="reveal-btn-icon" aria-hidden="true"></span>`
+          + `<span class="reveal-btn-label" data-label-closed="${label}" data-label-open="Ocultar"></span>`
+          + `</button>`;
+      })
+      .join('');
+    const panels = ids
+      .map((id) => {
+        const { cls, inner } = items[id];
+        const pid = `${base}-${id}`;
+        return `<div class="reveal-panel reveal-panel-${cls}" id="${pid}"><div class="reveal-inner">${inner}</div></div>`;
+      })
+      .join('');
+    return `<div class="reveal-group"><div class="reveal-bar">${buttons}</div>${panels}</div>`;
+  });
+
+  return html;
+}
+
 export async function getDoc(
   seccion: Seccion,
   subseccion: Subseccion,
@@ -435,7 +507,7 @@ export async function getDoc(
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(content);
 
-  const html = wrapSemanticBlocks(String(processed));
+  const html = wrapReveals(wrapSemanticBlocks(String(processed)));
   const title = (data.title as string) || slug;
   const preview = (data.preview as string) || '';
 

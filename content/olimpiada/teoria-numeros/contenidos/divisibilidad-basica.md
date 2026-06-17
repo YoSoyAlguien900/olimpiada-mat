@@ -107,59 +107,134 @@ Ahora supongamos $n = p_1 p_2 \cdots p_r = q_1 q_2 \cdots q_s$ con primos $p_i$ 
 
 ### Factorizaciones y MCD/MCM
 
-**Ejemplo 1.** Factorizar $360$ y $756$ en primos, y hallar su MCD y MCM.
+**Ejemplo 1.** Factorizar $360$ y $756$ en primos y, a partir de ahí, calcular su MCD y su MCM.
 
-$$360 = 8 \cdot 45 = 2^3 \cdot 3^2 \cdot 5, \qquad 756 = 4 \cdot 189 = 2^2 \cdot 3^3 \cdot 7.$$
+*La idea.* En cuanto tienes la factorización en primos de dos números, el MCD y el MCM se **leen primo a primo**, sin más cálculo. ¿Por qué? Un divisor común no puede contener más copias de un primo $p$ que el número que **menos** tenga, así que en el MCD se toma el exponente **mínimo**. Un múltiplo común necesita al menos tantas copias como el que **más** tenga: en el MCM, el exponente **máximo**.
 
-Para el MCD, tomamos el mínimo de cada exponente:
-$$\gcd(360, 756) = 2^{\min(3,2)} \cdot 3^{\min(2,3)} \cdot 5^{\min(1,0)} \cdot 7^{\min(0,1)} = 2^2 \cdot 3^2 = 36.$$
+*Factorización.* Partimos cada número repetidamente hasta llegar a primos:
 
-Para el MCM, tomamos el máximo:
-$$\text{lcm}(360, 756) = 2^3 \cdot 3^3 \cdot 5 \cdot 7 = 7560.$$
+$$
+360 = 36 \cdot 10 = (2^2 \cdot 3^2)(2 \cdot 5) = 2^3 \cdot 3^2 \cdot 5,
+$$
+$$
+756 = 4 \cdot 189 = 2^2 \cdot (27 \cdot 7) = 2^2 \cdot 3^3 \cdot 7.
+$$
 
-*Verificación.* $\gcd \cdot \text{lcm} = 36 \cdot 7560 = 272160 = 360 \cdot 756$. $\checkmark$
+*MCD y MCM.* Escribimos ambos en función de **todos** los primos en juego ($2, 3, 5, 7$), con exponente $0$ donde un primo falta:
 
----
+$$
+360 = 2^3\, 3^2\, 5^1\, 7^0, \qquad 756 = 2^2\, 3^3\, 5^0\, 7^1.
+$$
+
+Ahora basta tomar el mínimo de cada exponente para el MCD, y el máximo para el MCM:
+
+$$
+\gcd(360, 756) = 2^{2}\, 3^{2}\, 5^{0}\, 7^{0} = 2^2 \cdot 3^2 = 36,
+$$
+$$
+\operatorname{lcm}(360, 756) = 2^{3}\, 3^{3}\, 5^{1}\, 7^{1} = 2^3 \cdot 3^3 \cdot 5 \cdot 7 = 7560.
+$$
+
+*Por qué $\gcd \cdot \operatorname{lcm} = ab$.* Para cada primo, $\min(e, f) + \max(e, f) = e + f$: lo que el mínimo deja fuera, el máximo lo recupera. Sumando exponentes primo a primo, el producto $\gcd \cdot \operatorname{lcm}$ reconstruye exactamente $ab$. Aquí: $36 \cdot 7560 = 272160 = 360 \cdot 756$. ✓
+
+### Irracionalidad por factorización
 
 **Ejemplo 2.** Demostrar que $\sqrt{2}$ es irracional.
 
-Supongamos $\sqrt 2 = p/q$ con $p, q \in \mathbb Z_{>0}$ y $\gcd(p, q) = 1$. Entonces $p^2 = 2q^2$, así que $2 \mid p^2$. Como $2$ es primo, el Lema de Euclides da $2 \mid p$, y podemos escribir $p = 2k$. Sustituyendo: $4k^2 = 2q^2$, es decir $q^2 = 2k^2$, lo que implica $2 \mid q$. Pero entonces $\gcd(p, q) \geq 2$, contradicción. $\blacksquare$
+*La idea.* "Irracional" es una afirmación **negativa** (no existe ninguna fracción que…), difícil de atacar de frente. La maniobra estándar es **suponer que sí existe** y exprimir la hipótesis hasta romperla. El motor de la contradicción será el Lema de Euclides: si un primo divide a un cuadrado, divide a su base.
 
----
+*Solución.* Supongamos, por contradicción, que $\sqrt 2$ es racional. Entonces $\sqrt 2 = \dfrac{a}{b}$ con $a, b$ enteros positivos y la fracción **irreducible**, es decir $\gcd(a, b) = 1$ (toda fracción puede llevarse a esa forma). Elevamos al cuadrado:
 
-**Ejemplo 3.** ¿Cuántos divisores positivos tiene $n = 2^a \cdot 3^b \cdot 5^c$?
+$$
+2 = \frac{a^2}{b^2} \;\Longrightarrow\; a^2 = 2b^2.
+$$
 
-Cada divisor de $n$ tiene la forma $2^x \cdot 3^y \cdot 5^z$ con $0 \leq x \leq a$, $0 \leq y \leq b$, $0 \leq z \leq c$. Son $(a+1)(b+1)(c+1)$ divisores. En general, si $n = p_1^{e_1} \cdots p_r^{e_r}$, el número de divisores es $\tau(n) = \prod (e_i + 1)$.
+Entonces $2 \mid a^2$ y, como $2$ es primo, el Lema de Euclides da $2 \mid a$; escribimos $a = 2k$. Sustituyendo:
 
-Para $n = 360 = 2^3 \cdot 3^2 \cdot 5$: $\tau(360) = 4 \cdot 3 \cdot 2 = 24$.
+$$
+(2k)^2 = 2b^2 \;\Longrightarrow\; 4k^2 = 2b^2 \;\Longrightarrow\; b^2 = 2k^2,
+$$
 
----
+y el mismo razonamiento da $2 \mid b$. Pero entonces $2$ divide a $a$ y a $b$, luego $\gcd(a, b) \geq 2$, contradiciendo que la fracción era irreducible. $\blacksquare$
 
-**Ejemplo 4.** Sea $n \geq 2$. Demostrar que $\sqrt{n}$ es irracional si y solo si $n$ no es un cuadrado perfecto.
+*La moraleja.* El choque es entre "la fracción ya estaba reducida" y "pero $2$ divide a numerador y denominador". Esa tensión —no se puede reducir para siempre— es el germen del **descenso infinito** de Fermat.
 
-Si $n = k^2$, entonces $\sqrt n = k$ es racional. Si $n$ no es cuadrado, existe un primo $p$ tal que $p^{2m+1} \| n$ (lo divide exactamente con exponente impar). Si $\sqrt{n} = p/q$ con $\gcd(p,q) = 1$, entonces $p^2 = nq^2$. Comparando las valuaciones $p$-ádicas: $2v_p(p) = (2m+1) + 2v_p(q)$, es decir par = impar. Contradicción. $\blacksquare$
+### Contar divisores construyéndolos
+
+**Ejemplo 3.** ¿Cuántos divisores positivos tiene $n = 2^a \cdot 3^b \cdot 5^c$? Aplícalo a $360$.
+
+*La idea.* No hace falta listar los divisores: hay que **construirlos**. Cada divisor se fabrica eligiendo, de forma independiente, cuántas copias de cada primo se toman. Contar divisores se convierte así en un problema de combinatoria (principio de la multiplicación).
+
+*Solución.* Un divisor de $n$ es exactamente un número $2^x \cdot 3^y \cdot 5^z$ con
+
+$$
+0 \leq x \leq a, \qquad 0 \leq y \leq b, \qquad 0 \leq z \leq c,
+$$
+
+pues no puede contener primos ajenos a $n$ ni más copias de las disponibles. Hay $a+1$ opciones para $x$ (de $0$ a $a$), $b+1$ para $y$ y $c+1$ para $z$, e independientes entre sí. Por el principio de la multiplicación:
+
+$$
+\tau(n) = (a+1)(b+1)(c+1).
+$$
+
+En general, si $n = p_1^{e_1} \cdots p_r^{e_r}$, entonces $\tau(n) = \prod_{i} (e_i + 1)$.
+
+*Aplicación.* Para $360 = 2^3 \cdot 3^2 \cdot 5^1$: $\tau(360) = (3+1)(2+1)(1+1) = 4 \cdot 3 \cdot 2 = 24$.
+
+### Irracionalidad: el caso general
+
+**Ejemplo 4.** Sea $n \geq 2$ entero. Demostrar que $\sqrt{n}$ es irracional **salvo** cuando $n$ es un cuadrado perfecto.
+
+*La idea.* Generalizamos el Ejemplo 2, pero el primo clave ya no es "$2$": es **un primo cuyo exponente en $n$ sea impar**. La herramienta fina para hablar de "cuántas veces divide un primo" es la **valuación $p$-ádica** $v_p(\cdot)$ (el exponente de $p$ en la factorización). Lo decisivo: al elevar al cuadrado, toda valuación se **duplica**, y por tanto se vuelve par; un exponente impar en $n$ es incompatible con eso.
+
+*Solución.* Si $n = m^2$ es un cuadrado perfecto, entonces $\sqrt n = m$ es entero, luego racional.
+
+Recíprocamente, supongamos que $n$ **no** es cuadrado perfecto. Entonces algún primo $p$ aparece en $n$ con exponente **impar**: $v_p(n) = 2t + 1$. Supongamos por contradicción que $\sqrt n = \dfrac{a}{b}$ con $a, b$ enteros positivos. Elevando al cuadrado, $a^2 = n\, b^2$. Tomamos $v_p$ en ambos lados, usando $v_p(xy) = v_p(x) + v_p(y)$:
+
+$$
+v_p(a^2) = v_p(n) + v_p(b^2) \;\Longrightarrow\; 2\,v_p(a) = (2t + 1) + 2\,v_p(b).
+$$
+
+El lado izquierdo es **par** y el derecho es **impar** — imposible. Luego $\sqrt n$ no puede ser racional. $\blacksquare$
+
+*La moraleja.* "Ser cuadrado perfecto" equivale a "todas las valuaciones $p$-ádicas son pares". Comparar la **paridad de las valuaciones** es una de las técnicas más rentables en problemas con raíces, potencias y cuadrados.
 
 ## Aplicaciones
 
-### Criterios de divisibilidad
+### Criterios de divisibilidad: por qué funcionan
 
-Los criterios clásicos se derivan de la aritmética modular (ver capítulo de congruencias), pero aquí los enunciamos con sus justificaciones:
+Los criterios "de toda la vida" no son magia. Todos salen de la misma maniobra: escribir $n = \sum_i a_i 10^i$ y sustituir cada potencia $10^i$ por su **resto** módulo el divisor, que suele ser muy simple.
 
-**Por 2.** $2 \mid n \iff$ la última cifra de $n$ es par. (Pues $10^k$ es par para $k \geq 1$, y $n \equiv a_0 \pmod 2$.)
+**Por $2$ (y por $5$).** Como $10 \equiv 0 \pmod 2$, toda potencia $10^i$ con $i \geq 1$ desaparece módulo $2$, y queda $n \equiv a_0 \pmod 2$: decide la **última cifra**. (Igual con $5$, porque $10 \equiv 0 \pmod 5$.)
 
-**Por 4.** $4 \mid n \iff 4 \mid (10a_1 + a_0)$, las dos últimas cifras. (Pues $100 = 4 \cdot 25$, así $n \equiv 10a_1 + a_0 \pmod 4$.)
+**Por $4$.** Ahora $100 = 4 \cdot 25 \equiv 0 \pmod 4$, así que mueren todas las potencias desde $10^2$: $n \equiv 10 a_1 + a_0 \pmod 4$, las **dos últimas cifras**.
 
-**Por 3 y 9.** $3 \mid n \iff 3 \mid s(n)$ donde $s(n)$ es la suma de cifras. (Pues $10 \equiv 1 \pmod 3$, así $10^k \equiv 1$ y $n \equiv s(n) \pmod 3$. Ídem para $9$.)
+**Por $3$ y por $9$.** Aquí $10 \equiv 1$, luego $10^i \equiv 1$ para todo $i$, y $n \equiv a_0 + a_1 + \cdots = s(n) \pmod{3 \text{ y } 9}$: decide la **suma de cifras**.
 
-**Por 11.** $11 \mid n \iff 11 \mid (a_0 - a_1 + a_2 - \cdots)$, la suma alternada. (Pues $10 \equiv -1 \pmod{11}$, así $10^k \equiv (-1)^k$.)
+**Por $11$.** Como $10 \equiv -1 \pmod{11}$, se tiene $10^i \equiv (-1)^i$, y $n \equiv a_0 - a_1 + a_2 - \cdots \pmod{11}$: la **suma alternada**.
 
-**Por 7.** Algoritmo: separar las tres últimas cifras, multiplicar el resto por $2$ y restar. Repetir. La justificación: $1000 \equiv -1 \pmod 7$, así $\overline{A\, B} = 1000A + B \equiv -A + B \pmod 7$.
+**Por $7$, $11$ y $13$ a la vez.** El truco aquí es notar que $1000 = 10^3 \equiv -1 \pmod{1001}$ y que $1001 = 7 \cdot 11 \cdot 13$. Agrupando las cifras de tres en tres, $n$ equivale módulo $1001$ a la suma alternada de esos bloques: separa las tres últimas cifras, réstaselas a las anteriores, y repite.
 
-### Número de divisores y aplicaciones olímpicas
+### Maximizar el número de divisores
 
-**Problema.** Hallar el entero positivo $n \leq 1000$ con más divisores.
+**Problema.** Hallar el entero positivo $n \leq 1000$ con el mayor número de divisores.
 
-Como $\tau(n) = \prod(e_i + 1)$ y los primos son $2, 3, 5, 7, \ldots$, queremos maximizar el producto de los $(e_i + 1)$ sujeto a $2^{e_1} 3^{e_2} 5^{e_3} \cdots \leq 1000$. El número **altamente compuesto** óptimo bajo $1000$ es $720 = 2^4 \cdot 3^2 \cdot 5$, con $\tau(720) = 5 \cdot 3 \cdot 2 = 30$ divisores. (Se puede verificar que $840 = 2^3 \cdot 3 \cdot 5 \cdot 7$ tiene $\tau(840) = 32 > 30$; y $840 < 1000$. En realidad la respuesta es $720$ o $840$, dependiendo de verificación sistemática.)
+*La idea.* Por el Ejemplo 3, $\tau(n) = \prod (e_i + 1)$ depende **solo de los exponentes**, no de qué primos uses. Para un tamaño dado conviene entonces: **(1)** gastar los exponentes en los primos más pequeños ($2, 3, 5, 7, \dots$), porque "cuestan" menos tamaño; **(2)** repartirlos de forma decreciente $e_1 \geq e_2 \geq \cdots$. Eso deja muy pocos candidatos que comparar.
+
+*Solución.* Comparamos los mejores aspirantes con $2^{e_1} 3^{e_2} 5^{e_3} \cdots \leq 1000$:
+
+$$
+840 = 2^3 \cdot 3 \cdot 5 \cdot 7, \quad \tau = 4 \cdot 2 \cdot 2 \cdot 2 = 32,
+$$
+$$
+720 = 2^4 \cdot 3^2 \cdot 5, \quad \tau = 5 \cdot 3 \cdot 2 = 30, \qquad
+960 = 2^6 \cdot 3 \cdot 5, \quad \tau = 7 \cdot 2 \cdot 2 = 28,
+$$
+$$
+900 = 2^2 \cdot 3^2 \cdot 5^2, \quad \tau = 3 \cdot 3 \cdot 3 = 27.
+$$
+
+Añadir el primo $7$ (que aún cabe) bate a concentrar exponentes en pocos primos. El máximo es $\tau(840) = 32$, así que la respuesta es $\boxed{n = 840}$, con $32$ divisores. (Es el mayor número *altamente compuesto* $\leq 1000$.)
 
 ## Observación
 
@@ -173,14 +248,178 @@ y los cuatro factores son "irreducibles" pero no primos. Esta falla motivó a Ku
 
 ## Problemas relacionados
 
-- **(Clásico)** Demostrar que si $a \mid bc$ y $\gcd(a, b) = 1$, entonces $a \mid c$.
+**Problema 1 (lema de Euclides, clásico).** Demostrar que si $a \mid bc$ y $\gcd(a, b) = 1$, entonces $a \mid c$.
 
-- **(Clásico)** Hallar todos los $n \in \mathbb N$ tales que $n \mid 2^n - 1$.
+[[pista]]
 
-- **(Clásico)** Si $p$ y $q = p + 2$ son ambos primos y $p > 3$, probar que $3 \mid p + 1$.
+Como $\gcd(a,b) = 1$, la identidad de Bézout da enteros $x, y$ con $ax + by = 1$. Multiplica esa igualdad por $c$.
 
-- **(Clásico)** Demostrar que todo número natural de la forma $4k + 3$ tiene al menos un divisor primo de la misma forma. Usar esto para demostrar que hay infinitos primos $\equiv 3 \pmod 4$.
+[[/pista]]
 
-- **(Clásico)** Probar que $\tau(n)$ es impar si y solo si $n$ es un cuadrado perfecto.
+[[solución]]
 
-- **(Clásico)** Hallar todos los enteros positivos $n$ tales que $\tau(n) = \sqrt{n}$.
+Por la **identidad de Bézout**, como $\gcd(a, b) = 1$ existen enteros $x, y$ tales que
+
+$$
+ax + by = 1.
+$$
+
+Multiplicamos ambos lados por $c$:
+
+$$
+acx + bcy = c.
+$$
+
+Examinamos el lado izquierdo: $a \mid acx$ trivialmente, y $a \mid bc$ por hipótesis, así que $a \mid (bc)y = bcy$. Como $a$ divide a los dos sumandos, divide a su suma:
+
+$$
+a \mid (acx + bcy) = c. \qquad \blacksquare
+$$
+
+[[/solución]]
+
+**Problema 2 (clásico).** Hallar todos los $n \in \mathbb N$ tales que $n \mid 2^n - 1$.
+
+[[pista]]
+
+$n = 1$ funciona. Si $n > 1$, toma el **menor primo** $p$ que divide a $n$ y considera el orden de $2$ módulo $p$: debe dividir a la vez a $n$ y a $p - 1$, pero $\gcd(n, p-1) = 1$.
+
+[[/pista]]
+
+[[solución]]
+
+**Afirmación: la única solución es $n = 1$.**
+
+Para $n = 1$: $1 \mid 2^1 - 1 = 1$. ✓
+
+Supongamos ahora $n > 1$ y $n \mid 2^n - 1$. Como $2^n - 1$ es impar, $n$ es impar; en particular su menor primo $p$ cumple $p \geq 3$, luego $p \nmid 2$.
+
+Sea $d = \operatorname{ord}_p(2)$ el orden de $2$ módulo $p$ (el menor exponente positivo con $2^d \equiv 1 \pmod p$). Tenemos dos divisibilidades:
+
+- Como $p \mid n$ y $n \mid 2^n - 1$, se cumple $2^n \equiv 1 \pmod p$, luego $d \mid n$.
+- Por el pequeño teorema de Fermat, $2^{p-1} \equiv 1 \pmod p$, luego $d \mid p - 1$.
+
+Por tanto $d \mid \gcd(n, p-1)$. Ahora bien, todo primo que divide a $p - 1$ es menor que $p$, y $p$ es el **menor** primo que divide a $n$; así que $p-1$ y $n$ no comparten ningún factor primo, es decir $\gcd(n, p-1) = 1$.
+
+Entonces $d \mid 1$, o sea $d = 1$, lo que significa $2^1 \equiv 1 \pmod p$, es decir $p \mid 1$ — imposible. La contradicción descarta todo $n > 1$.
+
+La única solución es $\boxed{n = 1}$. $\blacksquare$
+
+[[/solución]]
+
+**Problema 3 (primos gemelos, clásico).** Si $p$ y $q = p + 2$ son ambos primos y $p > 3$, probar que $3 \mid p + 1$.
+
+[[pista]]
+
+Mira $p$ módulo $3$. Como $p > 3$ es primo, $p \not\equiv 0$. Descarta $p \equiv 1 \pmod 3$ viendo qué le pasaría a $p + 2$.
+
+[[/pista]]
+
+[[solución]]
+
+Como $p > 3$ es primo, $3 \nmid p$, así que $p \equiv 1$ o $p \equiv 2 \pmod 3$.
+
+**Si $p \equiv 1 \pmod 3$:** entonces $q = p + 2 \equiv 1 + 2 = 3 \equiv 0 \pmod 3$, es decir $3 \mid q$. Pero $q = p + 2 > 5 > 3$ es primo, y un primo mayor que $3$ no puede ser múltiplo de $3$. Contradicción, así que este caso no ocurre.
+
+**Luego $p \equiv 2 \pmod 3$:** entonces $p + 1 \equiv 2 + 1 = 3 \equiv 0 \pmod 3$, es decir
+
+$$
+3 \mid p + 1. \qquad \blacksquare
+$$
+
+[[/solución]]
+
+**Problema 4 (infinitud de primos $\equiv 3 \pmod 4$, clásico).** Demostrar que todo número natural de la forma $4k + 3$ tiene al menos un divisor primo de la misma forma. Usar esto para demostrar que hay infinitos primos $\equiv 3 \pmod 4$.
+
+[[pista]]
+
+Para la primera parte: $N \equiv 3 \pmod 4$ es impar, así que todos sus primos son $\equiv 1$ o $\equiv 3 \pmod 4$; si todos fueran $\equiv 1$, el producto sería $\equiv 1$. Para la infinitud, copia a Euclides con $N = 4\,p_1 p_2 \cdots p_r - 1$.
+
+[[/pista]]
+
+[[solución]]
+
+**Parte 1.** Sea $N \equiv 3 \pmod 4$. Entonces $N$ es impar, luego todos sus divisores primos son impares y, por tanto, cada uno es $\equiv 1$ o $\equiv 3 \pmod 4$. El producto de enteros $\equiv 1 \pmod 4$ es de nuevo $\equiv 1 \pmod 4$ (porque $1 \cdot 1 \equiv 1$). Si **todos** los primos de $N$ fueran $\equiv 1 \pmod 4$, entonces $N \equiv 1 \pmod 4$, contra $N \equiv 3$. Por tanto $N$ tiene al menos un divisor primo $\equiv 3 \pmod 4$.
+
+**Parte 2.** Supongamos, por contradicción, que solo hay un número **finito** de primos $\equiv 3 \pmod 4$, digamos $p_1 = 3, p_2, \ldots, p_r$. Consideremos
+
+$$
+N = 4\, p_1 p_2 \cdots p_r - 1.
+$$
+
+Entonces $N \equiv -1 \equiv 3 \pmod 4$, así que por la Parte 1 tiene un divisor primo $q \equiv 3 \pmod 4$. Como la lista $p_1, \ldots, p_r$ contiene **todos** los primos $\equiv 3 \pmod 4$, ese $q$ es uno de ellos, luego $q \mid p_1 p_2 \cdots p_r$ y por tanto $q \mid 4\,p_1 \cdots p_r$. Pero también $q \mid N = 4\,p_1 \cdots p_r - 1$. Restando, $q \mid 1$ — imposible.
+
+La contradicción prueba que hay **infinitos** primos $\equiv 3 \pmod 4$. $\blacksquare$
+
+[[/solución]]
+
+**Problema 5 (clásico).** Probar que $\tau(n)$ (número de divisores positivos de $n$) es impar si y solo si $n$ es un cuadrado perfecto.
+
+[[pista]]
+
+Escribe la factorización $n = p_1^{a_1} \cdots p_r^{a_r}$ y usa la fórmula $\tau(n) = (a_1+1)\cdots(a_r+1)$. Un producto es impar exactamente cuando todos sus factores lo son.
+
+[[/pista]]
+
+[[solución]]
+
+Escribimos la factorización en primos $n = p_1^{a_1} p_2^{a_2} \cdots p_r^{a_r}$. La fórmula del número de divisores es
+
+$$
+\tau(n) = (a_1 + 1)(a_2 + 1) \cdots (a_r + 1).
+$$
+
+Este producto es **impar** si y solo si **cada** factor $a_i + 1$ es impar (basta un factor par para que el producto sea par). Y $a_i + 1$ es impar si y solo si $a_i$ es par.
+
+Por tanto, $\tau(n)$ es impar $\iff$ todos los exponentes $a_i$ son pares $\iff$ $n = \left(p_1^{a_1/2} \cdots p_r^{a_r/2}\right)^2$ es un cuadrado perfecto.
+
+$\blacksquare$
+
+[[/solución]]
+
+**Problema 6 (clásico).** Hallar todos los enteros positivos $n$ tales que $\tau(n) = \sqrt{n}$.
+
+[[pista]]
+
+Como $\tau(n) = \sqrt n$ es entero, $n$ es un cuadrado: $n = \prod p_i^{2b_i}$, y la condición es $\prod (2b_i + 1) = \prod p_i^{b_i}$. El lado izquierdo es impar, y para cada primo $p \geq 3$ se tiene $p^b \geq 2b + 1$ con igualdad solo en $(p, b) = (3, 1)$.
+
+[[/pista]]
+
+[[solución]]
+
+Para que $\sqrt n = \tau(n)$ sea entero, $n$ debe ser un cuadrado perfecto. Escribimos $n = p_1^{2b_1} \cdots p_r^{2b_r}$, de modo que
+
+$$
+\sqrt{n} = \prod_{i} p_i^{b_i}, \qquad \tau(n) = \prod_i (2b_i + 1).
+$$
+
+La condición $\tau(n) = \sqrt n$ se vuelve
+
+$$
+\prod_i (2b_i + 1) = \prod_i p_i^{b_i}. \tag{$\ast$}
+$$
+
+**El número es impar.** El lado izquierdo de $(\ast)$ es producto de impares, luego $\sqrt n = \prod p_i^{b_i}$ es impar. Por tanto $n$ es impar y **ningún** $p_i$ es $2$; todos cumplen $p_i \geq 3$.
+
+**Comparación factor a factor.** Para cualquier primo $p \geq 3$ y exponente $b \geq 1$,
+
+$$
+p^b \geq 3^b \geq 2b + 1,
+$$
+
+donde la segunda desigualdad es igualdad solo si $b = 1$ (pues $3^1 = 3 = 2\cdot 1 + 1$, y para $b \geq 2$ es estricta). En consecuencia $p^b \geq 2b + 1$, **con igualdad únicamente cuando** $(p, b) = (3, 1)$.
+
+Multiplicando estas desigualdades sobre todos los $i$:
+
+$$
+\sqrt n = \prod_i p_i^{b_i} \geq \prod_i (2b_i + 1) = \tau(n).
+$$
+
+Pero $(\ast)$ exige igualdad, así que la igualdad debe darse en **cada** factor: cada $(p_i, b_i) = (3, 1)$. Como el primo $3$ puede aparecer una sola vez, solo hay dos posibilidades:
+
+- **Sin factores primos** ($r = 0$): $\sqrt n = 1$, es decir $n = 1$. Comprobación: $\tau(1) = 1 = \sqrt 1$. ✓
+- **Un único factor $(3,1)$:** $\sqrt n = 3$, es decir $n = 9$. Comprobación: $\tau(9) = 3 = \sqrt 9$. ✓
+
+Las únicas soluciones son $\boxed{n = 1 \text{ y } n = 9}$. $\blacksquare$
+
+[[/solución]]
