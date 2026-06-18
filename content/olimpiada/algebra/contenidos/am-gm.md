@@ -38,7 +38,7 @@ Reorganizando: $a + b \geq 2\sqrt{ab}$, es decir, $\dfrac{a+b}{2} \geq \sqrt{ab}
 
 La igualdad se da exactamente cuando $\sqrt{a} = \sqrt{b}$, es decir, cuando $a = b$.
 
-Para $n = 3$: equivalentemente $(a+b+c)^3 \geq 27abc$, que se demuestra por la desigualdad del caso $n=2$ aplicada iterativamente (ver el archivo de demostraciones para la versión general por inducción de Cauchy).
+Para $n = 3$, la desigualdad equivale a $(a+b+c)^3 \geq 27abc$ y se deduce aplicando el caso $n = 2$ de forma iterada. La versión general, válida para todo $n$, se demuestra por la inducción de Cauchy (ver el archivo de demostraciones).
 
 ## Ejemplo
 

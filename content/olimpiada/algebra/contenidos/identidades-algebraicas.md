@@ -170,7 +170,7 @@ $$a^3+b^3+c^3-3abc = (a+b+c)(a^2+b^2+c^2-ab-bc-ca).$$
 
 Nótese que $a^2+b^2+c^2-ab-bc-ca = \tfrac{1}{2}[(a-b)^2+(b-c)^2+(c-a)^2]\geq0$.
 
-**Corolario.** $a^3+b^3+c^3\geq3abc$ para $a,b,c\geq0$, con igualdad iff $a=b=c$ o $a+b+c=0$.
+**Corolario.** $a^3+b^3+c^3\geq3abc$ para $a,b,c\geq0$, con igualdad si y solo si $a=b=c$ (o, en general, $a+b+c=0$).
 
 ### Ejemplo
 

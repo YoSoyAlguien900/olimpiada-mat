@@ -20,27 +20,27 @@ $$\boxed{x^2 \geq 0,}$$
 
 con igualdad si y solo si $x = 0$.
 
-Este hecho, junto con las propiedades de orden de $\mathbb{R}$ (suma e multiplicación preservan el orden para positivos), es la base de **todas** las desigualdades entre reales.
+Este hecho, junto con las propiedades de orden de $\mathbb{R}$ (la suma y el producto por positivos preservan el orden), es la base de **todas** las desigualdades entre números reales.
 
 ---
 
 ## Primera consecuencia: $a^2+b^2\geq2ab$
 
-Para cualesquiera $a,b\in\mathbb{R}$:
+Partiendo de que el cuadrado $(a-b)^2$ es no negativo y desarrollándolo, se obtiene de inmediato, para cualesquiera $a,b\in\mathbb{R}$, la desigualdad más utilizada del álgebra:
 
-$$(a-b)^2\geq0 \implies a^2-2ab+b^2\geq0 \implies \boxed{a^2+b^2\geq2ab.}$$
+$$(a-b)^2\geq0 \implies a^2-2ab+b^2\geq0 \implies \boxed{a^2+b^2\geq2ab,}$$
 
-Igualdad iff $a=b$.
+con igualdad si y solo si $a=b$.
 
-**Esto es AM-GM para dos variables:** si $a,b\geq0$, sustituir $a\to\sqrt{a}$, $b\to\sqrt{b}$:
+Esta desigualdad **contiene a la AM–GM de dos variables**: cuando $a,b\geq0$, basta sustituir $a$ por $\sqrt{a}$ y $b$ por $\sqrt{b}$ para obtener
 
 $$a+b\geq2\sqrt{ab},$$
 
-que es exactamente AM-GM.
+es decir, que la media aritmética de dos números no negativos nunca es menor que su media geométrica.
 
-**Variante útil.** Para $a,b>0$:
+**Variante útil.** Dividiendo entre $ab$ (para $a,b>0$) aparece una forma que se usa constantemente:
 
-$$(a-b)^2\geq0 \implies a^2+b^2\geq2ab \implies \frac{a^2+b^2}{2}\geq ab \implies \frac{a}{b}+\frac{b}{a}\geq2.$$
+$$\frac{a^2+b^2}{2}\geq ab \implies \frac{a}{b}+\frac{b}{a}\geq2.$$
 
 ### Ejemplos
 
@@ -78,7 +78,7 @@ Equivalentemente, $|x|=\sqrt{x^2}$.
 
 | Propiedad | Enunciado |
 |---|---|
-| No negatividad | $\|x\|\geq0$, con igualdad iff $x=0$ |
+| No negatividad | $\|x\|\geq0$, con igualdad si y solo si $x=0$ |
 | Multiplicativa | $\|ab\|=\|a\|\cdot\|b\|$ |
 | Cuadrado | $x^2=\|x\|^2$ |
 | Simétrica | $\|-x\|=\|x\|$ |
@@ -96,7 +96,7 @@ $$\boxed{|a-b|\geq\big||a|-|b|\big|}$$
 
 **Demostración.** $|a|=|(a-b)+b|\leq|a-b|+|b|$, luego $|a|-|b|\leq|a-b|$. Por simetría ($a\leftrightarrow b$): $|b|-|a|\leq|a-b|$. Las dos juntas dan $||a|-|b||\leq|a-b|$. $\square$
 
-**Igualdad en la triangular.** $|a+b|=|a|+|b|$ iff $a$ y $b$ tienen el mismo signo (o alguno es $0$).
+**Igualdad en la triangular.** $|a+b|=|a|+|b|$ si y solo si $a$ y $b$ tienen el mismo signo (o alguno es $0$).
 
 ### Ejemplos
 
@@ -127,21 +127,21 @@ Por tanto la igualdad se cumple exactamente para $x\geq\tfrac12$ o $x\leq-3$. $\
 
 ---
 
-## Técnica: Sum of Squares (SOS) básico
+## Técnica: suma de cuadrados (SOS)
 
-**Idea.** Para demostrar $P(a,b,c)\geq0$, escribir $P$ explícitamente como suma de cuadrados con coeficientes no negativos:
+La técnica **SOS** (del inglés *sum of squares*) consiste en demostrar que una expresión $P(a,b,c)$ es no negativa **reescribiéndola** explícitamente como una suma de cuadrados con coeficientes no negativos:
 
-$$P = \lambda_1(A_1)^2 + \lambda_2(A_2)^2 + \cdots, \quad \lambda_i\geq0.$$
+$$P = \lambda_1 A_1^2 + \lambda_2 A_2^2 + \cdots, \qquad \lambda_i\geq0.$$
 
-Entonces $P\geq0$ es inmediato.
+Una vez logrado, la desigualdad $P\geq0$ es inmediata, y los cuadrados que se anulan revelan el caso de igualdad.
 
-**Recetas básicas:**
+Las dos identidades de referencia, omnipresentes en olimpiada, son:
 
-$$2(a^2+b^2+c^2-ab-bc-ca) = (a-b)^2+(b-c)^2+(c-a)^2.$$
+$$2(a^2+b^2+c^2-ab-bc-ca) = (a-b)^2+(b-c)^2+(c-a)^2,$$
 
-$$a^2+b^2+c^2-ab-bc-ca = \tfrac12[(a-b)^2+(b-c)^2+(c-a)^2].$$
+o, equivalentemente,
 
-Estas dos son las más usadas en olimpiada.
+$$a^2+b^2+c^2-ab-bc-ca = \tfrac12\left[(a-b)^2+(b-c)^2+(c-a)^2\right].$$
 
 ### Ejemplos de SOS
 
@@ -237,7 +237,7 @@ $$
 -10 \leq (n-5)^2 - 24 \leq 10 \iff 14\leq(n-5)^2\leq34.
 $$
 
-Como $(n-5)^2$ es un cuadrado entero entre $14$ y $34$, los únicos valores posibles son $16$ y $25$, es decir $|n-5|\in\{4,5\}$. Entonces $n-5\in\{-5,-4,4,5\}$, o sea $\boxed{n\in\{0,1,9,10\}}$. $\square$
+Como $(n-5)^2$ es un cuadrado entero entre $14$ y $34$, los únicos valores posibles son $16$ y $25$, es decir $|n-5|\in\{4,5\}$. Entonces $n-5\in\{-5,-4,4,5\}$, y por tanto $\boxed{n\in\{0,1,9,10\}}$. $\square$
 
 ---
 
