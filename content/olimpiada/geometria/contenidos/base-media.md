@@ -79,29 +79,43 @@ segment P M
 
 ### Aplicación a cuadriláteros: el paralelogramo de Varignon
 
-**Ejemplo 1 (OMG 2000/P2b).** Sea $ABCD$ un cuadrilátero convexo y sean $M$, $N$, $P$, $Q$ los puntos medios de $AB$, $BC$, $CD$, $DA$ respectivamente. Demostrar que $MNPQ$ es un paralelogramo de área igual a la mitad de $S_{ABCD}$.
+**Ejemplo 1 (OMG 2000/P2b — teorema de Varignon).** Sea $ABCD$ un cuadrilátero convexo y sean $M$, $N$, $P$, $Q$ los puntos medios de $AB$, $BC$, $CD$, $DA$. Demostrar que $MNPQ$ es un paralelogramo de área $\tfrac12 S_{ABCD}$.
 
-*Solución.* Tracemos la diagonal $AC$. En el triángulo $ABC$, $M$ y $N$ son los puntos medios de $AB$ y $BC$, así por el teorema de la base media:
+*La idea.* El cuadrilátero $ABCD$ no tiene estructura de triángulo, pero **trazar una diagonal lo parte en dos triángulos**, y en cada uno hay una base media relativa a esa diagonal. Las dos bases medias resultan paralelas e iguales (ambas son "media diagonal") — y eso es justo lo que define un paralelogramo.
 
-$$MN \parallel AC \qquad \text{y} \qquad MN = \tfrac12 AC.$$
+*Solución.* Trazamos la diagonal $AC$. En el triángulo $ABC$, $M, N$ son puntos medios de $AB, BC$, luego por la base media
 
-En el triángulo $ACD$, $Q$ y $P$ son los puntos medios de $DA$ y $DC$, así igualmente:
+$$
+MN \parallel AC, \qquad MN = \tfrac12 AC.
+$$
 
-$$QP \parallel AC \qquad \text{y} \qquad QP = \tfrac12 AC.$$
+En el triángulo $ACD$, $Q, P$ son puntos medios de $DA, DC$, luego
 
-Combinando ambas, $MN \parallel QP$ y $MN = QP$. Un cuadrilátero con un par de lados opuestos paralelos e iguales es un **paralelogramo** (véase el contenido de paralelogramos), luego $MNPQ$ es un paralelogramo. $\checkmark$
+$$
+QP \parallel AC, \qquad QP = \tfrac12 AC.
+$$
 
-Para el área: la diagonal $MP$ del paralelogramo $MNPQ$ lo divide en dos triángulos de igual área, $S_{MNPQ} = 2\,S_{MNP}$ (o usando $NQ$, $S_{MNPQ}=2\,S_{MQN}$ — cualquier diagonal sirve). Una manera limpia: la homotecia de centro $A$ y razón $\frac12$ envía $B \mapsto M$, y junto con las otras tres (centradas en $B$, $C$, $D$, todas de razón $\frac12$) descompone $ABCD$ en piezas que se reorganizan exactamente en $MNPQ$ recorrido una vez y su complemento — el cómputo directo con coordenadas o vectores da
+Por tanto $MN \parallel QP$ y $MN = QP$: un par de lados opuestos paralelos e iguales hace de $MNPQ$ un **paralelogramo**. $\checkmark$
 
-$$S_{MNPQ} = \tfrac12 S_{ABCD},$$
+*Área.* Calculamos los cuatro triángulos de las esquinas que sobran. El triángulo en $A$ es $\triangle AMQ$ con $AM = \tfrac12 AB$, $AQ = \tfrac12 AD$ y el mismo ángulo $\angle A$, así que su área es $\tfrac14$ del triángulo $ABD$. El triángulo en $C$, $\triangle CPN$, es $\tfrac14$ del triángulo $CBD$. Sumando y usando que la diagonal $BD$ parte $ABCD$ en $ABD$ y $CBD$:
 
-resultado conocido como el **teorema de Varignon**. $\blacksquare$
+$$
+[AMQ] + [CPN] = \tfrac14\big([ABD] + [CBD]\big) = \tfrac14 S_{ABCD}.
+$$
+
+Con el mismo argumento sobre la diagonal $AC$, los otros dos triángulos esquina suman $[BNM] + [DQP] = \tfrac14 S_{ABCD}$. Los cuatro juntos ocupan $\tfrac12 S_{ABCD}$, y lo que queda es el paralelogramo:
+
+$$
+S_{MNPQ} = S_{ABCD} - \tfrac12 S_{ABCD} = \tfrac12 S_{ABCD}. \qquad \blacksquare
+$$
 
 ---
 
 ### Aplicación a triángulos rectángulos: una segunda prueba del Problema 5
 
 **Ejemplo 2.** Sea $ABC$ un triángulo rectángulo con $\angle C = 90°$ y sea $M$ el punto medio de la hipotenusa $AB$. Demostrar que $MC = \frac12 AB$ (es decir, $MA = MB = MC$), sin usar coordenadas.
+
+*La idea.* Hay un punto medio ($M$); introducir un segundo punto medio ($N$, de un cateto) hace aparecer una base media. Y como un cateto es perpendicular al otro, esa base media se convierte en la **mediatriz** del cateto — y la mediatriz es precisamente el lugar de los puntos que equidistan.
 
 *Solución.* Sea $N$ el punto medio del cateto $AC$. Por el teorema de la base media en $\triangle ABC$ (con $N$, $M$ puntos medios de $AC$, $AB$):
 
@@ -120,6 +134,8 @@ $$MC = MA = MB = \tfrac12 AB. \qquad \blacksquare$$
 ### Problema guiado
 
 **Ejemplo 3 (Local XLIV OME).** Sea $ABC$ un triángulo, $M$ el punto medio de $BC$, y $D$, $E$ los puntos medios de $AB$ y $AC$. La recta $AM$ corta a $DE$ en $F$. Demostrar que $F$ es el punto medio de $AM$ y de $DE$.
+
+*La idea.* La base media $DE \parallel BC$ con razón $\tfrac12$ "copia a escala mitad" todo lo que pasa sobre $BC$: la mediana $AM$ corta a $DE$ en el punto homólogo de $M$, que es el punto medio de $DE$, y a la vez en el punto medio de la propia $AM$.
 
 *Solución.* Por la base media, $DE \parallel BC$. Como $DE \parallel BC$ y $F = AM \cap DE$, el segmento $DF$ es paralelo a $BM$ (ambos están sobre $DE$ y $BC$ respectivamente), así $\triangle ADF \sim \triangle ABM$ por **AA** (ángulo $\angle A$ común, y $\angle ADF = \angle ABM$ por ser ángulos correspondientes con la transversal $AB$ entre las paralelas $DE \parallel BC$). La razón de semejanza es $\dfrac{AD}{AB} = \dfrac12$. Luego $AF = \frac12 AM$ y $DF = \frac12 BM = \frac12 \cdot \frac12 BC = \frac14 BC$.
 
@@ -145,12 +161,133 @@ Análogamente $\triangle AEF \sim \triangle ACM$ con razón $\frac12$, dando $EF
 
 ## Problemas relacionados
 
-- **(OMG 2000/P2a)** Sea $ABC$ un triángulo y $M$, $N$, $P$ los puntos medios de $BC$, $CA$, $AB$. Probar que el triángulo medial $MNP$ divide a $ABC$ en cuatro triángulos congruentes entre sí, cada uno de área $\frac14 S_{ABC}$.
+**Problema 1 (OMG 2000/P2a).** Sea $ABC$ un triángulo y $M$, $N$, $P$ los puntos medios de $BC$, $CA$, $AB$. Probar que el triángulo medial $MNP$ divide a $ABC$ en cuatro triángulos congruentes, cada uno de área $\tfrac14 S_{ABC}$.
 
-- **(OMG 2000/P2b)** Sea $ABCD$ un cuadrilátero convexo y $M$, $N$, $P$, $Q$ los puntos medios de sus lados. Probar que $MNPQ$ es un paralelogramo (el paralelogramo de Varignon) de área $\frac12 S_{ABCD}$.
+[[pista]]
 
-- **(Clásico)** Sea $ABC$ un triángulo y $G$ su baricentro. Las medianas $AM$, $BN$, $CP$ concurren en $G$ y $AG = 2\,GM$, $BG = 2\,GN$, $CG = 2\,GP$. Demostrarlo usando bases medias.
+Aplica la base media tres veces: cada lado del triángulo medial es paralelo a un lado de $ABC$ y mide su mitad. Eso te da cuatro triángulos con lados iguales (LLL).
 
-- **(Clásico)** Sea $ABCD$ un trapecio con $AB \parallel CD$ y $M$, $N$ los puntos medios de los lados no paralelos $AD$, $BC$. Probar que $MN \parallel AB$ y $MN = \frac{AB+CD}{2}$.
+[[/pista]]
 
-- **(Clásico)** Sea $ABC$ un triángulo y $H$ su ortocentro. Sean $M$, $N$, $P$ los puntos medios de los lados. Probar que la circunferencia que pasa por $M$, $N$, $P$ también pasa por los pies de las tres alturas — la **circunferencia de los nueve puntos** (desarrollado en su propio capítulo).
+[[solución]]
+
+Por el teorema de la base media,
+
+$$
+NP = \tfrac12 BC, \qquad MP = \tfrac12 CA, \qquad MN = \tfrac12 AB,
+$$
+
+y además $NP\parallel BC$, $MP\parallel CA$, $MN\parallel AB$. Los cuatro triángulos en que queda dividido $ABC$ son $\triangle APN$, $\triangle PBM$, $\triangle NMC$ y el medial $\triangle MNP$. Comprobamos que los cuatro tienen los mismos tres lados $\tfrac12 AB,\ \tfrac12 BC,\ \tfrac12 CA$:
+
+- $\triangle PBM$: $PB = \tfrac12 AB$, $BM = \tfrac12 BC$, $MP = \tfrac12 CA$.
+- $\triangle APN$: $AP = \tfrac12 AB$, $AN = \tfrac12 CA$, $NP = \tfrac12 BC$.
+- $\triangle NMC$: $NC = \tfrac12 CA$, $MC = \tfrac12 BC$, $MN = \tfrac12 AB$.
+- $\triangle MNP$: $MN = \tfrac12 AB$, $NP = \tfrac12 BC$, $MP = \tfrac12 CA$.
+
+Los cuatro tienen lados $\tfrac12 AB, \tfrac12 BC, \tfrac12 CA$, luego son **congruentes** (criterio LLL). Como juntos recubren $ABC$ sin solaparse y son iguales, cada uno tiene área $\tfrac14 S_{ABC}$. $\blacksquare$
+
+[[/solución]]
+
+**Problema 2 (Varignon, segunda parte).** Sea $MNPQ$ el paralelogramo de Varignon del cuadrilátero $ABCD$ (puntos medios de los lados). Demostrar que $MNPQ$ es un **rectángulo** si y solo si las diagonales $AC$ y $BD$ de $ABCD$ son perpendiculares.
+
+[[pista]]
+
+Por el Ejemplo 1, los lados de $MNPQ$ son paralelos a las diagonales de $ABCD$: $MN\parallel AC$ y $NP\parallel BD$. Un paralelogramo es rectángulo cuando sus lados contiguos son perpendiculares.
+
+[[/pista]]
+
+[[solución]]
+
+Por el teorema de la base media (Ejemplo 1), los lados de $MNPQ$ son paralelos a las diagonales de $ABCD$:
+
+$$
+MN \parallel AC \quad(\text{en }\triangle ABC), \qquad NP \parallel BD \quad(\text{en }\triangle BCD).
+$$
+
+$MNPQ$ ya es un paralelogramo. Un paralelogramo es un **rectángulo** exactamente cuando dos lados contiguos son perpendiculares, es decir cuando $MN \perp NP$. Pero como $MN\parallel AC$ y $NP\parallel BD$,
+
+$$
+MN \perp NP \iff AC \perp BD.
+$$
+
+Por tanto $MNPQ$ es rectángulo si y solo si las diagonales de $ABCD$ son perpendiculares. $\blacksquare$
+
+[[/solución]]
+
+**Problema 3 (baricentro, razón $2:1$).** Sea $ABC$ un triángulo y $M$, $N$ los puntos medios de $BC$, $CA$. Las medianas $AM$ y $BN$ se cortan en $G$. Demostrar que $AG = 2\,GM$ y $BG = 2\,GN$.
+
+[[pista]]
+
+Traza la base media $MN$ ($MN\parallel AB$, $MN=\tfrac12 AB$) y busca dos triángulos semejantes con vértice en $G$.
+
+[[/pista]]
+
+[[solución]]
+
+Por la base media, $MN \parallel AB$ y $MN = \tfrac12 AB$.
+
+Como $MN\parallel AB$, en los triángulos $\triangle GAB$ y $\triangle GMN$ los ángulos son iguales (alternos internos con las transversales $AM$ y $BN$): $\angle GAB = \angle GMN$ y $\angle GBA = \angle GNM$. Luego $\triangle GAB \sim \triangle GMN$ por AA, con razón
+
+$$
+\frac{MN}{AB} = \frac12.
+$$
+
+De la semejanza, $\dfrac{GM}{GA} = \dfrac{GN}{GB} = \dfrac{MN}{AB} = \dfrac12$, es decir $GA = 2\,GM$ y $GB = 2\,GN$. (El mismo argumento con otra pareja de medianas muestra que las tres concurren en ese $G$, el baricentro.) $\blacksquare$
+
+[[/solución]]
+
+**Problema 4 (base media del trapecio).** Sea $ABCD$ un trapecio con $AB \parallel CD$ y sean $M$, $N$ los puntos medios de los lados no paralelos $AD$, $BC$. Probar que $MN \parallel AB$ y $MN = \dfrac{AB+CD}{2}$.
+
+[[pista]]
+
+Traza la diagonal $AC$ y llama $E$ a su punto medio. Aplica la base media en los triángulos $ACD$ y $ABC$ por separado.
+
+[[/pista]]
+
+[[solución]]
+
+Trazamos la diagonal $AC$ y sea $E$ su punto medio.
+
+En el triángulo $ACD$, $M$ y $E$ son puntos medios de $DA$ y $AC$, luego por la base media
+
+$$
+ME \parallel DC, \qquad ME = \tfrac12 DC.
+$$
+
+En el triángulo $ABC$, $E$ y $N$ son puntos medios de $AC$ y $CB$, luego
+
+$$
+EN \parallel AB, \qquad EN = \tfrac12 AB.
+$$
+
+Como $AB \parallel CD$, las rectas $ME$ y $EN$ son ambas paralelas a $AB$ y pasan por $E$: están sobre la **misma** recta. Por tanto $M$, $E$, $N$ están alineados, esa recta es paralela a $AB$, y
+
+$$
+MN = ME + EN = \tfrac12 DC + \tfrac12 AB = \frac{AB + CD}{2}. \qquad \blacksquare
+$$
+
+[[/solución]]
+
+**Problema 5 (hacia la circunferencia de los nueve puntos).** Sea $ABC$ un triángulo, $M$, $N$, $P$ los puntos medios de $BC$, $CA$, $AB$, y $D$ el pie de la altura desde $A$ (sobre $BC$). Demostrar que $D$ está en la circunferencia que pasa por $M$, $N$, $P$.
+
+[[pista]]
+
+Mira el cuadrilátero $PNMD$: tiene un par de lados paralelos ($NP\parallel BC$, y $M,D$ están en $BC$), así que es un trapecio. Comprueba que sus dos lados oblicuos son iguales (uno por base media, otro por la mediana a la hipotenusa del Ejemplo 2).
+
+[[/pista]]
+
+[[solución]]
+
+Consideramos el cuadrilátero de vértices $P$, $N$ (arriba) y $D$, $M$ (sobre la recta $BC$).
+
+**Es un trapecio.** Por la base media, $NP \parallel BC$ (pues $N, P$ son puntos medios de $CA, AB$). Como $D$ y $M$ están en $BC$, el lado $DM$ está sobre $BC$, así que $NP \parallel DM$: el cuadrilátero $PND M$ tiene un par de lados paralelos.
+
+**Sus lados oblicuos son iguales.** 
+- Por la base media, $NM = \tfrac12 AB$ (une los puntos medios de $CA$ y $CB$).
+- El pie $D$ cumple $\angle ADB = 90°$, así que en el triángulo rectángulo $ABD$ el punto $P$ (medio de la hipotenusa $AB$) equidista de los vértices: $PD = \tfrac12 AB$ (la mediana a la hipotenusa, Ejemplo 2).
+
+Luego los dos lados oblicuos miden $NM = PD = \tfrac12 AB$: el trapecio es **isósceles**, y todo trapecio isósceles es cíclico. Por tanto $P$, $N$, $M$, $D$ son concíclicos, es decir, $D$ está en la circunferencia que pasa por $M$, $N$, $P$.
+
+Por el mismo argumento, los pies de las otras dos alturas también están en esa circunferencia: es la **circunferencia de los nueve puntos** (desarrollada en su capítulo). $\blacksquare$
+
+[[/solución]]

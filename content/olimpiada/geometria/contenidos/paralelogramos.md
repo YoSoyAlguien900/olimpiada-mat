@@ -72,7 +72,9 @@ Para (iv): sea $O = AC \cap BD$. En los triángulos $\triangle AOB$ y $\triangle
 
 ### Construir un paralelogramo para trasladar información
 
-**Ejemplo 1 (Problema 7 de la colección de iniciación — OME Fase Local 2011-2012).** Sea $ABCD$ un cuadrilátero convexo y $P$ un punto interior tal que los cuatro triángulos $\triangle PAB$, $\triangle PBC$, $\triangle PCD$, $\triangle PDA$ tienen la misma área. Demostrar que las diagonales $AC$ y $BD$ se bisecan mutuamente (es decir, que $ABCD$ es un paralelogramo).
+**Ejemplo 1 (OME Fase Local 2011-2012).** Sea $ABCD$ un cuadrilátero convexo y $P$ un punto interior tal que los cuatro triángulos $\triangle PAB$, $\triangle PBC$, $\triangle PCD$, $\triangle PDA$ tienen la misma área. Demostrar que $ABCD$ es un paralelogramo.
+
+*La idea.* Hay que pasar de un dato de **áreas** a uno de **posiciones** (diagonales que se bisecan). El puente es que, fijada una base, el área de un triángulo solo depende de la **altura**: áreas iguales sobre un lado común equivalen a que los terceros vértices equidisten de ese lado, y eso lo biseca. Aplicado a las diagonales, da el criterio (iv).
 
 *Solución.* Usamos un hecho elemental sobre áreas: si dos triángulos comparten un lado $XY$, sus áreas son $\frac12 XY \cdot d(Z, XY)$ y $\frac12 XY \cdot d(W, XY)$ (con $Z$, $W$ los terceros vértices), así que **son proporcionales a las distancias del tercer vértice a la recta $XY$**; en particular, áreas iguales con lado común fuerzan distancias iguales — y, si los terceros vértices están en semiplanos opuestos respecto de esa recta, distancias iguales equivalen a que la recta biseque el segmento que los une.
 
@@ -86,7 +88,11 @@ Para (iv): sea $O = AC \cap BD$. En los triángulos $\triangle AOB$ y $\triangle
 
 ### Detectar un paralelogramo oculto: el paralelogramo de Varignon
 
-**Ejemplo 2.** (Repaso del Ejemplo 1 del contenido de la base media, ahora con el lenguaje de paralelogramos.) Sea $ABCD$ un cuadrilátero convexo y $M$, $N$, $P$, $Q$ los puntos medios de $AB$, $BC$, $CD$, $DA$. Por el teorema de la base media aplicado a $\triangle ABC$ (puntos medios $M$, $N$) y a $\triangle ACD$ (puntos medios $Q$, $P$): $MN \parallel AC \parallel QP$ y $MN = \frac12 AC = QP$.
+**Ejemplo 2.** (Repaso del Ejemplo 1 del contenido de la base media, ahora con el lenguaje de paralelogramos.) Sea $ABCD$ un cuadrilátero convexo y $M$, $N$, $P$, $Q$ los puntos medios de $AB$, $BC$, $CD$, $DA$.
+
+*La idea.* El criterio (iii) —**un solo** par de lados opuestos paralelos e iguales basta— es el más cómodo aquí: las bases medias relativas a la diagonal $AC$ dan justo ese par, sin tener que mirar los otros dos lados.
+
+Por el teorema de la base media aplicado a $\triangle ABC$ (puntos medios $M$, $N$) y a $\triangle ACD$ (puntos medios $Q$, $P$): $MN \parallel AC \parallel QP$ y $MN = \frac12 AC = QP$.
 
 Por el criterio **(iii)** —un par de lados opuestos paralelos e iguales—, $MNPQ$ es un paralelogramo (el **paralelogramo de Varignon**). $\blacksquare$
 
@@ -95,6 +101,8 @@ Por el criterio **(iii)** —un par de lados opuestos paralelos e iguales—, $M
 ### El paralelogramo como herramienta de traslación: el reflejo del ortocentro
 
 **Ejemplo 3 (Clásico).** Sea $ABC$ un triángulo con ortocentro $H$, y sea $D$ el punto tal que $BHCD$ es un paralelogramo. Demostrar que $D$ está sobre el circuncírculo de $ABC$ y que $AD$ es un diámetro.
+
+*La idea.* El paralelogramo se usa como **traslación de direcciones**: copia las perpendiculares de las alturas ($HB\perp AC$, $HC\perp AB$) hasta los lados $CD$, $BD$. Aparecen dos ángulos rectos $\angle ABD=\angle ACD=90°$, y "ver $AD$ bajo ángulo recto" es justo estar en la circunferencia de diámetro $AD$.
 
 *Solución.* Como $BHCD$ es un paralelogramo, sus lados opuestos son paralelos (criterio (i)): $CD \parallel HB$ y $BD \parallel HC$.
 
@@ -122,14 +130,107 @@ Así $A$, $B$, $C$ están los tres sobre la circunferencia de diámetro $AD$. Pe
 
 **El paralelogramo como caso límite.** Muchas configuraciones de olimpiada con triángulos semejantes o congruentes "colapsan" a un paralelogramo cuando cierto ángulo se vuelve $0°$ o $180°$ — reconocer este caso límite ayuda a anticipar qué propiedades persisten.
 
-## Problemas relacionados
+**Problema 1 (clásico).** En un paralelogramo $ABCD$, las bisectrices de los ángulos $\angle A$ y $\angle B$ se cortan en $P$. Demostrar que $\angle APB = 90°$.
 
-- **(OMG 2000/P2b)** Sea $ABCD$ un cuadrilátero convexo y $M$, $N$, $P$, $Q$ los puntos medios de sus lados. Demostrar que $MNPQ$ es un paralelogramo de área $\frac12 S_{ABCD}$ (paralelogramo de Varignon — véase también el contenido de la base media).
+[[pista]]
 
-- **(OME Fase Local 2011-2012)** Sea $ABCD$ un cuadrilátero convexo y $P$ interior tal que $S_{PAB} = S_{PBC} = S_{PCD} = S_{PDA}$. Probar que $ABCD$ es un paralelogramo (las diagonales se bisecan).
+En un paralelogramo, dos ángulos consecutivos son suplementarios: $\angle A + \angle B = 180°$. Mira el triángulo $APB$.
 
-- **(Local XLV OME 2009)** Sea $ABCD$ un paralelogramo con dos circunferencias interiores tangentes entre sí, una tangente a $AB$ y $AD$, la otra a $CB$ y $CD$. Probar que el punto de tangencia está sobre la diagonal $AC$. *(Pista: usar la simetría central de centro $O = AC \cap BD$, que intercambia los pares de lados $(AB, AD) \leftrightarrow (CD, CB)$ y por tanto los ángulos $\angle A \leftrightarrow \angle C$ y sus bisectrices.)*
+[[/pista]]
 
-- **(Clásico)** En un paralelogramo $ABCD$, sea $E$ un punto sobre $AB$ y $F$ un punto sobre $CD$ tales que $AE = CF$. Demostrar que $DEBF$ es un paralelogramo.
+[[solución]]
 
-- **(Clásico)** Sea $ABC$ un triángulo y $M$ el punto medio de $BC$. Sobre la prolongación de la mediana $AM$ se toma $D$ tal que $MD = MA$. Demostrar que $ABDC$ es un paralelogramo (esta es la construcción que «duplica la mediana», útil para trasladar un triángulo a un paralelogramo y aplicar el teorema de Stewart o la ley de cosenos).
+Como $AD \parallel BC$, los ángulos $\angle A$ y $\angle B$ son conjugados internos, luego suplementarios: $\angle A + \angle B = 180°$.
+
+$AP$ y $BP$ son bisectrices, así que $\angle PAB = \dfrac{\angle A}{2}$ y $\angle PBA = \dfrac{\angle B}{2}$. En el triángulo $APB$,
+
+$$
+\angle APB = 180° - \angle PAB - \angle PBA = 180° - \frac{\angle A + \angle B}{2} = 180° - \frac{180°}{2} = 90°. \qquad \blacksquare
+$$
+
+[[/solución]]
+
+**Problema 2 (la simetría central).** Sea $ABCD$ un paralelogramo con diagonales cortándose en $O$. Una recta por $O$ corta a $AB$ en $P$ y a $CD$ en $Q$. Demostrar que $O$ es el punto medio de $PQ$.
+
+[[pista]]
+
+Compara $\triangle OAP$ y $\triangle OCQ$: $O$ biseca $AC$, los ángulos en $O$ son opuestos por el vértice y $AB\parallel CD$ da otra igualdad de ángulos.
+
+[[/pista]]
+
+[[solución]]
+
+Comparamos $\triangle OAP$ y $\triangle OCQ$:
+
+- $OA = OC$ (las diagonales del paralelogramo se bisecan, criterio (iv));
+- $\angle AOP = \angle COQ$ (opuestos por el vértice en $O$);
+- $\angle OAP = \angle OCQ$ (alternos internos, pues $AB \parallel CD$ con transversal $AC$).
+
+Por **ALA**, $\triangle OAP \cong \triangle OCQ$, y los lados correspondientes dan $OP = OQ$: $O$ es el punto medio de $PQ$. (Es la **simetría central** del paralelogramo: toda recta por $O$ queda bisecada por $O$.) $\blacksquare$
+
+[[/solución]]
+
+**Problema 3 (clásico).** En el paralelogramo $ABCD$, sea $M$ el punto medio del lado $CD$. La recta $AM$ corta a la diagonal $BD$ en $P$. Demostrar que $BP = 2\,PD$.
+
+[[pista]]
+
+Busca dos triángulos semejantes con vértice en $P$, usando que $DM \parallel AB$ y $DM = \tfrac12 AB$.
+
+[[/pista]]
+
+[[solución]]
+
+Como $M$ está en $CD$ y $CD \parallel AB$, el segmento $DM$ es paralelo a $AB$. Además $DM = \tfrac12 CD = \tfrac12 AB$.
+
+En el punto $P = AM \cap BD$, los triángulos $\triangle PDM$ y $\triangle PBA$ tienen ángulos iguales (alternos internos por $DM \parallel AB$, y opuestos por el vértice en $P$), luego son semejantes:
+
+$$
+\triangle PDM \sim \triangle PBA \;\Longrightarrow\; \frac{PD}{PB} = \frac{DM}{AB} = \frac{1}{2}.
+$$
+
+Por tanto $PB = 2\,PD$. $\blacksquare$
+
+[[/solución]]
+
+**Problema 4 (clásico).** En un paralelogramo $ABCD$, sean $E$ sobre $AB$ y $F$ sobre $CD$ con $AE = CF$. Demostrar que $DEBF$ es un paralelogramo.
+
+[[pista]]
+
+Mira el par de lados $EB$ y $FD$: comprueba que son paralelos e iguales (criterio (iii)).
+
+[[/pista]]
+
+[[solución]]
+
+Como $E$ está en $AB$ y $F$ en $CD$, y $AB \parallel CD$, los segmentos $EB$ y $FD$ están sobre rectas paralelas: $EB \parallel FD$.
+
+Para las longitudes, usamos $AB = CD$ (lados opuestos del paralelogramo) y $AE = CF$ (hipótesis):
+
+$$
+EB = AB - AE = CD - CF = FD.
+$$
+
+Así $EB$ y $FD$ son un par de lados opuestos del cuadrilátero $DEBF$ que son paralelos e iguales; por el criterio (iii), $DEBF$ es un paralelogramo. $\blacksquare$
+
+[[/solución]]
+
+**Problema 5 (duplicar la mediana).** Sea $ABC$ un triángulo y $M$ el punto medio de $BC$. Sobre la prolongación de la mediana $AM$ se toma $D$ con $MD = MA$. Demostrar que $ABDC$ es un paralelogramo.
+
+[[pista]]
+
+Mira las diagonales del cuadrilátero $ABDC$ y aplica el criterio (iv).
+
+[[/pista]]
+
+[[solución]]
+
+Las diagonales del cuadrilátero $ABDC$ son $AD$ y $BC$. Por hipótesis:
+
+- $M$ es el punto medio de $BC$;
+- $M$ es el punto medio de $AD$ (pues $MD = MA$ y $D$ está en la recta $AM$, al otro lado de $M$).
+
+Las dos diagonales se cortan en $M$ y cada una queda bisecada por él. Por el criterio (iv), $ABDC$ es un paralelogramo. $\blacksquare$
+
+*(Esta construcción "duplica la mediana": transforma el triángulo en un paralelogramo, útil para trasladar lados y aplicar la ley del coseno o el teorema de Stewart.)*
+
+[[/solución]]

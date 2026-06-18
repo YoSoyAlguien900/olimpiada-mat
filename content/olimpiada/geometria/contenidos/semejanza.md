@@ -70,7 +70,11 @@ La semejanza aparece en cuatro situaciones:
 
 ### Semejanza por ángulo común
 
+*La idea común.* Cuando dos triángulos **comparten un ángulo**, ya tienes la mitad del criterio AA; basta cazar un segundo ángulo igual (un ángulo recto, una paralela, un inscrito) para declararlos semejantes y leer la proporción.
+
 **Ejemplo 1.** (Altura sobre la hipotenusa) En el triángulo rectángulo $ABC$ con ángulo recto en $C$, sea $H$ el pie de la altura desde $C$. Demostrar que $\triangle ACH \sim \triangle ABC$.
+
+*La idea.* Los dos triángulos comparten el ángulo $\angle A$, y ambos tienen un ángulo recto ($\angle AHC = \angle ACB = 90°$): AA cerrado.
 
 $\angle AHC = 90° = \angle ACB$ y $\angle A = \angle A$. Por AA: $\triangle ACH \sim \triangle ABC$.
 
@@ -95,17 +99,28 @@ rightangle H B C
 
 ---
 
-**Ejemplo 2.** (Secantes desde un punto exterior) Desde el punto $P$ exterior al círculo $\omega$, tracemos dos secantes que corten a $\omega$ en $\{A, B\}$ y $\{C, D\}$ respectivamente (con $A$ y $C$ más cercanos a $P$). Probar que $PA \cdot PB = PC \cdot PD$.
+**Ejemplo 2.** (Secantes desde un punto exterior) Desde un punto $P$ exterior al círculo $\omega$ trazamos dos secantes que cortan a $\omega$ en $A, B$ y en $C, D$ (con $A$ y $C$ los más cercanos a $P$). Probar que $PA \cdot PB = PC \cdot PD$.
 
-Los triángulos $\triangle PAC$ y $\triangle PDC$... hmm, busquemos la semejanza correcta. En $\omega$: $\angle PAD = \angle PCA$ (ángulos sobre el mismo arco $AD$, visto desde puntos del círculo). Y el ángulo en $P$ es compartido. Por AA: $\triangle PAD \sim \triangle PCB$ (¡ojo a la correspondencia!).
+*La idea.* Queremos un producto de longitudes; el camino es una **semejanza**. El ángulo en $P$ es común a las dos secantes, así que basta encontrar un segundo par de ángulos iguales — y esos los regala el ángulo inscrito. El único cuidado es **emparejar bien los vértices**.
 
-Veamos: $\angle PAD = \angle PBC$ (ambos inscriben el arco $AD$, pero... cuidado con el orden). Usemos $\angle DAC = \angle DBC$ (inscritos sobre arco $DC$) y el ángulo común en $P$: $\triangle PAD \sim \triangle PCB$ (vértice $P$ común, y $\angle PAD = \angle PCB$).
+*Solución.* Comparamos $\triangle PDA$ y $\triangle PBC$:
 
-De la semejanza: $PA/PC = PD/PB$, así $PA \cdot PB = PC \cdot PD$. $\square$
+- El ángulo en $P$ es **común** (es el ángulo entre las dos secantes).
+- $\angle PDA = \angle PBC$: en efecto, $\angle PDA = \angle CDA$ (el rayo $DP$ pasa por $C$) y $\angle PBC = \angle ABC$ (el rayo $BP$ pasa por $A$), y ambos, $\angle CDA$ y $\angle ABC$, son **ángulos inscritos que subtienden el mismo arco $\widehat{AC}$**, luego son iguales.
+
+Por el criterio AA, $\triangle PDA \sim \triangle PBC$ (correspondencia $P\leftrightarrow P$, $D\leftrightarrow B$, $A\leftrightarrow C$). De ahí
+
+$$
+\frac{PD}{PB} = \frac{PA}{PC} \;\Longrightarrow\; PA \cdot PB = PC \cdot PD. \qquad \square
+$$
+
+Este valor común es la **potencia del punto** $P$ respecto de $\omega$.
 
 ---
 
 **Ejemplo 3.** (Teorema de la bisectriz, demostración geométrica) La bisectriz interna del ángulo $\angle BAC$ en el triángulo $ABC$ corta a $BC$ en $D$. Demostrar que $BD/DC = AB/AC = c/b$.
+
+*La idea.* La bisectriz por sí sola no da proporciones; el truco clásico es **trazar una paralela** a ella desde $C$. Esa paralela crea un triángulo isósceles (que convierte $AC$ en una longitud manejable) y deja a Thales repartir $BC$ en la razón buscada.
 
 Trazamos por $C$ una paralela a $AD$, cortando $BA$ extendida en $E$. Como $AD \parallel CE$:
 
@@ -121,7 +136,11 @@ $$\frac{BD}{DC} = \frac{BA}{AE} = \frac{c}{b}. \qquad \square$$
 
 ### Semejanza con circunferencias
 
+*La idea común.* La circunferencia es una **fábrica de ángulos iguales**: cualquier par de ángulos inscritos sobre el mismo arco coincide. Eso aporta, gratis, el segundo ángulo que el criterio AA necesita.
+
 **Ejemplo 4.** Sea $ABCD$ un cuadrilátero cíclico con diagonales $AC$ y $BD$ intersectándose en $P$. Demostrar que $\triangle APB \sim \triangle DPC$.
+
+*La idea.* En $P$ hay ángulos opuestos por el vértice (iguales), y el arco común $\widehat{BC}$ da el segundo par: $\angle PAB = \angle PDC$.
 
 ```geofig
 // Cuadrilátero cíclico ABCD, diagonales AC y BD se cortan en P
@@ -224,15 +243,33 @@ dash A' B'
 
 ## Demostración
 
-Sea $f$ la semejanza que envía $A \mapsto A'$ y $B \mapsto B'$. Si $k \neq 1$, hay un único punto fijo $Z$ que se encuentra como la intersección de las circunferencias que contienen a $A, A', B'$ y que contienen a $B, B', A'$... La demostración detallada usa que los triángulos $\triangle ZAB$ y $\triangle ZA'B'$ son semejantes con el mismo centro $Z$.
+Sea $f$ la semejanza directa que envía $A \mapsto A'$ y $B \mapsto B'$, con razón $k \neq 1$. Buscamos su punto fijo $Z$.
 
-*Clave práctica:* el centro de la homotecia espiral que lleva $AB \mapsto A'B'$ se encuentra como la intersección de los círculos sobre $AA'$ y $BB'$... la construcción exacta es: $Z$ es el punto tal que $\triangle ZAA' \sim \triangle ZBB'$ con la misma orientación.
+Toda semejanza directa multiplica las distancias por $k$ y gira un ángulo fijo $\theta$. Para un punto fijo $Z$ debe cumplirse $\dfrac{ZA'}{ZA} = k$ y $\angle AZA' = \theta$, y lo mismo con $B$: $\dfrac{ZB'}{ZB} = k$, $\angle BZB' = \theta$. Esas dos condiciones equivalen a pedir
+
+$$
+\triangle ZAA' \sim \triangle ZBB' \quad(\text{misma orientación}),
+$$
+
+y un tal $Z$ existe y es único: es el segundo punto de intersección de la circunferencia que pasa por $A, A'$ y el centro buscado con la que pasa por $B, B'$ —concretamente, el segundo punto común de los circuncírculos de $\triangle XAB$ y $\triangle XA'B'$, donde $X = AB \cap A'B'$—. $\blacksquare$
 
 ## Ejemplo
 
-**Ejemplo 7.** (Homotecia espiral en olimpiadas) Sea $ABCD$ un cuadrado. Sobre los segmentos $AB$ y $BC$ se construyen cuadrados exteriores $ABB_1A_1$ y $BCC_1B_2$. Demostrar que los triángulos $\triangle AB_2C_1$ son isósceles o que ciertos puntos son concíclicos.
+**Ejemplo 7 (lema de la homotecia espiral).** Sea $Z$ el centro de una homotecia espiral que lleva el segmento $AB$ al segmento $A'B'$ (es decir, $\triangle ZAB \sim \triangle ZA'B'$ con la misma orientación). Demostrar que entonces $Z$ es **también** el centro de la homotecia espiral que lleva $AA'$ a $BB'$; esto es, $\triangle ZAA' \sim \triangle ZBB'$.
 
-*Hint:* La homotecia espiral de centro $B$ con razón $1$ y ángulo $90°$ envía $A \mapsto C$ y algún otro punto al lugar adecuado. Las configuraciones de cuadrados sobre lados de triángulos suelen resolverse identificando la homotecia espiral apropiada.
+*La idea.* La semejanza $\triangle ZAB \sim \triangle ZA'B'$ da, a la vez, una **igualdad de razones** y una **igualdad de ángulos**; reagrupándolas se reconoce el criterio LAL para los *otros* dos triángulos. Es el "intercambio" característico de la homotecia espiral, omnipresente en olimpiada.
+
+*Solución.* De $\triangle ZAB \sim \triangle ZA'B'$ obtenemos
+
+$$
+\frac{ZA}{ZA'} = \frac{ZB}{ZB'} \qquad\text{y}\qquad \angle AZB = \angle A'ZB'.
+$$
+
+La igualdad de razones se reescribe como $\dfrac{ZA}{ZB} = \dfrac{ZA'}{ZB'}$. Y de $\angle AZB = \angle A'ZB'$, sumando a ambos lados el ángulo $\angle BZA'$, sale $\angle AZA' = \angle BZB'$.
+
+Así, los triángulos $\triangle ZAA'$ y $\triangle ZBB'$ tienen un ángulo igual ($\angle AZA' = \angle BZB'$) comprendido entre lados proporcionales ($\tfrac{ZA}{ZB} = \tfrac{ZA'}{ZB'}$). Por el criterio **LAL**, $\triangle ZAA' \sim \triangle ZBB'$. $\blacksquare$
+
+*(Consecuencia práctica: el centro de la homotecia espiral que envía $AB\mapsto A'B'$ es el mismo que el de la que envía $AA'\mapsto BB'$. Buscar ese centro como segunda intersección de dos circuncírculos resuelve multitud de problemas de concurrencia.)*
 
 ## Aplicaciones
 
@@ -252,14 +289,117 @@ Sea $f$ la semejanza que envía $A \mapsto A'$ y $B \mapsto B'$. Si $k \neq 1$, 
 
 ## Problemas relacionados
 
-- **(Clásico)** Sea $ABC$ un triángulo y $H_B$, $H_C$ los pies de las alturas desde $B$ y desde $C$ respectivamente. Demostrar que $H_B$ y $H_C$ pertenecen a la circunferencia de diámetro $BC$.
+**Problema 1 (clásico).** Sea $ABC$ un triángulo y $H_B$, $H_C$ los pies de las alturas desde $B$ y desde $C$. Demostrar que $H_B$ y $H_C$ están en la circunferencia de diámetro $BC$.
 
-- **(Clásico)** Sea $P$ un punto interior del triángulo $ABC$. Las rectas $AP$, $BP$, $CP$ cortan a los lados opuestos en $D$, $E$, $F$. Probar que
+[[pista]]
 
-$$\frac{AP}{PD} + \frac{BP}{PE} + \frac{CP}{PF} = \frac{[ABC]}{[DEF]} + 2.$$
+Cada pie ve al segmento $BC$ bajo un ángulo recto. ¿Qué lugar geométrico es "los puntos que ven $BC$ a $90°$"?
 
-- **(Clásico)** Sea $ABCD$ un cuadrilátero con $\angle A + \angle C = 180°$. Demostrar que $ABCD$ es cíclico.
+[[/pista]]
 
-- **(Clásico)** En el triángulo rectángulo $ABC$ con ángulo recto en $C$, sea $D$ el pie de la altura desde $C$ sobre la hipotenusa $AB$. Demostrar que $CD^2 = AD \cdot DB$ directamente por semejanza de triángulos.
+[[solución]]
 
-- **(IMO 2009/2)** Sea $ABC$ un triángulo con circuncentro $O$. Los puntos $P$ y $Q$ son puntos interiores de los lados $CA$ y $AB$ respectivamente. Sean $K$, $L$ y $M$ los puntos medios de los segmentos $BP$, $CQ$ y $PQ$ respectivamente, y sea $\Gamma$ la circunferencia que pasa por $K$, $L$ y $M$. Supongamos que la recta $PQ$ es tangente a la circunferencia $\Gamma$. Probar que $OP = OQ$.
+El pie $H_B$ está sobre $AC$ y $BH_B \perp AC$, luego $\angle BH_B C = 90°$. Es decir, $H_B$ ve el segmento $BC$ bajo un ángulo recto, así que está sobre la circunferencia de diámetro $BC$ (recíproco del ángulo en semicírculo).
+
+Igualmente, $H_C$ está sobre $AB$ con $CH_C \perp AB$, luego $\angle BH_C C = 90°$ y $H_C$ está también sobre la circunferencia de diámetro $BC$. $\blacksquare$
+
+[[/solución]]
+
+**Problema 2 (diagonales de un trapecio).** En el trapecio $ABCD$ con $AB \parallel CD$, las diagonales se cortan en $P$. Demostrar que $\triangle PAB \sim \triangle PCD$ y deducir que $\dfrac{PA}{PC} = \dfrac{PB}{PD} = \dfrac{AB}{CD}$.
+
+[[pista]]
+
+Las paralelas $AB \parallel CD$ dan ángulos alternos internos iguales; el ángulo en $P$ es opuesto por el vértice.
+
+[[/pista]]
+
+[[solución]]
+
+Como $AB \parallel CD$ y $AC$ es transversal, $\angle PAB = \angle PCD$ (alternos internos). Igualmente, con la transversal $BD$, $\angle PBA = \angle PDC$. Y $\angle APB = \angle CPD$ (opuestos por el vértice). Por el criterio AA (de hecho sobran ángulos),
+
+$$
+\triangle PAB \sim \triangle PCD,
+$$
+
+con la correspondencia $A \leftrightarrow C$, $B \leftrightarrow D$. De la semejanza, los lados correspondientes son proporcionales:
+
+$$
+\frac{PA}{PC} = \frac{PB}{PD} = \frac{AB}{CD}. \qquad \blacksquare
+$$
+
+[[/solución]]
+
+**Problema 3 (recíproco del cuadrilátero cíclico).** Sea $ABCD$ un cuadrilátero convexo con $\angle A + \angle C = 180°$. Demostrar que $ABCD$ es cíclico.
+
+[[pista]]
+
+Traza la circunferencia por $A$, $B$, $C$ y razona por contradicción: si $D$ no estuviera en ella, el ángulo $\angle ADC$ no podría valer $180° - \angle B$.
+
+[[/pista]]
+
+[[solución]]
+
+Sea $\Gamma$ la circunferencia que pasa por $A$, $B$, $C$ (existe y es única, por ser tres puntos no alineados). Como en todo cuadrilátero $\angle A + \angle B + \angle C + \angle D = 360°$, la hipótesis $\angle A + \angle C = 180°$ equivale a $\angle B + \angle D = 180°$, es decir $\angle D = 180° - \angle B$.
+
+Los puntos $X$ del arco de $\Gamma$ situado al otro lado de $AC$ respecto de $B$ ven la cuerda $AC$ bajo el ángulo $\angle AXC = 180° - \angle B$ (cuadrilátero cíclico $ABCX$). Es decir, **ese arco es exactamente el lugar de los puntos, en ese semiplano, que ven $AC$ bajo el ángulo $180° - \angle B$**.
+
+Como $D$ está en ese semiplano (convexidad) y cumple $\angle ADC = 180° - \angle B$, el punto $D$ pertenece a dicho arco, luego a $\Gamma$. Por tanto $A$, $B$, $C$, $D$ son concíclicos. $\blacksquare$
+
+[[/solución]]
+
+**Problema 4 (clásico).** En el triángulo rectángulo $ABC$ con ángulo recto en $C$, sea $D$ el pie de la altura desde $C$ sobre la hipotenusa $AB$. Demostrar que $CD^2 = AD \cdot DB$.
+
+[[pista]]
+
+Los dos triángulos pequeños $\triangle ACD$ y $\triangle CBD$ son ambos semejantes al grande; compáralos entre sí.
+
+[[/pista]]
+
+[[solución]]
+
+En $\triangle ACD$ y $\triangle CBD$, ambos rectángulos en $D$:
+
+- $\angle ADC = \angle CDB = 90°$.
+- $\angle DAC = \angle DCB$: en efecto, $\angle DCB = 90° - \angle DCA$ (el ángulo recto en $C$ se parte en los dos), y $\angle DAC = 90° - \angle DCA$ (suma de ángulos de $\triangle ACD$). Luego son iguales.
+
+Por AA, $\triangle ACD \sim \triangle CBD$, con la correspondencia $A\leftrightarrow C$, $C\leftrightarrow B$, $D\leftrightarrow D$. De los lados correspondientes,
+
+$$
+\frac{AD}{CD} = \frac{CD}{DB} \;\Longrightarrow\; CD^2 = AD \cdot DB. \qquad \blacksquare
+$$
+
+[[/solución]]
+
+**Problema 5 (clásico).** Una circunferencia que pasa por $B$ y $C$ corta a los lados $AB$ y $AC$ del triángulo $ABC$ en $E$ y $F$ respectivamente. Demostrar que $\triangle AEF \sim \triangle ACB$ y deducir que $AE \cdot AB = AF \cdot AC$.
+
+[[pista]]
+
+$BEFC$ es cíclico. El ángulo $\angle AEF$ es el ángulo exterior de ese cuadrilátero cíclico en $E$, igual al interior opuesto $\angle ACB$.
+
+[[/pista]]
+
+[[solución]]
+
+Los puntos $B$, $E$, $F$, $C$ están sobre la circunferencia dada, así que $BEFC$ es un cuadrilátero cíclico. En un cuadrilátero cíclico, el ángulo exterior en un vértice es igual al ángulo interior opuesto; en el vértice $E$,
+
+$$
+\angle AEF = \angle ACB
+$$
+
+(el ángulo $\angle AEF$ es suplementario de $\angle FEB$, y $\angle FEB + \angle FCB = 180°$ por ser opuestos del cíclico).
+
+Ahora, en $\triangle AEF$ y $\triangle ACB$: el ángulo $\angle A$ es común y $\angle AEF = \angle ACB$. Por AA,
+
+$$
+\triangle AEF \sim \triangle ACB \quad(A\leftrightarrow A,\ E\leftrightarrow C,\ F\leftrightarrow B).
+$$
+
+De la proporción de lados correspondientes, $\dfrac{AE}{AC} = \dfrac{AF}{AB}$, es decir
+
+$$
+AE \cdot AB = AF \cdot AC. \qquad \blacksquare
+$$
+
+(Ambos productos valen la potencia de $A$ respecto de la circunferencia.)
+
+[[/solución]]

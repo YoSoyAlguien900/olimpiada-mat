@@ -103,51 +103,73 @@ Restando: $\angle APB = \angle DPB - \angle APD = \frac{1}{2}(\angle DOB - \angl
 
 En todos los casos, $\angle APB = \frac{1}{2}\angle AOB$. $\blacksquare$
 
-**Demostración del Corolario 3 (ángulo semiinscrito).** Sea $t$ la tangente a $\omega$ en $A$, y sea $\angle(AB, t) = \beta$. Queremos demostrar $\beta = \angle APB$ donde $P$ está en el arco que no contiene el punto donde $t$ es tangente.
+**Demostración del Corolario 3 (ángulo semiinscrito).** Sea $t$ la tangente a $\omega$ en $A$ y $\beta = \angle(AB, t)$ el ángulo que forma con la cuerda $AB$. Queremos ver que $\beta = \angle APB$, con $P$ en el arco que no contiene el punto de tangencia.
 
-Como $t \perp OA$ (radio perpendicular a la tangente), el ángulo entre $AB$ y el radio $OA$ es $90° - \beta$. Por tanto el ángulo central $\angle AOB = 2(90° - \beta) = 180° - 2\beta$... 
+El triángulo $OAB$ es isósceles ($OA = OB = r$), luego sus ángulos de la base valen
 
-Mejor: en el triángulo $OAB$, $OA = OB = r$, así $\angle OAB = \angle OBA = \frac{180° - \angle AOB}{2}$. El ángulo entre $AB$ y la tangente $t$ (que es perpendicular a $OA$) es $90° - \angle OAB = 90° - \frac{180° - \angle AOB}{2} = \frac{\angle AOB}{2} = \angle APB$.
+$$
+\angle OAB = \angle OBA = \frac{180° - \angle AOB}{2}.
+$$
 
-Luego $\angle(AB, t) = \angle APB$. $\blacksquare$
+Como el radio es perpendicular a la tangente ($t \perp OA$), el ángulo entre la cuerda $AB$ y la tangente es
+
+$$
+\beta = 90° - \angle OAB = 90° - \frac{180° - \angle AOB}{2} = \frac{\angle AOB}{2}.
+$$
+
+Y por el teorema del ángulo inscrito, $\dfrac{\angle AOB}{2} = \angle APB$. Por tanto $\beta = \angle APB$. $\blacksquare$
 
 ## Ejemplo
 
 ### Ángulos en cuadriláteros cíclicos
 
-**Ejemplo 1.** Sea $ABCD$ un cuadrilátero inscrito en una circunferencia. Demostrar que $\angle BAD + \angle BCD = 180°$ (ángulos opuestos son suplementarios).
+*La idea común.* En cuanto cuatro puntos están sobre una circunferencia, **todo ángulo del dibujo se traduce a un arco**. Dos preguntas resuelven casi todo: ¿qué arco abarca este ángulo inscrito? y ¿cómo se reparten los arcos en la circunferencia completa ($360°$)? Igualdades y suplementos salen solos.
 
-Los ángulos $\angle BAD$ y $\angle BCD$ son ángulos inscritos que abarcan arcos complementarios: $\angle BAD$ abarca el arco $\widehat{BCD}$ y $\angle BCD$ abarca el arco $\widehat{BAD}$. Estos dos arcos juntos forman la circunferencia completa ($360°$). Por el teorema, cada ángulo inscrito es la mitad de su arco central, así:
+**Ejemplo 1.** Sea $ABCD$ un cuadrilátero inscrito en una circunferencia. Demostrar que $\angle BAD + \angle BCD = 180°$.
 
-$$\angle BAD + \angle BCD = \frac{1}{2}(360°) = 180°. \qquad \blacksquare$$
+*La idea.* Los dos ángulos opuestos abarcan **arcos que entre los dos cubren toda la circunferencia**. Sumar los ángulos equivale a sumar medios arcos, y la suma de los arcos es $360°$.
+
+$\angle BAD$ es inscrito y abarca el arco $\widehat{BCD}$; $\angle BCD$ abarca el arco $\widehat{BAD}$. Juntos forman los $360°$, y como cada ángulo inscrito es la mitad de su arco,
+
+$$
+\angle BAD + \angle BCD = \frac{1}{2}\cdot 360° = 180°. \qquad \blacksquare
+$$
 
 ---
 
 **Ejemplo 2.** En la circunferencia $\omega$, los puntos $A, B, C, D$ están en ese orden. Probar que $\angle ACD = \angle ABD$.
 
-Ambos son ángulos inscritos que abarcan el arco $\widehat{AD}$ (el que no contiene a $B$ ni a $C$). Por el Corolario 1, son iguales. $\square$
+Ambos son ángulos inscritos que abarcan el **mismo** arco $\widehat{AD}$ (el que no contiene a $B$ ni a $C$). Por el Corolario 1, son iguales. $\square$
 
 ---
 
-**Ejemplo 3.** Sea $P$ un punto sobre la circunferencia circunscrita al triángulo $ABC$, en el arco $\widehat{BC}$ que no contiene a $A$. Demostrar que $\angle BPC = 180° - \angle BAC$.
+**Ejemplo 3.** Sea $P$ sobre la circunferencia circunscrita al triángulo $ABC$, en el arco $\widehat{BC}$ que no contiene a $A$. Demostrar que $\angle BPC = 180° - \angle BAC$.
 
-$\angle BAC$ abarca el arco $\widehat{BC}$ que contiene a $A$ (el arco menor si $A$ es el vértice opuesto al lado más largo). $\angle BPC$ abarca el arco $\widehat{BC}$ que contiene a $P$, que es el arco complementario.
+*La idea.* $A$ y $P$ están en **arcos opuestos** respecto de la cuerda $BC$, así que sus ángulos inscritos abarcan los dos arcos $\widehat{BC}$ complementarios, cuya suma es $360°$.
 
-La suma de los dos arcos es $360°$, así $\frac{1}{2}(\text{arco}_1 + \text{arco}_2) = 180°$, dando $\angle BAC + \angle BPC = 180°$. $\blacksquare$
+$\angle BAC$ abarca el arco $\widehat{BC}$ que contiene a $P$... no: $\angle BAC$ abarca el arco que **no** contiene a $A$, y $\angle BPC$ el que no contiene a $P$; entre ambos suman la circunferencia entera. Por tanto
 
-*(Esto confirma que $ABPC$ es cíclico — lo que ya sabíamos — pero la igualdad de arcos es la clave.)*
+$$
+\angle BAC + \angle BPC = \tfrac12\cdot 360° = 180° \;\Longrightarrow\; \angle BPC = 180° - \angle BAC. \qquad \blacksquare
+$$
+
+*(Es justo la condición de cuadrilátero cíclico $ABPC$: ángulos opuestos suplementarios.)*
 
 ---
 
 ### Ángulo semiinscrito: la tangente-cuerda
 
-**Ejemplo 4.** La tangente a la circunferencia $\omega$ en $A$ forma un ángulo de $40°$ con la cuerda $AB$. ¿Cuánto mide el arco $\widehat{AB}$ que no contiene el punto de tangencia? ¿Y el ángulo inscrito desde el arco opuesto?
+*La idea común.* La tangente actúa como una cuerda "límite": el ángulo que forma con una cuerda **vale lo mismo que el ángulo inscrito** que ve esa cuerda desde el otro arco (Corolario 3). Esto deja meter la tangente en cualquier cacería de ángulos como si fuera una cuerda más.
 
-Por el Corolario 3: el ángulo semiinscrito $= 40°$ es igual al ángulo inscrito desde el arco opuesto. El arco central correspondiente mide $2 \times 40° = 80°$. El ángulo inscrito desde ese arco es $40°$.
+**Ejemplo 4.** La tangente a $\omega$ en $A$ forma $40°$ con la cuerda $AB$. ¿Cuánto mide el arco $\widehat{AB}$ que no contiene el punto de tangencia, y el ángulo inscrito desde el arco opuesto?
+
+Por el Corolario 3, el ángulo semiinscrito ($40°$) es igual al ángulo inscrito desde el arco opuesto, así que ese **ángulo inscrito mide $40°$**. Y como el inscrito es la mitad de su arco central, el **arco mide $2\times 40° = 80°$**. $\square$
 
 ---
 
-**Ejemplo 5.** (Configuración clásica) Dos cuerdas $AB$ y $CD$ de una circunferencia se cortan en el punto interior $P$. Demostrar que $\angle APC = \angle DPB$ y calcular $\angle APC$ en términos de los arcos.
+**Ejemplo 5.** (Configuración clásica) Dos cuerdas $AB$ y $CD$ se cortan en un punto interior $P$. Demostrar que $\angle APC = \angle DPB$ y calcular $\angle APC$ en términos de los arcos.
+
+*La idea.* El ángulo $\angle APC$ es un ángulo **exterior** del triángulo $APC$ (o, vía la suma de ángulos del triángulo, se expresa con los otros dos), y cada uno de esos ángulos es inscrito: traducimos todo a arcos.
 
 ```geofig
 // Cuerdas AB y CD que se cortan en P
@@ -179,6 +201,8 @@ El ángulo formado por dos cuerdas que se cortan es la semisuma de los arcos que
 ### Problema olímpico
 
 **Ejemplo 6.** Sean $AB$ un diámetro de $\omega$, $C$ un punto de la semicircunferencia (distinto de $A$ y $B$), y $T$ el punto donde la tangente a $\omega$ en $C$ corta a la recta $AB$. Demostrar que $TC$ es bisectriz del ángulo $\angle ACB$ **si y solo si** $C$ es el punto medio del arco $\widehat{AB}$ (equivalentemente, $CA = CB$).
+
+*La idea.* El ángulo $\angle ACB$ es recto y fijo, lo que tienta a creer que la tangente "siempre" lo biseca. Pero el ángulo semiinscrito convierte "¿$TC$ biseca?" en comparar $\angle CAB$ con $\angle CBA$ — es decir, en si el triángulo es isósceles. La moraleja: una constante ($\angle ACB = 90°$) no implica simetría; hay que traducir la bisección a una igualdad de ángulos concreta.
 
 ```geofig
 // AB diámetro, C en la semicircunferencia, tangente en C corta a AB en T
@@ -263,12 +287,145 @@ $(\Leftarrow)$: Si $\angle BAC = \angle BDC$, entonces $D$ está sobre la circun
 
 ## Problemas relacionados
 
-- **(Clásico)** Sea $ABCD$ un cuadrilátero cíclico. Demostrar que $\angle ACB = \angle ADB$.
+**Problema 1 (clásico).** Sea $ABCD$ un cuadrilátero cíclico. Demostrar que $\angle ACB = \angle ADB$.
 
-- **(Clásico)** En la circunferencia $\omega$, $AB$ es diámetro. $C$ y $D$ son puntos de la semicircunferencia con $C$ entre $A$ y $D$. La tangente en $C$ corta a $BD$ en $E$. Demostrar que $CE$ bisecta al ángulo $\angle ACD$.
+[[pista]]
 
-- **(Clásico)** Sea $\omega$ la circunferencia circunscrita al triángulo $ABC$. La bisectriz desde $A$ corta a $\omega$ en el punto medio $M_A$ del arco $\widehat{BC}$ que no contiene a $A$. Probar que $M_A B = M_A C = M_A I$ donde $I$ es el incentro.
+Los dos ángulos miran la misma cuerda $AB$ desde el mismo arco.
 
-- **(Clásico)** Sea $H$ el ortocentro del triángulo $ABC$. El circuncírculo de $BHC$ tiene radio $R' = R$ (igual que el circuncírculo de $ABC$). Demostrarlo usando el ángulo inscrito.
+[[/pista]]
 
-- **(Teorema de Simson)** Si $P$ es un punto del circuncírculo del triángulo $ABC$, los pies de las perpendiculares desde $P$ a los tres lados son colineales. *(Demostrar usando ángulos inscritos y el criterio de cuatro puntos concíclicos.)*
+[[solución]]
+
+$\angle ACB$ y $\angle ADB$ son ángulos inscritos que subtienden la **misma cuerda $AB$**, y los vértices $C$ y $D$ están en el mismo arco respecto de $AB$ (el arco que no contiene a $A$ ni a $B$). Por el Corolario 1 (ángulos inscritos sobre el mismo arco), son iguales:
+
+$$
+\angle ACB = \frac{\widehat{AB}}{2} = \angle ADB. \qquad \blacksquare
+$$
+
+[[/solución]]
+
+**Problema 2 (tangente-cuerda).** Sea $ABC$ un triángulo inscrito en $\omega$. La tangente a $\omega$ en $A$ corta a la recta $BC$ en $T$. Demostrar que $TA^2 = TB \cdot TC$.
+
+[[pista]]
+
+Por el ángulo semiinscrito, $\angle TAB = \angle ACB$. Busca dos triángulos semejantes que compartan el vértice $T$.
+
+[[/pista]]
+
+[[solución]]
+
+Por el ángulo semiinscrito (Corolario 3), el ángulo entre la tangente $TA$ y la cuerda $AB$ es igual al ángulo inscrito que ve $AB$ desde el arco opuesto:
+
+$$
+\angle TAB = \angle ACB = \angle TCA.
+$$
+
+Consideramos los triángulos $\triangle TAB$ y $\triangle TCA$. Comparten el ángulo en $T$, y acabamos de ver que $\angle TAB = \angle TCA$. Por el criterio AA, son semejantes:
+
+$$
+\triangle TAB \sim \triangle TCA \;\Longrightarrow\; \frac{TA}{TC} = \frac{TB}{TA}.
+$$
+
+De la proporción, $TA^2 = TB \cdot TC$. $\blacksquare$
+
+*(Es el caso límite de la "potencia de un punto": la potencia de $T$ respecto de $\omega$ vale $TB\cdot TC$, y también $TA^2$ por ser $TA$ tangente.)*
+
+[[/solución]]
+
+**Problema 3 (lema del incentro, "trident").** Sea $\omega$ la circunferencia circunscrita al triángulo $ABC$. La bisectriz desde $A$ corta a $\omega$ en el punto medio $M$ del arco $\widehat{BC}$ que no contiene a $A$. Probar que $MB = MC = MI$, donde $I$ es el incentro.
+
+[[pista]]
+
+$MB = MC$ sale de que $M$ es punto medio del arco. Para $MI = MB$, demuestra que el triángulo $MBI$ es isósceles calculando $\angle MBI$ y $\angle MIB$ con $A/2$ y $B/2$.
+
+[[/pista]]
+
+[[solución]]
+
+Sean $\angle A, \angle B, \angle C$ los ángulos del triángulo. Como $AI$ y $BI$ son bisectrices, $\angle BAM = \angle A/2$ y $\angle IBC = \angle B/2$.
+
+**$MB = MC$.** Como $AM$ biseca $\angle A$, los arcos $\widehat{BM}$ y $\widehat{MC}$ son iguales (ambos subtienden ángulos inscritos $\angle BAM = \angle CAM = \angle A/2$). Arcos iguales $\Rightarrow$ cuerdas iguales, luego $MB = MC$.
+
+**$MI = MB$.** Estudiamos el triángulo $MBI$ y mostramos que es isósceles en $M$.
+
+- $\angle MBI = \angle MBC + \angle CBI$. Ahora $\angle MBC = \angle MAC = \dfrac{\angle A}{2}$ (ángulos inscritos sobre el mismo arco $\widehat{MC}$), y $\angle CBI = \dfrac{\angle B}{2}$. Así $\angle MBI = \dfrac{\angle A + \angle B}{2}$.
+- $\angle MIB$ es ángulo exterior del triángulo $ABI$ en $I$, luego es la suma de los dos no adyacentes: $\angle MIB = \angle IAB + \angle IBA = \dfrac{\angle A}{2} + \dfrac{\angle B}{2}$.
+
+Por tanto $\angle MBI = \angle MIB$, así que $\triangle MBI$ es isósceles y $MI = MB$.
+
+Combinando, $MB = MC = MI$. $\blacksquare$
+
+[[/solución]]
+
+**Problema 4 (clásico).** Sea $H$ el ortocentro del triángulo $ABC$. Demostrar que el circuncírculo de $BHC$ tiene el mismo radio $R$ que el de $ABC$.
+
+[[pista]]
+
+Primero prueba que $\angle BHC = 180° - \angle A$. Luego aplica la ley de los senos a $\triangle BHC$ con la cuerda $BC$.
+
+[[/pista]]
+
+[[solución]]
+
+**Cálculo de $\angle BHC$.** Sea $H$ el ortocentro. Mirando el triángulo $BHC$: $\angle HBC = 90° - \angle C$ y $\angle HCB = 90° - \angle B$ (la altura desde $B$ es perpendicular a $AC$, etc.). Entonces
+
+$$
+\angle BHC = 180° - (90° - \angle C) - (90° - \angle B) = \angle B + \angle C = 180° - \angle A.
+$$
+
+**Comparación de radios.** Sea $R'$ el circunradio de $BHC$. Por la ley de los senos aplicada a la cuerda $BC$ en ese círculo,
+
+$$
+\frac{BC}{\sin \angle BHC} = 2R'.
+$$
+
+En el círculo original, $\dfrac{BC}{\sin \angle A} = 2R$. Y como $\angle BHC = 180° - \angle A$, se tiene $\sin\angle BHC = \sin\angle A$, luego
+
+$$
+2R' = \frac{BC}{\sin\angle BHC} = \frac{BC}{\sin\angle A} = 2R \;\Longrightarrow\; R' = R. \qquad \blacksquare
+$$
+
+[[/solución]]
+
+**Problema 5 (recta de Simson).** Si $P$ es un punto del circuncírculo del triángulo $ABC$, los pies de las perpendiculares desde $P$ a los tres lados (rectas $BC$, $CA$, $AB$) son colineales.
+
+[[pista]]
+
+Llama $X, Y, Z$ a los pies sobre $BC$, $CA$, $AB$. Los ángulos rectos crean varios cuadriláteros cíclicos ($AYPZ$, $PXCY$, $BXPZ$). Persigue ángulos para probar $\angle PXZ = \angle PXY$, lo que obliga a $Z, X, Y$ a estar alineados.
+
+[[/pista]]
+
+[[solución]]
+
+Sean $X, Y, Z$ los pies de las perpendiculares desde $P$ a las rectas $BC$, $CA$, $AB$. Suponemos $P$ en el arco $\widehat{BC}$ que no contiene a $A$ (los demás casos son análogos).
+
+**Cuadriláteros cíclicos por ángulos rectos.** Como $\angle PYC = \angle PXC = 90°$, los puntos $P, X, C, Y$ están en una circunferencia (de diámetro $PC$). Como $\angle PXB = \angle PZB = 90°$, los puntos $P, X, B, Z$ están en otra circunferencia (de diámetro $PB$).
+
+**Cacería de ángulos.** En el círculo $PXBZ$, los ángulos $\angle PXZ$ y $\angle PBZ$ subtienden la misma cuerda $PZ$, y como $Z$ está en la recta $AB$, el rayo $BZ$ va por $BA$. Luego
+
+$$
+\angle PXZ = \angle PBZ = \angle PBA.
+$$
+
+En el círculo $PXCY$, los ángulos $\angle PXY$ y $\angle PCY$ subtienden la cuerda $PY$, y como $Y$ está en la recta $CA$,
+
+$$
+\angle PXY = \angle PCY = \angle PCA.
+$$
+
+**El cierre.** Los puntos $A, B, P, C$ están sobre el circuncírculo en ese orden cíclico (pues $P$ está en el arco $\widehat{BC}$ opuesto a $A$), así que $ABPC$ es un cuadrilátero cíclico. Sus ángulos en $B$ y en $C$ son **opuestos**, luego suplementarios:
+
+$$
+\angle PBA + \angle PCA = 180°.
+$$
+
+Sustituyendo,
+
+$$
+\angle PXZ + \angle PXY = \angle PBA + \angle PCA = 180°.
+$$
+
+Como los rayos $XZ$ y $XY$ forman con $XP$ ángulos que suman $180°$ y salen a lados opuestos de $XP$, son rayos opuestos: $Z$, $X$, $Y$ están alineados. Esa recta es la **recta de Simson** de $P$. $\blacksquare$
+
+[[/solución]]

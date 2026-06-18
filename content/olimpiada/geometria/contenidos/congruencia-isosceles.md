@@ -91,15 +91,21 @@ Esta coincidencia es una de las observaciones más rentables de la geometría el
 
 ### Isósceles ocultos: la fuente más común de igualdades de ángulos
 
+*La idea común.* El reflejo automático: en cuanto veas **dos segmentos iguales que salen del mismo punto** (dos radios, dos lados marcados…), tienes un triángulo isósceles, y por tanto una igualdad de ángulos gratis. Y al revés, dos ángulos iguales delatan dos lados iguales.
+
 **Ejemplo 1.** Sea $\omega$ una circunferencia de centro $O$ y $A$, $B$ dos puntos de $\omega$. Demostrar que $\angle OAB = \angle OBA$.
 
-*Solución.* $OA = OB = r$ (ambos son radios), así $\triangle OAB$ es isósceles con vértice $O$. Por el teorema, $\angle OAB = \angle OBA$. $\blacksquare$
+*La idea.* Dos radios al mismo círculo son iguales: $OA = OB$. Eso es un isósceles disfrazado.
+
+*Solución.* $OA = OB = r$, así $\triangle OAB$ es isósceles con vértice $O$, y por el teorema $\angle OAB = \angle OBA$. $\blacksquare$
 
 *(Esta observación trivial —todo triángulo formado por el centro y dos puntos de la circunferencia es isósceles— es exactamente la pieza que hace funcionar la demostración del teorema del ángulo inscrito: véase el contenido de Ángulos en la circunferencia, Caso 1 de la demostración.)*
 
 ---
 
 **Ejemplo 2.** En el triángulo $ABC$, la bisectriz interna del ángulo $\angle A$ corta al circuncírculo en el punto $M$ (el punto medio del arco $\widehat{BC}$ que no contiene a $A$). Demostrar que $MB = MC$.
+
+*La idea.* Queremos una igualdad de longitudes ($MB = MC$); la conseguimos por la ruta de los ángulos: la bisectriz iguala dos ángulos inscritos, esos igualan dos arcos, y arcos iguales dan cuerdas iguales (o, equivalentemente, un triángulo isósceles).
 
 *Solución.* Como $AM$ es bisectriz de $\angle BAC$, se tiene $\angle BAM = \angle CAM$. Estos son ángulos inscritos que abarcan los arcos $\widehat{BM}$ y $\widehat{CM}$ respectivamente, así $\widehat{BM} = \widehat{CM}$ (arcos iguales corresponden a ángulos inscritos iguales). Arcos iguales son subtendidos por cuerdas iguales, luego $MB = MC$.
 
@@ -113,6 +119,8 @@ Esta coincidencia es una de las observaciones más rentables de la geometría el
 
 **Ejemplo 3.** Por un punto $C$ exterior a la recta $AB$ se traza la paralela a la bisectriz del ángulo $\angle A$ del triángulo $ABC$ hasta cortar a la recta $AB$ en un punto $E$ (al prolongar $BA$ más allá de $A$). Demostrar que $AE = AC$, es decir, que $\triangle ACE$ es isósceles.
 
+*La idea.* Para fabricar un isósceles a voluntad, trazamos una **paralela** a la bisectriz: el paralelismo convierte la igualdad de ángulos de la bisectriz en una igualdad de los dos ángulos en la base del triángulo $ACE$, y de ahí salen los lados iguales.
+
 *Solución.* (Esta es la construcción auxiliar clásica para el teorema de la bisectriz —véase el contenido de Semejanza, Ejemplo 3.) Sea $AD$ la bisectriz de $\angle BAC$ ($D \in BC$), y $CE \parallel AD$ con $E$ en la prolongación de $BA$. Por ángulos alternos internos (transversal $AC$ entre las paralelas $AD$ y $CE$): $\angle DAC = \angle ACE$. Por ángulos correspondientes (transversal $AB$ entre las mismas paralelas): $\angle BAD = \angle AEC$.
 
 Como $AD$ es bisectriz, $\angle BAD = \angle DAC$, y combinando las dos igualdades anteriores: $\angle ACE = \angle AEC$. Por el teorema del triángulo isósceles (sentido recíproco), $\triangle ACE$ es isósceles con $AE = AC$. $\blacksquare$
@@ -122,6 +130,8 @@ Como $AD$ es bisectriz, $\angle BAD = \angle DAC$, y combinando las dos igualdad
 ### Problema guiado
 
 **Ejemplo 4 (Clásico).** Sea $ABC$ un triángulo isósceles con $AB = AC$. La bisectriz del ángulo $\angle B$ corta a $AC$ en $D$, y la bisectriz del ángulo $\angle C$ corta a $AB$ en $E$. Demostrar que $BD = CE$.
+
+*La idea.* La figura es **simétrica** respecto del eje del isósceles (que intercambia $B\leftrightarrow C$ y $D\leftrightarrow E$). Esa simetría se traduce en una congruencia de triángulos $\triangle DBC \cong \triangle ECB$, de la que $BD = CE$ sale como lados correspondientes.
 
 *Solución.* Sea $\beta = \angle ABC = \angle ACB$ (ángulos de la base, iguales porque $AB = AC$). Como $BD$ y $CE$ son bisectrices, $\angle DBC = \angle ECB = \dfrac{\beta}{2}$.
 
@@ -151,12 +161,106 @@ Por **ALA** (en ambos triángulos, el lado $BC = CB$ está flanqueado por un án
 
 ## Problemas relacionados
 
-- **(Clásico)** Sea $ABC$ un triángulo isósceles con $AB = AC$, y sean $M$, $N$ los puntos medios de $AC$ y $AB$. Demostrar que $BM = CN$.
+**Problema 1 (clásico).** Sea $ABC$ isósceles con $AB = AC$, y sean $M$, $N$ los puntos medios de $AC$ y $AB$. Demostrar que $BM = CN$.
 
-- **(Clásico)** Sea $\omega$ una circunferencia y $AB$, $CD$ dos cuerdas de igual longitud. Demostrar que los arcos $\widehat{AB}$ y $\widehat{CD}$ son iguales (usar que los triángulos $OAB$ y $OCD$ son congruentes por LLL, con $O$ el centro).
+[[pista]]
 
-- **(Clásico)** En el triángulo $ABC$, sea $I$ el incentro. Demostrar que $\angle BIC = 90° + \frac{\angle A}{2}$ (combinar la bisección de ángulos con la suma de ángulos en $\triangle BIC$).
+Compara $\triangle ABM$ y $\triangle ACN$: comparten el ángulo $\angle A$ y los lados que lo forman son iguales.
 
-- **(OMG, adaptado)** Sea $ABC$ un triángulo con $\angle B = 90°$ y sea $M$ el punto medio de $AC$. Demostrar que $\triangle ABM$ y $\triangle CBM$ son isósceles, y deducir que $BM = \frac12 AC$ (otra prueba de la propiedad de la mediana a la hipotenusa, complementaria a la del contenido de la base media).
+[[/pista]]
 
-- **(Clásico)** Sea $\omega$ el circuncírculo del triángulo $ABC$ y $M_A$ el punto medio del arco $\widehat{BC}$ que no contiene a $A$. Probar que $M_A$ equidista del incentro $I$ y de los vértices $B$, $C$ —el **Lema del Incentro**— combinando isósceles con ángulos inscritos.
+[[solución]]
+
+Como $AB = AC$ y $N$, $M$ son puntos medios de $AB$, $AC$, se tiene $AN = \tfrac12 AB = \tfrac12 AC = AM$. Comparamos $\triangle ABM$ y $\triangle ACN$:
+
+- $AB = AC$ (hipótesis),
+- $\angle A = \angle A$ (ángulo común),
+- $AM = AN$ (recién visto).
+
+Por **LAL**, $\triangle ABM \cong \triangle ACN$, y los lados correspondientes dan $BM = CN$. $\blacksquare$
+
+[[/solución]]
+
+**Problema 2 (clásico).** Sea $\omega$ una circunferencia de centro $O$ y $AB$, $CD$ dos cuerdas de igual longitud. Demostrar que los arcos $\widehat{AB}$ y $\widehat{CD}$ son iguales.
+
+[[pista]]
+
+Los triángulos $OAB$ y $OCD$ tienen sus tres lados iguales (dos radios y la cuerda).
+
+[[/pista]]
+
+[[solución]]
+
+Consideramos $\triangle OAB$ y $\triangle OCD$. Sus lados son:
+
+- $OA = OC = r$ y $OB = OD = r$ (radios),
+- $AB = CD$ (hipótesis).
+
+Por **LLL**, $\triangle OAB \cong \triangle OCD$, luego los ángulos centrales correspondientes son iguales: $\angle AOB = \angle COD$. Como cada arco mide lo mismo que su ángulo central, los arcos $\widehat{AB}$ y $\widehat{CD}$ son iguales. $\blacksquare$
+
+[[/solución]]
+
+**Problema 3 (clásico).** En el triángulo $ABC$, sea $I$ el incentro. Demostrar que $\angle BIC = 90° + \dfrac{\angle A}{2}$.
+
+[[pista]]
+
+$BI$ y $CI$ son bisectrices, así que $\angle IBC = \angle B/2$ y $\angle ICB = \angle C/2$. Aplica la suma de ángulos en $\triangle BIC$ y usa $\angle A+\angle B+\angle C = 180°$.
+
+[[/pista]]
+
+[[solución]]
+
+Como $I$ es el incentro, $BI$ y $CI$ bisecan los ángulos $\angle B$ y $\angle C$, luego $\angle IBC = \dfrac{\angle B}{2}$ y $\angle ICB = \dfrac{\angle C}{2}$. En el triángulo $BIC$,
+
+$$
+\angle BIC = 180° - \angle IBC - \angle ICB = 180° - \frac{\angle B + \angle C}{2}.
+$$
+
+Y como $\angle B + \angle C = 180° - \angle A$,
+
+$$
+\angle BIC = 180° - \frac{180° - \angle A}{2} = 180° - 90° + \frac{\angle A}{2} = 90° + \frac{\angle A}{2}. \qquad \blacksquare
+$$
+
+[[/solución]]
+
+**Problema 4 (mediana a la hipotenusa).** Sea $ABC$ con $\angle B = 90°$ y $M$ el punto medio de $AC$. Demostrar que $\triangle ABM$ y $\triangle CBM$ son isósceles, y deducir que $BM = \tfrac12 AC$.
+
+[[pista]]
+
+Prolonga $BM$ hasta $B'$ con $M$ punto medio de $BB'$. El cuadrilátero $ABCB'$ tiene las diagonales bisecándose, luego es un paralelogramo; con un ángulo recto, es un rectángulo.
+
+[[/pista]]
+
+[[solución]]
+
+Prolongamos la mediana $BM$ hasta un punto $B'$ tal que $M$ sea el punto medio de $BB'$. Entonces en el cuadrilátero $ABCB'$ las dos diagonales $AC$ y $BB'$ se cortan en su punto medio común $M$, lo que lo convierte en un **paralelogramo**.
+
+Como además $\angle ABC = 90°$, ese paralelogramo tiene un ángulo recto: es un **rectángulo**. En un rectángulo las diagonales son iguales, así que $BB' = AC$, y por tanto
+
+$$
+BM = \tfrac12 BB' = \tfrac12 AC.
+$$
+
+En consecuencia $MA = MB = MC = \tfrac12 AC$: los triángulos $\triangle ABM$ (con $MA = MB$) y $\triangle CBM$ (con $MC = MB$) son isósceles. $\blacksquare$
+
+[[/solución]]
+
+**Problema 5 (Lema del Incentro).** Sea $\omega$ el circuncírculo de $ABC$ y $M$ el punto medio del arco $\widehat{BC}$ que no contiene a $A$. Probar que $M$ equidista de $B$, $C$ y del incentro $I$: $MB = MC = MI$.
+
+[[pista]]
+
+$MB = MC$ es el Ejemplo 2. Para $MI = MB$, demuestra que $\triangle MBI$ es isósceles calculando $\angle MBI$ y $\angle MIB$ en términos de $\angle A/2$ y $\angle B/2$.
+
+[[/pista]]
+
+[[solución]]
+
+Como $M$ es el punto medio del arco $\widehat{BC}$, la bisectriz desde $A$ pasa por $M$, y por el Ejemplo 2 ya tenemos $MB = MC$. Falta ver $MI = MB$, para lo que mostramos que $\triangle MBI$ es isósceles en $M$.
+
+- $\angle MBI = \angle MBC + \angle CBI$. Ahora $\angle MBC = \angle MAC = \dfrac{\angle A}{2}$ (ángulos inscritos sobre el mismo arco $\widehat{MC}$), y $\angle CBI = \dfrac{\angle B}{2}$ (pues $BI$ biseca $\angle B$). Así $\angle MBI = \dfrac{\angle A + \angle B}{2}$.
+- $\angle MIB$ es ángulo exterior del triángulo $ABI$ en $I$, luego igual a la suma de los no adyacentes: $\angle MIB = \angle IAB + \angle IBA = \dfrac{\angle A}{2} + \dfrac{\angle B}{2}$.
+
+Por tanto $\angle MBI = \angle MIB$, el triángulo $\triangle MBI$ es isósceles y $MI = MB$. Combinando, $MB = MC = MI$. $\blacksquare$
+
+[[/solución]]
