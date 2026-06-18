@@ -219,7 +219,7 @@ $$
 (10a + b) + (a + b) = 100 \;\Longrightarrow\; 11a + 2b = 100.
 $$
 
-Despejamos $b = \dfrac{100 - 11a}{2}$. Para que $b$ sea entero entre $0$ y $9$ necesitamos $0 \leq 100 - 11a \leq 18$, es decir $11a \in [82, 100]$, o sea $a \in \{8, 9\}$:
+Despejamos $b = \dfrac{100 - 11a}{2}$. Para que $b$ sea entero entre $0$ y $9$ necesitamos $0 \leq 100 - 11a \leq 18$, es decir $11a \in [82, 100]$, lo que deja $a \in \{8, 9\}$:
 
 - $a = 8$: $b = \dfrac{100 - 88}{2} = 6$. Da $n = 86$. ✓
 - $a = 9$: $b = \dfrac{100 - 99}{2} = \dfrac{1}{2}$, no entero. ✗
@@ -299,7 +299,7 @@ $$
 A(n) \equiv \sum_{k=1}^n k = \frac{n(n+1)}{2} \pmod 9.
 $$
 
-Necesitamos $9 \mid \dfrac{n(n+1)}{2}$, o sea $9 \mid n(n+1)$. Como $\gcd(n, n+1) = 1$, esto equivale a $n \equiv 0$ o $n \equiv 8 \pmod 9$.
+Necesitamos $9 \mid \dfrac{n(n+1)}{2}$, es decir $9 \mid n(n+1)$. Como $\gcd(n, n+1) = 1$, esto equivale a $n \equiv 0$ o $n \equiv 8 \pmod 9$.
 
 **Módulo $5$.** Como $10 \equiv 0 \pmod 5$, en $R_k = 1 + 10 + \cdots + 10^{k-1}$ solo sobrevive el primer término: $R_k \equiv 1 \pmod 5$. Entonces
 

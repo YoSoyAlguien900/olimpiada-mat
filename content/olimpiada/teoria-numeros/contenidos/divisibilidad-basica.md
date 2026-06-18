@@ -301,7 +301,7 @@ Sea $d = \operatorname{ord}_p(2)$ el orden de $2$ módulo $p$ (el menor exponent
 
 Por tanto $d \mid \gcd(n, p-1)$. Ahora bien, todo primo que divide a $p - 1$ es menor que $p$, y $p$ es el **menor** primo que divide a $n$; así que $p-1$ y $n$ no comparten ningún factor primo, es decir $\gcd(n, p-1) = 1$.
 
-Entonces $d \mid 1$, o sea $d = 1$, lo que significa $2^1 \equiv 1 \pmod p$, es decir $p \mid 1$ — imposible. La contradicción descarta todo $n > 1$.
+Entonces $d \mid 1$, de modo que $d = 1$, lo que significa $2^1 \equiv 1 \pmod p$, es decir $p \mid 1$ — imposible. La contradicción descarta todo $n > 1$.
 
 La única solución es $\boxed{n = 1}$. $\blacksquare$
 

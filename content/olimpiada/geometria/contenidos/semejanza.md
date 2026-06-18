@@ -50,9 +50,9 @@ segment C' A'
 
 **Criterio AA.** Supongamos $\angle A = \angle A'$ y $\angle B = \angle B'$. Entonces $\angle C = 180° - \angle A - \angle B = 180° - \angle A' - \angle B' = \angle C'$.
 
-Para la proporcionalidad de lados: apliquemos una homotecia de centro $A$ y razón $k = A'B'/AB$ a $\triangle ABC$, obteniendo $\triangle A B_1 C_1$ con $AB_1 = kAB = A'B'$ y mismo ángulo en $A$ que $\triangle ABC$. Como $\angle A = \angle A'$ y $AB_1 = A'B'$, por ASA (usando $\angle B = \angle B_1 = \angle B'$), el triángulo $\triangle AB_1C_1 \cong \triangle A'B'C'$, así $\triangle ABC \sim \triangle A'B'C'$ con razón $k$. $\blacksquare$
+Para la proporcionalidad de lados aplicamos una homotecia de centro $A$ y razón $k = A'B'/AB$ a $\triangle ABC$, que produce un triángulo $\triangle AB_1C_1$ con $AB_1 = kAB = A'B'$ y el mismo ángulo en $A$. Como $\angle A = \angle A'$, $AB_1 = A'B'$ y $\angle B_1 = \angle B = \angle B'$, por el criterio **ALA** se tiene $\triangle AB_1C_1 \cong \triangle A'B'C'$. Por tanto $\triangle ABC \sim \triangle A'B'C'$ con razón $k$. $\blacksquare$
 
-**Criterio LLL.** Si $a/a' = b/b' = c/c' = k$, aplicamos la misma homotecia y usamos SSS para la congruencia de los triángulos resultantes.
+**Criterio LLL.** Si $a/a' = b/b' = c/c' = k$, aplicamos la misma homotecia y usamos el criterio **LLL** de congruencia sobre los triángulos resultantes.
 
 ## Detectar semejanzas: el método práctico
 
