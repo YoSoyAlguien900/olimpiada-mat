@@ -78,11 +78,11 @@ Equivalentemente, $|x|=\sqrt{x^2}$.
 
 | Propiedad | Enunciado |
 |---|---|
-| No negatividad | $\|x\|\geq0$, con igualdad si y solo si $x=0$ |
-| Multiplicativa | $\|ab\|=\|a\|\cdot\|b\|$ |
-| Cuadrado | $x^2=\|x\|^2$ |
-| Simétrica | $\|-x\|=\|x\|$ |
-| Acotación | $-\|x\|\leq x\leq\|x\|$ |
+| No negatividad | $\lvert x\rvert\geq0$, con igualdad si y solo si $x=0$ |
+| Multiplicativa | $\lvert ab\rvert=\lvert a\rvert\cdot\lvert b\rvert$ |
+| Cuadrado | $x^2=\lvert x\rvert^2$ |
+| Simétrica | $\lvert -x\rvert=\lvert x\rvert$ |
+| Acotación | $-\lvert x\rvert\leq x\leq\lvert x\rvert$ |
 
 **Desigualdad triangular:**
 

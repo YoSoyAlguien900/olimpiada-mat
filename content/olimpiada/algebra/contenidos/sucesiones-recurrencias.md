@@ -71,27 +71,37 @@ Usando la identidad anterior: $F_{m+n}=F_m F_{n+1}+F_{m-1}F_n$. Fijado $m$, si $
 
 ---
 
-**Ejemplo 3.** (Recurrencia de orden 2 general) Resolver $a_n = 5a_{n-1}-6a_{n-2}$ con $a_0=1$, $a_1=2$.
+**Ejemplo 3 (raíces distintas).** Resolver $a_n = 5a_{n-1}-6a_{n-2}$ con $a_0=1$, $a_1=2$.
 
-Polinomio: $r^2-5r+6=(r-2)(r-3)=0$. Raíces: $r_1=2$, $r_2=3$.
+*La idea.* El método es mecánico: escribir el polinomio característico, factorizarlo, y montar la combinación $A r_1^n+B r_2^n$. Las constantes $A,B$ son lo único que depende de las condiciones iniciales, y salen de un sistema $2\times2$.
 
-Solución: $a_n=A\cdot2^n+B\cdot3^n$.
+**Solución.** El polinomio característico es $r^2-5r+6=(r-2)(r-3)=0$, con raíces $r_1=2$, $r_2=3$. La solución general es
 
-Condiciones iniciales: $A+B=1$ y $2A+3B=2$. Resolviendo: $A=1$, $B=0$.
+$$a_n=A\cdot2^n+B\cdot3^n.$$
 
-**$a_n=2^n$.** *(Se verifica: $a_n=5\cdot2^{n-1}-6\cdot2^{n-2}=2^{n-2}(10-6)=2^{n-2}\cdot4=2^n$ ✓.)* $\square$
+Imponemos las condiciones iniciales: de $a_0=1$, $A+B=1$; de $a_1=2$, $2A+3B=2$. Restando la primera multiplicada por $2$ de la segunda: $B=0$, y entonces $A=1$. Por tanto
+
+$$a_n=2^n.$$
+
+*(Comprobación: $5\cdot2^{n-1}-6\cdot2^{n-2}=2^{n-2}(10-6)=2^{n-2}\cdot4=2^n$. ✓)* $\square$
+
+*La moraleja.* Toda recurrencia lineal homogénea de coeficientes constantes se resuelve igual: característico → raíces → combinación → ajustar constantes. No hay que adivinar nada.
 
 ---
 
-**Ejemplo 4.** (Raíz doble) Resolver $a_n = 4a_{n-1}-4a_{n-2}$ con $a_0=1$, $a_1=4$.
+**Ejemplo 4 (raíz doble).** Resolver $a_n = 4a_{n-1}-4a_{n-2}$ con $a_0=1$, $a_1=4$.
 
-Polinomio: $r^2-4r+4=(r-2)^2=0$. Raíz doble $r=2$.
+*La idea.* Cuando el característico tiene una raíz **doble** $r$, las dos soluciones $r^n$ no bastan (serían la misma); el segundo modo independiente es $n\,r^n$. Por eso la forma general es $(A+Bn)r^n$.
 
-Solución: $a_n=(A+Bn)\cdot2^n$.
+**Solución.** El polinomio característico es $r^2-4r+4=(r-2)^2=0$, con raíz doble $r=2$. La solución general es
 
-Con $a_0=1$: $A=1$. Con $a_1=4$: $(1+B)\cdot2=4$, así $B=1$.
+$$a_n=(A+Bn)\cdot2^n.$$
 
-**$a_n=(1+n)\cdot2^n$.** $\square$
+De $a_0=1$ obtenemos $A=1$. De $a_1=4$: $(1+B)\cdot2=4$, luego $B=1$. Por tanto
+
+$$a_n=(1+n)\cdot2^n. \;\square$$
+
+*La moraleja.* Una raíz de multiplicidad $m$ aporta los modos $r^n,\,nr^n,\dots,n^{m-1}r^n$. El factor $n$ es lo que distingue el caso de raíz repetida del de raíces distintas.
 
 ---
 
@@ -103,13 +113,21 @@ $$\sum_{k=1}^n F_k = \sum_{k=1}^n (F_{k+2}-F_{k+1}) = F_{n+2}-F_2 = F_{n+2}-1. \
 
 ---
 
-**Ejemplo 6.** (Olimpiada) Probar que $F_{n+1}^2-F_n F_{n+2} = (-1)^n$ (identidad de Cassini).
+**Ejemplo 6 (identidad de Cassini).** Probar que $F_{n+1}^2-F_n F_{n+2} = (-1)^n$ para todo $n\geq0$.
 
-Por la fórmula de Binet: con $\varphi\hat\varphi = -1$ y $\varphi-\hat\varphi=\sqrt5$:
+*La idea.* La cantidad $D_n=F_{n+1}^2-F_nF_{n+2}$ cambia de signo al avanzar un paso. Si demostramos que $D_{n+1}=-D_n$, entonces $D_n$ es una progresión geométrica de razón $-1$, y basta el valor inicial.
 
-$$F_{n+1}^2-F_nF_{n+2} = \frac{(\varphi^{n+1}-\hat\varphi^{n+1})^2-(\varphi^n-\hat\varphi^n)(\varphi^{n+2}-\hat\varphi^{n+2})}{5}.$$
+**Solución.** Sea $D_n=F_{n+1}^2-F_nF_{n+2}$. Usamos $F_{n+2}=F_{n+1}+F_n$ para relacionar $D_{n+1}$ con $D_n$:
 
-Expandiendo el numerador: $(\varphi\hat\varphi)^n(\varphi^2\hat\varphi^{-2}-2+\hat\varphi^2\varphi^{-2})-\ldots$... el cálculo directo reduce a $(\varphi\hat\varphi)^n(\hat\varphi-\varphi)^2/\text{algo}=(-1)^n$. Más elegante por inducción: $F_2^2-F_1F_3=1-2=-1=(-1)^1$ ✓; y $F_{n+2}^2-F_{n+1}F_{n+3}=-(F_{n+1}^2-F_nF_{n+2})$ por la recurrencia. $\square$
+$$D_{n+1}=F_{n+2}^2-F_{n+1}F_{n+3}=F_{n+2}^2-F_{n+1}(F_{n+2}+F_{n+1})=F_{n+2}^2-F_{n+1}F_{n+2}-F_{n+1}^2.$$
+
+Sacamos factor $F_{n+2}$ en los dos primeros términos: $F_{n+2}(F_{n+2}-F_{n+1})-F_{n+1}^2$. Pero $F_{n+2}-F_{n+1}=F_n$, así que
+
+$$D_{n+1}=F_{n+2}F_n-F_{n+1}^2=-\big(F_{n+1}^2-F_nF_{n+2}\big)=-D_n.$$
+
+Por tanto $D_n=(-1)^n D_0$. Como $D_0=F_1^2-F_0F_2=1-0=1$, concluimos $D_n=(-1)^n$. $\square$
+
+*La moraleja.* Para identidades del tipo "$\,\cdots=(-1)^n$", busca una relación $D_{n+1}=-D_n$: convierte la identidad en una recurrencia trivial y reduce todo a comprobar el caso base.
 
 ## Aplicaciones
 
@@ -129,12 +147,100 @@ Expandiendo el numerador: $(\varphi\hat\varphi)^n(\varphi^2\hat\varphi^{-2}-2+\h
 
 ## Problemas relacionados
 
-- **(Clásico)** Probar que $\gcd(F_m, F_n) = F_{\gcd(m,n)}$.
+**Problema 1 (clásico).** Probar que $F_n^2 + F_{n+1}^2 = F_{2n+1}$.
 
-- **(Clásico)** Probar que $F_n^2 + F_{n+1}^2 = F_{2n+1}$.
+[[pista]]
 
-- **(OMG-nivel)** Una sucesión satisface $a_1=1$, $a_2=3$, $a_{n}=4a_{n-1}-a_{n-2}$. Demostrar que $a_n^2-2$ no es un cuadrado perfecto para ningún $n\geq1$.
+Usa la identidad de adición $F_{m+n}=F_mF_{n+1}+F_{m-1}F_n$ del Ejemplo 1, con la elección $m=n+1$.
 
-- **(Clásico)** Sea $a_n = 2a_{n-1}+1$ con $a_0=0$. Hallar $a_n$ en forma cerrada y probar que si $n+1$ es potencia de $2$, entonces $a_n+1$ también.
+[[/pista]]
 
-- **(Clásico)** Sea $a_n = a_{n-1}+a_{n-2}+a_{n-3}$ con $a_0=a_1=a_2=1$. Demostrar que $3 \mid a_n$ si y solo si $3\mid n$.
+[[solución]]
+
+Partimos de la identidad de adición $F_{m+n}=F_mF_{n+1}+F_{m-1}F_n$ (Ejemplo 1) y tomamos $m=n+1$:
+
+$$F_{2n+1}=F_{(n+1)+n}=F_{n+1}\,F_{n+1}+F_{n}\,F_{n}=F_{n+1}^2+F_n^2. \;\blacksquare$$
+
+[[/solución]]
+
+**Problema 2 (clásico).** Probar que $F_n$ es par si y solo si $3\mid n$.
+
+[[pista]]
+
+Calcula la sucesión de Fibonacci módulo $2$: $0,1,1,0,1,1,\ldots$ ¿Cada cuánto se repite el $0$?
+
+[[/pista]]
+
+[[solución]]
+
+Trabajamos módulo $2$. La recurrencia $F_n\equiv F_{n-1}+F_{n-2}\pmod 2$ con $F_0=0,F_1=1$ da
+
+$$0,\,1,\,1,\,0,\,1,\,1,\,0,\,1,\,1,\,\ldots$$
+
+El patrón $(0,1,1)$ se repite con periodo $3$ (en cuanto reaparecen dos términos consecutivos $0,1$, todo se repite). Los ceros caen exactamente en las posiciones $n\equiv0\pmod3$. Por tanto $F_n$ es par $\iff 3\mid n$. $\blacksquare$
+
+[[/solución]]
+
+**Problema 3 (clásico).** Sea $a_n = 2a_{n-1}+1$ con $a_0=0$. Hallar $a_n$ en forma cerrada y deducir que $a_n+1$ es siempre una potencia de $2$.
+
+[[pista]]
+
+Es una recurrencia no homogénea. Suma $1$ a ambos lados: $a_n+1=2(a_{n-1}+1)$, así que $b_n=a_n+1$ es una PG.
+
+[[/pista]]
+
+[[solución]]
+
+Sumando $1$ a ambos lados, $a_n+1=2a_{n-1}+2=2(a_{n-1}+1)$. Definiendo $b_n=a_n+1$, queda $b_n=2b_{n-1}$ con $b_0=a_0+1=1$: una progresión geométrica. Por tanto $b_n=2^n$, es decir
+
+$$a_n=2^n-1.$$
+
+En consecuencia $a_n+1=2^n$, que es una potencia de $2$ para todo $n$. $\blacksquare$
+
+[[/solución]]
+
+**Problema 4 (nivel nacional).** Una sucesión satisface $a_1=1$, $a_2=3$, $a_n=4a_{n-1}-a_{n-2}$. Demostrar que $a_n^2-2$ no es un cuadrado perfecto para ningún $n\geq1$.
+
+[[pista]]
+
+La sucesión crece ($1,3,11,41,\ldots$). Para $n\geq2$, intenta encajar $a_n^2-2$ estrictamente entre dos cuadrados consecutivos.
+
+[[/pista]]
+
+[[solución]]
+
+La sucesión es $1,3,11,41,153,\ldots$, estrictamente creciente, así que $a_n\geq3\geq2$ para $n\geq2$.
+
+Para $n\geq2$ comparamos $a_n^2-2$ con los cuadrados vecinos de $a_n$:
+
+$$(a_n-1)^2=a_n^2-2a_n+1\;<\;a_n^2-2\;<\;a_n^2,$$
+
+donde la desigualdad de la izquierda equivale a $-2a_n+1<-2$, es decir $2a_n>3$, cierta porque $a_n\geq2$. Así $a_n^2-2$ está **estrictamente** entre dos cuadrados consecutivos $(a_n-1)^2$ y $a_n^2$, luego no puede ser un cuadrado perfecto.
+
+Para $n=1$: $a_1^2-2=-1$, que tampoco es un cuadrado perfecto. Por tanto $a_n^2-2$ no es cuadrado perfecto para ningún $n\geq1$. $\blacksquare$
+
+[[/solución]]
+
+**Problema 5 (nivel nacional).** Probar que $\gcd(F_m, F_n) = F_{\gcd(m,n)}$.
+
+[[pista]]
+
+Apóyate en dos hechos: $\gcd(F_k,F_{k+1})=1$, y la identidad de adición, que da $\gcd(F_m,F_n)=\gcd(F_m,F_{n-m})$. Es el algoritmo de Euclides trasladado a los índices.
+
+[[/pista]]
+
+[[solución]]
+
+*Primer hecho:* $\gcd(F_k,F_{k+1})=1$ para todo $k$, por inducción: $\gcd(F_k,F_{k+1})=\gcd(F_k,F_{k+1}-F_k)=\gcd(F_k,F_{k-1})$, que se reduce hasta $\gcd(F_1,F_2)=1$.
+
+*Paso clave:* por la identidad de adición $F_{n}=F_{(n-m)+m}=F_{n-m}F_{m+1}+F_{n-m-1}F_m$. Como $F_m$ divide al segundo sumando,
+
+$$\gcd(F_m,F_n)=\gcd\!\big(F_m,\;F_{n-m}F_{m+1}\big).$$
+
+Y como $\gcd(F_m,F_{m+1})=1$, el factor $F_{m+1}$ no aporta divisores comunes, de modo que $\gcd(F_m,F_n)=\gcd(F_m,F_{n-m})$.
+
+*Conclusión:* la operación $n\mapsto n-m$ sobre los índices es exactamente el algoritmo de Euclides. Iterándolo, los índices $(m,n)$ se reducen a $(\gcd(m,n),0)$, y como $F_0=0$,
+
+$$\gcd(F_m,F_n)=F_{\gcd(m,n)}. \;\blacksquare$$
+
+[[/solución]]

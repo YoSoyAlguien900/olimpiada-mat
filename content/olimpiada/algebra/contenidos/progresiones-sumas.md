@@ -51,7 +51,17 @@ $$S_{25}=\frac{25(3+99)}{2}=\frac{25\cdot102}{2}=1275.$$
 
 **Ejemplo 3.** Las raíces de $x^3-9x^2+26x-24=0$ están en PA. Hallarlas.
 
-Si las raíces son $a-d, a, a+d$: por Vieta, $(a-d)+a+(a+d)=9$, así $a=3$. Y $(a-d)\cdot a\cdot(a+d)=24$, es decir, $3(9-d^2)=24$, luego $d^2=1$, $d=\pm1$. Raíces: $2, 3, 4$. $\square$
+*La idea.* Si tres números están en PA, se escriben $a-d,\,a,\,a+d$: con esta forma simétrica, la **suma** se reduce a $3a$ y Vieta da $a$ al instante.
+
+**Solución.** Escribimos las raíces como $a-d,\,a,\,a+d$. Por Vieta, su suma es $9$:
+
+$$(a-d)+a+(a+d)=3a=9\;\Longrightarrow\;a=3.$$
+
+El producto de las raíces es $24$:
+
+$$(a-d)\,a\,(a+d)=a(a^2-d^2)=3(9-d^2)=24\;\Longrightarrow\;9-d^2=8\;\Longrightarrow\;d^2=1,$$
+
+luego $d=\pm1$. En ambos casos las raíces son $2,\,3,\,4$. $\square$
 
 ---
 
@@ -89,7 +99,19 @@ PG infinita con $a_1=1/3$, $r=1/3$: $S=\dfrac{1/3}{1-1/3}=\dfrac{1}{2}$.
 
 **Ejemplo 3.** Las raíces de $8x^3-14x^2+7x-1=0$ están en PG. Hallarlas.
 
-Si las raíces son $a/r, a, ar$: por Vieta, $(a/r)\cdot a\cdot(ar)=1/8$, así $a^3=1/8$, $a=1/2$. Y $(a/r)+a+(ar)=14/8=7/4$: $\frac{1}{2r}+\frac{1}{2}+\frac{r}{2}=7/4$, luego $\frac{1}{2r}+\frac{r}{2}=5/4$, multiplicando por $2r$: $r^2-5r/2+1=0$... más limpio: $1+2r+2r^2=7r/2$... Resolver: $r=2$ o $r=1/2$. Raíces: $1/4, 1/2, 1$. $\square$
+*La idea.* Como en el caso PA, la simetría de la PG sugiere parametrizar las raíces como $a/r,\,a,\,ar$: así el **producto** de las tres es simplemente $a^3$, y por Vieta lo conocemos de inmediato.
+
+**Solución.** Escribimos las raíces como $\dfrac{a}{r},\,a,\,ar$. Por Vieta, el producto de las raíces es $\dfrac{-(-1)}{8}=\dfrac18$, y como ese producto es $\dfrac{a}{r}\cdot a\cdot ar=a^3$,
+
+$$a^3=\frac18\;\Longrightarrow\;a=\frac12.$$
+
+La suma de las raíces es $\dfrac{14}{8}=\dfrac74$:
+
+$$\frac{a}{r}+a+ar=\frac74\;\Longrightarrow\;\frac{1}{2}\left(\frac1r+1+r\right)=\frac74\;\Longrightarrow\;\frac1r+r=\frac72-1=\frac52.$$
+
+Multiplicando por $2r$: $2r^2-5r+2=0$, cuyas soluciones son $r=2$ y $r=\dfrac12$ (que dan el mismo conjunto de raíces, en orden inverso). Con $a=\tfrac12,\ r=2$ las raíces son $\dfrac14,\ \dfrac12,\ 1$. $\square$
+
+*La moraleja.* Para raíces en PA usa $a-d,a,a+d$ (la suma se simplifica); para raíces en PG usa $a/r,a,ar$ (el producto se simplifica). En cada caso, la parametrización simétrica hace que una de las fórmulas de Vieta dé un valor de un solo golpe.
 
 ---
 
@@ -170,12 +192,92 @@ Sea $a_2=7$ (de la suma: $3a_2=21$). Luego $(7-d)\cdot7\cdot(7+d)=315$, así $7(
 
 ## Problemas relacionados
 
-- **(Iniciación)** Calcular $1+3+5+\cdots+2019$. *(Respuesta: $1010^2=1020100$.)*
+**Problema 1 (iniciación).** Calcular $1+3+5+\cdots+2019$.
 
-- **(Regional)** Demostrar que la suma de cualquier número impar de términos consecutivos de una PA es divisible por ese número impar.
+[[pista]]
 
-- **(Regional)** Hallar la suma $\dfrac{1}{1\cdot2}+\dfrac{1}{2\cdot3}+\cdots+\dfrac{1}{n(n+1)}$. *(Respuesta: $\frac{n}{n+1}$. Usar telescopeo.)*
+Es la suma de los primeros impares. ¿Cuántos hay hasta $2019$? Recuerda que $1+3+\cdots+(2n-1)=n^2$.
 
-- **(Regional)** Si $a,b,c$ son términos de una PG con $a<b<c$ enteros positivos, y $a+b+c=21$, $ab+bc+ca=116$: hallar $a,b,c$.
+[[/pista]]
 
-- **(Nacional)** Demostrar que no existen tres términos en PG que sean también una terna pitagórica primitiva (i.e., $a^2+b^2=c^2$ con $\gcd(a,b,c)=1$).
+[[solución]]
+
+Es una PA con $a_1=1$, $d=2$. El término $2019=2n-1$ da $n=1010$ términos. La suma de los primeros $n$ impares es $n^2$, luego
+
+$$1+3+5+\cdots+2019=1010^2=1\,020\,100. \;\blacksquare$$
+
+[[/solución]]
+
+**Problema 2 (regional).** Demostrar que la suma de cualquier número impar de términos consecutivos de una PA es divisible por ese número impar.
+
+[[pista]]
+
+Toma $2m+1$ términos consecutivos. El del medio es la media de todos; agrupa los extremos en parejas simétricas alrededor de él.
+
+[[/pista]]
+
+[[solución]]
+
+Sean $2m+1$ términos consecutivos de una PA, y sea $t$ el término **central**. Por la propiedad de la PA, los pares simétricos respecto al centro suman $2t$: el $k$-ésimo a la izquierda y el $k$-ésimo a la derecha del centro son $t-kd$ y $t+kd$, que suman $2t$. Hay $m$ de esos pares más el centro, de modo que la suma total es
+
+$$S=m\cdot 2t+t=(2m+1)\,t.$$
+
+Por tanto $S$ es múltiplo de $2m+1$, el número (impar) de términos. $\blacksquare$
+
+[[/solución]]
+
+**Problema 3 (regional).** Hallar la suma $\dfrac{1}{1\cdot2}+\dfrac{1}{2\cdot3}+\cdots+\dfrac{1}{n(n+1)}$.
+
+[[pista]]
+
+Descompón $\dfrac{1}{k(k+1)}=\dfrac1k-\dfrac1{k+1}$ y observa cómo se cancelan los términos al sumar (telescopeo).
+
+[[/pista]]
+
+[[solución]]
+
+Usamos la descomposición en fracciones simples $\dfrac{1}{k(k+1)}=\dfrac1k-\dfrac1{k+1}$. La suma telescopa:
+
+$$\sum_{k=1}^n\frac{1}{k(k+1)}=\sum_{k=1}^n\left(\frac1k-\frac1{k+1}\right)=\left(1-\frac12\right)+\left(\frac12-\frac13\right)+\cdots+\left(\frac1n-\frac1{n+1}\right).$$
+
+Todos los términos intermedios se cancelan, quedando
+
+$$1-\frac{1}{n+1}=\frac{n}{n+1}. \;\blacksquare$$
+
+[[/solución]]
+
+**Problema 4 (regional).** Si $a,b,c$ son términos consecutivos de una PG con $a<b<c$ enteros positivos, $a+b+c=21$ y $ab+bc+ca=126$, hallar $a,b,c$.
+
+[[pista]]
+
+En una PG de tres términos, $b^2=ac$. Sustituye eso en $ab+bc+ca$ y verás que se factoriza como $b\cdot(a+b+c)$.
+
+[[/pista]]
+
+[[solución]]
+
+Por ser PG de tres términos, $b^2=ac$. Entonces
+
+$$ab+bc+ca=b(a+c)+ac=b(a+c)+b^2=b(a+b+c)=21b.$$
+
+Igualando a $126$: $21b=126$, luego $b=6$. Como $ac=b^2=36$ y $a+c=21-6=15$, los números $a,c$ son las raíces de $t^2-15t+36=0$, esto es $t=3$ o $t=12$. Con $a<b<c$: $a=3,\ b=6,\ c=12$ (PG de razón $2$). $\blacksquare$
+
+[[/solución]]
+
+**Problema 5 (nacional).** Demostrar que no existe ninguna terna pitagórica $a^2+b^2=c^2$ (con $a<b<c$ enteros positivos) cuyos tres lados estén en progresión geométrica.
+
+[[pista]]
+
+Escribe los tres términos como $a$, $ar$, $ar^2$ y sustituye en $a^2+b^2=c^2$; obtendrás una ecuación solo en $r^2$.
+
+[[/pista]]
+
+[[solución]]
+
+Supongamos $a,b,c$ en PG con razón $r>1$ (pues $a<b<c$), es decir $b=ar$, $c=ar^2$, con $r$ racional. La condición pitagórica $a^2+b^2=c^2$ da
+
+$$a^2+a^2r^2=a^2r^4\;\Longrightarrow\;1+r^2=r^4.$$
+
+Poniendo $u=r^2>0$: $u^2-u-1=0$, luego $u=\dfrac{1+\sqrt5}{2}$. Entonces $r^2=\dfrac{1+\sqrt5}{2}$ es irracional, así que $r$ es irracional. Pero si $a,b,c$ son enteros, $r=b/a$ sería racional — contradicción. Por tanto no existe tal terna. $\blacksquare$
+
+[[/solución]]

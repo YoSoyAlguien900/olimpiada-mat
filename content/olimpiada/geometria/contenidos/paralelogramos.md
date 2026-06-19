@@ -130,6 +130,8 @@ Así $A$, $B$, $C$ están los tres sobre la circunferencia de diámetro $AD$. Pe
 
 **El paralelogramo como caso límite.** Muchas configuraciones de olimpiada con triángulos semejantes o congruentes "colapsan" a un paralelogramo cuando cierto ángulo se vuelve $0°$ o $180°$ — reconocer este caso límite ayuda a anticipar qué propiedades persisten.
 
+## Problemas relacionados
+
 **Problema 1 (clásico).** En un paralelogramo $ABCD$, las bisectrices de los ángulos $\angle A$ y $\angle B$ se cortan en $P$. Demostrar que $\angle APB = 90°$.
 
 [[pista]]

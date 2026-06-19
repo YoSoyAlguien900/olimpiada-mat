@@ -64,7 +64,7 @@ Equivalentemente: $\text{Im}(f)=B$.
 
 **Ejemplo 3 (EF).** Sea $f:\mathbb{R}\to\mathbb{R}$ con $f(x+f(y))=f(x)+y$. Probar que $f$ es sobreyectiva.
 
-Fijado $c\in\mathbb{R}$. Tomar $x=0$: $f(f(y))=f(0)+y$. Para que $f(z)=c$, necesitamos $z$ con $f(0)+y=c$ para $z=f(y)$... Más directo: $f(f(y))=f(0)+y$ da que $f(f(y))-f(0)=y$, que es biyectivo en $y$. Así la imagen de $f\circ f$ es todo $\mathbb{R}$. En particular, para cualquier $c$, $f(f(y_0))=c$ para algún $y_0$, luego $c$ es imagen de $f(y_0)$ bajo $f$. $\square$
+Tomando $x=0$ obtenemos $f(f(y))=f(0)+y$. Cuando $y$ recorre $\mathbb{R}$, el lado derecho $f(0)+y$ recorre **todo** $\mathbb{R}$. Por tanto, dado cualquier $c\in\mathbb{R}$, existe $y_0$ con $f(0)+y_0=c$, y entonces $f\big(f(y_0)\big)=c$: el valor $c$ se alcanza (es la imagen de $f(y_0)$). Como $c$ era arbitrario, $f$ es sobreyectiva. $\square$
 
 ---
 
@@ -78,7 +78,7 @@ Una función biyectiva tiene **función inversa** $f^{-1}:B\to A$ tal que $f(f^{
 
 ### Ejemplo
 
-**EF:** Si $f:\mathbb{R}\to\mathbb{R}$ con $f(x+f(y))=f(x)+y$ es biyectiva, entonces existe $f^{-1}$, y $f(f(y))=y+f(0)$ da que $f$ "casi" es involutiva.
+**EF:** En el ejemplo $f(x+f(y))=f(x)+y$ ya vimos que $f$ es inyectiva y sobreyectiva, luego es **biyectiva** y existe $f^{-1}$. La relación $f(f(y))=y+f(0)$ dice que $f\circ f$ es la traslación $y\mapsto y+f(0)$; en particular, si además $f(0)=0$, entonces $f$ es **involutiva** ($f(f(y))=y$, es decir, $f^{-1}=f$).
 
 ---
 
@@ -150,17 +150,33 @@ Dado $f(g(x,y))=h(x,y)$, los primeros pasos son:
 
 ### Ejemplo completo
 
-**Hallar todas $f:\mathbb{R}\to\mathbb{R}$ con $f(f(x))=x+1$.**
+**Hallar todas las $f:\mathbb{R}\to\mathbb{R}$ tales que $f(x)+2f(1-x)=x^2$ para todo $x\in\mathbb{R}$.**
 
-Paso 1: $f(f(0))=1$. Sea $a=f(0)$: $f(a)=1$.
+*La idea.* No hay $f$ dentro de $f$ ni variables libres independientes: solo aparecen $f(x)$ y $f(1-x)$. La sustitución $x\to 1-x$ intercambia esos dos valores y genera una **segunda ecuación** con las mismas dos incógnitas $f(x)$ y $f(1-x)$. Dos ecuaciones lineales, dos incógnitas: se resuelve como un sistema.
 
-Paso 2: Aplicar $f$ a ambos lados de $f(f(x))=x+1$: $f(f(f(x)))=f(x+1)$. Pero también $f(f(f(x)))=f(x)+1$ (usando la ecuación con $f(x)$ en lugar de $x$). Así $f(x+1)=f(x)+1$.
+**Solución.** Llamemos $(1)$ a la ecuación dada:
 
-Paso 3: De $f(x+1)=f(x)+1$: $f(x)=f(0)+x=a+x$. Verificar: $f(f(x))=f(a+x)=a+(a+x)=2a+x$. Esto debe ser $x+1$, luego $2a=1$, $a=1/2$.
+$$f(x)+2f(1-x)=x^2.$$
 
-Solución: $f(x)=x+1/2$.
+Sustituimos $x$ por $1-x$ (válido porque la ecuación vale para todo real, y $1-(1-x)=x$); la llamamos $(2)$:
 
-Verificar: $f(f(x))=f(x+1/2)=(x+1/2)+1/2=x+1$. ✓ $\square$
+$$f(1-x)+2f(x)=(1-x)^2.$$
+
+Tratamos $u=f(x)$ y $v=f(1-x)$ como incógnitas del sistema formado por $(1)$ y $(2)$:
+
+$$\begin{cases} u+2v=x^2,\\ 2u+v=(1-x)^2. \end{cases}$$
+
+Multiplicamos la segunda por $2$ y le restamos la primera: $4u+2v-(u+2v)=2(1-x)^2-x^2$, es decir $3u=2(1-x)^2-x^2$. Desarrollando $2(1-x)^2-x^2=2(1-2x+x^2)-x^2=x^2-4x+2$, de modo que
+
+$$f(x)=u=\frac{x^2-4x+2}{3}.$$
+
+**Verificación.** Con esta $f$, $f(1-x)=\dfrac{(1-x)^2-4(1-x)+2}{3}=\dfrac{x^2+2x-1}{3}$, y entonces
+
+$$f(x)+2f(1-x)=\frac{(x^2-4x+2)+2(x^2+2x-1)}{3}=\frac{3x^2}{3}=x^2. \checkmark$$
+
+Como el sistema tiene determinante $1\cdot1-2\cdot2=-3\neq0$, la solución es **única**: $\boxed{f(x)=\dfrac{x^2-4x+2}{3}}$. $\square$
+
+*La moraleja.* Cuando la ecuación solo relaciona $f$ evaluada en un puñado de puntos ligados por una transformación (aquí $x\leftrightarrow 1-x$), itera esa transformación hasta cerrar un **sistema lineal** y resuélvelo. No hace falta adivinar la forma de $f$: sale forzada.
 
 ---
 
@@ -174,16 +190,100 @@ Verificar: $f(f(x))=f(x+1/2)=(x+1/2)+1/2=x+1$. ✓ $\square$
 | Creciente | $a<b\Rightarrow f(a)<f(b)$ | Es inyectiva; extensible a $\mathbb{R}$ |
 | Par | $f(-x)=f(x)$ | $f(0)$ libre; paridad en cálculos |
 | Impar | $f(-x)=-f(x)$ | $f(0)=0$ obligatoriamente |
-| Acotada | $|f(x)|\leq M$ | Con Cauchy $\Rightarrow$ $f(x)=cx$ |
+| Acotada | $\lvert f(x)\rvert\leq M$ | Con Cauchy $\Rightarrow$ $f(x)=cx$ |
 
 ## Problemas relacionados
 
-- **(Regional)** Demostrar que si $f:\mathbb{R}\to\mathbb{R}$ es inyectiva y $f(f(x))=x$ para todo $x$, entonces $f$ tiene exactamente un punto fijo o ninguno.
+**Problema 1 (regional).** Sea $f:\mathbb{Z}\to\mathbb{Z}$ con $f(m+n)=f(m)+f(n)$ para todo $m,n$. Probar que $f(n)=f(1)\cdot n$ para todo $n\in\mathbb{Z}$.
 
-- **(Regional)** Sea $f:\mathbb{Z}\to\mathbb{Z}$ con $f(m+n)=f(m)+f(n)$ para todo $m,n$. Probar que $f(n)=f(1)\cdot n$ para todo $n\in\mathbb{Z}$.
+[[pista]]
 
-- **(Nacional)** Sea $f:\mathbb{R}\to\mathbb{R}$ con $f(x+f(y))=y+f(x)$. Probar que $f$ es biyectiva e involutiva ($f(f(x))=x$).
+Calcula primero $f(0)$, luego $f(n)$ para $n>0$ por inducción sumando $1$ cada vez, y por último relaciona $f(-n)$ con $f(n)$.
 
-- **(Nacional)** Sea $f:\mathbb{R}^+\to\mathbb{R}^+$ con $f(xf(y))=yf(x)$ para todo $x,y>0$. Probar que $f$ es inyectiva y hallar $f$.
+[[/pista]]
 
-- **(Nacional)** Demostrar que si $f:\mathbb{R}\to\mathbb{R}$ es monótona y satisface $f(x+y)=f(x)+f(y)$, entonces $f(x)=cx$ para alguna constante $c$.
+[[solución]]
+
+Sea $c=f(1)$.
+
+*Cero.* Con $m=n=0$: $f(0)=f(0)+f(0)$, luego $f(0)=0$.
+
+*Enteros positivos.* Por inducción, $f(n)=f(n-1+1)=f(n-1)+f(1)=f(n-1)+c$. Como $f(0)=0$, sumando se obtiene $f(n)=nc$ para todo $n\geq0$.
+
+*Enteros negativos.* Con $m=n$ y $-n$: $0=f(0)=f(n+(-n))=f(n)+f(-n)$, luego $f(-n)=-f(n)=-nc$. 
+
+En todos los casos $f(n)=cn=f(1)\cdot n$. $\blacksquare$
+
+[[/solución]]
+
+**Problema 2 (regional).** Demostrar que si $f:\mathbb{R}\to\mathbb{R}$ cumple $f(f(x))=x$ para todo $x$, entonces $f$ es biyectiva, y describir su estructura (puntos fijos y parejas intercambiadas).
+
+[[pista]]
+
+Como $f(f(x))=x$, los puntos se agrupan en parejas $\{x,f(x)\}$ con $x\neq f(x)$, salvo los puntos fijos. La inyectividad impide que dos $x$ distintos compartan imagen.
+
+[[/pista]]
+
+[[solución]]
+
+La condición $f(f(x))=x$ dice que $f$ es su propia inversa (involución), y en particular biyectiva. Para cada $x$, o bien $f(x)=x$ (punto fijo), o bien $f(x)\neq x$, y entonces $\{x,f(x)\}$ es una pareja que $f$ intercambia (pues $f(f(x))=x$). 
+
+Así $f$ descompone $\mathbb{R}$ en puntos fijos y en parejas intercambiadas $\{a,b\}$ con $f(a)=b$, $f(b)=a$, $a\neq b$. No hay ninguna obstrucción a que haya $0$, $1$ o muchos puntos fijos: por ejemplo $f(x)=x$ los tiene todos, $f(x)=-x$ tiene exactamente uno ($x=0$), y $f(x)=x+1$ si $x$ par, $x-1$ si $x$ impar (sobre $\mathbb{Z}$) no tiene ninguno. La estructura forzada por inyectividad $+$ involución es precisamente esa partición en puntos fijos y trasposiciones. $\blacksquare$
+
+[[/solución]]
+
+**Problema 3 (nacional).** Sea $f:\mathbb{R}\to\mathbb{R}$ con $f(x+f(y))=y+f(x)$ para todo $x,y$. Probar que $f$ es biyectiva e involutiva ($f(f(x))=x$).
+
+[[pista]]
+
+Para inyectividad, fija $x$ y varía $y$. Para la involución, sustituye $x=0$ y luego usa la sobreyectividad para eliminar la constante $f(0)$.
+
+[[/pista]]
+
+[[solución]]
+
+*Inyectividad.* Si $f(y_1)=f(y_2)$, entonces $y_1+f(x)=f(x+f(y_1))=f(x+f(y_2))=y_2+f(x)$, luego $y_1=y_2$.
+
+*Sobreyectividad.* Con $x=0$: $f(f(y))=y+f(0)$. El lado derecho recorre todo $\mathbb{R}$, así que $f\circ f$ es sobreyectiva, y por tanto $f$ también.
+
+*Involución.* Sea $c=f(0)$. Tenemos $f(f(y))=y+c$. Como $f$ es sobreyectiva, existe $a$ con $f(a)=0$. Poniendo $y=a$ en la ecuación original con $x=a$: $f(a+f(a))=a+f(a)$, es decir $f(a+0)=a+0$, o sea $f(a)=a$. Pero $f(a)=0$, luego $a=0$ y $c=f(0)=0$. Por tanto $f(f(y))=y$: $f$ es involutiva (y biyectiva, por ser involución). $\blacksquare$
+
+[[/solución]]
+
+**Problema 4 (nacional).** Sea $f:\mathbb{R}^+\to\mathbb{R}^+$ con $f(xf(y))=yf(x)$ para todo $x,y>0$. Probar que $f$ es inyectiva y que $f$ es involutiva.
+
+[[pista]]
+
+Para inyectividad usa $x=1$. Después busca $f(1)$ y aplica la ecuación con valores bien elegidos para obtener $f(f(y))=y$.
+
+[[/pista]]
+
+[[solución]]
+
+*Inyectividad.* Con $x=1$: $f(f(y))=y\,f(1)$. Si $f(y_1)=f(y_2)$, aplicando $f$ y usando esta relación, $y_1f(1)=f(f(y_1))=f(f(y_2))=y_2f(1)$; como $f(1)>0$, se cancela y $y_1=y_2$.
+
+*Valor en $1$.* Pongamos $x=y=1$: $f(f(1))=f(1)$. Por inyectividad, $f(1)=1$.
+
+*Involución.* Volviendo a $f(f(y))=y\,f(1)=y$, concluimos $f(f(y))=y$ para todo $y>0$: $f$ es involutiva (y, en particular, biyectiva). $\blacksquare$
+
+[[/solución]]
+
+**Problema 5 (nacional).** Demostrar que si $f:\mathbb{R}\to\mathbb{R}$ es monótona y satisface $f(x+y)=f(x)+f(y)$ para todos $x,y$, entonces $f(x)=cx$ para alguna constante $c$.
+
+[[pista]]
+
+La ecuación de Cauchy da $f(q)=cq$ para todo racional $q$ (con $c=f(1)$). La monotonía extiende la igualdad a los irracionales por densidad.
+
+[[/pista]]
+
+[[solución]]
+
+Sea $c=f(1)$. Como en el Problema 1, la aditividad da $f(q)=cq$ para todo $q\in\mathbb{Q}$ (primero enteros, luego $f(p/q)$ usando $q\cdot f(p/q)=f(p)=cp$).
+
+Sea ahora $x\in\mathbb{R}$ cualquiera y supongamos $f$ no decreciente (el caso no creciente es análogo). Tomamos racionales $q_1\leq x\leq q_2$ tan próximos a $x$ como queramos. Por monotonía,
+
+$$cq_1=f(q_1)\leq f(x)\leq f(q_2)=cq_2.$$
+
+Si $c\geq0$, haciendo $q_1\uparrow x$ y $q_2\downarrow x$ ambos extremos tienden a $cx$, luego $f(x)=cx$. (Si $f$ fuese no creciente, $c\leq0$ y el mismo argumento con las desigualdades invertidas da $f(x)=cx$.) Por densidad de $\mathbb{Q}$, esto vale para todo $x$, así que $f(x)=cx$. $\blacksquare$
+
+[[/solución]]
