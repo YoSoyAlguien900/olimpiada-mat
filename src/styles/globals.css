@@ -1024,6 +1024,53 @@ a { color: inherit; text-decoration: none; }
   font-size: 14px;
 }
 
+/* ====== TABLAS ====== */
+.prose table {
+  display: block;              /* permite scroll horizontal en móvil */
+  width: fit-content;
+  max-width: 100%;
+  overflow: auto;             /* recorta esquinas redondeadas y da scroll si hace falta */
+  border-collapse: collapse;
+  margin: 1.8em 0;
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.45;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  box-shadow: var(--shadow-1);
+}
+.prose table thead th {
+  background: var(--paper-3);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 11px 20px;
+  border-bottom: 1.5px solid var(--rule);
+  white-space: nowrap;
+}
+.prose table tbody td {
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--rule-soft);
+  color: var(--ink-2);
+  vertical-align: middle;
+}
+.prose table tbody tr:last-child td { border-bottom: none; }
+.prose table tbody tr:nth-child(even) { background: var(--paper-2); }
+.prose table tbody tr:hover { background: var(--paper-3); }
+/* la primera columna actúa de "etiqueta": tinta más fuerte */
+.prose table tbody td:first-child { color: var(--ink); }
+
+@media (max-width: 600px) {
+  .prose table { font-size: 14.5px; }
+  .prose table thead th { padding: 9px 12px; }
+  .prose table tbody td { padding: 8px 12px; }
+}
+
 /* ====== CROSS-NAV (seguir explorando) ====== */
 .xnav {
   margin-top: 64px;
