@@ -109,7 +109,7 @@ Esta identidad —**estrellas y barras**— es la herramienta estándar para con
 
 ### Sobreconteo controlado
 
-A veces es más fácil contar cada objeto varias veces de manera uniforme y dividir al final —exactamente como en la prueba de $\binom{n}{k} = n^{\underline k}/k!$ de arriba—. Esta idea, llevada a su forma más general, es el germen del [conteo doble](conteo-doble) y de la [acción de grupos sobre conjuntos](biyecciones) (lema de Burnside).
+A veces es más fácil contar cada objeto varias veces de manera uniforme y dividir al final —exactamente como en la prueba de $\binom{n}{k} = n^{\underline k}/k!$ de arriba—. Esta idea, llevada a su forma más general, es el germen del [conteo doble](../metodos/conteo-doble) y de la [acción de grupos sobre conjuntos](../metodos/biyecciones) (lema de Burnside).
 
 ## Observación
 

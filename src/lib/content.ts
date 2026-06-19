@@ -403,7 +403,11 @@ function wrapSemanticBlocks(html: string): string {
       const cleaned = m[1].replace(/<span class="katex-mathml">[\s\S]*?<\/span>/g, '');
       const titleText = cleaned.replace(/<[^>]+>/g, '').trim();
       const key = titleText.toLowerCase();
-      currentKind = semantic[key] || 'section';
+      // Si el título no coincide exacto, probamos con su primera palabra: así
+      // «Corolario 1», «Teorema (Lucas, 1878)» o «Demostración 1: …» reciben el
+      // estilo de su familia (corolario, teorema, prueba), conservando el rótulo completo.
+      const firstWord = key.split(/[\s(]/)[0];
+      currentKind = semantic[key] || semantic[firstWord] || 'section';
       currentTitle = cleaned.trim();
     } else {
       buffer += part;

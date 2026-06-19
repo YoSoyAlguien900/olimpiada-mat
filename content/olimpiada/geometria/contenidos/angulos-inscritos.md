@@ -46,9 +46,13 @@ label  0   0.8  "∠AOB"
 label  0  -1.6  "∠APB"
 ```
 
-**Corolario 1.** Todos los ángulos inscritos que abarcan el mismo arco son iguales.
+## Corolario 1
 
-**Corolario 2.** (Ángulo en semicírculo) Si $AB$ es diámetro de $\omega$, entonces $\angle APB = 90°$ para todo $P \in \omega$, $P \neq A, B$.
+Todos los ángulos inscritos que abarcan el mismo arco son iguales.
+
+## Corolario 2
+
+**(Ángulo en semicírculo)** Si $AB$ es diámetro de $\omega$, entonces $\angle APB = 90°$ para todo $P \in \omega$ con $P \neq A, B$.
 
 ```geofig
 // AB diámetro; el ángulo APB es siempre recto
@@ -63,7 +67,9 @@ segment P B
 rightangle P A B
 ```
 
-**Corolario 3.** (Ángulo semiinscrito = ángulo inscrito) El ángulo que forma una cuerda $AB$ con la tangente a $\omega$ en $A$ es igual al ángulo inscrito en el arco opuesto: $\angle(AB, t_A) = \angle APB$ para $P$ en el arco que no contiene el punto de tangencia.
+## Corolario 3
+
+**(Ángulo semiinscrito = ángulo inscrito)** El ángulo que forma una cuerda $AB$ con la tangente a $\omega$ en $A$ es igual al ángulo inscrito en el arco opuesto: $\angle(AB, t_A) = \angle APB$ para $P$ en el arco que no contiene el punto de tangencia.
 
 ```geofig
 // Tangente TA, cuerda AB, y ángulo inscrito desde P en el arco opuesto
