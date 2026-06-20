@@ -32,22 +32,24 @@ $a=2, b=2, c=1/4$ (check: $2\cdot2\cdot1/4=1$ ✓):
 
 Producto: $(3/2)\cdot5\cdot(-1/4)=-15/8<0<1$. $\checkmark$
 
-**Observación.** Si algún factor es negativo, el producto de tres negativos es negativo (o positivo si exactamente dos son negativos). Habrá que analizar los signos.
+**Observación.** El signo del producto depende de cuántos factores sean negativos. Antes de nada conviene averiguar **cuántos factores pueden ser negativos a la vez**.
 
 **¿Pueden dos factores ser negativos simultáneamente?**
 
-Si $a-1+1/b<0$ y $b-1+1/c<0$: entonces $a+1/b<1$ y $b+1/c<1$. Multiplicando: $(a+1/b)(b+1/c)=ab+a/c+1+1/(bc)<1$. Así $ab+a/c+1/(bc)<0$, imposible pues $a,b,c>0$. **No pueden ser dos factores negativos al mismo tiempo.**
+Si $a-1+1/b<0$ y $b-1+1/c<0$: entonces $a+1/b<1$ y $b+1/c<1$. Como ambos miembros son positivos, podemos multiplicar las dos desigualdades: $(a+1/b)(b+1/c)<1$. Pero al desarrollar,
+
+$$(a+1/b)(b+1/c)=ab+\frac{a}{c}+1+\frac{1}{bc}>1,$$
+
+porque todos los sumandos son positivos y aparece un $+1$. Contradicción. El mismo argumento (por la simetría cíclica) vale para cualquier pareja de factores, así que **a lo sumo un factor puede ser negativo**.
 
 ---
 
 ## Fase 2: la estructura del problema
 
-El hecho de que no puedan ser dos factores negativos simultáneamente nos dice: el producto de los tres factores puede ser:
-- Negativo (exactamente un factor negativo), que es $<0<1$ ✓.
-- Negativo (exactamente tres factores negativos), también $<0<1$ ✓.
-- Positivo (los tres factores positivos): **el caso interesante**.
+Como **a lo sumo un factor puede ser negativo**, solo quedan dos posibilidades:
 
-También: el caso de exactamente dos factores negativos es imposible (lo demostramos arriba), y si exactamente tres son negativos, el producto es negativo $<1$ ✓.
+- **Exactamente un factor es negativo.** Los otros dos son positivos, así que el producto es (negativo)$\cdot$(positivo)$\cdot$(positivo) $<0<1$. La desigualdad se cumple holgadamente. ✓ *(Y si algún factor es $0$, el producto es $0<1$, también ✓.)*
+- **Los tres factores son positivos.** Este es el único caso que requiere trabajo.
 
 **Conclusión de la Fase 2:** Solo hay que demostrar la desigualdad cuando **los tres factores son positivos**.
 
