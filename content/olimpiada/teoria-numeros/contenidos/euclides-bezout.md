@@ -16,12 +16,16 @@ Pero más importante que el algoritmo mismo es lo que se sigue de él: la **iden
 
 **(Algoritmo de Euclides)** Sean $a, b$ enteros positivos. Apliquemos el algoritmo de divisiones sucesivas:
 
-$$a = b q_1 + r_1, \quad 0 \leq r_1 < b,$$
-$$b = r_1 q_2 + r_2, \quad 0 \leq r_2 < r_1,$$
-$$r_1 = r_2 q_3 + r_3, \quad 0 \leq r_3 < r_2,$$
-$$\vdots$$
-$$r_{k-2} = r_{k-1} q_k + r_k, \quad 0 \leq r_k < r_{k-1},$$
-$$r_{k-1} = r_k q_{k+1} + 0.$$
+$$
+\begin{aligned}
+a       &= b q_1 + r_1,       &\quad& 0 \leq r_1 < b, \\
+b       &= r_1 q_2 + r_2,     &\quad& 0 \leq r_2 < r_1, \\
+r_1     &= r_2 q_3 + r_3,     &\quad& 0 \leq r_3 < r_2, \\
+        &\ \ \ \vdots \\
+r_{k-2} &= r_{k-1} q_k + r_k, &\quad& 0 \leq r_k < r_{k-1}, \\
+r_{k-1} &= r_k q_{k+1} + 0.
+\end{aligned}
+$$
 
 La sucesión de restos $b > r_1 > r_2 > \cdots \geq 0$ es estrictamente decreciente, así que el algoritmo termina. El **último resto no nulo** es $\gcd(a, b) = r_k$.
 
